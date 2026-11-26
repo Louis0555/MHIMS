@@ -490,6 +490,17 @@ document.addEventListener('DOMContentLoaded', () => {
     currentViewingNameParts = patientData.nameParts || null;
     currentViewingId = patientData.id || 'PNT-1021';
 
+    const riskPill = patientFullView?.querySelector<HTMLElement>('.patient-badges-row .risk-pill');
+    if (riskPill) {
+      const riskClasses = ['low-risk', 'medium-risk', 'high-risk'];
+      const riskLabel = riskPill.querySelector<HTMLElement>('span:last-child');
+      riskPill.classList.remove(...riskClasses);
+      if (riskClasses.includes(patientData.riskClass)) {
+        riskPill.classList.add(patientData.riskClass);
+      }
+      if (riskLabel) riskLabel.textContent = patientData.riskLevel || 'Risk unavailable';
+    }
+
     if (viewPatientId) {
       viewPatientId.textContent = `Patient No. : ${currentViewingId}`;
     }
@@ -613,6 +624,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const pAddress = addressEl ? addressEl.textContent.trim() : 'San Mateo, Camaligan';
       const pAge = tr.cells[2]?.textContent.trim() || '20';
       const nameParts = patientNamePartsByDisplayName[pName] || null;
+      const riskPill = tr.querySelector<HTMLElement>('.risk-pill');
+      const riskClass = riskPill && ['low-risk', 'medium-risk', 'high-risk']
+        .find(className => riskPill.classList.contains(className));
 
       openPatientFullView({
         id: pId.replace('PT-26-', 'PNT-') || 'PNT-1021',
@@ -620,7 +634,9 @@ document.addEventListener('DOMContentLoaded', () => {
         fullName: getFullPatientName(pName),
         nameParts,
         address: pAddress,
-        age: pAge
+        age: pAge,
+        riskLevel: riskPill?.textContent.trim(),
+        riskClass
       });
     });
   });

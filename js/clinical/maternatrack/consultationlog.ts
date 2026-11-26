@@ -556,7 +556,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalPatientNo) modalPatientNo.textContent = `Patient No. : ${patientNo}`;
     if (modalPatientName) modalPatientName.textContent = patientName;
     if (modalTrimester) modalTrimester.textContent = trimesterLabel;
-    if (modalRisk) modalRisk.textContent = viewConsultRisk ? viewConsultRisk.textContent.trim() : 'Low Risk';
+    if (modalRisk) {
+      const riskClasses = ['low-risk', 'medium-risk', 'high-risk'];
+      const riskClass = viewConsultRisk
+        ? riskClasses.find(className => viewConsultRisk.classList.contains(className))
+        : 'low-risk';
+      modalRisk.textContent = viewConsultRisk ? viewConsultRisk.textContent.trim() : 'Low Risk';
+      modalRisk.classList.remove(...riskClasses);
+      if (riskClass) modalRisk.classList.add(riskClass);
+    }
     if (viewConsultLmpEdd) {
       const dates = viewConsultLmpEdd.textContent.match(/LMP:\s*([^|]+)\|\s*EDD:\s*(.+)/);
       if (dates && modalLmp && modalEdd) {

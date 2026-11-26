@@ -1791,3 +1791,47 @@ iconify-icon {
   color: #e4a016;
   background-color: #fff3de;
 }
+
+.card-header-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cp-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cp-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 10.5px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cp-tag.consultation-tag {
+  color: #a34f78;
+  background-color: #f8e9ef;
+}
+
+.cp-tag.gender-tag {
+  color: #2e6333;
+  background-color: #e4efe5;
+}
+
+.btn-view-details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-badge.completed {
+  color: #4b5563;
+  background-color: #e5e7eb;
+}

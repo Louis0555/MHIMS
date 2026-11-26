@@ -728,6 +728,11 @@ iconify-icon {
   line-height: 1;
 }
 
+.risk-pill:not(.low-risk):not(.medium-risk):not(.high-risk) {
+  background-color: #F1F5F9;
+  color: #475569;
+}
+
 .risk-dot {
   width: 7px;
   height: 7px;
@@ -735,31 +740,35 @@ iconify-icon {
   flex-shrink: 0;
 }
 
+.risk-pill:not(.low-risk):not(.medium-risk):not(.high-risk) .risk-dot {
+  background-color: #94A3B8;
+}
+
 /* Low Risk (Green) */
 .risk-pill.low-risk {
-  background-color: #dcfce7;
-  color: #166534;
+  background-color: #DFEAE3;
+  color: #2D5934;
 }
 .risk-pill.low-risk .risk-dot {
-  background-color: #16a34a;
+  background-color: #2A7A4F;
 }
 
 /* Medium Risk (Amber/Orange) */
 .risk-pill.medium-risk {
-  background-color: #FBF0DC;
-  color: #D09518;
+  background-color: #FFF2D8;
+  color: #D39213;
 }
 .risk-pill.medium-risk .risk-dot {
-  background-color: #D09518;
+  background-color: #D39213;
 }
 
 /* High Risk (Red) */
 .risk-pill.high-risk {
-  background-color: #FBE7E4;
-  color: #B23A2E;
+  background-color: #FBE6E3;
+  color: #B9362A;
 }
 .risk-pill.high-risk .risk-dot {
-  background-color: #B23A2E;
+  background-color: #B9362A;
 }
 
 /* Action View Link */
@@ -2079,10 +2088,10 @@ iconify-icon {
 .btn-modal-save {
   height: 38px;
   padding: 0 28px;
-  background-color: #D09518;
+  background-color: #E1A835;
   border: none;
   border-radius: 6px;
-  color: #ffffff;
+  color: #101D5B;
   font-family: inherit;
   font-size: 13.5px;
   font-weight: 700;
@@ -2091,7 +2100,7 @@ iconify-icon {
 }
 
 .btn-modal-save:hover {
-  background-color: #b58012;
+  background-color: #D49A2B;
   transform: translateY(-1px);
 }
 

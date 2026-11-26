@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const normalizedStatus = status.trim().toLowerCase();
     if (normalizedStatus === 'normal') return 'status-normal';
     if (normalizedStatus === 'pending assessment') return 'status-pending';
-    if (['overweight', 'obese', 'severely stunted', 'severely underweight', 'severely wasted', 'severely acute malnutrition (sam)'].includes(normalizedStatus)) {
+    if (['obese', 'severely stunted', 'severely underweight', 'severely wasted', 'severely acute malnutrition (sam)'].includes(normalizedStatus)) {
       return 'status-alert';
     }
     return 'status-warning';

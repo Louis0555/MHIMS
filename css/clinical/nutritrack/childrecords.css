@@ -783,23 +783,23 @@ iconify-icon {
 }
 
 .status-pill.status-normal {
-  background: #e2ece4;
-  color: #356644;
+  background: #DFE9E2;
+  color: #2D5A2E;
 }
 
 .status-pill.status-warning {
-  background: #fff1d9;
-  color: #bd810e;
+  background: #FBF0DC;
+  color: #D09518;
 }
 
 .status-pill.status-alert {
-  background: #fce6e4;
-  color: #b73632;
+  background: #FBE7E4;
+  color: #B23A2E;
 }
 
 .status-pill.status-pending {
-  background: #edf1f7;
-  color: #55667e;
+  background: #FBF0DC;
+  color: #D09518;
 }
 
 /* Patient Name + Address Column */
@@ -847,11 +847,11 @@ iconify-icon {
 
 /* Low Risk (Green) */
 .risk-pill.low-risk {
-  background-color: #dcfce7;
-  color: #166534;
+  background-color: #DFE9E2;
+  color: #2D5A2E;
 }
 .risk-pill.low-risk .risk-dot {
-  background-color: #16a34a;
+  background-color: #2D5A2E;
 }
 
 /* Medium Risk (Amber/Orange) */
@@ -1133,22 +1133,29 @@ iconify-icon {
   min-width: 74px;
   padding: 3px 11px;
   border-radius: 999px;
-  background: #e7f5eb;
-  color: #317044;
+  background: #DFE9E2;
+  color: #2D5A2E;
   font-size: 13px;
   text-align: center;
 }
 
 .nutrition-status-pill[data-status="overweight"],
-.nutrition-status-pill[data-status="obese"] {
-  background: #fde7e4;
-  color: #c83d31;
+.nutrition-status-pill[data-status="underweight"],
+.nutrition-status-pill[data-status="stunted"],
+.nutrition-status-pill[data-status="wasted"],
+.nutrition-status-pill[data-status="pending assessment"],
+.nutrition-status-pill[data-status="moderate acute malnutrition (mam)"] {
+  background: #FBF0DC;
+  color: #D09518;
 }
 
-.nutrition-status-pill[data-status="underweight"],
-.nutrition-status-pill[data-status="stunted"] {
-  background: #dce8f8;
-  color: #315d91;
+.nutrition-status-pill[data-status="obese"],
+.nutrition-status-pill[data-status="severely stunted"],
+.nutrition-status-pill[data-status="severely underweight"],
+.nutrition-status-pill[data-status="severely wasted"],
+.nutrition-status-pill[data-status="severely acute malnutrition (sam)"] {
+  background: #FBE7E4;
+  color: #B23A2E;
 }
 
 .last-updated-text {
@@ -1447,18 +1454,18 @@ iconify-icon {
 }
 
 .record-status.completed {
-  color: #166534;
-  background: #dcfce7;
+  color: #2D5A2E;
+  background: #DFE9E2;
 }
 
 .record-status.ongoing {
-  color: #92400e;
-  background: #fef3c7;
+  color: #2D5A2E;
+  background: #DFE9E2;
 }
 
 .record-status.pending {
-  color: #9a6d00;
-  background: #fff1d2;
+  color: #D09518;
+  background: #FBF0DC;
 }
 
 .consultation-history-group {
@@ -2177,10 +2184,10 @@ iconify-icon {
 .btn-modal-save {
   height: 38px;
   padding: 0 28px;
-  background-color: #D09518;
+  background-color: #E1A835;
   border: none;
   border-radius: 6px;
-  color: #ffffff;
+  color: #101D5B;
   font-family: inherit;
   font-size: 13.5px;
   font-weight: 700;
@@ -2189,7 +2196,7 @@ iconify-icon {
 }
 
 .btn-modal-save:hover {
-  background-color: #b58012;
+  background-color: #D49A2B;
   transform: translateY(-1px);
 }
 

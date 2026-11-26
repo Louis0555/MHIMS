@@ -1039,13 +1039,14 @@
 }
 
 .resident-btn-save {
-  color: #fff;
-  background: var(--primary-navy);
-  border: 1px solid var(--primary-navy);
+  color: #101D5B;
+  background: #E1A835;
+  border: 1px solid #E1A835;
 }
 
 .resident-btn-save:hover {
-  background: var(--primary-navy-hover);
+  background: #D49A2B;
+  border-color: #D49A2B;
 }
 
 .resident-btn-cancel {
@@ -1114,14 +1115,14 @@
 }
 
 .resident-edit-mode .resident-btn-save {
-  color: #fff;
-  background: #c4932e;
-  border-color: #c4932e;
+  color: #101D5B;
+  background: #E1A835;
+  border-color: #E1A835;
 }
 
 .resident-edit-mode .resident-btn-save:hover {
-  background: #ac7d23;
-  border-color: #ac7d23;
+  background: #D49A2B;
+  border-color: #D49A2B;
 }
 
 @media (max-width: 760px) {
@@ -1529,8 +1530,8 @@
 .profile-visit-footer p { display: none; }
 .profile-visit-footer>div { width: 100%; justify-content: flex-end; gap: 12px; }
 .profile-visit-footer button { min-width: 92px; min-height: 31px; padding: 6px 18px; font-size: 12px; }
-.profile-visit-footer .resident-btn-save { min-width: 121px; color: var(--primary-navy); background: #e4a82e; border-color: #e4a82e; }
-.profile-visit-footer .resident-btn-save:hover { background: #d09518; }
+.profile-visit-footer .resident-btn-save { min-width: 121px; color: #101D5B; background: #E1A835; border-color: #E1A835; }
+.profile-visit-footer .resident-btn-save:hover { background: #D49A2B; border-color: #D49A2B; }
 .profile-visit-footer .resident-btn-cancel { color: var(--primary-navy); border-color: var(--primary-navy); }
 
 @media (max-width: 620px) {

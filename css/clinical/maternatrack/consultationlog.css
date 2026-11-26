@@ -758,6 +758,11 @@ iconify-icon {
   line-height: 1;
 }
 
+.risk-pill:not(.low-risk):not(.medium-risk):not(.high-risk) {
+  background-color: #F1F5F9;
+  color: #475569;
+}
+
 .risk-dot {
   width: 7px;
   height: 7px;
@@ -765,34 +770,38 @@ iconify-icon {
   flex-shrink: 0;
 }
 
+.risk-pill:not(.low-risk):not(.medium-risk):not(.high-risk) .risk-dot {
+  background-color: #94A3B8;
+}
+
 /* Low Risk (Green) */
 .risk-pill.low-risk {
-  background-color: #dcfce7;
-  color: #166534;
+  background-color: #DFEAE3;
+  color: #2D5934;
 }
 
 .risk-pill.low-risk .risk-dot {
-  background-color: #16a34a;
+  background-color: #2A7A4F;
 }
 
 /* Medium Risk (Amber/Orange) */
 .risk-pill.medium-risk {
-  background-color: #FBF0DC;
-  color: #D09518;
+  background-color: #FFF2D8;
+  color: #D39213;
 }
 
 .risk-pill.medium-risk .risk-dot {
-  background-color: #D09518;
+  background-color: #D39213;
 }
 
 /* High Risk (Red) */
 .risk-pill.high-risk {
-  background-color: #FBE7E4;
-  color: #B23A2E;
+  background-color: #FBE6E3;
+  color: #B9362A;
 }
 
 .risk-pill.high-risk .risk-dot {
-  background-color: #B23A2E;
+  background-color: #B9362A;
 }
 
 /* Action View Link */
@@ -994,24 +1003,60 @@ iconify-icon {
   white-space: nowrap;
 }
 
+.summary-risk-pill::before,
+.prenatal-risk-tag::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  margin-right: 6px;
+  border-radius: 50%;
+}
+
+.summary-risk-pill.low-risk::before,
+.prenatal-risk-tag.low-risk::before {
+  background-color: #2A7A4F;
+}
+
+.summary-risk-pill.medium-risk::before,
+.prenatal-risk-tag.medium-risk::before {
+  background-color: #D39213;
+}
+
+.summary-risk-pill.high-risk::before,
+.prenatal-risk-tag.high-risk::before {
+  background-color: #B9362A;
+}
+
 .summary-risk-pill {
   justify-content: center;
   min-width: 126px;
 }
 
+.summary-risk-pill:not(.low-risk):not(.medium-risk):not(.high-risk) {
+  background-color: #F1F5F9;
+  color: #475569;
+}
+
+.summary-risk-pill:not(.low-risk):not(.medium-risk):not(.high-risk)::before,
+.prenatal-risk-tag:not(.low-risk):not(.medium-risk):not(.high-risk)::before {
+  background-color: #94A3B8;
+}
+
 .summary-risk-pill.low-risk {
-  background-color: #e9fbf1;
-  color: #2d6033;
+  background-color: #DFEAE3;
+  color: #2D5934;
 }
 
 .summary-risk-pill.medium-risk {
-  background-color: #fbf0dc;
-  color: #a8730f;
+  background-color: #FFF2D8;
+  color: #D39213;
 }
 
 .summary-risk-pill.high-risk {
-  background-color: #fbe7e4;
-  color: #b23a2e;
+  background-color: #FBE6E3;
+  color: #B9362A;
 }
 
 .lmp-edd-pill {
@@ -1584,10 +1629,10 @@ iconify-icon {
   white-space: nowrap;
 }
 
-.prenatal-risk-tag {
-  color: #357044;
-  background: #e7f8ec;
-}
+.prenatal-risk-tag.low-risk { color: #2D5934; background: #DFEAE3; }
+.prenatal-risk-tag.medium-risk { color: #D39213; background: #FFF2D8; }
+.prenatal-risk-tag.high-risk { color: #B9362A; background: #FBE6E3; }
+.prenatal-risk-tag:not(.low-risk):not(.medium-risk):not(.high-risk) { color: #475569; background: #F1F5F9; }
 
 .prenatal-date-tag {
   color: var(--primary-navy);
@@ -1845,9 +1890,14 @@ iconify-icon {
 }
 
 .prenatal-save-button {
-  color: var(--primary-navy);
-  background: #e4aa2c;
-  border: 1px solid #e4aa2c;
+  color: #101D5B;
+  background: #E1A835;
+  border: 1px solid #E1A835;
+}
+
+.prenatal-save-button:hover {
+  background: #D49A2B;
+  border-color: #D49A2B;
 }
 
 .prenatal-cancel-button {

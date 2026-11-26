@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalTitle = document.getElementById('modalTitle');
     const modalDescription = addModal.querySelector('.patient-modal-header p');
     const saveButton = addModal.querySelector('.btn-save-record');
-    if (modalTitle) modalTitle.textContent = record ? 'Edit Patient Record' : 'Add New Patient';
+    if (modalTitle) modalTitle.textContent = record ? 'Edit Patient Record' : 'Add Patient Record';
     if (modalDescription) modalDescription.textContent = record ? 'Update the patient details below' : 'Fill in the details below to register a new patient';
     if (saveButton) saveButton.textContent = record ? 'Save Changes' : 'Save Record';
     progressSections.forEach(section => delete section.dataset.progressTouched);
@@ -436,7 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const addButton = document.getElementById('btnAddRecord');
   const closeButton = document.getElementById('closePatientModal');
   const cancelButton = document.getElementById('cancelPatientModal');
-  if (addButton) addButton.addEventListener('click', openModal);
+  if (addButton) addButton.addEventListener('click', () => openModal());
   if (closeButton) closeButton.addEventListener('click', closeModal);
   if (cancelButton) cancelButton.addEventListener('click', closeModal);
   if (addModal) {

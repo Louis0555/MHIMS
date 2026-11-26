@@ -31,7 +31,7 @@
 
   --badge-consultation: #2D5A2E;
   --badge-waiting: #D09518;
-  --badge-urgent: #DC2626;
+  --badge-urgent: #B23A2E;
 
   --font-sans: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --sidebar-width: 230px;
@@ -720,10 +720,10 @@ iconify-icon {
   white-space: nowrap;
 }
 
-.status-badge.in-consultation { background-color: var(--badge-consultation); }
-.status-badge.waiting         { background-color: var(--badge-waiting); }
-.status-badge.urgent          { background-color: var(--badge-urgent); }
-.status-badge.completed       { background-color: #4b5563; }
+.status-badge.in-consultation { background-color: #DFE9E2; color: #2D5A2E; }
+.status-badge.waiting         { background-color: #FBF0DC; color: #D09518; }
+.status-badge.urgent          { background-color: #FBE7E4; color: #B23A2E; }
+.status-badge.completed       { background-color: #DFE9E2; color: #2D5A2E; }
 
 .td-action { text-align: center; }
 
@@ -1523,17 +1523,22 @@ iconify-icon {
 }
 
 .status-badge.urgent {
-  color: #c62828;
-  background-color: #fde8e6;
+  color: #B23A2E;
+  background-color: #FBE7E4;
 }
 
 .status-badge.in-consultation {
-  color: #2e6333;
-  background-color: #e4efe5;
+  color: #2D5A2E;
+  background-color: #DFE9E2;
 }
 
 .status-badge.upcoming,
 .status-badge.waiting {
-  color: #e4a016;
-  background-color: #fff3de;
+  color: #D09518;
+  background-color: #FBF0DC;
+}
+
+.status-badge.completed {
+  color: #2D5A2E;
+  background-color: #DFE9E2;
 }

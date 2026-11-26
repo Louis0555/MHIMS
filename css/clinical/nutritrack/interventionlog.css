@@ -196,8 +196,8 @@
 }
 
 .progress-ongoing {
-  background: #c7d9f2;
-  color: #102963;
+  background: #DFE9E2;
+  color: #2D5A2E;
 }
 
 .intervention-log-table .view-action-divider {
@@ -609,8 +609,8 @@ body.intervention-modal-open {
   margin-left: 4px;
   padding: 2px 8px;
   border-radius: 99px;
-  background: #fef3c7;
-  color: #a16207;
+  background: #DFE9E2;
+  color: #2D5A2E;
   font-size: 10px;
   font-weight: 700;
 }
@@ -717,20 +717,20 @@ body.intervention-modal-open {
 .intervention-program-status strong {
   padding: 4px 9px;
   border-radius: 99px;
-  background: #dcfce7;
-  color: #15803d;
+  background: #DFE9E2;
+  color: #2D5A2E;
   font-size: 10px;
   font-weight: 700;
 }
 
 .intervention-program-status strong.status-pending {
-  background: #fef3c7;
-  color: #a16207;
+  background: #FBF0DC;
+  color: #D09518;
 }
 
 .intervention-program-status strong.status-complete {
-  background: #dbeafe;
-  color: #1d4ed8;
+  background: #DFE9E2;
+  color: #2D5A2E;
 }
 
 .intervention-program-content {
@@ -945,6 +945,15 @@ body.intervention-modal-open {
   padding: 0 18px;
   font-size: 12px;
   font-weight: 700;
+  border-color: #E1A835;
+  background: #E1A835;
+  color: #101D56;
+}
+
+.intervention-edit-btn:hover {
+  border-color: #D09518;
+  background: #D09518;
+  color: #101D56;
 }
 
 @media (max-width: 600px) {

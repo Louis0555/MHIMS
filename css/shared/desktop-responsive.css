@@ -98,18 +98,16 @@
 
 @media screen and (min-width: 761px) and (max-height: 760px) {
   body {
-    height: auto;
-    min-height: 100vh;
-    min-height: 100dvh;
-    overflow-x: hidden;
-    overflow-y: auto;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
   }
 
   .dashboard-layout {
-    height: auto;
-    min-height: 100vh;
-    min-height: 100dvh;
-    overflow: visible;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
   }
 
   .dashboard-layout > .sidebar {
@@ -121,9 +119,21 @@
   }
 
   .dashboard-layout > .main-content {
-    height: auto;
-    min-height: 100vh;
-    min-height: 100dvh;
-    overflow: visible;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: none;
+  }
+
+  .dashboard-layout > .main-content::-webkit-scrollbar,
+  .sidebar-top::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar-top {
+    scrollbar-width: none;
   }
 }

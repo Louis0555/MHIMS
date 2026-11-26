@@ -445,6 +445,8 @@ body.modal-open .main-content { overflow: hidden; }
   gap: 13px 15px;
 }
 
+.patient-modal .form-grid + .form-grid { margin-top: 13px; }
+
 .form-grid.two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .form-grid.three-col { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .form-grid.four-col { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -453,7 +455,7 @@ body.modal-open .main-content { overflow: hidden; }
   display: flex;
   min-width: 0;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
   border: 0;
 }
 
@@ -478,6 +480,14 @@ body.modal-open .main-content { overflow: hidden; }
   background: #fff;
   color: #24314e;
   font: inherit;
+  font-size: 10px;
+}
+
+.patient-modal .form-field .mhims-select-trigger {
+  height: 30px;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 4px;
   font-size: 10px;
 }
 
@@ -555,8 +565,8 @@ body.modal-open .main-content { overflow: hidden; }
   cursor: pointer;
 }
 
-.btn-save-record { min-width: 119px; border-color: #e2a52c; background: #e5a62c; color: #fff; }
-.btn-save-record:hover { background: #d09518; }
+.btn-save-record { min-width: 119px; border-color: #E1A835; background: #E1A835; color: #101D5B; }
+.btn-save-record:hover { background: #D49A2B; border-color: #D49A2B; }
 .btn-cancel-record:hover { background: #f1f5f9; }
 
 .patient-details-dialog {

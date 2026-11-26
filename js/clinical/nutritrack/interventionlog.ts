@@ -220,7 +220,10 @@ document.addEventListener('DOMContentLoaded', () => {
     setViewText('interventionViewLogId', row.dataset.logId ?? 'LOG001');
     setViewText('interventionViewPatientName', patientName);
     setViewText('interventionViewLastUpdated', toLongDate(lastUpdated));
-    setViewText('interventionViewNutritionStatus', row.dataset.nutritionStatus ?? 'Underweight');
+    const nutritionStatus = row.dataset.nutritionStatus ?? 'Underweight';
+    setViewText('interventionViewNutritionStatus', nutritionStatus);
+    const nutritionStatusPill = document.getElementById('interventionViewNutritionStatus');
+    if (nutritionStatusPill) nutritionStatusPill.dataset.status = nutritionStatus.trim().toLowerCase();
     setViewText('interventionViewRegistered', row.dataset.registeredDate ?? 'October 1, 2026');
     setViewText('interventionViewProgramCategory', isFeeding ? 'SUPPLEMENTARY FEEDING' : `${program.toUpperCase()} PROGRAM`);
     setViewText('interventionViewProgramName', `${program} Intervention`);

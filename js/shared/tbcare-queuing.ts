@@ -110,10 +110,14 @@ function initializeTbCareQueue() {
 
   function updateSelectedPatient() {
     const viewDetailsButton = getElement<HTMLButtonElement>("btnViewDetails");
+    const consultationTag = getElement("cpConsultationTag");
+    const genderTag = getElement("cpGenderTag");
     if (!selectedPatient) {
       if (selectedName) selectedName.textContent = "No upcoming patient";
       if (selectedDetails) selectedDetails.textContent = "The queue is currently empty.";
       if (selectedQueueNo) selectedQueueNo.textContent = "#--";
+      if (consultationTag) consultationTag.textContent = "—";
+      if (genderTag) genderTag.textContent = "";
       if (viewDetailsButton) viewDetailsButton.disabled = true;
       return;
     }
@@ -127,6 +131,8 @@ function initializeTbCareQueue() {
     if (selectedQueueNo) {
       selectedQueueNo.textContent = `#${String(selectedPatient.queueNo).padStart(2, "0")}`;
     }
+    if (consultationTag) consultationTag.textContent = selectedPatient.consultation;
+    if (genderTag) genderTag.textContent = selectedPatient.gender;
   }
 
   function createGroupRow(label: string, count: number): HTMLTableRowElement {

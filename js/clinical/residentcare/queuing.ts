@@ -443,6 +443,8 @@ function renderCurrentPatient() {
     document.getElementById("cpName").textContent = "No upcoming patient";
     document.getElementById("cpDemographics").textContent = "The queue is currently empty.";
     document.getElementById("cpQueueNo").textContent = "#--";
+    document.getElementById("cpConsultationTag").textContent = "—";
+    document.getElementById("cpGenderTag").textContent = "";
     if (viewDetailsBtn) viewDetailsBtn.disabled = true;
     return;
   }
@@ -453,6 +455,8 @@ function renderCurrentPatient() {
     `${selectedPatient.consultation} · ${selectedPatient.category} · ${selectedPatient.address}`;
   document.getElementById("cpQueueNo").textContent =
     `#${String(selectedPatient.queueNo).padStart(2, "0")}`;
+  document.getElementById("cpConsultationTag").textContent = selectedPatient.consultation;
+  document.getElementById("cpGenderTag").textContent = selectedPatient.gender;
 }
 
 // Event Listeners for Queue Actions & Filters

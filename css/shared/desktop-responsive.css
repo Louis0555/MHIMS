@@ -1,0 +1,129 @@
+.dashboard-layout {
+  width: 100%;
+  min-width: 0;
+}
+
+.dashboard-layout > .sidebar {
+  flex: 0 0 var(--sidebar-width, 230px);
+  min-width: 0;
+}
+
+.dashboard-layout > .main-content {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.dashboard-layout > .main-content > * {
+  min-width: 0;
+}
+
+@media screen and (min-width: 761px) and (max-width: 1280px) {
+  .dashboard-layout > .sidebar {
+    --sidebar-width: clamp(184px, 19vw, 230px);
+    width: var(--sidebar-width);
+    padding-right: clamp(9px, 1.1vw, 14px);
+    padding-left: clamp(9px, 1.1vw, 14px);
+  }
+
+  .sidebar-logo-img {
+    width: clamp(88px, 9vw, 116px);
+    height: clamp(88px, 9vw, 116px);
+  }
+
+  .sidebar .nav-item-btn,
+  .sidebar .nav-dropdown-toggle {
+    height: auto;
+    min-height: 38px;
+    padding-right: clamp(8px, 1vw, 12px);
+    padding-left: clamp(8px, 1vw, 12px);
+    font-size: clamp(14px, 1.25vw, 16px);
+  }
+
+  .sidebar .nav-item-btn > span,
+  .sidebar .nav-dropdown-toggle .nav-btn-content > span,
+  .sidebar .submenu-item > span,
+  .sidebar .btn-logout > span {
+    display: inline;
+  }
+
+  .sidebar iconify-icon {
+    display: inline-flex;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .sidebar .nav-dropdown.open .nav-submenu {
+    display: flex;
+  }
+
+  .dashboard-layout > .main-content {
+    padding-right: clamp(14px, 2vw, 28px);
+    padding-left: clamp(14px, 2vw, 28px);
+  }
+
+  .dashboard-layout > .main-content .top-header,
+  .dashboard-layout > .main-content .portal-header,
+  .dashboard-layout > .main-content .statistics-header {
+    flex-wrap: wrap;
+    gap: clamp(8px, 1.2vw, 16px);
+  }
+
+  .dashboard-layout > .main-content .dashboard-title,
+  .dashboard-layout > .main-content .page-title {
+    font-size: clamp(29px, 3.6vw, 46px);
+    overflow-wrap: anywhere;
+  }
+
+  .dashboard-layout > .main-content .dashboard-subtitle,
+  .dashboard-layout > .main-content .page-subtitle {
+    font-size: clamp(16px, 1.8vw, 22px);
+    overflow-wrap: anywhere;
+  }
+
+  .dashboard-layout > .main-content .header-actions {
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .dashboard-layout > .main-content {
+    max-width: 1760px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: clamp(28px, 2vw, 56px);
+    padding-left: clamp(28px, 2vw, 56px);
+  }
+}
+
+@media screen and (min-width: 761px) and (max-height: 760px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .dashboard-layout {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  .dashboard-layout > .sidebar {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .dashboard-layout > .main-content {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+}

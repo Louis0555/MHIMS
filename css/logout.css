@@ -5,6 +5,7 @@
 @import "./shared/clinical-detail-views.css";
 @import "./shared/page-header.css";
 @import "./shared/record-save-notice.css";
+@import "./shared/desktop-responsive.css";
 
 .logout-dialog {
   position: fixed;

@@ -222,6 +222,7 @@ body.pharmacy-patient-page {
 
 .pharmacy-dispensed-table th:nth-child(3) {
   width: 21%;
+  text-align: left;
 }
 
 .pharmacy-dispensed-table th:nth-child(4) {

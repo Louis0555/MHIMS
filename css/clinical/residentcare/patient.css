@@ -505,6 +505,10 @@
   line-height: 1;
 }
 
+.patient-table td:nth-child(6) .status-pill {
+  transform: translateX(-8px);
+}
+
 .status-dot {
   width: 7px;
   height: 7px;
@@ -544,12 +548,12 @@
 
 /* 4. Completed (Green) */
 .status-pill.completed {
-  background-color: #dcfce7;
-  color: #166534;
+  background-color: #DFE9E2;
+  color: #2D5A2E;
 }
 
 .status-pill.completed .status-dot {
-  background-color: #16a34a;
+  background-color: #2D5A2E;
 }
 
 /* 5. Missed to Follow-up (Brown) */

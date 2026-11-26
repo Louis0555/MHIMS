@@ -728,6 +728,10 @@ iconify-icon {
   line-height: 1;
 }
 
+.patient-table td:nth-child(5) .risk-pill {
+  transform: translateX(16px);
+}
+
 .risk-pill:not(.low-risk):not(.medium-risk):not(.high-risk) {
   background-color: #F1F5F9;
   color: #475569;

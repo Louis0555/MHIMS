@@ -1,0 +1,399 @@
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-label,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-label {
+  color: #626262;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .residentcare-toolbar,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .records-toolbar,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .patient-toolbar,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-toolbar,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .period-row {
+  position: relative;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .residentcare-toolbar .filter-controls-wrap,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .records-toolbar .filter-controls-wrap,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .patient-toolbar .filter-controls-wrap,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-toolbar .pharmacy-filter-controls,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .period-row .period-options {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+  transform: translate(-50%, -50%);
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-row:has(> .filter-label):has(> .filter-dropdown-wrap) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 28px;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-row:has(> .filter-label):has(> .filter-dropdown-wrap) > .filter-dropdown-wrap {
+  position: relative;
+  left: auto;
+  flex: 0 0 auto;
+  transform: none;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-row:has(> .filter-label):has(> .filter-dropdown-wrap) > .filter-label {
+  color: #626262;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-row:has(> .filter-label):has(> .filter-dropdown-wrap) > .filter-dropdown-wrap > .filter-btn {
+  position: relative;
+  display: inline-flex;
+  width: 145px;
+  min-width: 145px;
+  height: 26px;
+  min-height: 26px;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 14px;
+  border: 0;
+  border-radius: 5px;
+  background: #101d56;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-row:has(> .filter-label):has(> .filter-dropdown-wrap) > .filter-dropdown-wrap > .filter-btn:hover {
+  background: #1a2b70;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-row:has(> .filter-label):has(> .filter-dropdown-wrap) > .filter-dropdown-wrap > .filter-btn:focus-visible {
+  outline: 3px solid #89a9dc;
+  outline-offset: 2px;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-row:has(> .filter-label):has(> .filter-dropdown-wrap) > .filter-dropdown-wrap > .filter-btn iconify-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  color: #fff;
+  transform: translateY(-50%);
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-row:has(> .filter-label):has(> .filter-dropdown-wrap) > .queue-sort-note {
+  margin-left: 0;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-btn,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-btn,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .period-options button,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .medicine-type-filter select {
+  box-sizing: border-box;
+  display: inline-flex;
+  min-width: 70px;
+  height: 24px;
+  min-height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 3px 14px;
+  border: 1.5px solid #101d56;
+  border-radius: 6px;
+  background: #fff;
+  color: #101d56;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-btn:hover,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-btn:hover:not(.active),
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .period-options button:hover,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .period-options button:focus-visible {
+  background: #eef2f8;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-btn.active,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-btn.has-filter,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-btn.active,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .period-options button.active {
+  border-color: #101d56;
+  background: #101d56;
+  color: #fff;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-btn iconify-icon {
+  color: #101d56;
+  font-size: 15px;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-btn.active iconify-icon,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-btn.has-filter iconify-icon {
+  color: #fff;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-controls-wrap,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .period-options {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-controls-wrap > .filter-btn,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-controls-wrap > .filter-dropdown-wrap > .filter-btn,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .period-options button,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls > .pharmacy-filter-btn,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls > .dispensed-date-range > .pharmacy-filter-btn,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls > .medicine-type-filter > select {
+  border-radius: 0;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-controls-wrap > * + *,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls > * + *,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .period-options button + button {
+  margin-left: -1.5px;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-controls-wrap > :first-child > .filter-btn,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-controls-wrap > button:first-child,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .period-options button:first-child,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls > :first-child {
+  border-radius: 6px 0 0 6px;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-controls-wrap > :last-child > .filter-btn,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-controls-wrap > button:last-child,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .period-options button:last-child,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls > :last-child,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls > .dispensed-date-range:last-child > .pharmacy-filter-btn,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls > .medicine-type-filter:last-child > select {
+  border-radius: 0 6px 6px 0;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-dropdown-menu {
+  min-width: 175px;
+  max-height: 260px;
+  padding: 6px 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgb(16 29 86 / 14%);
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-menu-item {
+  min-height: 30px;
+  padding: 7px 14px;
+  color: #101d56;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-menu-item:hover,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-menu-item:focus-visible,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-menu-item.active {
+  background: #eaf0f8;
+  color: #101d56;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls {
+  height: 24px;
+  overflow: visible;
+  border: 0;
+  border-radius: 6px;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls > .pharmacy-filter-btn {
+  flex: 0 0 auto;
+  padding-right: 14px;
+  padding-left: 14px;
+  border-width: 1.5px;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .medicine-type-filter {
+  box-sizing: border-box;
+  height: 24px;
+  align-items: stretch;
+  flex: 0 0 150px;
+  border: 0;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .medicine-type-filter select {
+  box-sizing: border-box;
+  width: 150px;
+  min-width: 0;
+  height: 24px;
+  padding: 3px 28px 3px 12px;
+  border: 1.5px solid #101d56;
+  border-radius: 0 6px 6px 0;
+  background: #fff;
+  color: #101d56;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  text-align-last: center;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .medicine-type-filter .mhims-select-trigger,
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-field .mhims-select-trigger {
+  box-sizing: border-box;
+  height: 24px;
+  min-height: 24px;
+  padding: 0 30px 0 11px;
+  border: 1.5px solid #101d56;
+  border-radius: 6px;
+  background: #fff;
+  color: #43536e;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .medicine-type-filter .mhims-select-trigger {
+  width: 100%;
+  min-width: 0;
+  justify-content: center;
+  padding-right: 30px;
+  padding-left: 30px;
+  border: 1.5px solid #101d56;
+  border-radius: 0 6px 6px 0;
+  color: #101d56;
+  text-align: center;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .medicine-type-filter .mhims-select-value.placeholder {
+  color: #101d56 !important;
+  font-weight: 600;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-field {
+  color: #626262;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .statistics-controls .filter-row {
+  width: min(100%, 980px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 760px) {
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .residentcare-toolbar,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .records-toolbar,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .patient-toolbar,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-toolbar {
+    box-sizing: border-box;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 10px;
+  }
+
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .patient-filter-group,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-group,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-row {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 8px;
+  }
+
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .residentcare-toolbar .filter-controls-wrap,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .records-toolbar .filter-controls-wrap,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .patient-toolbar .filter-controls-wrap,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-toolbar .pharmacy-filter-controls,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .period-row .period-options {
+    box-sizing: border-box;
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    margin: 0 auto;
+    transform: none;
+  }
+
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-controls-wrap > .filter-btn,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-controls-wrap > .filter-dropdown-wrap > .filter-btn,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .period-options button,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls > .pharmacy-filter-btn,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls > .dispensed-date-range > .pharmacy-filter-btn,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls > .medicine-type-filter > select,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls > .medicine-type-filter .mhims-select-trigger {
+    border: 1.5px solid #101d56;
+    border-radius: 6px;
+  }
+
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-controls-wrap > * + *,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls > * + *,
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .period-options button + button {
+    margin-left: 0;
+  }
+
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-row:has(> .filter-label) {
+    box-sizing: border-box;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-row:has(> .filter-label) > .filter-dropdown-wrap {
+    position: static;
+    transform: none;
+  }
+
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-row:has(> .filter-label):has(> .filter-dropdown-wrap) {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-row:has(> .filter-label):has(> .filter-dropdown-wrap) > .filter-label {
+    font-size: 16px;
+  }
+
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-row:has(> .filter-label):has(> .filter-dropdown-wrap) > .filter-dropdown-wrap > .filter-btn {
+    width: 125px;
+    min-width: 125px;
+    font-size: 14px;
+  }
+
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .filter-row:has(> .filter-label):has(> .filter-dropdown-wrap) > .queue-sort-note {
+    flex-basis: auto;
+    margin-left: 0;
+  }
+
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .period-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-row {
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    overflow: visible;
+  }
+
+  body:has(.sidebar-nav[aria-label$="Navigation Modules"]) .pharmacy-filter-controls {
+    max-width: 100%;
+    height: auto;
+    min-height: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+}

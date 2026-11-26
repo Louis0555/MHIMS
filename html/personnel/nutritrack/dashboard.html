@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHIMS - NutriTrack Overview | Dashboard</title>
+  <link rel="icon" type="image/png" href="../../../assets/images/MHIMS LOGO.png">
+  <meta name="description"
+    content="NutriTrack Overview - Municipal Health Office Information Management System (MHIMS), Municipality of Camaligan.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Iconify Icon Web Component Script -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <!-- Clinical Dashboard CSS -->
+  <link rel="stylesheet" href="../../../css/personnel/nutritrack/dashboard.css" data-mhims-page-style>
+  <link rel="stylesheet" href="../../../css/shared/dashboard-queue.css" data-mhims-page-style>
+
+  <!-- MaternaTrack Sidebar Shared Logic -->
+    <script type="module" src="../../../js/shared/sidebar-navigation.ts" data-mhims-router defer></script>
+
+  <!-- MaternaTrack Dashboard Logic -->
+  <script type="module" src="../../../js/personnel/nutritrack/dashboard.ts?mhims-page=personnel-nutritrack-dashboard" defer></script>
+  <link rel="stylesheet" href="../../../css/logout.css">
+  <script type="module" src="../../../js/logout.ts" data-mhims-global defer></script>
+</head>
+
+<body>
+
+  <div class="dashboard-layout">
+
+    <!-- ======================================================================
+         Left Sidebar Navigation
+         ====================================================================== -->
+    <aside class="sidebar">
+
+      <div class="sidebar-top">
+        <!-- MHIMS Crest Logo -->
+        <a href="../maindashboard/dashboard.html" class="sidebar-brand" title="MHIMS Personnel Portal">
+          <img src="../../../assets/images/MHIMS LOGO.png" alt="MHIMS Official Logo" class="sidebar-logo-img">
+        </a>
+
+        <!-- Navigation Modules List -->
+        <nav class="sidebar-nav" aria-label="Personnel Navigation Modules">
+          <a href="../maindashboard/dashboard.html" class="nav-item-btn"><iconify-icon icon="ant-design:home-filled" width="22" height="22"></iconify-icon><span>Dashboard</span></a>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="bi:people-fill" width="22" height="22"></iconify-icon><span>ResidentCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../residentcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../residentcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../residentcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../residentcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa6-solid:person-breastfeeding" width="22" height="22"></iconify-icon><span>MaternaTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../maternatrack/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../maternatrack/patientrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient Records</span></a>
+              <a href="../maternatrack/consultationlog.html" class="submenu-item"><iconify-icon icon="mdi:clipboard-text-clock" width="18" height="18"></iconify-icon><span>Consultation Log</span></a>
+              <a href="../maternatrack/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../maternatrack/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa:child" width="22" height="22"></iconify-icon><span>NutriTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="dashboard.html" class="submenu-item active" aria-current="page"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="childrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Child Records</span></a>
+              <a href="queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="interventionlog.html" class="submenu-item"><iconify-icon icon="icon-park-solid:notebook" width="18" height="18"></iconify-icon><span>Intervention Log</span></a>
+              <a href="calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="healthicons:lungs" width="22" height="22"></iconify-icon><span>TBCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../tbcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../tbcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../tbcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../tbcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <a href="../pharmacy/dashboard.html" class="nav-item-btn"><iconify-icon icon="griddy-icons:pills-alt-02-filled" width="22" height="22"></iconify-icon><span>Pharmacy</span></a>
+        </nav>
+      </div>
+
+      <!-- Bottom Logout Button -->
+      <div class="sidebar-footer">
+        <a href="../../login.html" class="btn-logout" id="logoutBtn" title="Log out from system">
+          <iconify-icon icon="cuida:logout-outline" width="22" height="22"></iconify-icon>
+          <span>Logout</span>
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- ======================================================================
+         Main Dashboard Content Area
+         ====================================================================== -->
+    <main class="main-content">
+
+      <!-- Top Header Bar -->
+      <header class="top-header">
+        <div class="header-title-wrap">
+          <h1 class="dashboard-title">Dashboard</h1>
+          <p class="dashboard-subtitle">NutriTrack overview</p>
+        </div>
+
+        <div class="header-actions">
+          <!-- Notification Bell Button -->
+          
+        </div>
+      </header>
+
+      <!-- Dashboard Two-Column Grid -->
+      <div class="dashboard-grid">
+
+        <!-- ------------------------------------------------------------------
+             LEFT COLUMN: Metric Cards + Upcoming Activities
+             ------------------------------------------------------------------ -->
+        <div class="grid-col-left">
+
+          <!-- 4 Metric Cards (2x2 Grid) -->
+          <section class="metrics-row" aria-label="MaternaTrack Key Metrics">
+
+            <!-- Card 1: Registered Mother -->
+            <article class="metric-card">
+              <div class="metric-header">
+                <div class="metric-icon-circle blue">
+                  <iconify-icon icon="bi:people-fill" width="38" height="38"></iconify-icon>
+                </div>
+                <h3 class="metric-title">Registered<br>Children</h3>
+              </div>
+              <div class="metric-value">5,000</div>
+              <div class="metric-trend">
+                <span class="trend-stat up">&#8593; 4.2 %</span>
+                <span class="trend-period">vs. last month</span>
+              </div>
+            </article>
+
+            <!-- Card 2: High-Risks Patient -->
+            <article class="metric-card">
+              <div class="metric-header">
+                <div class="metric-icon-circle gold">
+                  <iconify-icon icon="mdi:calendar-clock" width="37" height="37"></iconify-icon>
+                </div>
+                <h3 class="metric-title">Upcoming<br>Visits</h3>
+              </div>
+              <div class="metric-value">5</div>
+              <div class="metric-trend">
+                <span class="trend-stat down-good">&#8595; -8.3 %</span>
+                <span class="trend-period">vs. last month</span>
+              </div>
+            </article>
+
+            <!-- Card 3: Deliveries Due This Month -->
+            <article class="metric-card">
+              <div class="metric-header">
+                <div class="metric-icon-circle green">
+                  <iconify-icon icon="bi:person-fill-check" width="37" height="37"></iconify-icon>
+                </div>
+                <h3 class="metric-title">Children<br>Monitored</h3>
+              </div>
+              <div class="metric-value">25</div>
+              <div class="metric-trend">
+                <span class="trend-stat up">&#8593; 2.4 %</span>
+                <span class="trend-period">vs. last month</span>
+              </div>
+            </article>
+
+            <!-- Card 4: Prenatal visits this month -->
+            <article class="metric-card">
+              <div class="metric-header">
+                <div class="metric-icon-circle red">
+                  <iconify-icon icon="at-icons:danger" width="37" height="37"></iconify-icon>
+                </div>
+                <h3 class="metric-title">High-Risks<br>Cases</h3>
+              </div>
+              <div class="metric-value">20</div>
+              <div class="metric-trend">
+                <span class="trend-stat down">&#8595; 6.3 %</span>
+                <span class="trend-period">vs. last month</span>
+              </div>
+            </article>
+
+          </section>
+
+          <!-- Upcoming Activities Card -->
+          <section class="activities-card" aria-labelledby="activitiesTitle">
+            <div class="card-header-row">
+              <div class="card-title-icon-wrap">
+                <iconify-icon icon="boxicons:calendar-alt-filled" width="30" height="30"></iconify-icon>
+                <h2 id="activitiesTitle" class="card-title-heading">Upcoming Activities</h2>
+              </div>
+              <a href="#allActivities" class="card-action-link">View All Activities</a>
+            </div>
+
+            <div class="activities-list">
+              <!-- Item 1 -->
+              <div class="activity-item">
+                <div class="activity-date-badge blue">
+                  <span class="badge-month">OCT</span>
+                  <span class="badge-day">8</span>
+                  <span class="badge-weekday">Wed</span>
+                </div>
+                <div class="activity-details">
+                  <span class="activity-time">08:00 AM – 12:00 PM</span>
+                  <h4 class="activity-title">Barangay Health Consultation</h4>
+                  <span class="activity-location">Location: Barangay Marupit</span>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="activity-item">
+                <div class="activity-date-badge green">
+                  <span class="badge-month">OCT</span>
+                  <span class="badge-day">10</span>
+                  <span class="badge-weekday">Fri</span>
+                </div>
+                <div class="activity-details">
+                  <span class="activity-time">08:00 AM – 12:00 PM</span>
+                  <h4 class="activity-title">Barangay Health Consultation</h4>
+                  <span class="activity-location">Location: Barangay San Ramon</span>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="activity-item">
+                <div class="activity-date-badge purple">
+                  <span class="badge-month">OCT</span>
+                  <span class="badge-day">12</span>
+                  <span class="badge-weekday">Sun</span>
+                </div>
+                <div class="activity-details">
+                  <span class="activity-time">08:00 AM – 12:00 PM</span>
+                  <h4 class="activity-title">Barangay Health Consultation</h4>
+                  <span class="activity-location">Location: Barangay San Marcos</span>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-date-badge blue">
+                  <span class="badge-month">OCT</span>
+                  <span class="badge-day">15</span>
+                  <span class="badge-weekday">Wed</span>
+                </div>
+                <div class="activity-details">
+                  <span class="activity-time">08:00 AM – 12:00 PM</span>
+                  <h4 class="activity-title">Child Immunization Clinic</h4>
+                  <span class="activity-location">Location: Barangay San Roque</span>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-date-badge green">
+                  <span class="badge-month">OCT</span>
+                  <span class="badge-day">17</span>
+                  <span class="badge-weekday">Fri</span>
+                </div>
+                <div class="activity-details">
+                  <span class="activity-time">01:00 PM – 04:00 PM</span>
+                  <h4 class="activity-title">Maternal Health Checkup</h4>
+                  <span class="activity-location">Location: Barangay San Pablo</span>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-date-badge purple">
+                  <span class="badge-month">OCT</span>
+                  <span class="badge-day">19</span>
+                  <span class="badge-weekday">Sun</span>
+                </div>
+                <div class="activity-details">
+                  <span class="activity-time">08:00 AM – 11:00 AM</span>
+                  <h4 class="activity-title">Nutrition Screening &amp; Counseling</h4>
+                  <span class="activity-location">Location: Barangay San Marcos</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- ------------------------------------------------------------------
+             RIGHT COLUMN: Patient Queuing
+             ------------------------------------------------------------------ -->
+        <div class="grid-col-right">
+
+          <section class="queuing-section-card" aria-labelledby="queuingSectionTitle">
+
+            <!-- Queuing List Card -->
+            <div class="queue-list-card">
+              <!-- Section Header -->
+              <div class="queuing-section-header">
+                <h2 id="queuingSectionTitle" class="queuing-section-heading">Patient Queuing</h2>
+                <span class="waiting-badge-pill">10 Waiting</span>
+              </div>
+
+              <!-- Scrollable Queue Patients List -->
+              <div class="queue-items-container">
+
+                <!-- Item 1: Active in consultation -->
+                <div class="patient-queue-row in-consultation">
+                  <div class="queue-number-badge">1</div>
+                  <div class="queue-patient-info">
+                    <span class="consult-status-label">In consultation</span>
+                    <h4 class="patient-name-text">Juan Dela Cruz</h4>
+                    <span class="patient-address-text">San Mateo, Camaligan</span>
+                  </div>
+                  <a href="queuing.html" class="btn-queue-details">View Details</a>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="patient-queue-row">
+                  <div class="queue-number-badge">2</div>
+                  <div class="queue-patient-info">
+                    <h4 class="patient-name-text">Ramon Garcia</h4>
+                    <span class="patient-address-text">Sua, Camaligan</span>
+                  </div>
+                  <a href="queuing.html" class="btn-queue-details">View Details</a>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="patient-queue-row">
+                  <div class="queue-number-badge">3</div>
+                  <div class="queue-patient-info">
+                    <h4 class="patient-name-text">Marites Cruz</h4>
+                    <span class="patient-address-text">San Mateo, Camaligan</span>
+                  </div>
+                  <a href="queuing.html" class="btn-queue-details">View Details</a>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="patient-queue-row">
+                  <div class="queue-number-badge">4</div>
+                  <div class="queue-patient-info">
+                    <h4 class="patient-name-text">Alvin Torres</h4>
+                    <span class="patient-address-text">San Ramon, Camaligan</span>
+                  </div>
+                  <a href="queuing.html" class="btn-queue-details">View Details</a>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="patient-queue-row">
+                  <div class="queue-number-badge">5</div>
+                  <div class="queue-patient-info">
+                    <h4 class="patient-name-text">Caros Mendoza</h4>
+                    <span class="patient-address-text">San Roque, Camaligan</span>
+                  </div>
+                  <a href="queuing.html" class="btn-queue-details">View Details</a>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="patient-queue-row">
+                  <div class="queue-number-badge">6</div>
+                  <div class="queue-patient-info">
+                    <h4 class="patient-name-text">Elena Garcia</h4>
+                    <span class="patient-address-text">San Marcos, Camaligan</span>
+                  </div>
+                  <a href="queuing.html" class="btn-queue-details">View Details</a>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="patient-queue-row">
+                  <div class="queue-number-badge">7</div>
+                  <div class="queue-patient-info">
+                    <h4 class="patient-name-text">Jessa Lim</h4>
+                    <span class="patient-address-text">Marupit, Camaligan</span>
+                  </div>
+                  <a href="queuing.html" class="btn-queue-details">View Details</a>
+                </div>
+
+                <div class="patient-queue-row">
+                  <div class="queue-number-badge">8</div>
+                  <div class="queue-patient-info">
+                    <h4 class="patient-name-text">Paolo Hernandez</h4>
+                    <span class="patient-address-text">San Mateo, Camaligan</span>
+                  </div>
+                  <a href="queuing.html" class="btn-queue-details">View Details</a>
+                </div>
+
+                <div class="patient-queue-row">
+                  <div class="queue-number-badge">9</div>
+                  <div class="queue-patient-info">
+                    <h4 class="patient-name-text">Liza Bautista</h4>
+                    <span class="patient-address-text">San Pablo, Camaligan</span>
+                  </div>
+                  <a href="queuing.html" class="btn-queue-details">View Details</a>
+                </div>
+
+                <div class="patient-queue-row">
+                  <div class="queue-number-badge">10</div>
+                  <div class="queue-patient-info">
+                    <h4 class="patient-name-text">Noel Reyes</h4>
+                    <span class="patient-address-text">Marupit, Camaligan</span>
+                  </div>
+                  <a href="queuing.html" class="btn-queue-details">View Details</a>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Queue Action Buttons Stack -->
+            <div class="queue-actions-stack">
+              <button type="button" class="btn-action-primary" id="btnCallNext">
+                <iconify-icon icon="solar:volume-loud-bold" width="20" height="20"></iconify-icon>
+                <span>Call Next Patient</span>
+              </button>
+
+              <button type="button" class="btn-action-outline" id="btnMarkInConsult">
+                <iconify-icon icon="fa6-solid:user-nurse" width="18" height="18"></iconify-icon>
+                <span>Mark as in Consultation</span>
+              </button>
+
+              <button type="button" class="btn-action-outline" id="btnMarkCompleted">
+                <iconify-icon icon="solar:check-circle-bold" width="18" height="18"></iconify-icon>
+                <span>Mark as Completed</span>
+              </button>
+
+              <button type="button" class="btn-action-outline" id="btnSkipPatient">
+                <iconify-icon icon="fluent:next-24-filled" width="18" height="18"></iconify-icon>
+                <span>Skip Patient</span>
+              </button>
+            </div>
+
+            <!-- Bottom Disclaimer Box -->
+            <div class="queue-disclaimer-box">
+              <div class="disclaimer-icon-circle">
+                <iconify-icon icon="material-symbols:info" width="22" height="22"></iconify-icon>
+              </div>
+              <p class="disclaimer-text">
+                Patients are automatically sorted by queue number. You manually adjust the order if needed
+              </p>
+            </div>
+
+          </section>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+
+</html>

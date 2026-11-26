@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHIMS - Municipal Health Office Information Management System | Sign In</title>
+  <link rel="icon" type="image/png" href="../assets/images/MHIMS LOGO.png">
+  <meta name="description"
+    content="Official Sign In portal for the Municipal Health Office Information Management System (MHIMS) - Municipality of Camaligan.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- External Stylesheet from css/ folder -->
+  <link rel="stylesheet" href="../css/login.css">
+
+  <!-- External JavaScript from js/ folder -->
+  <script type="module" src="../js/script.ts" defer></script>
+</head>
+
+<body>
+
+  <!-- Main Container -->
+  <main class="page-container">
+
+    <!-- Top Header Branding -->
+    <header class="header-brand">
+      <div class="brand-logo-wrap">
+        <img src="../assets/images/MHIMS LOGO.png" alt="MHIMS Official Crest Logo" class="MHIMS-logo-img">
+      </div>
+      <div class="brand-text-wrap">
+        <img src="../assets/images/MHIMS TEXT.png" alt="MHIMS Official Crest Logo" class="MHIMS-TEXT-img">
+        <p class="brand-subtitle">Municipal Health Office</p>
+        <p class="brand-subtitle-line2">Information Management System</p>
+      </div>
+    </header>
+
+    <!-- Sign In Card -->
+    <section class="auth-card" id="authCard" aria-labelledby="cardTitle">
+      <h2 id="cardTitle" class="card-title">SIGN IN TO MHIMS</h2>
+      <p class="card-subtitle">Use your assigned MHO account to continue</p>
+
+      <!-- Role Switcher Segmented Control -->
+      <div class="role-switcher-container" role="tablist" aria-label="Portal Selection">
+        <button type="button" class="role-tab-btn" id="tabClinical" data-role="Clinical Personnel" role="tab"
+          aria-selected="false" aria-controls="loginForm">
+          Clinical Personnel
+        </button>
+        <button type="button" class="role-tab-btn active" id="tabHealthOffice" data-role="Health Office Personnel"
+          role="tab" aria-selected="true" aria-controls="loginForm">
+          Health Office Personnel
+        </button>
+      </div>
+
+
+
+      <!-- Authentication Form -->
+      <form class="auth-form" id="loginForm" novalidate>
+
+        <!-- Username Field -->
+        <div class="form-group">
+          <label for="username" class="form-label">Username</label>
+          <div class="input-container">
+            <input type="text" id="username" name="username" class="form-input" placeholder="Enter your Username"
+              autocomplete="username" required>
+          </div>
+          <span class="field-error-message" id="usernameError"></span>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <div class="input-container">
+            <input type="password" id="password" name="password" class="form-input" placeholder="Enter your Password"
+              autocomplete="current-password" required>
+            <button type="button" class="password-toggle-btn" id="togglePassword" aria-label="Show password"
+              title="Show / hide password">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </button>
+          </div>
+          <span class="field-error-message" id="passwordError"></span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <span class="btn-text">Log in</span>
+          <span class="btn-spinner" aria-hidden="true"></span>
+        </button>
+
+      </form>
+
+      <!-- Card Footer -->
+      <div class="card-footer">
+        <p class="card-footer-text">
+          Forgot password? Contact your administrator.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- Bottom Partnership Section -->
+    <footer class="partnership-section">
+      <h3 class="partnership-title">IN PARTNERSHIP WITH</h3>
+      <div class="partnership-content">
+        <!-- Municipality Seal -->
+        <div class="partnership-seal">
+          <img src="../assets/images/CAMALIGAN LOGO.png" alt="Official Seal of Municipality of Camaligan"
+            class="camaligan-seal-img">
+        </div>
+
+        <!-- Partnership Typography -->
+        <div class="partnership-text">
+          <span class="municipality-name">Municipality of Camaligan</span>
+          <span class="office-name">Municipal Health Office</span>
+          <span class="province-name">Camarines Sur, Philippines</span>
+        </div>
+
+        <!-- Health Office Shield Seal -->
+        <div class="partnership-seal right-shield">
+          <img src="../assets/images/MHO LOGO.png" alt="Seal of Camaligan Municipal Health Office"
+            class="mho-seal-img">
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Toast Notification Feedback -->
+  <aside class="toast-notification" id="toastNotification" role="alert" aria-live="assertive">
+    <div class="toast-icon">
+      <svg width="24" height="24" fill="none" stroke="#16a34a" stroke-width="2.2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+    </div>
+    <div class="toast-content">
+      <h5 class="toast-title" id="toastTitle">Notification</h5>
+      <p class="toast-message" id="toastMessage">Action performed successfully.</p>
+    </div>
+  </aside>
+
+</body>
+
+</html>

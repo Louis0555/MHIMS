@@ -1,0 +1,97 @@
+@import "./shared/form-select.css";
+@import "./shared/sidebar.css";
+@import "./shared/clinical-filter-controls.css";
+@import "./shared/search-input.css";
+@import "./shared/clinical-detail-views.css";
+@import "./shared/page-header.css";
+@import "./shared/record-save-notice.css";
+
+.logout-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  width: min(304px, calc(100vw - 32px));
+  padding: 32px 28px 30px;
+  border: 0;
+  border-radius: 6px;
+  color: #101f5c;
+  background: #fff;
+  box-shadow: 0 20px 60px rgb(15 31 77 / 24%);
+  font-family: inherit;
+  text-align: center;
+}
+
+.logout-dialog::backdrop {
+  background: rgb(20 31 57 / 42%);
+  backdrop-filter: blur(3px);
+}
+
+.logout-dialog__icon {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 8px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #aec4e4;
+}
+
+.logout-dialog__icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.logout-dialog__title {
+  margin: 0;
+  color: #101f5c;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.logout-dialog__message {
+  margin: 12px 0 64px;
+  color: #101f5c;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.logout-dialog__actions {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.logout-dialog__button {
+  min-width: 84px;
+  padding: 7px 16px;
+  border: 1px solid #101f5c;
+  border-radius: 7px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logout-dialog__button--cancel {
+  color: #111;
+  background: #fff;
+}
+
+.logout-dialog__button--confirm {
+  color: #fff;
+  background: #101f5c;
+}
+
+.logout-dialog__button:focus-visible {
+  outline: 3px solid #89a9dc;
+  outline-offset: 3px;
+}
+
+@media (max-width: 360px) {
+  .logout-dialog__actions {
+    gap: 16px;
+  }
+}

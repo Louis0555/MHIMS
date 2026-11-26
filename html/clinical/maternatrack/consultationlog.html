@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHIMS - MaternaTrack | Consultation Log</title>
+  <link rel="icon" type="image/png" href="../../../assets/images/MHIMS LOGO.png">
+  <meta name="description"
+    content="MaternaTrack Consultation Log - List of Consultation - Municipal Health Office Information Management System (MHIMS), Municipality of Camaligan.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Iconify Icon Web Component Script -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <!-- MaternaTrack Consultation Log CSS -->
+  <link rel="stylesheet" href="../../../css/clinical/maternatrack/consultationlog.css" data-mhims-page-style>
+
+  <!-- MaternaTrack Sidebar Shared Logic -->
+    <script type="module" src="../../../js/shared/sidebar-navigation.ts" data-mhims-router defer></script>
+
+  <!-- MaternaTrack Consultation Log Logic -->
+  <script type="module" src="../../../js/clinical/maternatrack/consultationlog.ts?mhims-page=clinical-maternatrack-consultationlog" defer></script>
+  <link rel="stylesheet" href="../../../css/logout.css">
+  <script type="module" src="../../../js/logout.ts" data-mhims-global defer></script>
+</head>
+
+<body>
+
+  <div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <div class="sidebar-top">
+        <a href="../maindashboard/dashboard.html" class="sidebar-brand" title="MHIMS Clinical Portal">
+          <img src="../../../assets/images/MHIMS LOGO.png" alt="MHIMS Official Logo" class="sidebar-logo-img">
+        </a>
+
+        <nav class="sidebar-nav" aria-label="Clinical Navigation Modules">
+          <a href="../maindashboard/dashboard.html" class="nav-item-btn"><iconify-icon icon="ant-design:home-filled" width="22" height="22"></iconify-icon><span>Dashboard</span></a>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="bi:people-fill" width="22" height="22"></iconify-icon><span>ResidentCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../residentcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../residentcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../residentcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../residentcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa6-solid:person-breastfeeding" width="22" height="22"></iconify-icon><span>MaternaTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="patientrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient Records</span></a>
+              <a href="consultationlog.html" class="submenu-item active" aria-current="page"><iconify-icon icon="mdi:clipboard-text-clock" width="18" height="18"></iconify-icon><span>Consultation Log</span></a>
+              <a href="queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa:child" width="22" height="22"></iconify-icon><span>NutriTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../nutritrack/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../nutritrack/childrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Child Records</span></a>
+              <a href="../nutritrack/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../nutritrack/interventionlog.html" class="submenu-item"><iconify-icon icon="icon-park-solid:notebook" width="18" height="18"></iconify-icon><span>Intervention Log</span></a>
+              <a href="../nutritrack/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="healthicons:lungs" width="22" height="22"></iconify-icon><span>TBCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../tbcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../tbcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../tbcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../tbcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="griddy-icons:pills-alt-02-filled" width="22" height="22"></iconify-icon><span>Pharmacy</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../pharmacy/dashboard.html" class="submenu-item"><iconify-icon icon="griddy-icons:pills-alt-02-filled" width="18" height="18"></iconify-icon><span>Medicine</span></a>
+              <a href="../pharmacy/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+            </div>
+          </div>
+          <a href="../statistics/dashboard.html?view=maternatrack" class="nav-item-btn"><iconify-icon icon="mdi:google-analytics" width="22" height="22"></iconify-icon><span>Statistics</span></a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="../../login.html" class="btn-logout" id="logoutBtn" title="Log out from system">
+          <iconify-icon icon="cuida:logout-outline" width="22" height="22"></iconify-icon>
+          <span>Logout</span>
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <!-- 1. Consultation Table View Container -->
+      <div id="consultationTableView">
+
+        <!-- Top Header Bar -->
+        <header class="top-header">
+          <div class="header-title-wrap">
+            <h1 class="dashboard-title">MaternaTrack</h1>
+            <p class="dashboard-subtitle">List of Consultation</p>
+          </div>
+
+          <div class="header-actions">
+            <!-- Search Input -->
+            <div class="header-search-wrap">
+              <input type="text" id="consultSearchInput" class="search-input-field" placeholder="Search patients name">
+              <button type="button" class="search-icon-btn" aria-label="Search">
+                <iconify-icon icon="lucide:search" width="18" height="18"></iconify-icon>
+              </button>
+            </div>
+
+            <!-- Notification Bell Button -->
+            
+          </div>
+        </header>
+
+        <!-- Filter Toolbar (Matching ResidentCare Design) -->
+        <div class="records-toolbar">
+          <div class="filter-group">
+            <span class="filter-label">Filter by :</span>
+            <div class="filter-controls-wrap">
+              <button type="button" class="filter-btn active btn-all" id="btnFilterAll">All</button>
+
+              <!-- 1. Trimester Dropdown -->
+              <div class="filter-dropdown-wrap" id="trimesterDropdownWrap">
+                <button type="button" class="filter-btn dropdown-toggle" id="trimesterDropdownBtn" aria-haspopup="true" aria-expanded="false">
+                  <span class="filter-btn-text">Trimester</span>
+                  <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="18" height="18"></iconify-icon>
+                </button>
+                <div class="filter-dropdown-menu" id="trimesterDropdownMenu">
+                  <a class="filter-menu-item" data-filter="trimester" data-value="1st Trimester">1st Trimester</a>
+                  <a class="filter-menu-item" data-filter="trimester" data-value="2nd Trimester">2nd Trimester</a>
+                  <a class="filter-menu-item" data-filter="trimester" data-value="3rd Trimester">3rd Trimester</a>
+                </div>
+              </div>
+
+              <!-- 2. Risk Level Dropdown -->
+              <div class="filter-dropdown-wrap" id="riskDropdownWrap">
+                <button type="button" class="filter-btn dropdown-toggle" id="riskDropdownBtn" aria-haspopup="true" aria-expanded="false">
+                  <span class="filter-btn-text">Risk Level</span>
+                  <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="18" height="18"></iconify-icon>
+                </button>
+                <div class="filter-dropdown-menu" id="riskDropdownMenu">
+                  <a class="filter-menu-item" data-filter="riskLevel" data-value="Low Risk">Low Risk</a>
+                  <a class="filter-menu-item" data-filter="riskLevel" data-value="Medium Risk">Medium Risk</a>
+                  <a class="filter-menu-item" data-filter="riskLevel" data-value="High Risk">High Risk</a>
+                </div>
+              </div>
+
+              <!-- 3. Barangay Dropdown -->
+              <div class="filter-dropdown-wrap" id="barangayDropdownWrap">
+                <button type="button" class="filter-btn dropdown-toggle" id="barangayDropdownBtn" aria-haspopup="true" aria-expanded="false">
+                  <span class="filter-btn-text">Barangay</span>
+                  <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="18" height="18"></iconify-icon>
+                </button>
+                <div class="filter-dropdown-menu" id="barangayDropdownMenu">
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Marcos">San Marcos</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="Santo Domingo">Santo Domingo</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Jose">San Jose</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Pablo">San Pablo</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Mateo">San Mateo</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="Santo Tomas">Santo Tomas</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Lucas">San Lucas</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Juan">San Juan</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Ramon">San Ramon</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="Gugon">Gugon</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="Dugcal">Dugcal</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="Sua">Sua</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="Marupit">Marupit</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="Tarosanan">Tarosanan</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Francisco">San Francisco</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Roque">San Roque</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <!-- Consultation Log Table Card -->
+      <div class="patient-table-card">
+        <div class="table-responsive">
+          <table class="patient-table" id="consultationTable">
+            <thead>
+              <tr>
+                <th>Patient No.</th>
+                <th>Patient Name</th>
+                <th>Age</th>
+                <th>Trimester</th>
+                <th>Risk Level</th>
+                <th>Last Visit Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1 -->
+              <tr>
+                <td>PT-26-583741</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Yoshika S. Boncodin</span>
+                    <span class="patient-col-address">San Mateo, Camaligan</span>
+                  </div>
+                </td>
+                <td>20</td>
+                <td>1st Trimester</td>
+                <td>
+                  <span class="risk-pill low-risk">
+                    <span class="risk-dot"></span>
+                    <span>Low Risk</span>
+                  </span>
+                </td>
+                <td>October 4, 2026</td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 2 -->
+              <tr>
+                <td>PT-26-951382</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Cessi R. Antonio</span>
+                    <span class="patient-col-address">San Juan, Camaligan</span>
+                  </div>
+                </td>
+                <td>28</td>
+                <td>3rd Trimester</td>
+                <td>
+                  <span class="risk-pill medium-risk">
+                    <span class="risk-dot"></span>
+                    <span>Medium Risk</span>
+                  </span>
+                </td>
+                <td>October 2, 2026</td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 3 -->
+              <tr>
+                <td>PT-26-208694</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Louis L. San Juan</span>
+                    <span class="patient-col-address">San Ramon, Camaligan</span>
+                  </div>
+                </td>
+                <td>28</td>
+                <td>2nd Trimester</td>
+                <td>
+                  <span class="risk-pill low-risk">
+                    <span class="risk-dot"></span>
+                    <span>Low Risk</span>
+                  </span>
+                </td>
+                <td>October 3, 2026</td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 4 -->
+              <tr>
+                <td>PT-26-774031</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Kristina C. David</span>
+                    <span class="patient-col-address">Gogon, Camaligan</span>
+                  </div>
+                </td>
+                <td>28</td>
+                <td>2nd Trimester</td>
+                <td>
+                  <span class="risk-pill low-risk">
+                    <span class="risk-dot"></span>
+                    <span>Low Risk</span>
+                  </span>
+                </td>
+                <td>October 3, 2026</td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 5 -->
+              <tr>
+                <td>PT-26-194826</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Shiki S. Rodriguez</span>
+                    <span class="patient-col-address">San Mateo, Camaligan</span>
+                  </div>
+                </td>
+                <td>21</td>
+                <td>1st Trimester</td>
+                <td>
+                  <span class="risk-pill low-risk">
+                    <span class="risk-dot"></span>
+                    <span>Low Risk</span>
+                  </span>
+                </td>
+                <td>October 4, 2026</td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 6 -->
+              <tr>
+                <td>PT-26-730415</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Kyla R. Bom</span>
+                    <span class="patient-col-address">San Juan, Camaligan</span>
+                  </div>
+                </td>
+                <td>25</td>
+                <td>3rd Trimester</td>
+                <td>
+                  <span class="risk-pill medium-risk">
+                    <span class="risk-dot"></span>
+                    <span>Medium Risk</span>
+                  </span>
+                </td>
+                <td>October 2, 2026</td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 7 -->
+              <tr>
+                <td>PT-26-462907</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Alexis D. San Juan</span>
+                    <span class="patient-col-address">San Ramon, Camaligan</span>
+                  </div>
+                </td>
+                <td>28</td>
+                <td>2nd Trimester</td>
+                <td>
+                  <span class="risk-pill low-risk">
+                    <span class="risk-dot"></span>
+                    <span>Low Risk</span>
+                  </span>
+                </td>
+                <td>October 3, 2026</td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 8 -->
+              <tr>
+                <td>PT-26-815263</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Kristine C. San Pablo</span>
+                    <span class="patient-col-address">Gogon, Camaligan</span>
+                  </div>
+                </td>
+                <td>30</td>
+                <td>3rd Trimester</td>
+                <td>
+                  <span class="risk-pill high-risk">
+                    <span class="risk-dot"></span>
+                    <span>High Risk</span>
+                  </span>
+                </td>
+                <td>October 3, 2026</td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 9 -->
+              <tr>
+                <td>PT-26-349178</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Maria K. Kanto</span>
+                    <span class="patient-col-address">Gogon, Camaligan</span>
+                  </div>
+                </td>
+                <td>32</td>
+                <td>3rd Trimester</td>
+                <td>
+                  <span class="risk-pill high-risk">
+                    <span class="risk-dot"></span>
+                    <span>High Risk</span>
+                  </span>
+                </td>
+                <td>October 3, 2026</td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 10 -->
+              <tr>
+                <td>PT-26-627504</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Tara C. Inom</span>
+                    <span class="patient-col-address">Gogon, Camaligan</span>
+                  </div>
+                </td>
+                <td>27</td>
+                <td>3rd Trimester</td>
+                <td>
+                  <span class="risk-pill high-risk">
+                    <span class="risk-dot"></span>
+                    <span>High Risk</span>
+                  </span>
+                </td>
+                <td>October 3, 2026</td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+                 <!-- Row 11 -->
+              <tr>
+                <td>PT-26-347896</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Angelica Del Rosario</span>
+                    <span class="patient-col-address">San Roque, Camaligan</span>
+                  </div>
+                </td>
+                <td>30</td>
+                <td>2nd Trimester</td>
+                <td>
+                  <span class="risk-pill medium-risk">
+                    <span class="risk-dot"></span>
+                    <span>Medium Risk</span>
+                  </span>
+                </td>
+                <td>October 3, 2026</td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>PT-26-718294</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Jessa Mae Pineda</span><span class="patient-col-address">San Jose, Camaligan</span></div></td>
+                <td>25</td><td>1st Trimester</td>
+                <td><span class="risk-pill low-risk"><span class="risk-dot"></span><span>Low Risk</span></span></td>
+                <td>October 26, 2026</td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-704628</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Kristine Joy Tolentino</span><span class="patient-col-address">Santo Tomas, Camaligan</span></div></td>
+                <td>31</td><td>2nd Trimester</td>
+                <td><span class="risk-pill medium-risk"><span class="risk-dot"></span><span>Medium Risk</span></span></td>
+                <td>October 29, 2026</td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-219536</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Raquel M. Llorente</span><span class="patient-col-address">San Pablo, Camaligan</span></div></td>
+                <td>22</td><td>3rd Trimester</td>
+                <td><span class="risk-pill low-risk"><span class="risk-dot"></span><span>Low Risk</span></span></td>
+                <td>November 12, 2026</td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-568317</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Jessa Nicole Hernandez</span><span class="patient-col-address">Santo Domingo, Camaligan</span></div></td>
+                <td>29</td><td>1st Trimester</td>
+                <td><span class="risk-pill high-risk"><span class="risk-dot"></span><span>High Risk</span></span></td>
+                <td>November 21, 2026</td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-943205</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Nina Alcaraz</span><span class="patient-col-address">Marupit, Camaligan</span></div></td>
+                <td>26</td><td>2nd Trimester</td>
+                <td><span class="risk-pill low-risk"><span class="risk-dot"></span><span>Low Risk</span></span></td>
+                <td>November 18, 2026</td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-316748</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Mary Grace Villanueva</span><span class="patient-col-address">San Juan, Camaligan</span></div></td>
+                <td>34</td><td>3rd Trimester</td>
+                <td><span class="risk-pill medium-risk"><span class="risk-dot"></span><span>Medium Risk</span></span></td>
+                <td>November 25, 2026</td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-685129</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Princess L. Monta</span><span class="patient-col-address">San Ramon, Camaligan</span></div></td>
+                <td>19</td><td>1st Trimester</td>
+                <td><span class="risk-pill low-risk"><span class="risk-dot"></span><span>Low Risk</span></span></td>
+                <td>October 30, 2026</td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-421863</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Joycelyn S. Alonzo</span><span class="patient-col-address">Dugcal, Camaligan</span></div></td>
+                <td>28</td><td>2nd Trimester</td>
+                <td><span class="risk-pill high-risk"><span class="risk-dot"></span><span>High Risk</span></span></td>
+                <td>November 22, 2026</td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-157904</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Celine P. Barrios</span><span class="patient-col-address">Tarosanan, Camaligan</span></div></td>
+                <td>24</td><td>3rd Trimester</td>
+                <td><span class="risk-pill low-risk"><span class="risk-dot"></span><span>Low Risk</span></span></td>
+                <td>November 20, 2026</td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-832476</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Grace B. Ocampo</span><span class="patient-col-address">Sua, Camaligan</span></div></td>
+                <td>33</td><td>2nd Trimester</td>
+                <td><span class="risk-pill medium-risk"><span class="risk-dot"></span><span>Medium Risk</span></span></td>
+                <td>November 23, 2026</td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+      <!-- /#consultationTableView -->
+
+      <!-- 2. Full Patient Consultation View Container (Shown on "View" Click) -->
+      <div id="consultationFullView" class="patient-full-view" style="display: none;">
+
+        <!-- Top Header Bar for Full View -->
+        <header class="fullview-top-header">
+          <div class="fullview-title-wrap">
+            <button type="button" class="btn-back-records" id="btnBackToConsultations" title="Back to Consultation Log">
+              <iconify-icon icon="lucide:chevron-left" width="34" height="34"></iconify-icon>
+            </button>
+            <div class="fullview-headings">
+              <h1 class="fullview-title">MaternaTrack</h1>
+              <p class="fullview-subtitle">Full view of patient's consultations</p>
+            </div>
+          </div>
+
+          <div class="header-actions">
+            <!-- Notification Bell Button -->
+            
+          </div>
+        </header>
+
+        <!-- Full Consultation Detail Card -->
+        <div class="patient-detail-card consultation-detail-card">
+
+          <!-- Card Header / Patient Summary -->
+          <div class="patient-card-header">
+            <div class="patient-summary-left">
+              <div class="patient-avatar-circle">
+                <iconify-icon icon="solar:user-bold" width="38" height="38"></iconify-icon>
+              </div>
+              <div class="patient-summary-info">
+                <span class="patient-id-tag" id="viewConsultPatientId">Patient No. : PNT-1021</span>
+                <h2 class="patient-full-name" id="viewConsultPatientName">Yoshika S. Boncodin</h2>
+                <div class="patient-meta-row">
+                  <span class="meta-item">
+                    <iconify-icon icon="fa6-solid:person-pregnant" class="meta-icon gold"></iconify-icon>
+                    <span id="viewConsultPregnancy">Second Pregnancy</span>
+                  </span>
+                  <span class="meta-item">
+                    <iconify-icon icon="boxicons:calendar-alt-filled" class="meta-icon gold"></iconify-icon>
+                    <span id="viewConsultAge">20 years old</span>
+                  </span>
+                  <span class="meta-item">
+                    <iconify-icon icon="mdi:map-marker" class="meta-icon gold"></iconify-icon>
+                    <span id="viewConsultAddress">Zone 2, San Mateo Camaligan</span>
+                  </span>
+                </div>
+                <div class="patient-status-pills">
+                  <span class="summary-risk-pill low-risk" id="viewConsultRisk">Low Risk</span>
+                  <div class="lmp-edd-pill" id="viewConsultLmpEdd">
+                    <iconify-icon icon="boxicons:calendar-alt-filled" width="16" height="16"></iconify-icon>
+                    <span>LMP: 09/04/2026 | EDD: 01/10/2027</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="patient-summary-right">
+              <div class="summary-action-btns">
+                <button type="button" class="btn-edit-profile" id="btnConsultEditProfile">
+                  <iconify-icon icon="lucide:pencil" width="15" height="15"></iconify-icon>
+                  <span>Edit Profile</span>
+                </button>
+                <button type="button" class="btn-export-profile" id="btnConsultExport">
+                  <iconify-icon icon="lucide:upload" width="15" height="15"></iconify-icon>
+                  <span>Export</span>
+                </button>
+              </div>
+
+              <!-- Trimester Filter Dropdown on the Right Part Button -->
+              <div class="trimester-select-wrap" id="consultTrimesterDropdownWrap">
+                <button type="button" class="btn-trimester-dropdown" id="consultTrimesterDropdownBtn" aria-haspopup="true" aria-expanded="false">
+                  <iconify-icon icon="solar:user-bold" width="16" height="16"></iconify-icon>
+                  <span id="consultTrimesterBtnText">1ST TRIMESTER (1-12 Weeks)</span>
+                  <iconify-icon icon="mingcute:down-line" class="trimester-chevron" width="16" height="16"></iconify-icon>
+                </button>
+                <div class="trimester-dropdown-menu" id="consultTrimesterDropdownMenu">
+                  <a class="trimester-menu-item active" data-trimester="1">1ST TRIMESTER (1-12 Weeks)</a>
+                  <a class="trimester-menu-item" data-trimester="2">2ND TRIMESTER (13-27 weeks)</a>
+                  <a class="trimester-menu-item" data-trimester="3">3RD TRIMESTER (28-40+ weeks)</a>
+                </div>
+              </div>
+              <div class="checkup-indicator-text" id="consultCheckupIndicator">Checkup #1 • [—]</div>
+            </div>
+          </div>
+
+          <!-- Segmented Check-Up Tabs -->
+          <div class="checkup-segmented-tabs" id="checkupTabsBar">
+            <button type="button" class="checkup-segment-tab active" data-checkup="1">1st Check-Up</button>
+            <button type="button" class="checkup-segment-tab" data-checkup="2">2nd Check-Up</button>
+            <button type="button" class="checkup-segment-tab" data-checkup="3">3rd Checkup</button>
+          </div>
+
+          <!-- ================================================================
+               TRIMESTER 1 CONTENT VIEW CONTAINER
+               ================================================================ -->
+          <div id="trimesterView1" class="trimester-content-panel">
+
+            <!-- Section I: Physical Exam & Vitals -->
+            <section class="consult-section">
+              <div class="section-title-wrap">
+                <h3 class="section-title">I. Physical Exam & Vitals</h3>
+                <p class="section-subtitle">Core identification and contact information for this resident.</p>
+              </div>
+              <div class="fieldboxes-row col-4">
+                <div class="field-box-item">
+                  <label class="field-box-label">Weight</label>
+                  <div class="field-box-value" id="valWeight1">70 kg</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Height</label>
+                  <div class="field-box-value" id="valHeight1">180 cm</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Age of Gestation</label>
+                  <div class="field-box-value" id="valAog1">4 weeks and 2 days</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Blood Pressure</label>
+                  <div class="field-box-value" id="valBp1">120/80</div>
+                </div>
+              </div>
+
+              <div class="fieldboxes-row col-3" style="margin-top: 14px;">
+                <div class="field-box-item">
+                  <label class="field-box-label">Nutritional Status</label>
+                  <div class="field-box-value" id="valNutrition1">Normal</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Birth Plan</label>
+                  <div class="field-box-value" id="valBirthPlan1">Progestin Subdermal Implant</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Dental Examination Conducted?</label>
+                  <div class="field-box-value" id="valDental1">Needs Treatment</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section II: Laboratory & Treatments -->
+            <section class="consult-section">
+              <div class="section-title-wrap">
+                <h3 class="section-title">II. Laboratory & Treatments</h3>
+              </div>
+              <!-- Lab Tests Done Card -->
+              <div class="lab-treatment-card">
+                <h4 class="card-inner-heading">Laboratory Test Done</h4>
+                <div class="card-bullet-grid">
+                  <ul class="bullet-list">
+                    <li>CBC</li>
+                    <li>Urinalysis</li>
+                    <li>Blood Glucose Testing</li>
+                    <li>STI Screening</li>
+                  </ul>
+                  <ul class="bullet-list">
+                    <li>Stool Examination</li>
+                    <li>Visual Inspection with Acetic Acid (VIA)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="fieldboxes-row col-3" style="margin-top: 16px;">
+                <div class="field-box-item">
+                  <label class="field-box-label">Hemoglobin Count</label>
+                  <div class="field-box-value" id="valHgb1">11.0 g/dL</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Urinalysis</label>
+                  <div class="field-box-value" id="valUrinalysis1">Clear</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Complete Blood Count (CBC)</label>
+                  <div class="field-box-value" id="valCbc1">11.5 g/dL</div>
+                </div>
+              </div>
+
+              <h4 class="subgroup-heading" style="margin-top: 18px; margin-bottom: 8px;">STI Test using Syndromic Approach</h4>
+              <div class="fieldboxes-row col-3">
+                <div class="field-box-item">
+                  <label class="field-box-label">Syphilis</label>
+                  <div class="field-box-value" id="valSyphilis1">Non-Reactive</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">HIV</label>
+                  <div class="field-box-value" id="valHiv1">Non-Reactive</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Hepatitis B (HbsAg)</label>
+                  <div class="field-box-value" id="valHepB1">Non-Reactive</div>
+                </div>
+              </div>
+
+              <div class="fieldboxes-row col-3" style="margin-top: 14px;">
+                <div class="field-box-item">
+                  <label class="field-box-label">Stool Examination</label>
+                  <div class="field-box-value" id="valStool1">Normal</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Acetic Acid Wash</label>
+                  <div class="field-box-value" id="valAcetic1">VIA Negative</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Tetanus Toxoid / Vaccine Date</label>
+                  <div class="field-box-value" id="valTetanus1">10/04/2026</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section III: Treatments & Counseling Services -->
+            <section class="consult-section">
+              <div class="section-title-wrap">
+                <h3 class="section-title">III. Treatments & Counseling Services</h3>
+              </div>
+              <div class="lab-treatment-card">
+                <div class="card-bullet-grid">
+                  <div>
+                    <h4 class="card-inner-heading">Treatments Administered</h4>
+                    <ul class="bullet-list">
+                      <li>Syphilis</li>
+                      <li>Antiretrovial (ARV)</li>
+                      <li>Bacteriuria</li>
+                      <li>Anemia</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="card-inner-heading">Counseling</h4>
+                    <ul class="bullet-list">
+                      <li>Substance Avoidance (Alchohol, Tobacco, Illegal Drugs)</li>
+                      <li>Proper Nutrition & Dietary Advice</li>
+                      <li>Safe Sex Education</li>
+                      <li>Insecticide-Treated Mosquito Net Usage (ITN / Kulambo)</li>
+                      <li>Birth Plan Guidance</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section IV: Clinical Disposition & Care Management -->
+            <section class="consult-section">
+              <div class="section-title-wrap">
+                <h3 class="section-title">IV. Clinical Disposition & Care Management</h3>
+              </div>
+              <div class="fieldboxes-row col-3">
+                <div class="field-box-item">
+                  <label class="field-box-label">Return Visit Date</label>
+                  <div class="field-box-value" id="valReturnDate1">10/25/2026</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Name of Health Service Provider</label>
+                  <div class="field-box-value" id="valProvider1">Dr. Taehyung Kim</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Hospital Referral</label>
+                  <div class="field-box-value" id="valReferral1">Bicol Medical Center</div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+
+          <!-- ================================================================
+               TRIMESTER 2 CONTENT VIEW CONTAINER
+               ================================================================ -->
+          <div id="trimesterView2" class="trimester-content-panel" style="display: none;">
+
+            <!-- Section I: Physical Exam & Vitals -->
+            <section class="consult-section">
+              <div class="section-title-wrap">
+                <h3 class="section-title">I. Physical Exam & Vitals</h3>
+                <p class="section-subtitle">Core identification and contact information for this resident.</p>
+              </div>
+              <div class="fieldboxes-row col-4">
+                <div class="field-box-item">
+                  <label class="field-box-label">Weight</label>
+                  <div class="field-box-value" id="valWeight2">75 kg</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Height</label>
+                  <div class="field-box-value" id="valHeight2">180 cm</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Age of Gestation</label>
+                  <div class="field-box-value" id="valAog2">13 weeks</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Blood Pressure</label>
+                  <div class="field-box-value" id="valBp2">120/80</div>
+                </div>
+              </div>
+
+              <div class="fieldboxes-row col-3" style="margin-top: 14px;">
+                <div class="field-box-item">
+                  <label class="field-box-label">Nutritional Status</label>
+                  <div class="field-box-value" id="valNutrition2">Normal</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section II: Clinical Assessment & Advice -->
+            <section class="consult-section">
+              <div class="section-title-wrap">
+                <h3 class="section-title">II. Clinical Assessment & Advice</h3>
+              </div>
+              <div class="maternal-condition-box">
+                <div class="condition-label">Assessment of Maternal Condition:</div>
+                <div class="condition-value" id="valCondition2">Normal fundal height growth, no edema or severe headaches.</div>
+              </div>
+
+              <div class="fieldboxes-row col-2" style="margin-top: 14px;">
+                <div class="field-box-item">
+                  <label class="field-box-label">Birth Plan Modification</label>
+                  <div class="field-box-value" id="valBirthPlan2">Progestin Subdermal Implant</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Dental Examination Conducted?</label>
+                  <div class="field-box-value" id="valDental2">Needs Treatment</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section III: Laboratory & Treatments -->
+            <section class="consult-section">
+              <div class="section-title-wrap">
+                <h3 class="section-title">III. Laboratory & Treatments</h3>
+              </div>
+              <!-- Lab Tests Done Card -->
+              <div class="lab-treatment-card">
+                <h4 class="card-inner-heading">Laboratory Test Done</h4>
+                <div class="card-bullet-grid">
+                  <ul class="bullet-list">
+                    <li>CBC</li>
+                    <li>Urinalysis</li>
+                    <li>Blood Glucose Testing</li>
+                    <li>STI Screening</li>
+                  </ul>
+                  <ul class="bullet-list">
+                    <li>Stool Examination</li>
+                    <li>Visual Inspection with Acetic Acid (VIA)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="fieldboxes-row col-4" style="margin-top: 16px;">
+                <div class="field-box-item">
+                  <label class="field-box-label">Urinalysis</label>
+                  <div class="field-box-value" id="valUrinalysis2">Clear</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">CBC</label>
+                  <div class="field-box-value" id="valCbc2">11.0 g/dL</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">STI Etiologic Test</label>
+                  <div class="field-box-value" id="valSti2">Non-Reactive</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Pap Smear</label>
+                  <div class="field-box-value" id="valPap2">Normal / Negative</div>
+                </div>
+              </div>
+
+              <div class="fieldboxes-row col-2" style="margin-top: 14px;">
+                <div class="field-box-item">
+                  <label class="field-box-label">Gestational Diabetes Screening (OGTT)</label>
+                  <div class="field-box-value" id="valOgtt2">Normal</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Bacteriuria Screening</label>
+                  <div class="field-box-value" id="valBacteriuria2">Negative</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Treatments & Counseling Services Card (Image 1) -->
+            <div class="lab-treatment-card" style="margin-top: 18px; margin-bottom: 24px;">
+              <div class="card-bullet-grid">
+                <div>
+                  <h4 class="card-inner-heading">Treatments Administered</h4>
+                  <ul class="bullet-list">
+                    <li>Deworming</li>
+                    <li>Antiretrovial (ARV)</li>
+                    <li>Bacteriuria</li>
+                    <li>Anemia</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="card-inner-heading">Counseling</h4>
+                  <ul class="bullet-list">
+                    <li>Review of Previous Topics</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section IV: Clinical Disposition & Care Management -->
+            <section class="consult-section">
+              <div class="section-title-wrap">
+                <h3 class="section-title">IV. Clinical Disposition & Care Management</h3>
+              </div>
+              <div class="fieldboxes-row col-3">
+                <div class="field-box-item">
+                  <label class="field-box-label">Return Visit Date</label>
+                  <div class="field-box-value" id="valReturnDate2">11/22/2026</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Name of Health Service Provider</label>
+                  <div class="field-box-value" id="valProvider2">Dr. Taehyung Kim</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Hospital Referral</label>
+                  <div class="field-box-value" id="valReferral2">Bicol Medical Center</div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+
+          <!-- ================================================================
+               TRIMESTER 3 CONTENT VIEW CONTAINER (Matching Images 2, 3, 4)
+               ================================================================ -->
+          <div id="trimesterView3" class="trimester-content-panel" style="display: none;">
+
+            <!-- Section I: Physical Exam & Vitals (Image 2) -->
+            <section class="consult-section">
+              <div class="section-title-wrap">
+                <h3 class="section-title">I. Physical Exam & Vitals</h3>
+                <p class="section-subtitle">Core identification and contact information for this resident.</p>
+              </div>
+              <div class="fieldboxes-row col-4">
+                <div class="field-box-item">
+                  <label class="field-box-label">Weight</label>
+                  <div class="field-box-value" id="valWeight3">82 kg</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Height</label>
+                  <div class="field-box-value" id="valHeight3">180 cm</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Age of Gestation</label>
+                  <div class="field-box-value" id="valAog3">28 weeks</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Blood Pressure</label>
+                  <div class="field-box-value" id="valBp3">120/80</div>
+                </div>
+              </div>
+
+              <div class="fieldboxes-row col-3" style="margin-top: 14px;">
+                <div class="field-box-item">
+                  <label class="field-box-label">Nutritional Status</label>
+                  <div class="field-box-value" id="valNutrition3">Normal</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section II: Clinical Assessment & Advice (Image 2) -->
+            <section class="consult-section">
+              <div class="section-title-wrap">
+                <h3 class="section-title">II. Clinical Assessment & Advice</h3>
+              </div>
+              <div class="maternal-condition-box">
+                <div class="condition-label">Assessment of Maternal Condition:</div>
+                <div class="condition-value" id="valCondition3">Normal fundal height growth, no edema or severe headaches.</div>
+              </div>
+
+              <div class="fieldboxes-row col-2" style="margin-top: 14px;">
+                <div class="field-box-item">
+                  <label class="field-box-label">Birth Plan Modification</label>
+                  <div class="field-box-value" id="valBirthPlan3">Progestin Subdermal Implant</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Dental Examination Conducted?</label>
+                  <div class="field-box-value" id="valDental3">Completed</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section III: Laboratory & Treatments (Image 3) -->
+            <section class="consult-section">
+              <div class="section-title-wrap">
+                <h3 class="section-title">III. Laboratory & Treatments</h3>
+              </div>
+              <!-- Lab Tests Done Card -->
+              <div class="lab-treatment-card">
+                <h4 class="card-inner-heading">Laboratory Test Done</h4>
+                <div class="card-bullet-grid">
+                  <ul class="bullet-list">
+                    <li>CBC</li>
+                    <li>Urinalysis</li>
+                    <li>Blood Glucose Testing</li>
+                    <li>STI Screening</li>
+                  </ul>
+                  <ul class="bullet-list">
+                    <li>Stool Examination</li>
+                    <li>Visual Inspection with Acetic Acid (VIA)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="fieldboxes-row col-3" style="margin-top: 16px;">
+                <div class="field-box-item">
+                  <label class="field-box-label">Urinalysis</label>
+                  <div class="field-box-value" id="valUrinalysis3">Clear</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">CBC</label>
+                  <div class="field-box-value" id="valCbc3">11.0 g/dL</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Bacteriuria Screening</label>
+                  <div class="field-box-value" id="valBacteriuria3">Negative</div>
+                </div>
+              </div>
+
+              <div class="field-box-item" style="margin-top: 14px;">
+                <label class="field-box-label">Blood or RHU Group (if needed)</label>
+                <div class="field-box-value" id="valBloodGroup3" style="min-height: 48px; padding: 12px 16px; line-height: 1.5;">
+                  Baseline ABO/Rh typing confirmed. Standard prenatal management; no Rh isoimmunization precautions required.
+                </div>
+              </div>
+            </section>
+
+            <!-- Treatments & Counseling Services Card (Image 4) -->
+            <div class="lab-treatment-card" style="margin-top: 18px; margin-bottom: 24px;">
+              <div class="card-bullet-grid">
+                <div>
+                  <h4 class="card-inner-heading">Treatments Administered</h4>
+                  <ul class="bullet-list">
+                    <li>Antiretrovial (ARV)</li>
+                    <li>Bacteriuria</li>
+                    <li>Anemia</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="card-inner-heading">Counseling</h4>
+                  <ul class="bullet-list">
+                    <li>Review of Previous Topics</li>
+                    <li>Advised on postpartum at postnatal care</li>
+                    <li>Advised on birth spacing</li>
+                    <li>Tetanus-Containing Vaccine Follow-up</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section IV: Clinical Disposition & Care Management (Image 4) -->
+            <section class="consult-section">
+              <div class="section-title-wrap">
+                <h3 class="section-title">IV. Clinical Disposition & Care Management</h3>
+              </div>
+              <div class="fieldboxes-row col-3">
+                <div class="field-box-item">
+                  <label class="field-box-label">Return Visit Date</label>
+                  <div class="field-box-value" id="valReturnDate3">11/22/2026</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Name of Health Service Provider</label>
+                  <div class="field-box-value" id="valProvider3">Dr. Taehyung Kim</div>
+                </div>
+                <div class="field-box-item">
+                  <label class="field-box-label">Hospital Referral</label>
+                  <div class="field-box-value" id="valReferral3">Bicol Medical Center</div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+
+        </div>
+
+      </div>
+      <!-- /#consultationFullView -->
+
+      <div class="prenatal-modal-backdrop" id="prenatalVisitModal" aria-hidden="true">
+        <section class="prenatal-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="prenatalModalTitle">
+          <header class="prenatal-modal-header">
+            <div>
+              <h2 id="prenatalModalTitle">Log Prenatal Visit</h2>
+              <p>Record clinical consultation details for this visit</p>
+            </div>
+            <button type="button" class="prenatal-modal-close" id="btnClosePrenatalModal" aria-label="Close">
+              <iconify-icon icon="lucide:x" width="22" height="22"></iconify-icon>
+            </button>
+          </header>
+
+          <form id="prenatalVisitForm">
+            <div class="prenatal-modal-body">
+              <div class="prenatal-patient-summary">
+                <div class="prenatal-avatar"><iconify-icon icon="solar:user-bold" width="38" height="38"></iconify-icon></div>
+                <div class="prenatal-patient-details">
+                  <span class="prenatal-patient-number" id="prenatalPatientNo">Patient No. : MTRN-0987</span>
+                  <strong id="prenatalPatientName">Yoshika S. Boncodin</strong>
+                  <div class="prenatal-patient-tags">
+                    <span class="prenatal-risk-tag" id="prenatalRisk">Low Risk</span>
+                    <span class="prenatal-date-tag" id="prenatalLmp">LMP: 09/04/2026</span>
+                    <span class="prenatal-date-tag" id="prenatalEdd">EDD: 01/10/2027</span>
+                  </div>
+                </div>
+                <span class="prenatal-trimester-badge" id="prenatalTrimesterBadge">1ST TRIMESTER (1-12 Weeks)</span>
+              </div>
+
+              <div class="prenatal-progress">
+                <div class="prenatal-progress-heading">
+                  <strong id="prenatalProgressTitle">1 of 2 required section complete</strong>
+                  <strong id="prenatalProgressPercent">50%</strong>
+                </div>
+                <div class="prenatal-progress-track"><span id="prenatalProgressBar"></span></div>
+                <div class="prenatal-progress-meta">
+                  <span id="prenatalProgressNote">1 section left: II. Initial Consultation</span>
+                  <span id="prenatalAutosaved">Draft autosaved 2 min ago</span>
+                </div>
+              </div>
+
+              <div class="prenatal-sections-scroll">
+              <section class="prenatal-form-section">
+                <h3 class="prenatal-section-title">I. Physical Exam &amp; Vitals</h3>
+                <div class="prenatal-form-grid prenatal-visit-details">
+                  <label class="prenatal-field">Visit Number <em>*</em>
+                    <select id="prenatalVisitNumber" name="visitNumber" required>
+                      <option value="Checkup #1">Checkup #1</option>
+                      <option value="Checkup #2">Checkup #2</option>
+                      <option value="Checkup #3">Checkup #3</option>
+                    </select>
+                  </label>
+                  <label class="prenatal-field">Date of Visit
+                    <input type="date" id="prenatalVisitDate" name="visitDate" disabled>
+                  </label>
+                </div>
+                <div class="prenatal-form-grid prenatal-vitals-grid">
+                  <label class="prenatal-field">Weight
+                    <input name="weight" placeholder="e.g 70 kg">
+                  </label>
+                  <label class="prenatal-field">Height
+                    <input name="height" placeholder="e.g 160 cm">
+                  </label>
+                  <label class="prenatal-field">Age of Gestation
+                    <input name="gestation" placeholder="e.g 14 weeks &amp; 3 days">
+                  </label>
+                  <label class="prenatal-field">Blood Pressure
+                    <input name="bloodPressure" placeholder="Auto-Filled">
+                  </label>
+                  <label class="prenatal-field">Nutritional Status
+                    <input name="nutrition" placeholder="Auto-Detected">
+                  </label>
+                </div>
+              </section>
+
+              <section class="prenatal-form-section">
+                <h3 class="prenatal-section-title">II. Clinical Assessment &amp; Advice</h3>
+                <label class="prenatal-field prenatal-field-full">Assessment of Maternal Condition <em>*</em>
+                  <textarea name="maternalCondition" rows="2" required placeholder="e.g Normal fundal height growth, no edema or severe headaches"></textarea>
+                </label>
+                <div class="prenatal-form-grid prenatal-assessment-grid">
+                  <label class="prenatal-field">Birth Plan Modification <em>*</em>
+                    <select name="birthPlan" required>
+                      <option value="">Select a Birth Plan</option>
+                      <option>Facility-based delivery</option>
+                      <option>Home-based delivery</option>
+                      <option>Progestin Subdermal Implant</option>
+                      <option>Other</option>
+                    </select>
+                  </label>
+                  <label class="prenatal-field">Dental Examination Conducted? <em>*</em>
+                    <select name="dentalExam" required>
+                      <option value="">Select status</option>
+                      <option>Yes</option>
+                      <option>No</option>
+                      <option>Needs treatment</option>
+                    </select>
+                  </label>
+                </div>
+              </section>
+
+              <section class="prenatal-form-section">
+                <h3 class="prenatal-section-title">III. Laboratory &amp; Treatments</h3>
+                <fieldset class="prenatal-test-list">
+                  <legend>Laboratory Test Done</legend>
+                  <div class="prenatal-test-column">
+                    <label><input type="checkbox" name="tests" value="CBC"> CBC</label>
+                    <label><input type="checkbox" name="tests" value="Urinalysis"> Urinalysis</label>
+                    <label><input type="checkbox" name="tests" value="Blood Glucose Testing"> Blood Glucose Testing</label>
+                    <label><input type="checkbox" name="tests" value="STI Screening"> STI Screening</label>
+                  </div>
+                  <div class="prenatal-test-column">
+                    <label><input type="checkbox" name="tests" value="Stool Examination"> Stool Examination</label>
+                    <label><input type="checkbox" name="tests" value="VIA"> Visual Inspection with Acetic Acid (VIA)</label>
+                  </div>
+                </fieldset>
+
+                <div class="prenatal-trimester-fields" data-trimester-fields="1">
+                  <div class="prenatal-form-grid prenatal-lab-grid">
+                    <label class="prenatal-field">Hemoglobin Count <em>*</em><input name="hemoglobin" required placeholder="e.g 12.5 g/dL"></label>
+                    <label class="prenatal-field">Urinalysis <em>*</em><input name="urinalysis" required placeholder="e.g color, transparency"></label>
+                    <label class="prenatal-field">Complete Blood Count (CBC) <em>*</em><input name="cbc" required placeholder="e.g 12.8 g/dL"></label>
+                    <h4 class="prenatal-subheading">STI Test Using Syndromic Approach</h4>
+                    <label class="prenatal-field">Syphilis <em>*</em><select name="syphilis" required><option value="">Reactive / Non-Reactive</option><option>Reactive</option><option>Non-Reactive</option></select></label>
+                    <label class="prenatal-field">HIV <em>*</em><select name="hiv" required><option value="">Positive / Negative</option><option>Positive</option><option>Negative</option></select></label>
+                    <label class="prenatal-field">Hepatitis B (HbsAg) <em>*</em><select name="hepatitisB" required><option value="">Reactive / Non-Reactive</option><option>Reactive</option><option>Non-Reactive</option></select></label>
+                    <label class="prenatal-field">Stool Examination <em>*</em><input name="stool" required placeholder="e.g consistency, color"></label>
+                    <label class="prenatal-field">Acetic Acid Wash <em>*</em><select name="aceticAcid" required><option value="">Positive / Negative</option><option>Positive</option><option>Negative</option></select></label>
+                    <label class="prenatal-field">Tetanus Toxoid / Vaccine Date <em>*</em><input type="date" name="tetanusDate" required></label>
+                  </div>
+                </div>
+
+                <div class="prenatal-trimester-fields" data-trimester-fields="2" hidden>
+                  <div class="prenatal-form-grid prenatal-lab-grid">
+                    <label class="prenatal-field">Urinalysis <em>*</em><input name="urinalysis2" required placeholder="e.g color, transparency"></label>
+                    <label class="prenatal-field">CBC <em>*</em><input name="cbc2" required placeholder="e.g 12.8 g/dL"></label>
+                    <label class="prenatal-field">STI Etiologic Test <em>*</em><select name="stiEtiologic" required><option value="">Non-Reactive / Reactive</option><option>Non-Reactive</option><option>Reactive</option></select></label>
+                    <label class="prenatal-field">Pap Smear <em>*</em><select name="papSmear" required><option value="">Non-Reactive / Reactive</option><option>Non-Reactive</option><option>Reactive</option></select></label>
+                    <label class="prenatal-field">Gestational Diabetes Screening (OGTT) <em>*</em><input name="ogtt" required placeholder="e.g Normal"></label>
+                    <label class="prenatal-field">Bacteriuria Screening <em>*</em><select name="bacteriuria" required><option value="">Normal / Negative</option><option>Normal</option><option>Negative</option><option>Positive</option></select></label>
+                  </div>
+                </div>
+
+                <div class="prenatal-trimester-fields" data-trimester-fields="3" hidden>
+                  <div class="prenatal-form-grid prenatal-lab-grid">
+                    <label class="prenatal-field">Urinalysis <em>*</em><input name="urinalysis3" required placeholder="e.g color, transparency"></label>
+                    <label class="prenatal-field">Bacteriuria Screening <em>*</em><select name="bacteriuria3" required><option value="">Normal / Negative</option><option>Normal</option><option>Negative</option><option>Positive</option></select></label>
+                    <label class="prenatal-field prenatal-field-full">Blood or RH group (if needed) <em>*</em><input name="bloodGroup" required></label>
+                  </div>
+                </div>
+
+                <div class="prenatal-trimester-fields prenatal-form-grid prenatal-check-groups" data-trimester-fields="1">
+                  <fieldset>
+                    <legend>Treatments Administered</legend>
+                    <label><input type="checkbox" name="treatments" value="Syphilis"> Syphilis</label>
+                    <label><input type="checkbox" name="treatments" value="Antiretroviral (ARV)"> Antiretroviral (ARV)</label>
+                    <label><input type="checkbox" name="treatments" value="Bacteriuria"> Bacteriuria</label>
+                    <label><input type="checkbox" name="treatments" value="Anemia"> Anemia</label>
+                  </fieldset>
+                  <fieldset>
+                    <legend>Counseling</legend>
+                    <label><input type="checkbox" name="counseling" value="Substance Avoidance"> Substance Avoidance (Alcohol, Tobacco, Illegal Drugs)</label>
+                    <label><input type="checkbox" name="counseling" value="Proper Nutrition & Dietary Advice"> Proper Nutrition &amp; Dietary Advice</label>
+                    <label><input type="checkbox" name="counseling" value="Safe Sex Education"> Safe Sex Education</label>
+                    <label><input type="checkbox" name="counseling" value="ITN Usage"> Insecticide-Treated Mosquito Net Usage (ITN / Kulambo)</label>
+                    <label><input type="checkbox" name="counseling" value="Birth Plan Guidance"> Birth Plan Guidance</label>
+                  </fieldset>
+                </div>
+                <div class="prenatal-trimester-fields prenatal-form-grid prenatal-check-groups" data-trimester-fields="2" hidden>
+                  <fieldset>
+                    <legend>Treatments Administered</legend>
+                    <label><input type="checkbox" name="treatments" value="Deworming"> Deworming</label>
+                    <label><input type="checkbox" name="treatments" value="Antiretroviral (ARV)"> Antiretroviral (ARV)</label>
+                    <label><input type="checkbox" name="treatments" value="Bacteriuria"> Bacteriuria</label>
+                    <label><input type="checkbox" name="treatments" value="Anemia"> Anemia</label>
+                  </fieldset>
+                  <fieldset>
+                    <legend>Counseling</legend>
+                    <label><input type="checkbox" name="counseling" value="Review of Previous Topics"> Review of Previous Topics</label>
+                  </fieldset>
+                </div>
+                <div class="prenatal-trimester-fields prenatal-form-grid prenatal-check-groups" data-trimester-fields="3" hidden>
+                  <fieldset>
+                    <legend>Treatments Administered</legend>
+                    <label><input type="checkbox" name="treatments" value="Antiretroviral (ARV)"> Antiretroviral (ARV)</label>
+                    <label><input type="checkbox" name="treatments" value="Bacteriuria"> Bacteriuria</label>
+                    <label><input type="checkbox" name="treatments" value="Anemia"> Anemia</label>
+                  </fieldset>
+                  <fieldset>
+                    <legend>Counseling</legend>
+                    <label><input type="checkbox" name="counseling" value="Review of Previous Topics"> Review of Previous Topics</label>
+                    <label><input type="checkbox" name="counseling" value="Postpartum Care"> Advised on postpartum at postnatal care</label>
+                    <label><input type="checkbox" name="counseling" value="Birth Spacing"> Advised on birth spacing</label>
+                    <label><input type="checkbox" name="counseling" value="Tetanus Vaccine Follow-up"> Tetanus-Containing Vaccine Follow-up</label>
+                  </fieldset>
+                </div>
+              </section>
+
+              <section class="prenatal-form-section">
+                <h3 class="prenatal-section-title">IV. Clinical Disposition and Care Management</h3>
+                <div class="prenatal-form-grid prenatal-disposition-grid">
+                  <label class="prenatal-field">Return Visit Date <em>*</em><input type="date" name="returnDate" required></label>
+                  <label class="prenatal-field">Name of Health Service Provider <em>*</em><input name="provider" required placeholder="e.g Dr. Min Yoongi RN."></label>
+                  <label class="prenatal-field">Hospital Referral <em>*</em><input name="referral" required placeholder="e.g Bicol Medical Center"></label>
+                </div>
+              </section>
+              </div>
+            </div>
+
+            <footer class="prenatal-modal-footer">
+              <button type="submit" class="prenatal-save-button">Save Record</button>
+              <button type="button" class="prenatal-cancel-button" id="btnCancelPrenatalModal">Cancel</button>
+            </footer>
+          </form>
+        </section>
+      </div>
+
+    </main>
+
+  </div>
+
+
+</body>
+
+</html>

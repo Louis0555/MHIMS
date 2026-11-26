@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHIMS - MaternaTrack | Patient Records</title>
+  <link rel="icon" type="image/png" href="../../../assets/images/MHIMS LOGO.png">
+  <meta name="description"
+    content="MaternaTrack Patient Records - General Health & Profiling - Municipal Health Office Information Management System (MHIMS), Municipality of Camaligan.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Iconify Icon Web Component Script -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <!-- MaternaTrack Patient Records CSS -->
+  <link rel="stylesheet" href="../../../css/personnel/maternatrack/patientrecords.css" data-mhims-page-style>
+
+  <!-- MaternaTrack Sidebar Shared Logic -->
+    <script type="module" src="../../../js/shared/sidebar-navigation.ts" data-mhims-router defer></script>
+
+  <!-- MaternaTrack Patient Records Logic -->
+  <script type="module" src="../../../js/personnel/maternatrack/patientrecords.ts?mhims-page=personnel-maternatrack-patientrecords" defer></script>
+  <link rel="stylesheet" href="../../../css/logout.css">
+  <script type="module" src="../../../js/logout.ts" data-mhims-global defer></script>
+</head>
+
+<body>
+
+  <div class="save-notice save-notice--changes" id="maternaSaveNotice" role="status" aria-live="polite" aria-hidden="true">
+    <iconify-icon icon="healthicons:person-check" width="22" height="22" class="save-notice-icon"></iconify-icon>
+    <div class="save-notice-message">
+      <strong>Changes Saved</strong>
+      <p>Patient Record is updated</p>
+    </div>
+    <button type="button" class="save-notice-close" id="maternaSaveNoticeClose" aria-label="Dismiss changes saved message">
+      <iconify-icon icon="lucide:x" width="16" height="16"></iconify-icon>
+    </button>
+  </div>
+
+  <div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <div class="sidebar-top">
+        <!-- MHIMS Crest Logo -->
+        <a href="../maindashboard/dashboard.html" class="sidebar-brand" title="MHIMS Personnel Portal">
+          <img src="../../../assets/images/MHIMS LOGO.png" alt="MHIMS Official Logo" class="sidebar-logo-img">
+        </a>
+
+        <!-- Navigation Modules List -->
+        <nav class="sidebar-nav" aria-label="Personnel Navigation Modules">
+          <a href="../maindashboard/dashboard.html" class="nav-item-btn"><iconify-icon icon="ant-design:home-filled" width="22" height="22"></iconify-icon><span>Dashboard</span></a>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="bi:people-fill" width="22" height="22"></iconify-icon><span>ResidentCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../residentcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../residentcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../residentcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../residentcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa6-solid:person-breastfeeding" width="22" height="22"></iconify-icon><span>MaternaTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="patientrecords.html" class="submenu-item active" aria-current="page"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient Records</span></a>
+              <a href="consultationlog.html" class="submenu-item"><iconify-icon icon="mdi:clipboard-text-clock" width="18" height="18"></iconify-icon><span>Consultation Log</span></a>
+              <a href="queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa:child" width="22" height="22"></iconify-icon><span>NutriTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../nutritrack/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../nutritrack/childrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Child Records</span></a>
+              <a href="../nutritrack/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../nutritrack/interventionlog.html" class="submenu-item"><iconify-icon icon="icon-park-solid:notebook" width="18" height="18"></iconify-icon><span>Intervention Log</span></a>
+              <a href="../nutritrack/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="healthicons:lungs" width="22" height="22"></iconify-icon><span>TBCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../tbcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../tbcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../tbcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../tbcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <a href="../pharmacy/dashboard.html" class="nav-item-btn"><iconify-icon icon="griddy-icons:pills-alt-02-filled" width="22" height="22"></iconify-icon><span>Pharmacy</span></a>
+        </nav>
+      </div>
+
+      <!-- Bottom Logout Button -->
+      <div class="sidebar-footer">
+        <a href="../../login.html" class="btn-logout" id="logoutBtn" title="Log out from system">
+          <iconify-icon icon="cuida:logout-outline" width="22" height="22"></iconify-icon>
+          <span>Logout</span>
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <!-- 1. Table View Container (Default) -->
+      <div id="recordsTableView">
+        <!-- Top Header Bar -->
+        <header class="top-header">
+        <div class="header-title-wrap">
+          <h1 class="dashboard-title">MaternaTrack</h1>
+          <p class="dashboard-subtitle">General Health & Profiling</p>
+        </div>
+
+        <div class="header-actions">
+          <!-- Search Input -->
+          <div class="header-search-wrap">
+            <input type="text" id="patientSearchInput" class="search-input-field" placeholder="Search patients name">
+            <button type="button" class="search-icon-btn" aria-label="Search">
+              <iconify-icon icon="lucide:search" width="18" height="18"></iconify-icon>
+            </button>
+          </div>
+
+          <!-- Notification Bell Button -->
+          
+        </div>
+      </header>
+
+      <!-- Filter Toolbar (Matching ResidentCare Design) -->
+      <div class="records-toolbar">
+        <div class="filter-group">
+          <span class="filter-label">Filter by :</span>
+          <div class="filter-controls-wrap">
+            <button type="button" class="filter-btn active btn-all" id="btnFilterAll">All</button>
+
+            <!-- 1. Trimester Dropdown -->
+            <div class="filter-dropdown-wrap" id="trimesterDropdownWrap">
+              <button type="button" class="filter-btn dropdown-toggle" id="trimesterDropdownBtn" aria-haspopup="true" aria-expanded="false">
+                <span class="filter-btn-text">Trimester</span>
+                <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="18" height="18"></iconify-icon>
+              </button>
+              <div class="filter-dropdown-menu" id="trimesterDropdownMenu">
+                <a class="filter-menu-item" data-filter="trimester" data-value="1st Trimester">1st Trimester</a>
+                <a class="filter-menu-item" data-filter="trimester" data-value="2nd Trimester">2nd Trimester</a>
+                <a class="filter-menu-item" data-filter="trimester" data-value="3rd Trimester">3rd Trimester</a>
+              </div>
+            </div>
+
+            <!-- 2. Risk Level Dropdown -->
+            <div class="filter-dropdown-wrap" id="riskDropdownWrap">
+              <button type="button" class="filter-btn dropdown-toggle" id="riskDropdownBtn" aria-haspopup="true" aria-expanded="false">
+                <span class="filter-btn-text">Risk Level</span>
+                <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="18" height="18"></iconify-icon>
+              </button>
+              <div class="filter-dropdown-menu" id="riskDropdownMenu">
+                <a class="filter-menu-item" data-filter="riskLevel" data-value="Low Risk">Low Risk</a>
+                <a class="filter-menu-item" data-filter="riskLevel" data-value="Medium Risk">Medium Risk</a>
+                <a class="filter-menu-item" data-filter="riskLevel" data-value="High Risk">High Risk</a>
+              </div>
+            </div>
+
+            <!-- 3. Barangay Dropdown -->
+            <div class="filter-dropdown-wrap" id="barangayDropdownWrap">
+              <button type="button" class="filter-btn dropdown-toggle" id="barangayDropdownBtn" aria-haspopup="true" aria-expanded="false">
+                <span class="filter-btn-text">Barangay</span>
+                <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="18" height="18"></iconify-icon>
+              </button>
+              <div class="filter-dropdown-menu" id="barangayDropdownMenu">
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Marcos">San Marcos</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="Santo Domingo">Santo Domingo</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Jose">San Jose</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Pablo">San Pablo</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Mateo">San Mateo</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="Santo Tomas">Santo Tomas</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Lucas">San Lucas</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Juan">San Juan</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Ramon">San Ramon</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="Gugon">Gugon</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="Dugcal">Dugcal</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="Sua">Sua</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="Marupit">Marupit</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="Tarosanan">Tarosanan</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Francisco">San Francisco</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Roque">San Roque</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Patient Records Table Card -->
+      <div class="patient-table-card">
+        <div class="table-responsive">
+          <table class="patient-table" id="patientsTable">
+            <thead>
+              <tr>
+                <th>Patient No.</th>
+                <th>Patient Name</th>
+                <th>Age</th>
+                <th>Trimester</th>
+                <th>Risk Level</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1 -->
+              <tr>
+                <td>PT-26-583741</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Chynna T. Flores</span>
+                    <span class="patient-col-address">San Mateo, Camaligan</span>
+                  </div>
+                </td>
+                <td>20</td>
+                <td>1st Trimester</td>
+                <td>
+                  <span class="risk-pill low-risk">
+                    <span class="risk-dot"></span>
+                    <span>Low Risk</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 2 -->
+              <tr>
+                <td>PT-26-951382</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Cessi R. Antonio</span>
+                    <span class="patient-col-address">San Juan, Camaligan</span>
+                  </div>
+                </td>
+                <td>28</td>
+                <td>3rd Trimester</td>
+                <td>
+                  <span class="risk-pill medium-risk">
+                    <span class="risk-dot"></span>
+                    <span>Medium Risk</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 3 -->
+              <tr>
+                <td>PT-26-208694</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Louis L. San Juan</span>
+                    <span class="patient-col-address">San Ramon, Camaligan</span>
+                  </div>
+                </td>
+                <td>28</td>
+                <td>2nd Trimester</td>
+                <td>
+                  <span class="risk-pill low-risk">
+                    <span class="risk-dot"></span>
+                    <span>Low Risk</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 4 -->
+              <tr>
+                <td>PT-26-774031</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Kristina C. David</span>
+                    <span class="patient-col-address">Gogon, Camaligan</span>
+                  </div>
+                </td>
+                <td>28</td>
+                <td>2nd Trimester</td>
+                <td>
+                  <span class="risk-pill low-risk">
+                    <span class="risk-dot"></span>
+                    <span>Low Risk</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 5 -->
+              <tr>
+                <td>PT-26-194826</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Shiki S. Rodriguez</span>
+                    <span class="patient-col-address">San Mateo, Camaligan</span>
+                  </div>
+                </td>
+                <td>21</td>
+                <td>1st Trimester</td>
+                <td>
+                  <span class="risk-pill low-risk">
+                    <span class="risk-dot"></span>
+                    <span>Low Risk</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 6 -->
+              <tr>
+                <td>PT-26-730415</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Kyla R. Bom</span>
+                    <span class="patient-col-address">San Juan, Camaligan</span>
+                  </div>
+                </td>
+                <td>25</td>
+                <td>3rd Trimester</td>
+                <td>
+                  <span class="risk-pill medium-risk">
+                    <span class="risk-dot"></span>
+                    <span>Medium Risk</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 7 -->
+              <tr>
+                <td>PT-26-462907</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Alexis D. San Juan</span>
+                    <span class="patient-col-address">San Ramon, Camaligan</span>
+                  </div>
+                </td>
+                <td>28</td>
+                <td>2nd Trimester</td>
+                <td>
+                  <span class="risk-pill low-risk">
+                    <span class="risk-dot"></span>
+                    <span>Low Risk</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 8 -->
+              <tr>
+                <td>PT-26-815263</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Kristine C. San Pablo</span>
+                    <span class="patient-col-address">Gogon, Camaligan</span>
+                  </div>
+                </td>
+                <td>30</td>
+                <td>3rd Trimester</td>
+                <td>
+                  <span class="risk-pill high-risk">
+                    <span class="risk-dot"></span>
+                    <span>High Risk</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 9 -->
+              <tr>
+                <td>PT-26-349178</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Maria K. Kanto</span>
+                    <span class="patient-col-address">Gogon, Camaligan</span>
+                  </div>
+                </td>
+                <td>32</td>
+                <td>3rd Trimester</td>
+                <td>
+                  <span class="risk-pill high-risk">
+                    <span class="risk-dot"></span>
+                    <span>High Risk</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 10 -->
+              <tr>
+                <td>PT-26-627504</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Tara C. Inom</span>
+                    <span class="patient-col-address">Gogon, Camaligan</span>
+                  </div>
+                </td>
+                <td>27</td>
+                <td>3rd Trimester</td>
+                <td>
+                  <span class="risk-pill high-risk">
+                    <span class="risk-dot"></span>
+                    <span>High Risk</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+                <!-- Row 11 -->
+              <tr>
+                <td>PT-26-347896</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Angelica Del Rosario</span>
+                    <span class="patient-col-address">San Roque, Camaligan</span>
+                  </div>
+                </td>
+                <td>30</td>
+                <td>2nd Trimester</td>
+                <td>
+                  <span class="risk-pill medium-risk">
+                    <span class="risk-dot"></span>
+                    <span>Medium Risk</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>PT-26-718294</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Jessa Mae Pineda</span><span class="patient-col-address">San Jose, Camaligan</span></div></td>
+                <td>25</td><td>1st Trimester</td>
+                <td><span class="risk-pill low-risk"><span class="risk-dot"></span><span>Low Risk</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-704628</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Kristine Joy Tolentino</span><span class="patient-col-address">Santo Tomas, Camaligan</span></div></td>
+                <td>31</td><td>2nd Trimester</td>
+                <td><span class="risk-pill medium-risk"><span class="risk-dot"></span><span>Medium Risk</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-219536</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Raquel M. Llorente</span><span class="patient-col-address">San Pablo, Camaligan</span></div></td>
+                <td>22</td><td>3rd Trimester</td>
+                <td><span class="risk-pill low-risk"><span class="risk-dot"></span><span>Low Risk</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-568317</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Jessa Nicole Hernandez</span><span class="patient-col-address">Santo Domingo, Camaligan</span></div></td>
+                <td>29</td><td>1st Trimester</td>
+                <td><span class="risk-pill high-risk"><span class="risk-dot"></span><span>High Risk</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-943205</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Nina Alcaraz</span><span class="patient-col-address">Marupit, Camaligan</span></div></td>
+                <td>26</td><td>2nd Trimester</td>
+                <td><span class="risk-pill low-risk"><span class="risk-dot"></span><span>Low Risk</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-316748</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Mary Grace Villanueva</span><span class="patient-col-address">San Juan, Camaligan</span></div></td>
+                <td>34</td><td>3rd Trimester</td>
+                <td><span class="risk-pill medium-risk"><span class="risk-dot"></span><span>Medium Risk</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-685129</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Princess L. Monta</span><span class="patient-col-address">San Ramon, Camaligan</span></div></td>
+                <td>19</td><td>1st Trimester</td>
+                <td><span class="risk-pill low-risk"><span class="risk-dot"></span><span>Low Risk</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-421863</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Joycelyn S. Alonzo</span><span class="patient-col-address">Dugcal, Camaligan</span></div></td>
+                <td>28</td><td>2nd Trimester</td>
+                <td><span class="risk-pill high-risk"><span class="risk-dot"></span><span>High Risk</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-157904</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Celine P. Barrios</span><span class="patient-col-address">Tarosanan, Camaligan</span></div></td>
+                <td>24</td><td>3rd Trimester</td>
+                <td><span class="risk-pill low-risk"><span class="risk-dot"></span><span>Low Risk</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-832476</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Grace B. Ocampo</span><span class="patient-col-address">Sua, Camaligan</span></div></td>
+                <td>33</td><td>2nd Trimester</td>
+                <td><span class="risk-pill medium-risk"><span class="risk-dot"></span><span>Medium Risk</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+      <!-- /#recordsTableView -->
+
+      <!-- 2. Full Patient Record View Container (Shown on "View" Click) -->
+      <div id="patientFullView" class="patient-full-view" style="display: none;">
+
+        <!-- Top Header Bar for Full View -->
+        <header class="fullview-top-header">
+          <div class="fullview-title-wrap">
+            <button type="button" class="btn-back-records" id="btnBackToRecords" title="Back to Patient Records">
+              <iconify-icon icon="lucide:chevron-left" width="34" height="34"></iconify-icon>
+            </button>
+            <div class="fullview-headings">
+              <h1 class="fullview-title">MaternaTrack</h1>
+              <p class="fullview-subtitle">Full view of the Patient's record</p>
+            </div>
+          </div>
+
+          <div class="header-actions">
+            <!-- Notification Bell Button -->
+            
+          </div>
+        </header>
+
+        <!-- Full Patient Record Detail Card -->
+        <div class="patient-detail-card">
+
+          <!-- Card Header / Patient Summary -->
+          <div class="patient-card-header">
+            <div class="patient-summary-left">
+              <div class="patient-avatar-circle">
+                <iconify-icon icon="solar:user-bold" width="38" height="38"></iconify-icon>
+              </div>
+              <div class="patient-summary-info">
+                <span class="patient-id-tag" id="viewPatientId">Patient No. : PNT-1021</span>
+                <h2 class="patient-full-name" id="viewPatientName">Chynna Tacmo Flores</h2>
+                <div class="patient-meta-row">
+                  <span class="meta-item">
+                    <iconify-icon icon="fa6-solid:person-pregnant" class="meta-icon gold"></iconify-icon>
+                    <span id="viewPregnancyCount">Second Pregnancy</span>
+                  </span>
+                  <span class="meta-item">
+                    <iconify-icon icon="mdi:gender-male-female" class="meta-icon gold"></iconify-icon>
+                    <span id="viewGender">Not available</span>
+                  </span>
+                  <span class="meta-item">
+                    <iconify-icon icon="boxicons:calendar-alt-filled" class="meta-icon gold"></iconify-icon>
+                    <span id="viewAge">20 years old</span>
+                  </span>
+                  <span class="meta-item">
+                    <iconify-icon icon="mdi:map-marker" class="meta-icon gold"></iconify-icon>
+                    <span id="viewZone">Zone 2, San Mateo Camaligan</span>
+                  </span>
+                </div>
+                <div class="patient-badges-row">
+                  <span class="risk-pill low-risk">
+                    <span class="risk-dot"></span>
+                    <span>Low Risk</span>
+                  </span>
+                  <span class="trimester-pill">1st Trimester</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="patient-summary-right">
+              <div class="summary-action-btns">
+                <button type="button" class="btn-edit-profile" id="btnEditProfile">
+                  <iconify-icon icon="lucide:pencil" width="15" height="15"></iconify-icon>
+                  <span>Edit Profile</span>
+                </button>
+                <button type="button" class="btn-export-profile" id="btnExportProfile">
+                  <iconify-icon icon="lucide:upload" width="15" height="15"></iconify-icon>
+                  <span>Export</span>
+                </button>
+              </div>
+              <div class="summary-status-wrap">
+                <span class="resident-active-pill">
+                  <iconify-icon icon="solar:user-check-bold" width="15" height="15"></iconify-icon>
+                  <span>Active resident</span>
+                </span>
+                <span class="last-updated-text">Last updated: March 20, 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-factors-banner">
+            <strong>Risk Factors:</strong>
+            <span>Family history of Diabetes and Heart Disease</span>
+          </div>
+
+          <hr class="card-horizontal-divider">
+
+          <div class="patient-detail-sections" aria-label="Patient record sections">
+            <!-- Section I: Personal Information -->
+            <section class="patient-detail-section" id="sectionPersonal">
+            <div class="section-title-wrap">
+              <h3 class="section-title">I. Personal Information</h3>
+              <p class="section-subtitle">Core identification and contact information for this patient.</p>
+            </div>
+
+            <div class="section-fields-grid">
+              <!-- Family Serial Number -->
+              <div class="field-item w-40">
+                <label class="field-label">Family Serial Number</label>
+                <div class="field-value-box">FSN-0000</div>
+              </div>
+
+              <!-- Full Name -->
+              <div class="field-item w-60">
+                <label class="field-label">Full Name</label>
+                <div class="field-value-box" id="viewDetailFullName">Chynna Tacmo Flores</div>
+              </div>
+
+              <!-- Row 3: Birthdate, Age, Blood Type -->
+              <div class="fields-row col-3">
+                <div class="field-item">
+                  <label class="field-label">Birthdate</label>
+                  <div class="field-value-box">October 25, 2006</div>
+                </div>
+                <div class="field-item">
+                  <label class="field-label">Age</label>
+                  <div class="field-value-box" id="viewDetailAge">20 years old</div>
+                </div>
+                <div class="field-item">
+                  <label class="field-label">Blood Type</label>
+                  <div class="field-value-box">AB +</div>
+                </div>
+              </div>
+
+              <!-- Row 4: Height, Pre-Pregnancy Weight, Pre-Pregnancy BMI -->
+              <div class="fields-row col-3">
+                <div class="field-item">
+                  <label class="field-label">Height</label>
+                  <div class="field-value-box">180 cm</div>
+                </div>
+                <div class="field-item">
+                  <label class="field-label">Pre-Pregnancy Weight</label>
+                  <div class="field-value-box">70 kg</div>
+                </div>
+                <div class="field-item">
+                  <label class="field-label">Pre-Pregnancy BMI</label>
+                  <div class="field-value-box">Normal</div>
+                </div>
+              </div>
+
+              <!-- Row 5: Contact Number, Civil Status -->
+              <div class="fields-row col-2">
+                <div class="field-item">
+                  <label class="field-label">Contact Number</label>
+                  <div class="field-value-box">09123456788</div>
+                </div>
+                <div class="field-item">
+                  <label class="field-label">Civil Status</label>
+                  <div class="field-value-box">Married</div>
+                </div>
+              </div>
+
+              <!-- Row 6: Complete Address -->
+              <div class="field-item w-60">
+                <label class="field-label">Complete Address</label>
+                <div class="field-value-box" id="viewDetailAddress">Zone 2, San Mateo, Camaligan, Camarines Sur</div>
+              </div>
+            </div>
+            </section>
+
+            <!-- Section II: Patient's History -->
+            <section class="patient-detail-section" id="sectionHistory">
+            <div class="section-title-wrap">
+              <h3 class="section-title">II. Medical History</h3>
+              <p class="section-subtitle">Conditions recorded for this patient.</p>
+            </div>
+
+            <div class="history-group">
+              <h4 class="history-group-heading">Personal history</h4>
+              <div class="history-empty">No personal conditions recorded</div>
+            </div>
+
+            <div class="history-group">
+              <h4 class="history-group-heading">Family history</h4>
+              <div class="history-cards-wrap">
+                <article class="history-card">
+                  <h5 class="history-card-title">Diabetes</h5>
+                  <p class="history-card-description">High-Blood Sugar</p>
+                  <div class="history-box-pill">
+                    <span class="bold-label">Remarks:</span> Mother and maternal grandmother with Type 2 Diabetes Mellitus
+                  </div>
+                </article>
+
+                <article class="history-card">
+                  <h5 class="history-card-title">Heart Disease</h5>
+                  <p class="history-card-description">Heart and blood vessel conditions</p>
+                  <div class="history-box-pill">
+                    <span class="bold-label">Remarks:</span> Father with Hypertensive Heart Disease and Coronary Artery Disease
+                  </div>
+                </article>
+              </div>
+            </div>
+            </section>
+
+            <!-- Section III: Obstetric & Pregnancy Details -->
+            <section class="patient-detail-section" id="sectionObstetric">
+            <div class="section-title-wrap">
+              <h3 class="section-title uppercase">III. OBSTETRIC & PREGNANCY DETAILS</h3>
+              <p class="section-subtitle">Current pregnancy status, menstrual history, and delivery estimates.</p>
+            </div>
+
+            <!-- Group 1: LMP, EDC, EDD, AOG (4 cols) -->
+            <div class="fields-row col-4">
+              <div class="field-item">
+                <label class="field-label">Last Menstrual Period (LMP)</label>
+                <div class="field-value-box">
+                  <span id="viewLmpValue">09/04/2026</span>
+                </div>
+              </div>
+              <div class="field-item">
+                <label class="field-label">Estimated Due of Confinement (EDC)</label>
+                <div class="field-value-box">01/09/2027</div>
+              </div>
+              <div class="field-item">
+                <label class="field-label">Estimated Due of Delivery (EDD)</label>
+                <div class="field-value-box" id="viewEddValue">01/10/2027</div>
+              </div>
+              <div class="field-item">
+                <label class="field-label">Age of Gestation (AOG)</label>
+                <div class="field-value-box">24 weeks and 3 days</div>
+              </div>
+            </div>
+
+            <!-- Group 2: GTPAL -->
+            <div class="gtpal-block">
+              <h4 class="gtpal-heading">OBSTETRIC HISTORY (GTPAL)</h4>
+              <div class="gtpal-grid">
+                <div class="gtpal-card">
+                  <span class="gtpal-label">Gravida (G)</span>
+                  <span class="gtpal-value">2</span>
+                </div>
+                <div class="gtpal-card">
+                  <span class="gtpal-label">Term (T)</span>
+                  <span class="gtpal-value">1</span>
+                </div>
+                <div class="gtpal-card">
+                  <span class="gtpal-label">PreTerm (P)</span>
+                  <span class="gtpal-value">0</span>
+                </div>
+                <div class="gtpal-card">
+                  <span class="gtpal-label">Abortion (A)</span>
+                  <span class="gtpal-value">0</span>
+                </div>
+                <div class="gtpal-card">
+                  <span class="gtpal-label">Living (L)</span>
+                  <span class="gtpal-value">1</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Group 3: Previous Pregnancy History -->
+            <div class="prev-pregnancy-block">
+              <h4 class="prev-pregnancy-heading">PREVIOUS PREGNANCY HISTORY</h4>
+              <div class="prev-pregnancy-card">
+                <h5 class="pregnancy-num-title">PREGNANCY #1</h5>
+
+                <div class="fields-row col-2">
+                  <div class="field-value-box">
+                    <span>Date of Delivery: </span><strong>October 12, 2023</strong>
+                  </div>
+                  <div class="field-value-box">
+                    <span>Birth Outcome: </span><strong>Alive</strong>
+                  </div>
+                </div>
+
+                <div class="fields-row col-2">
+                  <div class="field-value-box">
+                    <span>Type of Delivery: </span><strong>Normal Delivery</strong>
+                  </div>
+                  <div class="field-value-box">
+                    <span>Number of Children Delivered: </span><strong>Single Birth</strong>
+                  </div>
+                </div>
+
+                <div class="pregnancy-complications-wrap">
+                  <label class="field-label">Pregnancy-Related Conditions / Complications</label>
+                  <div class="field-value-box w-40">Pre- Eclampsia</div>
+                </div>
+              </div>
+            </div>
+
+            </section>
+          </div>
+
+        </div>
+      </div>
+      <!-- /#patientFullView -->
+
+    </main>
+
+  </div>
+
+
+
+  <!-- ======================================================================
+       Edit New Patient Modal (Matching Design & Layout)
+       ====================================================================== -->
+  <div id="editPatientModal" class="modal-backdrop" style="display: none;">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+      <!-- Modal Header -->
+      <header class="modal-header">
+        <div class="modal-header-titles">
+          <h2 class="modal-title" id="modalTitle">Edit Patient</h2>
+          <p class="modal-subtitle">Update the details below to save changes to the patient's record</p>
+        </div>
+        <button type="button" class="btn-modal-close" id="btnCloseModal" aria-label="Close modal">
+          <iconify-icon icon="lucide:x" width="20" height="20"></iconify-icon>
+        </button>
+      </header>
+
+      <div class="modal-progress">
+        <div class="modal-progress-card">
+          <div class="modal-progress-heading">
+            <strong id="modalProgressSummary">0 of 3 sections complete</strong>
+            <strong id="modalProgressPercent">0%</strong>
+          </div>
+          <div
+            class="modal-progress-track"
+            id="modalProgressTrack"
+            role="progressbar"
+            aria-label="Patient record completion"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0">
+            <span class="modal-progress-bar" id="modalProgressBar"></span>
+          </div>
+          <p class="modal-progress-note" id="modalProgressNote"></p>
+        </div>
+      </div>
+
+      <!-- Modal Form Body -->
+      <form id="editPatientForm" class="modal-body" novalidate>
+
+        <!-- SECTION I: PATIENT INFORMATION -->
+        <section class="modal-form-section" data-progress-group="patient-info">
+          <h3 class="modal-section-title">I. PATIENT INFORMATION</h3>
+          <div class="modal-section-divider"></div>
+
+          <div class="form-grid">
+            <!-- Row 1: Patient No, Family Serial Number -->
+            <div class="form-row col-2">
+              <div class="form-group">
+                <label class="form-label" for="editPatientNo">Patient’s No. <span class="req-star">*</span></label>
+                <input type="text" id="editPatientNo" name="patientNo" class="form-input readonly-input" placeholder="Auto-Filled" readonly>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="editFamilySerial">Family Serial Number <span class="req-star">*</span></label>
+                <input type="text" id="editFamilySerial" name="familySerial" class="form-input" placeholder="Auto-Filled" required>
+              </div>
+            </div>
+
+            <!-- Row 2: Last Name, First Name, Middle Name -->
+            <div class="form-row col-3">
+              <div class="form-group">
+                <label class="form-label" for="editLastName">Last Name <span class="req-star">*</span></label>
+                <input type="text" id="editLastName" name="lastName" class="form-input" placeholder="Auto-Filled" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="editFirstName">First Name <span class="req-star">*</span></label>
+                <input type="text" id="editFirstName" name="firstName" class="form-input" placeholder="Auto-Filled" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="editMiddleName">Middle Name <span class="req-star">*</span></label>
+                <input type="text" id="editMiddleName" name="middleName" class="form-input" placeholder="Auto-Filled" required>
+              </div>
+            </div>
+
+            <!-- Row 3: Birth Date, Age (Auto-calc), Blood Type -->
+            <div class="form-row col-3">
+              <div class="form-group">
+                <label class="form-label" for="editBirthDate">Birth Date <span class="req-star">*</span></label>
+                <input type="date" id="editBirthDate" name="birthDate" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="editAge">Age <span class="req-star">*</span></label>
+                <input type="text" id="editAge" name="age" class="form-input readonly-input" placeholder="Auto-Filled" readonly required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Blood Type <span class="req-star">*</span></label>
+                <div class="cust-select-wrap" id="bloodTypeWrap">
+                  <button type="button" class="cust-select-btn" id="bloodTypeBtn" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="cust-select-text" id="bloodTypeTxt">Auto-Filled</span>
+                    <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="20" height="20" class="cust-select-chevron"></iconify-icon>
+                  </button>
+                  <div class="cust-select-menu" id="bloodTypeMenu" role="listbox">
+                    <div class="cust-select-item" data-value="A +">A +</div>
+                    <div class="cust-select-item" data-value="A -">A -</div>
+                    <div class="cust-select-item" data-value="B +">B +</div>
+                    <div class="cust-select-item" data-value="B -">B -</div>
+                    <div class="cust-select-item" data-value="AB +">AB +</div>
+                    <div class="cust-select-item" data-value="AB -">AB -</div>
+                    <div class="cust-select-item" data-value="O +">O +</div>
+                    <div class="cust-select-item" data-value="O -">O -</div>
+                  </div>
+                  <input type="hidden" id="editBloodType" name="bloodType" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 4: Height, Pre-Pregnancy Weight, Pre-Pregnancy BMI (Auto-calc) -->
+            <div class="form-row col-3">
+              <div class="form-group">
+                <label class="form-label" for="editHeight">Height (cm) <span class="req-star">*</span></label>
+                <input type="number" id="editHeight" name="height" class="form-input" placeholder="Auto-Filled" step="0.1" min="50" max="250" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="editWeight">Pre-Pregnancy Weight (kg) <span class="req-star">*</span></label>
+                <input type="number" id="editWeight" name="weight" class="form-input" placeholder="Auto-Filled" step="0.1" min="20" max="250" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="editBMI">Pre-Pregnancy BMI <span class="req-star">*</span></label>
+                <input type="text" id="editBMI" name="bmi" class="form-input readonly-input" placeholder="Auto-Filled" readonly required>
+              </div>
+            </div>
+
+            <!-- Row 5: Contact Number, Civil Status -->
+            <div class="form-row col-2">
+              <div class="form-group">
+                <label class="form-label" for="editContact">Contact Number <span class="req-star">*</span></label>
+                <input type="text" id="editContact" name="contact" class="form-input" placeholder="Auto-Filled" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Civil Status <span class="req-star">*</span></label>
+                <div class="cust-select-wrap" id="civilStatusWrap">
+                  <button type="button" class="cust-select-btn" id="civilStatusBtn" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="cust-select-text" id="civilStatusTxt">Auto-Filled</span>
+                    <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="20" height="20" class="cust-select-chevron"></iconify-icon>
+                  </button>
+                  <div class="cust-select-menu" id="civilStatusMenu" role="listbox">
+                    <div class="cust-select-item" data-value="Single">Single</div>
+                    <div class="cust-select-item" data-value="Married">Married</div>
+                    <div class="cust-select-item" data-value="Widowed">Widowed</div>
+                    <div class="cust-select-item" data-value="Separated">Separated</div>
+                  </div>
+                  <input type="hidden" id="editCivilStatus" name="civilStatus" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 6: Zone/Street, Barangay, Municipality/Province -->
+            <div class="form-row col-3">
+              <div class="form-group">
+                <label class="form-label" for="editZone">Zone, Street <span class="req-star">*</span></label>
+                <input type="text" id="editZone" name="zone" class="form-input" placeholder="Auto-Filled" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Barangay <span class="req-star">*</span></label>
+                <div class="cust-select-wrap" id="barangayWrap">
+                  <button type="button" class="cust-select-btn" id="barangayBtn" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="cust-select-text" id="barangayTxt">Auto-Filled</span>
+                    <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="20" height="20" class="cust-select-chevron"></iconify-icon>
+                  </button>
+                  <div class="cust-select-menu" id="barangayMenu" role="listbox">
+                    <div class="cust-select-item" data-value="San Marcos">San Marcos</div>
+                    <div class="cust-select-item" data-value="Santo Domingo">Santo Domingo</div>
+                    <div class="cust-select-item" data-value="San Jose">San Jose</div>
+                    <div class="cust-select-item" data-value="San Pablo">San Pablo</div>
+                    <div class="cust-select-item" data-value="San Mateo">San Mateo</div>
+                    <div class="cust-select-item" data-value="Santo Tomas">Santo Tomas</div>
+                    <div class="cust-select-item" data-value="San Lucas">San Lucas</div>
+                    <div class="cust-select-item" data-value="San Juan">San Juan</div>
+                    <div class="cust-select-item" data-value="San Ramon">San Ramon</div>
+                    <div class="cust-select-item" data-value="Gugon">Gugon</div>
+                    <div class="cust-select-item" data-value="Dugcal">Dugcal</div>
+                    <div class="cust-select-item" data-value="Sua">Sua</div>
+                    <div class="cust-select-item" data-value="Marupit">Marupit</div>
+                    <div class="cust-select-item" data-value="Tarosanan">Tarosanan</div>
+                    <div class="cust-select-item" data-value="San Francisco">San Francisco</div>
+                  </div>
+                  <input type="hidden" id="editBarangay" name="barangay" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="editMunicipality">Municipality, Province <span class="req-star">*</span></label>
+                <input type="text" id="editMunicipality" name="municipality" class="form-input" placeholder="Auto-Filled" value="Camaligan, Camarines Sur" required>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION II: PATIENT'S HISTORY -->
+        <section class="modal-form-section" data-progress-group="history">
+          <h3 class="modal-section-title">II. PATIENT’S HISTORY</h3>
+          <div class="modal-section-divider"></div>
+          <h4 class="modal-subsection-heading">Medical Conditions and History</h4>
+
+          <div class="conditions-grid">
+            <!-- 1. Tuberculosis -->
+            <div class="condition-card">
+              <span class="condition-name">Tuberculosis (14 days or more of cough)</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="tb_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="tb_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="tb_remarks" class="form-input condition-input" placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+
+            <!-- 2. Heart Disease -->
+            <div class="condition-card">
+              <span class="condition-name">Heart Disease (shortness of breath)</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="heart_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="heart_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="heart_remarks" class="form-input condition-input" placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+
+            <!-- 3. Diabetes -->
+            <div class="condition-card">
+              <span class="condition-name">Diabetes (high blood sugar)</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="diabetes_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="diabetes_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="diabetes_remarks" class="form-input condition-input" placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+
+            <!-- 4. Hypertension -->
+            <div class="condition-card">
+              <span class="condition-name">Hypertension (high blood pressure)</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="htn_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="htn_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="htn_remarks" class="form-input condition-input" placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+
+            <!-- 5. Bronchial Asthma -->
+            <div class="condition-card">
+              <span class="condition-name">Bronchial Asthma</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="asthma_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="asthma_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="asthma_remarks" class="form-input condition-input" placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+
+            <!-- 6. Urinary Track Infection -->
+            <div class="condition-card">
+              <span class="condition-name">Urinary Track Infection</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="uti_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="uti_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="uti_remarks" class="form-input condition-input" placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+
+            <!-- 7. Parasitism -->
+            <div class="condition-card">
+              <span class="condition-name">Parasitism</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="para_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="para_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="para_remarks" class="form-input condition-input" placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+
+            <!-- 8. Goiter -->
+            <div class="condition-card">
+              <span class="condition-name">Goiter</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="goiter_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="goiter_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="goiter_remarks" class="form-input condition-input" placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+
+            <!-- 9. Anemia (pallor) -->
+            <div class="condition-card">
+              <span class="condition-name">Anemia (pallor)</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="anemia_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="anemia_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="anemia_remarks" class="form-input condition-input" placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION III: OBSTETRIC & PREGNANCY DETAILS -->
+        <section class="modal-form-section" data-progress-group="previous-pregnancy">
+          <h3 class="modal-section-title">III. OBSTETRIC & PREGNANCY DETAILS</h3>
+          <div class="modal-section-divider"></div>
+
+          <!-- LMP, EDC, EDD -->
+          <div class="form-row col-3">
+            <div class="form-group">
+              <label class="form-label" for="editLMP">Last Menstrual Period (LMP) <span class="req-star">*</span></label>
+              <input type="date" id="editLMP" name="lmp" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="editEDC">Estimated Date of Confinement (EDC)</label>
+              <input type="text" id="editEDC" name="edc" class="form-input readonly-input" placeholder="Auto-Computed" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="editEDD">Estimated Date of Delivery (EDD)</label>
+              <input type="text" id="editEDD" name="edd" class="form-input readonly-input" placeholder="Auto-Computed" readonly>
+            </div>
+          </div>
+
+          <!-- AOG / Gestational Age -->
+          <div class="form-row col-3" style="margin-top: 14px;">
+            <div class="form-group">
+              <label class="form-label" for="editAOG">AOG / Gestational Age</label>
+              <input type="text" id="editAOG" name="aog" class="form-input readonly-input" placeholder="Auto-Computed" readonly>
+            </div>
+          </div>
+
+          <!-- GTPAL Grid -->
+          <h4 class="gtpal-title-label">OBSTETRIC HISTORY (GTPAL)</h4>
+          <div class="gtpal-input-grid">
+            <div class="gtpal-input-item">
+              <label class="form-label">G (GRAVIDA) <span class="req-star">*</span></label>
+              <input type="number" id="editGravida" name="gravida" class="form-input gtpal-num-input" min="0" max="15" value="0" required>
+            </div>
+            <div class="gtpal-input-item">
+              <label class="form-label">T (TERM) <span class="req-star">*</span></label>
+              <input type="number" id="editTerm" name="term" class="form-input gtpal-num-input" min="0" max="15" value="0" required>
+            </div>
+            <div class="gtpal-input-item">
+              <label class="form-label">P (PRETERM) <span class="req-star">*</span></label>
+              <input type="number" id="editPreterm" name="preterm" class="form-input gtpal-num-input" min="0" max="15" value="0" required>
+            </div>
+            <div class="gtpal-input-item">
+              <label class="form-label">A (ABORTION) <span class="req-star">*</span></label>
+              <input type="number" id="editAbortion" name="abortion" class="form-input gtpal-num-input" min="0" max="15" value="0" required>
+            </div>
+            <div class="gtpal-input-item">
+              <label class="form-label">L (LIVING) <span class="req-star">*</span></label>
+              <input type="number" id="editLiving" name="living" class="form-input gtpal-num-input" min="0" max="15" value="0" required>
+            </div>
+          </div>
+
+          <!-- First Pregnancy Question -->
+          <div class="first-pregnancy-question">
+            <span class="first-preg-label">First Pregnancy? <span class="req-star">*</span></span>
+            <div class="radio-inline-group">
+              <label class="radio-option">
+                <input type="radio" name="firstPregnancy" value="yes" id="firstPregYes" required>
+                <span>Yes</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="firstPregnancy" value="no" id="firstPregNo" required>
+                <span>No</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- PREVIOUS PREGNANCY HISTORY (Dynamic based on First Pregnancy = Yes and Gravida count) -->
+          <div id="previousPregnancySection" class="previous-pregnancy-section" style="display: none;">
+            <h4 class="prev-preg-section-heading">PREVIOUS PREGNANCY HISTORY</h4>
+            <div id="pregnancyCardsContainer" class="pregnancy-cards-container">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </div>
+
+        </section>
+
+      </form>
+
+      <!-- Modal Footer -->
+      <footer class="modal-footer">
+        <button type="button" class="btn-modal-cancel" id="btnCancelEdit">Cancel</button>
+        <button type="submit" form="editPatientForm" class="btn-modal-save" id="btnSaveRecord">Save Record</button>
+      </footer>
+
+    </div>
+  </div>
+
+</body>
+
+</html>

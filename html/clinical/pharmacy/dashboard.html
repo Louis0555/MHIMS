@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHIMS - Pharmacy | Medicine Inventory &amp; Distribution</title>
+  <link rel="icon" type="image/png" href="../../../assets/images/MHIMS LOGO.png">
+  <meta name="description" content="Clinical Pharmacy medicine inventory and distribution.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <link rel="stylesheet" href="../../../css/clinical/residentcare/dashboard.css" data-mhims-page-style>
+  <link rel="stylesheet" href="../../../css/clinical/pharmacy/dashboard.css" data-mhims-page-style>
+    <script type="module" src="../../../js/shared/sidebar-navigation.ts" data-mhims-router defer></script>
+  <script type="module" src="../../../js/clinical/pharmacy/dashboard.ts?mhims-page=clinical-pharmacy-dashboard" defer></script>
+  <link rel="stylesheet" href="../../../css/logout.css">
+  <script type="module" src="../../../js/logout.ts" data-mhims-global defer></script>
+</head>
+
+<body>
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+
+      <div class="sidebar-top">
+        <!-- MHIMS Crest Logo -->
+        <a href="dashboard.html" class="sidebar-brand" title="MHIMS Clinical Portal">
+          <img src="../../../assets/images/MHIMS LOGO.png" alt="MHIMS Official Logo" class="sidebar-logo-img">
+        </a>
+
+        <!-- Navigation Modules List -->
+        <nav class="sidebar-nav" aria-label="Clinical Navigation Modules">
+          <a href="../maindashboard/dashboard.html" class="nav-item-btn"><iconify-icon icon="ant-design:home-filled" width="22" height="22"></iconify-icon><span>Dashboard</span></a>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="bi:people-fill" width="22" height="22"></iconify-icon><span>ResidentCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../residentcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../residentcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../residentcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../residentcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa6-solid:person-breastfeeding" width="22" height="22"></iconify-icon><span>MaternaTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../maternatrack/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../maternatrack/patientrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient Records</span></a>
+              <a href="../maternatrack/consultationlog.html" class="submenu-item"><iconify-icon icon="mdi:clipboard-text-clock" width="18" height="18"></iconify-icon><span>Consultation Log</span></a>
+              <a href="../maternatrack/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../maternatrack/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa:child" width="22" height="22"></iconify-icon><span>NutriTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../nutritrack/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../nutritrack/childrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Child Records</span></a>
+              <a href="../nutritrack/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../nutritrack/interventionlog.html" class="submenu-item"><iconify-icon icon="icon-park-solid:notebook" width="18" height="18"></iconify-icon><span>Intervention Log</span></a>
+              <a href="../nutritrack/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="healthicons:lungs" width="22" height="22"></iconify-icon><span>TBCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../tbcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../tbcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../tbcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../tbcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown open">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="true">
+              <span class="nav-btn-content"><iconify-icon icon="griddy-icons:pills-alt-02-filled" width="22" height="22"></iconify-icon><span>Pharmacy</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="dashboard.html" class="submenu-item active" aria-current="page"><iconify-icon icon="griddy-icons:pills-alt-02-filled" width="18" height="18"></iconify-icon><span>Medicine</span></a>
+              <a href="patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+            </div>
+          </div>
+          <a href="../statistics/dashboard.html" class="nav-item-btn"><iconify-icon icon="mdi:google-analytics" width="22" height="22"></iconify-icon><span>Statistics</span></a>
+        </nav>
+      </div>
+
+      <!-- Bottom Logout Button -->
+      <div class="sidebar-footer">
+        <a href="../../login.html" class="btn-logout" id="logoutBtn" title="Log out from system">
+          <iconify-icon icon="cuida:logout-outline" width="22" height="22"></iconify-icon>
+          <span>Logout</span>
+        </a>
+      </div>
+
+    </aside>
+
+    <main class="main-content pharmacy-main-content">
+      <header class="top-header">
+        <div class="header-title-wrap">
+          <h1 class="dashboard-title">Pharmacy</h1>
+          <p class="dashboard-subtitle">Medicine Inventory &amp; Distribution</p>
+        </div>
+        <div class="header-actions">
+          <label class="search-box pharmacy-search-wrap">
+            <span class="sr-only">Search medicine name or type</span>
+            <iconify-icon icon="lucide:search" class="search-icon" width="18" height="18" aria-hidden="true"></iconify-icon>
+            <input type="search" id="medicineSearch" class="search-input" placeholder="Search medicine name / type" autocomplete="off">
+          </label>
+          
+        </div>
+      </header>
+
+      <section class="pharmacy-toolbar" aria-label="Medicine inventory filters and actions">
+        <div class="pharmacy-filter-row">
+          <span class="pharmacy-filter-label">Filter by :</span>
+          <div class="pharmacy-filter-controls" role="group" aria-label="Filter inventory by status">
+            <button type="button" class="pharmacy-filter-btn active" data-status-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="pharmacy-filter-btn" data-status-filter="low-stock" aria-pressed="false">Low Stock</button>
+            <button type="button" class="pharmacy-filter-btn" data-status-filter="expiring-soon" aria-pressed="false">Expiring Soon</button>
+            <button type="button" class="pharmacy-filter-btn" data-status-filter="expired" aria-pressed="false">Expired</button>
+            <label class="medicine-type-filter">
+              <span class="sr-only">Filter by medicine type</span>
+              <select id="medicineTypeFilter" aria-label="Medicine Types">
+                <option value="">Medicine Types</option>
+                <option value="Antibiotic">Antibiotic</option>
+                <option value="Analgesic">Analgesic</option>
+                <option value="Anti-TB">Anti-TB</option>
+                <option value="Antihistamine">Antihistamine</option>
+                <option value="Antidiabetic">Antidiabetic</option>
+                <option value="Antihypertensive">Antihypertensive</option>
+                <option value="Rehydration">Rehydration</option>
+                <option value="Antifungal">Antifungal</option>
+                <option value="Bronchodilator">Bronchodilator</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <button type="button" class="btn-receive-stock" data-inventory-action="receive">
+          <iconify-icon icon="mingcute:add-fill" width="17" height="17"></iconify-icon>
+          Receive Stock
+        </button>
+      </section>
+
+      <section class="pharmacy-table-card" aria-label="Medicine inventory">
+        <div class="pharmacy-table-scroll">
+          <table class="pharmacy-table" id="medicineInventory">
+            <thead>
+              <tr>
+                <th scope="col">Batch No.</th>
+                <th scope="col">Medicine Name</th>
+                <th scope="col">Strength / Dose</th>
+                <th scope="col">On-Hand</th>
+                <th scope="col">Expiry</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-status="in-stock" data-type="Antibiotic">
+                <td>BAT-83921</td>
+                <td><div class="medicine-info"><strong>Amoxicillin</strong><span>Antibiotic</span></div></td>
+                <td>500mg</td><td class="stock-value">450</td><td>2028-09-30</td>
+                <td><span class="stock-status in-stock"><span class="status-dot"></span>In stock</span></td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-inventory-action="view">View</button></div></td>
+              </tr>
+              <tr data-status="in-stock" data-type="Analgesic">
+                <td>BAT-14073</td>
+                <td><div class="medicine-info"><strong>Paracetamol</strong><span>Analgesic</span></div></td>
+                <td>500mg</td><td class="stock-value">1200</td><td>2028-08-31</td>
+                <td><span class="stock-status in-stock"><span class="status-dot"></span>In stock</span></td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-inventory-action="view">View</button></div></td>
+              </tr>
+              <tr data-status="expiring-soon" data-type="Antibiotic">
+                <td>BAT-92584</td>
+                <td><div class="medicine-info"><strong>Azithromycin</strong><span>Antibiotic</span></div></td>
+                <td>500mg</td><td class="stock-value">24</td><td>2026-11-30</td>
+                <td><span class="stock-status expiring-soon"><span class="status-dot"></span>Expiring Soon</span></td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-inventory-action="view">View</button></div></td>
+              </tr>
+              <tr data-status="in-stock" data-type="Anti-TB">
+                <td>BAT-31806</td>
+                <td><div class="medicine-info"><strong>Rifampicin</strong><span>Anti-TB</span></div></td>
+                <td>500mg</td><td class="stock-value">180</td><td>2028-03-31</td>
+                <td><span class="stock-status in-stock"><span class="status-dot"></span>In stock</span></td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-inventory-action="view">View</button></div></td>
+              </tr>
+              <tr data-status="low-stock" data-type="Antihistamine">
+                <td>BAT-60429</td>
+                <td><div class="medicine-info"><strong>Cetirizine</strong><span>Antihistamine</span></div></td>
+                <td>10mg</td><td class="stock-value">0</td><td>2026-08-31</td>
+                <td><span class="stock-status low-stock"><span class="status-dot"></span>Low stock</span></td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-inventory-action="view">View</button></div></td>
+              </tr>
+              <tr data-status="in-stock" data-type="Antidiabetic">
+                <td>BAT-75138</td>
+                <td><div class="medicine-info"><strong>Metformin</strong><span>Antidiabetic</span></div></td>
+                <td>500mg</td><td class="stock-value">600</td><td>2028-01-31</td>
+                <td><span class="stock-status in-stock"><span class="status-dot"></span>In stock</span></td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-inventory-action="view">View</button></div></td>
+              </tr>
+              <tr data-status="expired" data-type="Antihypertensive">
+                <td>BAT-28941</td>
+                <td><div class="medicine-info"><strong>Amlodipine</strong><span>Antihypertensive</span></div></td>
+                <td>10mg</td><td class="stock-value">15</td><td>2026-10-31</td>
+                <td><span class="stock-status expired"><span class="status-dot"></span>Expired</span></td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-inventory-action="view">View</button></div></td>
+              </tr>
+              <tr data-status="in-stock" data-type="Rehydration">
+                <td>BAT-53607</td>
+                <td><div class="medicine-info"><strong>Oral Rehydration Salts</strong><span>Rehydration</span></div></td>
+                <td>5mg</td><td class="stock-value">300</td><td>2027-06-30</td>
+                <td><span class="stock-status in-stock"><span class="status-dot"></span>In stock</span></td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-inventory-action="view">View</button></div></td>
+              </tr>
+              <tr data-status="in-stock" data-type="Antifungal">
+                <td>BAT-41295</td>
+                <td><div class="medicine-info"><strong>Fluconazole</strong><span>Antifungal</span></div></td>
+                <td>150mg</td><td class="stock-value">85</td><td>2027-12-31</td>
+                <td><span class="stock-status in-stock"><span class="status-dot"></span>In stock</span></td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-inventory-action="view">View</button></div></td>
+              </tr>
+              <tr data-status="low-stock" data-type="Bronchodilator">
+                <td>BAT-87063</td>
+                <td><div class="medicine-info"><strong>Salbutamol Inhaler</strong><span>Bronchodilator</span></div></td>
+                <td>100mcg</td><td class="stock-value">0</td><td>2026-04-30</td>
+                <td><span class="stock-status low-stock"><span class="status-dot"></span>Low stock</span></td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-inventory-action="view">View</button></div></td>
+              </tr>
+              <tr data-status="in-stock" data-type="Analgesic">
+                <td>BAT-98216</td>
+                <td><div class="medicine-info"><strong>Ibuprofen</strong><span>Analgesic</span></div></td>
+                <td>200mg</td><td class="stock-value">240</td><td>2028-07-31</td>
+                <td><span class="stock-status in-stock"><span class="status-dot"></span>In stock</span></td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-inventory-action="view">View</button></div></td>
+              </tr>
+              <tr data-status="in-stock" data-type="Antihistamine">
+                <td>BAT-42751</td>
+                <td><div class="medicine-info"><strong>Loratadine</strong><span>Antihistamine</span></div></td>
+                <td>10mg</td><td class="stock-value">120</td><td>2028-05-31</td>
+                <td><span class="stock-status in-stock"><span class="status-dot"></span>In stock</span></td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-inventory-action="view">View</button></div></td>
+              </tr>
+              <tr data-status="in-stock" data-type="Antibiotic">
+                <td>BAT-59134</td>
+                <td><div class="medicine-info"><strong>Cephalexin</strong><span>Antibiotic</span></div></td>
+                <td>500mg</td><td class="stock-value">350</td><td>2028-02-29</td>
+                <td><span class="stock-status in-stock"><span class="status-dot"></span>In stock</span></td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-inventory-action="view">View</button></div></td>
+              </tr>
+              <tr data-status="in-stock" data-type="Antifungal">
+                <td>BAT-76305</td>
+                <td><div class="medicine-info"><strong>Clotrimazole</strong><span>Antifungal</span></div></td>
+                <td>1%</td><td class="stock-value">75</td><td>2027-12-31</td>
+                <td><span class="stock-status in-stock"><span class="status-dot"></span>In stock</span></td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-inventory-action="view">View</button></div></td>
+              </tr>
+              <tr data-status="in-stock" data-type="Anti-TB">
+                <td>BAT-61847</td>
+                <td><div class="medicine-info"><strong>Isoniazid</strong><span>Anti-TB</span></div></td>
+                <td>300mg</td><td class="stock-value">180</td><td>2028-11-30</td>
+                <td><span class="stock-status in-stock"><span class="status-dot"></span>In stock</span></td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-inventory-action="view">View</button></div></td>
+              </tr>
+              <tr data-status="in-stock" data-type="Rehydration">
+                <td>BAT-73042</td>
+                <td><div class="medicine-info"><strong>Oral Rehydration Salts</strong><span>Rehydration</span></div></td>
+                <td>1 sachet</td><td class="stock-value">300</td><td>2028-06-30</td>
+                <td><span class="stock-status in-stock"><span class="status-dot"></span>In stock</span></td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-inventory-action="view">View</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="empty-inventory" id="emptyInventory" hidden>No medicines match these filters.</p>
+        </div>
+      </section>
+
+      <section class="medicine-detail-view" id="medicineDetailView" aria-labelledby="medicineDetailPageTitle" hidden>
+        <header class="medicine-detail-page-header">
+          <div class="medicine-detail-page-heading">
+            <button type="button" class="medicine-detail-back" id="medicineDetailBack" aria-label="Back to medicine inventory">
+              <iconify-icon icon="lucide:chevron-left" width="22" height="22"></iconify-icon>
+            </button>
+            <div>
+              <h1 id="medicineDetailPageTitle">Pharmacy</h1>
+              <p>View Medicine</p>
+            </div>
+          </div>
+          <button type="button" class="medicine-detail-edit" id="medicineDetailEdit">Edit Medicine</button>
+        </header>
+
+        <article class="medicine-detail-card" aria-labelledby="medicineDetailName">
+          <header class="medicine-detail-summary">
+            <div class="medicine-detail-summary-main">
+              <span class="medicine-detail-batch">Batch Number: <strong id="medicineDetailBatch">—</strong></span>
+              <h2 id="medicineDetailName"></h2>
+              <p><span id="medicineDetailCategory"></span><span aria-hidden="true"> · </span><span id="medicineDetailStrength"></span></p>
+            </div>
+            <div class="medicine-detail-stock">
+              <span>On-Hand</span>
+              <strong id="medicineDetailOnHand"></strong>
+              <span class="stock-status" id="medicineDetailStatus">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span id="medicineDetailStatusLabel"></span>
+              </span>
+            </div>
+          </header>
+
+          <div class="medicine-detail-content">
+            <section class="medicine-detail-section" aria-labelledby="medicineInformationTitle">
+              <h2 id="medicineInformationTitle">I. Medicine Information</h2>
+              <div class="medicine-detail-table-wrap">
+                <table class="medicine-detail-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Medicine Name</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Strength / Dose</th>
+                      <th scope="col">Expiry Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td id="medicineDetailInfoName"></td>
+                      <td id="medicineDetailInfoCategory"></td>
+                      <td id="medicineDetailInfoStrength"></td>
+                      <td id="medicineDetailExpiry"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="medicine-detail-section" aria-labelledby="medicineStockTitle">
+              <h2 id="medicineStockTitle">II. Stock &amp; Distribution</h2>
+              <div class="medicine-detail-fields">
+                <div class="medicine-detail-field"><span>Unit</span><strong id="medicineDetailUnit"></strong></div>
+                <div class="medicine-detail-field"><span>Quantity Received</span><strong id="medicineDetailQuantityReceived"></strong></div>
+                <div class="medicine-detail-field"><span>Reorder Level</span><strong id="medicineDetailReorderLevel"></strong></div>
+              </div>
+            </section>
+
+            <section class="medicine-detail-section" aria-labelledby="medicineReceivingTitle">
+              <h2 id="medicineReceivingTitle">III. Receiving Details</h2>
+              <div class="medicine-detail-fields">
+                <div class="medicine-detail-field"><span>Date Received</span><strong id="medicineDetailDateReceived"></strong></div>
+                <div class="medicine-detail-field"><span>Received By</span><strong id="medicineDetailReceivedBy"></strong></div>
+                <div class="medicine-detail-field"><span>Supplier / Source</span><strong id="medicineDetailSupplier"></strong></div>
+              </div>
+            </section>
+
+            <section class="medicine-detail-section medicine-detail-remarks" aria-labelledby="medicineRemarksTitle">
+              <h2 id="medicineRemarksTitle">IV. Remarks</h2>
+              <p id="medicineDetailRemarks"></p>
+            </section>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <dialog class="inventory-dialog" id="inventoryDialog" aria-labelledby="inventoryDialogTitle" aria-describedby="inventoryDialogDescription">
+    <header class="inventory-dialog-header">
+      <div>
+        <h2 id="inventoryDialogTitle">Receive Stock</h2>
+        <p id="inventoryDialogDescription">Add a new medicine or incoming batch to inventory</p>
+      </div>
+      <button type="button" class="dialog-close" data-close-dialog aria-label="Close dialog">
+        <iconify-icon icon="lucide:x" width="20" height="20"></iconify-icon>
+      </button>
+    </header>
+    <form id="inventoryActionForm" class="inventory-action-form">
+      <section class="inventory-progress" aria-label="Form completion">
+        <div class="inventory-progress-heading">
+          <strong id="inventoryProgressLabel">0 of 2 required sections complete</strong>
+          <strong id="inventoryProgressPercent">0%</strong>
+        </div>
+        <div
+          class="inventory-progress-track"
+          id="inventoryProgressTrack"
+          role="progressbar"
+          aria-label="Required sections complete"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0">
+          <span id="inventoryProgressFill"></span>
+        </div>
+        <p id="inventoryProgressDetails">2 sections left: Medicine Information, Stock &amp; Distribution</p>
+      </section>
+      <div class="inventory-dialog-scroll">
+        <p class="dialog-error" id="inventoryDialogError" role="alert" hidden></p>
+        <section class="inventory-form-section">
+          <h3>MEDICINE INFORMATION</h3>
+          <div class="inventory-field-grid">
+            <div class="inventory-field span-6">
+              <label for="inventoryBatch">Batch Number</label>
+              <input id="inventoryBatch" name="batch" type="text" placeholder="M-0000" autocomplete="off">
+            </div>
+            <div class="inventory-field span-6">
+              <label for="inventoryCategory">Category <span class="required-marker" aria-hidden="true">*</span></label>
+              <select id="inventoryCategory" name="category" required>
+                <option value="">Select category</option>
+                <option value="Antibiotic">Antibiotic</option>
+                <option value="Analgesic">Analgesic</option>
+                <option value="Anti-TB">Anti-TB</option>
+                <option value="Antihistamine">Antihistamine</option>
+                <option value="Antidiabetic">Antidiabetic</option>
+                <option value="Antihypertensive">Antihypertensive</option>
+                <option value="Rehydration">Rehydration</option>
+                <option value="Antifungal">Antifungal</option>
+                <option value="Bronchodilator">Bronchodilator</option>
+              </select>
+            </div>
+            <div class="inventory-field span-8">
+              <label for="inventoryName">Medicine Name <span class="required-marker" aria-hidden="true">*</span></label>
+              <input id="inventoryName" name="medicineName" type="text" placeholder="e.g. Amoxicillin" autocomplete="off" required>
+            </div>
+            <div class="inventory-field span-4">
+              <label for="inventoryStrength">Strength / Dose</label>
+              <input id="inventoryStrength" name="strength" type="text" placeholder="e.g. 500mg tablet" autocomplete="off">
+            </div>
+            <div class="inventory-field span-6">
+              <label for="inventoryExpiry">Expiry Date <span class="required-marker" aria-hidden="true">*</span></label>
+              <input id="inventoryExpiry" name="expiryDate" type="date" required>
+            </div>
+          </div>
+        </section>
+
+        <section class="inventory-form-section">
+          <h3>STOCK &amp; DISTRIBUTION</h3>
+          <div class="inventory-field-grid">
+            <div class="inventory-field span-4">
+              <label for="inventoryUnit">Unit <span class="required-marker" aria-hidden="true">*</span></label>
+              <select id="inventoryUnit" name="unit" required>
+                <option value="">units</option>
+                <option value="units">Units</option>
+                <option value="Tablets">Tablets</option>
+                <option value="Capsules">Capsules</option>
+                <option value="Bottles">Bottles</option>
+                <option value="Boxes">Boxes</option>
+                <option value="Vials">Vials</option>
+                <option value="Inhalers">Inhalers</option>
+                <option value="Sachets">Sachets</option>
+              </select>
+            </div>
+            <div class="inventory-field span-4">
+              <label for="inventoryQuantity" id="inventoryQuantityLabel">Quantity Received <span class="required-marker" aria-hidden="true">*</span></label>
+              <input id="inventoryQuantity" name="quantity" type="number" min="1" step="1" placeholder="e.g. 100" required>
+            </div>
+            <div class="inventory-field span-4">
+              <label for="inventoryReorderLevel">Reorder Level</label>
+              <input id="inventoryReorderLevel" name="reorderLevel" type="number" min="0" step="1" placeholder="e.g. 100">
+            </div>
+          </div>
+        </section>
+
+        <section class="inventory-form-section">
+          <h3>RECEIVING DETAILS</h3>
+          <div class="inventory-field-grid">
+            <div class="inventory-field span-4">
+              <label for="inventoryDateReceived">Date Received <span class="required-marker" id="inventoryDateReceivedRequiredMarker" aria-hidden="true">*</span></label>
+              <input id="inventoryDateReceived" name="dateReceived" type="date" required>
+            </div>
+            <div class="inventory-field span-8">
+              <label for="inventoryReceivedBy">Received By</label>
+              <input id="inventoryReceivedBy" name="receivedBy" type="text" placeholder="e.g. BHW John Ceasar Antonio" autocomplete="name">
+            </div>
+            <div class="inventory-field span-8">
+              <label for="inventorySupplier">Supplier / Source</label>
+              <input id="inventorySupplier" name="supplier" type="text" placeholder="e.g. DOH Regional Supply" autocomplete="organization">
+            </div>
+          </div>
+        </section>
+
+        <section class="inventory-form-section inventory-remarks-section">
+          <label for="inventoryRemarks">Remarks</label>
+          <textarea id="inventoryRemarks" name="remarks" placeholder="Optional Notes"></textarea>
+        </section>
+      </div>
+    </form>
+    <footer class="dialog-actions">
+      <button type="button" class="dialog-cancel" data-close-dialog>Cancel</button>
+      <button type="submit" class="dialog-submit" id="inventorySubmit" form="inventoryActionForm">Save to Inventory</button>
+    </footer>
+  </dialog>
+</body>
+
+</html>

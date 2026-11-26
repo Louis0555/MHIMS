@@ -1,0 +1,362 @@
+.patient-full-view .fullview-top-header {
+  margin-top: 37px;
+  margin-bottom: 24px;
+}
+
+.patient-full-view .fullview-title {
+  font-size: 24px;
+}
+
+.patient-full-view .fullview-subtitle {
+  font-size: 14.5px;
+}
+
+.patient-full-view .patient-detail-card {
+  width: 100%;
+  max-width: 1200px;
+  padding: 38px 32px 32px;
+}
+
+.patient-full-view .patient-id-tag {
+  font-size: 13.5px;
+}
+
+.patient-full-view .patient-full-name {
+  font-size: 24px;
+}
+
+.patient-full-view .meta-item {
+  font-size: 13.5px;
+}
+
+.patient-full-view .section-title {
+  font-size: 16px;
+}
+
+.patient-full-view .section-subtitle {
+  font-size: 12.5px;
+}
+
+.patient-full-view .field-label {
+  font-size: 12px;
+}
+
+.patient-full-view .field-value-box {
+  font-size: 14px;
+}
+
+.resident-profile-view .resident-profile-page-header {
+  min-height: 0;
+  margin: 37px 0 24px;
+  padding: 0 4px;
+}
+
+.resident-profile-view .resident-profile-heading h1 {
+  font-size: 24px;
+}
+
+.resident-profile-view .resident-profile-heading p {
+  font-size: 14.5px;
+}
+
+.resident-profile-view .resident-profile-card {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-color: #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.resident-profile-view .profile-patient-number {
+  font-size: 13.5px;
+}
+
+.resident-profile-view .profile-person-details h2 {
+  font-size: 24px;
+}
+
+.resident-profile-view .profile-demographics {
+  font-size: 13.5px;
+}
+
+.resident-profile-view .profile-edit-button,
+.resident-profile-view .profile-export-button,
+.resident-profile-view .profile-add-visit-button {
+  font-size: 13.5px;
+}
+
+.resident-profile-view .profile-section-title {
+  font-size: 16px;
+}
+
+.resident-profile-view .profile-section-description {
+  font-size: 12.5px;
+}
+
+.resident-profile-view .profile-detail > span {
+  font-size: 12px;
+}
+
+.resident-profile-view .profile-detail > strong {
+  font-size: 14px;
+}
+
+.resident-profile-view .profile-history-table {
+  font-size: 12px;
+}
+
+.resident-profile-view .profile-history-table th {
+  font-size: 11px;
+}
+
+.resident-profile-view .profile-subsection-title {
+  font-size: 16px;
+}
+
+.resident-profile-view .profile-subsection-heading {
+  font-size: 14px;
+}
+
+.patient-details-backdrop {
+  padding-top: 37px;
+}
+
+.patient-details-backdrop .patient-details-dialog {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.patient-details-backdrop .patient-profile-page-heading h2 {
+  font-size: 24px;
+}
+
+.patient-details-backdrop .patient-profile-page-heading p {
+  font-size: 14.5px;
+}
+
+.patient-details-backdrop .patient-profile-card {
+  width: 100%;
+  max-width: 1200px;
+  border-color: #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.patient-details-backdrop .patient-profile-case {
+  font-size: 13.5px;
+}
+
+.patient-details-backdrop .patient-profile-name {
+  font-size: 24px;
+}
+
+.patient-details-backdrop .patient-profile-meta {
+  font-size: 13.5px;
+}
+
+.patient-details-backdrop .patient-profile-section h3 {
+  font-size: 16px;
+}
+
+.patient-details-backdrop .patient-profile-section h4 {
+  font-size: 14px;
+}
+
+.patient-details-backdrop .patient-profile-field strong {
+  font-size: 12px;
+}
+
+.patient-details-backdrop .patient-profile-field span {
+  font-size: 14px;
+}
+
+.patient-details-backdrop .patient-profile-table {
+  font-size: 12px;
+}
+
+.patient-details-backdrop .patient-profile-table th {
+  font-size: 11px;
+}
+
+#detailsModalOverlay .modal-box {
+  width: min(1200px, calc(100vw - 48px));
+  max-width: 1200px;
+  max-height: calc(100dvh - 48px);
+  overflow: auto;
+  padding: 38px 32px 32px;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+#detailsModalOverlay .modal-header {
+  padding: 0 0 24px;
+  background: #fff;
+  color: var(--primary-navy);
+}
+
+#detailsModalOverlay .modal-header h3 {
+  color: var(--primary-navy);
+  font-size: 24px;
+  font-weight: 800;
+}
+
+#detailsModalOverlay .modal-close-btn {
+  color: var(--primary-navy);
+}
+
+#detailsModalOverlay .modal-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 28px;
+  padding: 0;
+}
+
+#detailsModalOverlay .modal-field {
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 12px;
+}
+
+#detailsModalOverlay .modal-field span:first-child {
+  flex: 0 1 44%;
+  font-size: 12px;
+}
+
+#detailsModalOverlay .modal-field span:last-child {
+  flex: 1;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+body.patient-detail-open .dashboard-title {
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+body.patient-detail-open .dashboard-subtitle {
+  font-size: 14.5px;
+  line-height: 1.35;
+}
+
+body.patient-detail-open .dispensed-patient-card {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-color: #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+body.patient-detail-open .dispensed-patient-number {
+  font-size: 13.5px;
+}
+
+body.patient-detail-open .dispensed-patient-heading h2 {
+  font-size: 24px;
+}
+
+body.patient-detail-open .dispensed-patient-heading p {
+  font-size: 13.5px;
+}
+
+body.patient-detail-open .dispensed-last-date span {
+  font-size: 12px;
+}
+
+body.patient-detail-open .dispensed-last-date strong {
+  font-size: 14px;
+}
+
+body.patient-detail-open .dispensed-section-heading h3,
+body.patient-detail-open .dispensed-record-section h3 {
+  font-size: 16px;
+}
+
+body.patient-detail-open .dispensed-section-heading p {
+  font-size: 12.5px;
+}
+
+body.patient-detail-open .dispensed-history-table {
+  font-size: 12px;
+}
+
+body.patient-detail-open .dispensed-history-table th {
+  font-size: 11px;
+}
+
+body.patient-detail-open .dispensed-history-table td {
+  font-size: 12px;
+}
+
+body.patient-detail-open .dispensed-selected-record {
+  font-size: 14px;
+}
+
+body.patient-detail-open .dispensed-record-field span {
+  font-size: 12px;
+}
+
+body.patient-detail-open .dispensed-record-field strong {
+  font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  .patient-full-view .fullview-top-header,
+  .resident-profile-view .resident-profile-page-header {
+    margin-top: 18px;
+  }
+
+  .patient-details-backdrop {
+    padding-top: 18px;
+  }
+
+  .patient-full-view .patient-detail-card {
+    padding: 28px 24px 24px;
+  }
+
+  #detailsModalOverlay .modal-box {
+    width: calc(100vw - 32px);
+    padding: 28px 24px 24px;
+  }
+
+  #detailsModalOverlay .modal-content {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 520px) {
+  .patient-full-view .fullview-top-header,
+  .resident-profile-view .resident-profile-page-header {
+    margin-top: 10px;
+  }
+
+  .patient-details-backdrop {
+    padding-top: 10px;
+  }
+
+  .patient-full-view .patient-detail-card {
+    padding: 18px;
+  }
+
+  #detailsModalOverlay .modal-box {
+    width: calc(100vw - 24px);
+    padding: 18px;
+  }
+
+  #detailsModalOverlay .modal-header {
+    padding-bottom: 18px;
+  }
+
+  #detailsModalOverlay .modal-field {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  #detailsModalOverlay .modal-field span:last-child {
+    text-align: left;
+  }
+
+}

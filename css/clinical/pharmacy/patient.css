@@ -1,0 +1,945 @@
+body.pharmacy-patient-page {
+  --sidebar-width: 214px;
+}
+
+.pharmacy-patient-page .sidebar {
+  width: 214px;
+  flex: 0 0 214px;
+}
+
+.pharmacy-patient-content {
+  padding-top: 50px;
+  padding-left: 51px;
+}
+
+.pharmacy-patient-content .top-header {
+  margin-bottom: 31px;
+}
+
+.pharmacy-patient-content .notification-btn {
+  width: 34px;
+  height: 32px;
+  border: 1px solid var(--primary-navy);
+  border-radius: 7px;
+  background: #f5f3ec;
+  color: var(--primary-navy);
+}
+
+.pharmacy-patient-content .notification-badge-dot {
+  background: #2563eb;
+}
+
+.pharmacy-patient-toolbar {
+  margin-bottom: 25px;
+}
+
+.pharmacy-patient-toolbar .pharmacy-filter-row {
+  gap: 23px;
+}
+
+.pharmacy-patient-toolbar .pharmacy-filter-label {
+  width: 60px;
+  flex: 0 0 60px;
+}
+
+.pharmacy-patient-toolbar .pharmacy-filter-controls {
+  overflow: visible;
+}
+
+.pharmacy-patient-toolbar .pharmacy-filter-btn {
+  height: 17px;
+  padding: 2px 12px;
+  font-size: 10px;
+}
+
+.pharmacy-patient-toolbar [data-date-filter="all"] {
+  width: 72px;
+}
+
+.pharmacy-patient-toolbar [data-date-filter="today"] {
+  width: 94px;
+}
+
+.pharmacy-patient-toolbar [data-date-filter="week"],
+.pharmacy-patient-toolbar [data-date-filter="month"] {
+  width: 96px;
+}
+
+.dispensed-date-range {
+  position: relative;
+  display: flex;
+}
+
+.date-range-toggle {
+  width: 108px;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.date-range-toggle iconify-icon {
+  flex: 0 0 auto;
+  transition: transform 0.15s ease;
+}
+
+.dispensed-date-range.open .date-range-toggle iconify-icon {
+  transform: rotate(180deg);
+}
+
+.date-range-menu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 5px);
+  left: 0;
+  display: none;
+  width: 252px;
+  padding: 13px;
+  border: 1px solid #17265f;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(16, 29, 86, 0.16);
+}
+
+.date-range-menu.show {
+  display: grid;
+  gap: 10px;
+}
+
+.date-range-menu label {
+  display: grid;
+  gap: 5px;
+  color: var(--primary-navy);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.date-range-menu input {
+  width: 100%;
+  height: 32px;
+  padding: 0 9px;
+  border: 1px solid #9aabd0;
+  border-radius: 4px;
+  background: #fff;
+  color: var(--primary-navy);
+  font: inherit;
+  font-size: 12px;
+}
+
+.date-range-menu input:focus {
+  border-color: var(--primary-navy);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(16, 29, 86, 0.12);
+}
+
+.date-range-error {
+  margin: 0;
+  color: #b42318;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.date-range-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 2px;
+}
+
+.date-range-clear,
+.date-range-apply {
+  min-height: 28px;
+  padding: 4px 11px;
+  border: 1px solid var(--primary-navy);
+  border-radius: 4px;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.date-range-clear {
+  background: #fff;
+  color: var(--primary-navy);
+}
+
+.date-range-clear:hover {
+  background: #f1f5f9;
+}
+
+.date-range-apply {
+  background: var(--primary-navy);
+  color: #fff;
+}
+
+.date-range-apply:hover {
+  background: #1b2b68;
+}
+
+.btn-dispense-medicine {
+  display: inline-flex;
+  min-width: 129px;
+  height: 35px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 7px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--primary-navy);
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn-dispense-medicine:hover {
+  background: #1b2b68;
+}
+
+.pharmacy-dispensed-table {
+  table-layout: fixed;
+}
+
+.pharmacy-dispensed-table th {
+  background-color: #6783a9;
+  text-align: left;
+}
+
+.pharmacy-dispensed-table th:last-child {
+  text-align: right;
+}
+
+.pharmacy-dispensed-table th:nth-child(1) {
+  width: 12%;
+}
+
+.pharmacy-dispensed-table th:nth-child(2) {
+  width: 22%;
+}
+
+.pharmacy-dispensed-table th:nth-child(3) {
+  width: 21%;
+}
+
+.pharmacy-dispensed-table th:nth-child(4) {
+  width: 12%;
+  text-align: center;
+}
+
+.pharmacy-dispensed-table th:nth-child(5) {
+  width: 18%;
+  text-align: center;
+}
+
+.pharmacy-dispensed-table th:nth-child(6) {
+  width: 15%;
+}
+
+.pharmacy-dispensed-table td {
+  font-size: 13.5px;
+}
+
+.pharmacy-dispensed-table td:nth-child(2),
+.pharmacy-dispensed-table td:nth-child(3) {
+  text-align: left;
+}
+
+.pharmacy-dispensed-table td:nth-child(3) {
+  color: var(--primary-navy);
+  font-weight: 500;
+}
+
+.pharmacy-dispensed-table td:nth-child(4),
+.pharmacy-dispensed-table td:nth-child(5) {
+  text-align: center;
+}
+
+.pharmacy-dispensed-table .dispensed-patient,
+.pharmacy-dispensed-table .dispensed-medicine {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pharmacy-dispensed-table .dispensed-patient strong,
+.pharmacy-dispensed-table .dispensed-medicine span {
+  overflow: hidden;
+  color: var(--primary-navy);
+  font-size: 14px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+}
+
+.pharmacy-dispensed-table .dispensed-patient span,
+.pharmacy-dispensed-table .dispensed-medicine strong {
+  overflow: hidden;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+}
+
+.pharmacy-dispensed-table .dispensed-medicine strong {
+  color: var(--primary-navy);
+}
+
+.pharmacy-dispensed-table .medicine-action {
+  gap: 16px;
+}
+
+.pharmacy-dispensed-table .medicine-action > span {
+  font-size: 18px;
+}
+
+.pharmacy-dispensed-table .view-link {
+  font-size: 11px;
+}
+
+.dispense-dialog .inventory-dialog-scroll {
+  padding: 22px 30px;
+}
+
+.dispense-form-scroll .inventory-field-grid {
+  gap: 18px 12px;
+}
+
+.dispense-dialog .inventory-form-section + .inventory-form-section {
+  margin-top: 24px;
+}
+
+.dispense-dialog .dialog-actions,
+.dispensed-view-dialog .dialog-actions {
+  display: flex;
+  min-height: 58px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 0 24px;
+  border-top: 1px solid #e8ebf1;
+  background: #fff;
+}
+
+.prescription-field {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.prescription-field legend {
+  margin-bottom: 6px;
+  color: #4a4a4a;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 15px;
+}
+
+.prescription-options {
+  display: flex;
+  height: 30px;
+  align-items: center;
+  gap: 25px;
+  padding-left: 3px;
+}
+
+.prescription-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #4a4a4a;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.prescription-options input {
+  width: 15px;
+  height: 15px;
+  min-height: 15px;
+  margin: 0;
+  padding: 0;
+  accent-color: var(--primary-navy);
+}
+
+.dispense-dialog .inventory-action-form input:disabled {
+  border-color: #d7d7d7;
+  background: #f1f1f1;
+  color: #888;
+  opacity: 1;
+}
+
+.dialog-cancel,
+.dispense-submit {
+  min-height: 32px;
+  padding: 6px 14px;
+  border: 1px solid var(--primary-navy);
+  border-radius: 5px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dialog-cancel {
+  background: #fff;
+  color: var(--primary-navy);
+}
+
+.dispense-dialog .dialog-actions .dispense-submit {
+  border-color: #e6a52b;
+  width: 118px;
+  min-width: 118px;
+  padding-right: 4px;
+  padding-left: 4px;
+  background: #e6a52b;
+  color: #fff;
+  font-size: 8px;
+  white-space: nowrap;
+}
+
+.dispense-submit:hover {
+  background: #d09518;
+}
+
+.dispensed-back-button[hidden],
+.dispensed-patient-detail[hidden] {
+  display: none !important;
+}
+
+.dispensed-back-button {
+  position: absolute;
+  top: 8px;
+  left: -29px;
+  display: grid;
+  width: 20px;
+  height: 24px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #d79a16;
+  cursor: pointer;
+}
+
+.dispensed-patient-detail {
+  min-height: 0;
+  flex: 1 1 auto;
+}
+
+.dispensed-patient-card {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e8e1d6;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(31, 41, 55, 0.06);
+}
+
+.dispensed-profile-summary {
+  display: flex;
+  min-height: 134px;
+  flex: 0 0 134px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 35px;
+  padding: 38px 0 22px;
+  border-bottom: 1px solid #8298c2;
+}
+
+.dispensed-patient-identity {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 18px;
+}
+
+.dispensed-patient-avatar {
+  display: grid;
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--primary-navy);
+  color: #fff;
+}
+
+.dispensed-patient-heading {
+  min-width: 0;
+}
+
+.dispensed-patient-number {
+  display: block;
+  margin-bottom: 5px;
+  color: #c98200;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.dispensed-patient-heading h2 {
+  overflow: hidden;
+  margin: 0;
+  color: var(--primary-navy);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.15;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dispensed-patient-heading p {
+  overflow: hidden;
+  margin: 8px 0 0;
+  color: var(--primary-navy);
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dispensed-last-date {
+  display: grid;
+  gap: 4px;
+  padding-top: 5px;
+  text-align: right;
+}
+
+.dispensed-last-date span {
+  color: #7b8495;
+  font-size: 10px;
+}
+
+.dispensed-last-date strong {
+  color: var(--primary-navy);
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.dispensed-detail-sections {
+  display: flex;
+  min-height: 0;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.dispensed-history-section,
+.dispensed-record-section {
+  min-height: 0;
+  flex: 1 1 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #cbd5e1 transparent;
+  scrollbar-width: thin;
+}
+
+.dispensed-history-section {
+  padding: 24px 35px 12px;
+}
+
+.dispensed-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.dispensed-section-heading h3,
+.dispensed-record-section h3 {
+  margin: 0;
+  color: var(--primary-navy);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 17px;
+}
+
+.dispensed-section-heading p {
+  margin: 0;
+  color: #7b8495;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.dispensed-history-table {
+  width: 100%;
+  table-layout: fixed;
+  border: 1px solid #273971;
+  border-collapse: collapse;
+  background: #f2f5fb;
+  color: var(--primary-navy);
+}
+
+.dispensed-history-table th {
+  height: 28px;
+  padding: 5px 8px;
+  border-bottom: 1px solid #273971;
+  background: #f5f7fb;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.dispensed-history-table th:nth-child(1) { width: 15%; }
+.dispensed-history-table th:nth-child(2) { width: 14%; }
+.dispensed-history-table th:nth-child(3) { width: 11%; }
+.dispensed-history-table th:nth-child(4) { width: 24%; }
+.dispensed-history-table th:nth-child(5) { width: 21%; }
+.dispensed-history-table th:nth-child(6) { width: 15%; text-align: center; }
+
+.dispensed-history-table td {
+  height: 45px;
+  padding: 6px 8px;
+  border-bottom: 1px solid #273971;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.dispensed-history-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.dispensed-history-table td:last-child {
+  text-align: center;
+}
+
+.dispensed-medicine-cell strong {
+  display: block;
+  font-weight: 700;
+}
+
+.dispensed-status {
+  display: inline-flex;
+  min-width: 74px;
+  min-height: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #dcecdf;
+  color: #39724b;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.dispensed-record-section {
+  padding: 10px 35px 24px;
+}
+
+.dispensed-record-section h3 {
+  margin-bottom: 22px;
+}
+
+.dispensed-selected-record {
+  margin: 0 0 26px;
+  color: var(--primary-navy);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.dispensed-record-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.dispensed-record-field {
+  display: grid;
+  min-width: 0;
+  gap: 6px;
+}
+
+.dispensed-record-field span {
+  overflow: hidden;
+  color: var(--primary-navy);
+  font-size: 9px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dispensed-record-field strong {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  overflow: hidden;
+  padding: 9px 11px;
+  border: 1px solid #b8c7e1;
+  border-radius: 7px;
+  background: #f3f6fb;
+  color: var(--primary-navy);
+  font-size: 10px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+}
+
+body.patient-detail-open {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+body.patient-detail-open .dashboard-layout {
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+}
+
+body.patient-detail-open .pharmacy-patient-content {
+  display: flex;
+  height: 100dvh;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 50px 49px 41px 69px;
+}
+
+body.patient-detail-open .top-header {
+  position: relative;
+  flex: 0 0 auto;
+  align-items: flex-start;
+  margin: 0 0 30px;
+}
+
+body.patient-detail-open .dashboard-title {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+body.patient-detail-open .dashboard-subtitle {
+  margin-top: 2px;
+  color: #37445f;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+body.patient-detail-open .header-actions,
+body.patient-detail-open .pharmacy-patient-toolbar,
+body.patient-detail-open .pharmacy-table-card {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .pharmacy-patient-content .header-actions {
+    gap: 16px;
+    margin-right: 0;
+  }
+
+  .pharmacy-patient-toolbar {
+    align-items: flex-start;
+  }
+
+  .pharmacy-patient-toolbar .pharmacy-filter-controls {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .pharmacy-patient-content .top-header {
+    align-items: flex-start;
+  }
+
+  .pharmacy-patient-content .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .pharmacy-patient-content .pharmacy-search-wrap {
+    width: min(290px, calc(100% - 50px));
+  }
+
+  .pharmacy-patient-toolbar .pharmacy-filter-row {
+    gap: 10px;
+  }
+
+  .pharmacy-patient-toolbar .pharmacy-filter-controls {
+    width: 100%;
+  }
+
+  .pharmacy-patient-toolbar [data-date-filter="all"],
+  .pharmacy-patient-toolbar [data-date-filter="today"],
+  .pharmacy-patient-toolbar [data-date-filter="week"],
+  .pharmacy-patient-toolbar [data-date-filter="month"],
+  .date-range-toggle {
+    width: auto;
+    flex: 1 1 auto;
+  }
+
+  .pharmacy-patient-toolbar .pharmacy-filter-btn {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .date-range-menu {
+    right: 0;
+    left: auto;
+  }
+
+  .pharmacy-dispensed-table {
+    min-width: 780px;
+  }
+
+  .dispense-dialog {
+    width: calc(100vw - 24px);
+    height: calc(100dvh - 24px);
+    max-height: calc(100dvh - 24px);
+    transform: none;
+  }
+
+  .dispense-dialog .inventory-dialog-scroll {
+    padding: 18px;
+  }
+
+  .dispense-dialog .inventory-field.span-6 {
+    grid-column: 1 / -1;
+  }
+
+  body.patient-detail-open .pharmacy-patient-content {
+    padding-right: 24px;
+    padding-left: 52px;
+  }
+
+  .dispensed-profile-summary {
+    margin-right: 24px;
+    margin-left: 24px;
+    padding-top: 26px;
+  }
+
+  .dispensed-history-section,
+  .dispensed-record-section {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .dispensed-history-table th {
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 8px;
+  }
+
+  .dispensed-history-table td {
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 9px;
+  }
+
+  .dispensed-status {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  body.patient-detail-open .pharmacy-patient-content {
+    padding: 28px 14px 14px;
+  }
+
+  body.patient-detail-open .top-header {
+    margin-bottom: 16px;
+  }
+
+  body.patient-detail-open .dispensed-back-button {
+    position: static;
+    flex: 0 0 20px;
+    margin-top: 1px;
+  }
+
+  body.patient-detail-open .top-header {
+    gap: 8px;
+  }
+
+  .dispensed-profile-summary {
+    min-height: 110px;
+    flex-basis: 110px;
+    gap: 8px;
+    margin-right: 16px;
+    margin-left: 16px;
+    padding-top: 19px;
+  }
+
+  .dispensed-patient-avatar {
+    width: 50px;
+    height: 50px;
+    flex-basis: 50px;
+  }
+
+  .dispensed-patient-avatar iconify-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .dispensed-patient-identity {
+    gap: 10px;
+  }
+
+  .dispensed-patient-heading h2 {
+    font-size: 15px;
+  }
+
+  .dispensed-last-date {
+    padding-top: 2px;
+  }
+
+  .dispensed-last-date strong {
+    max-width: 90px;
+    font-size: 8px;
+    white-space: normal;
+  }
+
+  .dispensed-history-section,
+  .dispensed-record-section {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .dispensed-section-heading {
+    align-items: flex-start;
+  }
+
+  .dispensed-section-heading h3,
+  .dispensed-record-section h3 {
+    font-size: 11px;
+  }
+
+  .dispensed-section-heading p {
+    font-size: 8px;
+  }
+
+  .dispensed-history-table th {
+    font-size: 7px;
+  }
+
+  .dispensed-history-table td {
+    font-size: 8px;
+  }
+
+  .dispensed-record-fields {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .dispensed-record-section h3 {
+    margin-bottom: 12px;
+  }
+
+  .dispensed-selected-record {
+    margin-bottom: 14px;
+    font-size: 10px;
+  }
+}

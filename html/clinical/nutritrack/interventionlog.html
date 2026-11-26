@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHIMS - NutriTrack | Intervention Log</title>
+  <link rel="icon" type="image/png" href="../../../assets/images/MHIMS LOGO.png">
+  <meta name="description" content="NutriTrack child nutrition intervention log.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <link rel="stylesheet" href="../../../css/clinical/nutritrack/childrecords.css" data-mhims-page-style>
+  <link rel="stylesheet" href="../../../css/clinical/nutritrack/interventionlog.css" data-mhims-page-style>
+  <link rel="stylesheet" href="../../../css/logout.css">
+    <script type="module" src="../../../js/shared/sidebar-navigation.ts" data-mhims-router defer></script>
+  <script type="module" src="../../../js/clinical/nutritrack/interventionlog.ts?mhims-page=clinical-nutritrack-interventionlog" defer></script>
+  <script type="module" src="../../../js/logout.ts" data-mhims-global defer></script>
+</head>
+<body>
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <a href="../maindashboard/dashboard.html" class="sidebar-brand" title="MHIMS Clinical Portal">
+          <img src="../../../assets/images/MHIMS LOGO.png" alt="MHIMS Official Logo" class="sidebar-logo-img">
+        </a>
+        <nav class="sidebar-nav" aria-label="Clinical Navigation Modules">
+          <a href="../maindashboard/dashboard.html" class="nav-item-btn"><iconify-icon icon="ant-design:home-filled" width="22" height="22"></iconify-icon><span>Dashboard</span></a>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="bi:people-fill" width="22" height="22"></iconify-icon><span>ResidentCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../residentcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../residentcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../residentcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../residentcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa6-solid:person-breastfeeding" width="22" height="22"></iconify-icon><span>MaternaTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../maternatrack/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../maternatrack/patientrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient Records</span></a>
+              <a href="../maternatrack/consultationlog.html" class="submenu-item"><iconify-icon icon="mdi:clipboard-text-clock" width="18" height="18"></iconify-icon><span>Consultation Log</span></a>
+              <a href="../maternatrack/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../maternatrack/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa:child" width="22" height="22"></iconify-icon><span>NutriTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="childrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Child Records</span></a>
+              <a href="queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="interventionlog.html" class="submenu-item active" aria-current="page"><iconify-icon icon="icon-park-solid:notebook" width="18" height="18"></iconify-icon><span>Intervention Log</span></a>
+              <a href="calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="healthicons:lungs" width="22" height="22"></iconify-icon><span>TBCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../tbcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../tbcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../tbcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../tbcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="griddy-icons:pills-alt-02-filled" width="22" height="22"></iconify-icon><span>Pharmacy</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../pharmacy/dashboard.html" class="submenu-item"><iconify-icon icon="griddy-icons:pills-alt-02-filled" width="18" height="18"></iconify-icon><span>Medicine</span></a>
+              <a href="../pharmacy/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+            </div>
+          </div>
+          <a href="../statistics/dashboard.html?view=nutritrack" class="nav-item-btn"><iconify-icon icon="mdi:google-analytics" width="22" height="22"></iconify-icon><span>Statistics</span></a>
+        </nav>
+      </div>
+      <div class="sidebar-footer">
+        <a href="../../login.html" class="btn-logout" id="logoutBtn"><iconify-icon icon="cuida:logout-outline" width="22" height="22"></iconify-icon><span>Logout</span></a>
+      </div>
+    </aside>
+
+    <main class="main-content intervention-log-page">
+      <header class="top-header">
+        <div class="header-title-wrap">
+          <h1 class="dashboard-title">NutriTrack</h1>
+          <p class="dashboard-subtitle">Intervention Log</p>
+        </div>
+        <div class="header-actions">
+          <div class="header-search-wrap">
+            <input type="search" id="interventionSearchInput" class="search-input-field" placeholder="Search by Name or Intervention" aria-label="Search by Name or Intervention">
+            <iconify-icon icon="lucide:search" width="18" class="search-icon"></iconify-icon>
+          </div>
+          
+        </div>
+      </header>
+
+      <div class="records-toolbar">
+        <span class="filter-label">Filter by :</span>
+        <div class="filter-group">
+          <div class="filter-controls-wrap">
+            <button type="button" class="filter-btn active btn-all" id="btnFilterAll">All</button>
+            <button type="button" class="filter-btn progress-filter-btn" id="btnFilterPending" data-progress="Pending">Pending</button>
+            <button type="button" class="filter-btn progress-filter-btn" id="btnFilterOngoing" data-progress="On-Going">On-Going</button>
+            <button type="button" class="filter-btn progress-filter-btn" id="btnFilterComplete" data-progress="Complete">Complete</button>
+            <div class="filter-dropdown-wrap" id="programDropdownWrap">
+              <button type="button" class="filter-btn dropdown-toggle" id="programDropdownBtn" aria-haspopup="true" aria-expanded="false">
+                <span class="filter-btn-text">Programs</span><iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="18" height="18"></iconify-icon>
+              </button>
+              <div class="filter-dropdown-menu" id="programDropdownMenu">
+                <a class="filter-menu-item" data-filter="program" data-value="Referral">Referral</a>
+                <a class="filter-menu-item" data-filter="program" data-value="Feeding">Feeding</a>
+                <a class="filter-menu-item" data-filter="program" data-value="Monitoring">Monitoring</a>
+                <a class="filter-menu-item" data-filter="program" data-value="Deworming">Deworming</a>
+                <a class="filter-menu-item" data-filter="program" data-value="Counseling">Counseling</a>
+                <a class="filter-menu-item" data-filter="program" data-value="Vitamin A">Vitamin A</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn-add-record" id="btnAddIntervention">
+          <iconify-icon icon="mingcute:add-fill" width="17" height="17"></iconify-icon>Add Record
+        </button>
+      </div>
+
+      <div class="patient-table-card intervention-table-card">
+        <div class="table-responsive">
+          <table class="patient-table intervention-log-table" id="interventionTable">
+            <thead>
+              <tr><th>Patient No.</th><th>Child’s Name</th><th>Program</th><th>Progress</th><th>Last Updated</th><th><span class="visually-hidden">Actions</span></th></tr>
+            </thead>
+            <tbody>
+              <tr data-patient-no="PT-26-583741" data-program="Referral" data-progress="Pending">
+                <td>PT-26-583741</td><td><div class="patient-info-col"><span class="patient-col-name">Yoongi S. Boncodin</span><span class="patient-col-address">San Mateo, Camaligan</span></div></td>
+                <td>Referral</td><td><span class="status-pill status-warning"><span class="status-pill-label">Pending</span></span></td><td>08/10/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-951382" data-program="Feeding" data-progress="On-Going">
+                <td>PT-26-951382</td><td><div class="patient-info-col"><span class="patient-col-name">Joonie R. Antonio</span><span class="patient-col-address">San Juan, Camaligan</span></div></td>
+                <td>Feeding</td><td><span class="status-pill progress-ongoing"><span class="status-pill-label">On-Going</span></span></td><td>10/05/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-208694" data-program="Monitoring" data-progress="Pending">
+                <td>PT-26-208694</td><td><div class="patient-info-col"><span class="patient-col-name">Louis L. San Juan</span><span class="patient-col-address">San Ramon, Camaligan</span></div></td>
+                <td>Monitoring</td><td><span class="status-pill status-warning"><span class="status-pill-label">Pending</span></span></td><td>09/29/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-774031" data-program="Deworming" data-progress="Pending">
+                <td>PT-26-774031</td><td><div class="patient-info-col"><span class="patient-col-name">Kristina C. David</span><span class="patient-col-address">Gogon, Camaligan</span></div></td>
+                <td>Deworming</td><td><span class="status-pill status-warning"><span class="status-pill-label">Pending</span></span></td><td>08/10/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-194826" data-program="Counseling" data-progress="On-Going">
+                <td>PT-26-194826</td><td><div class="patient-info-col"><span class="patient-col-name">Shiki S. Rodriguez</span><span class="patient-col-address">San Mateo, Camaligan</span></div></td>
+                <td>Counseling</td><td><span class="status-pill progress-ongoing"><span class="status-pill-label">On-Going</span></span></td><td>09/29/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-730415" data-program="Vitamin A" data-progress="On-Going">
+                <td>PT-26-730415</td><td><div class="patient-info-col"><span class="patient-col-name">Kyla R. Bom</span><span class="patient-col-address">San Juan, Camaligan</span></div></td>
+                <td>Vitamin A</td><td><span class="status-pill progress-ongoing"><span class="status-pill-label">On-Going</span></span></td><td>08/10/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-462907" data-program="Referral" data-progress="On-Going">
+                <td>PT-26-462907</td><td><div class="patient-info-col"><span class="patient-col-name">Alexis D. San Juan</span><span class="patient-col-address">San Ramon, Camaligan</span></div></td>
+                <td>Referral</td><td><span class="status-pill progress-ongoing"><span class="status-pill-label">On-Going</span></span></td><td>08/10/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-815263" data-program="Monitoring" data-progress="Pending">
+                <td>PT-26-815263</td><td><div class="patient-info-col"><span class="patient-col-name">Kristine C. San Pablo</span><span class="patient-col-address">Gogon, Camaligan</span></div></td>
+                <td>Monitoring</td><td><span class="status-pill status-warning"><span class="status-pill-label">Pending</span></span></td><td>09/29/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-349178" data-program="Vitamin A" data-progress="Pending">
+                <td>PT-26-349178</td><td><div class="patient-info-col"><span class="patient-col-name">Maria K. Kanto</span><span class="patient-col-address">Gogon, Camaligan</span></div></td>
+                <td>Vitamin A</td><td><span class="status-pill status-warning"><span class="status-pill-label">Pending</span></span></td><td>09/29/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-627504" data-program="Feeding" data-progress="Pending">
+                <td>PT-26-627504</td><td><div class="patient-info-col"><span class="patient-col-name">Tara C. Inom</span><span class="patient-col-address">Gogon, Camaligan</span></div></td>
+                <td>Feeding</td><td><span class="status-pill status-warning"><span class="status-pill-label">Pending</span></span></td><td>08/10/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-347896" data-program="Monitoring" data-progress="On-Going">
+                <td>PT-26-347896</td><td><div class="patient-info-col"><span class="patient-col-name">Angelica Del Rosario</span><span class="patient-col-address">San Roque, Camaligan</span></div></td>
+                <td>Monitoring</td><td><span class="status-pill progress-ongoing"><span class="status-pill-label">On-Going</span></span></td><td>10/01/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-118492" data-program="Feeding" data-progress="Pending">
+                <td>PT-26-118492</td><td><div class="patient-info-col"><span class="patient-col-name">Christian J. Gomez</span><span class="patient-col-address">Santo Domingo, Camaligan</span></div></td>
+                <td>Feeding</td><td><span class="status-pill status-warning"><span class="status-pill-label">Pending</span></span></td><td>09/15/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-894102" data-program="Referral" data-progress="Pending">
+                <td>PT-26-894102</td><td><div class="patient-info-col"><span class="patient-col-name">Joshua P. Alcantara</span><span class="patient-col-address">San Jose, Camaligan</span></div></td>
+                <td>Referral</td><td><span class="status-pill status-warning"><span class="status-pill-label">Pending</span></span></td><td>10/12/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-441923" data-program="Monitoring" data-progress="On-Going">
+                <td>PT-26-441923</td><td><div class="patient-info-col"><span class="patient-col-name">Beatrice M. Reyes</span><span class="patient-col-address">San Mateo, Camaligan</span></div></td>
+                <td>Monitoring</td><td><span class="status-pill progress-ongoing"><span class="status-pill-label">On-Going</span></span></td><td>10/18/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-559102" data-program="Feeding" data-progress="Pending">
+                <td>PT-26-559102</td><td><div class="patient-info-col"><span class="patient-col-name">Daniel K. Tan</span><span class="patient-col-address">San Juan, Camaligan</span></div></td>
+                <td>Feeding</td><td><span class="status-pill status-warning"><span class="status-pill-label">Pending</span></span></td><td>10/20/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-728194" data-program="Vitamin A" data-progress="On-Going">
+                <td>PT-26-728194</td><td><div class="patient-info-col"><span class="patient-col-name">Sophia L. Castro</span><span class="patient-col-address">Gogon, Camaligan</span></div></td>
+                <td>Vitamin A</td><td><span class="status-pill progress-ongoing"><span class="status-pill-label">On-Going</span></span></td><td>10/22/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-663810" data-program="Counseling" data-progress="Pending">
+                <td>PT-26-663810</td><td><div class="patient-info-col"><span class="patient-col-name">Liam V. Mendoza</span><span class="patient-col-address">San Ramon, Camaligan</span></div></td>
+                <td>Counseling</td><td><span class="status-pill status-warning"><span class="status-pill-label">Pending</span></span></td><td>10/24/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+              <tr data-patient-no="PT-26-992147" data-program="Deworming" data-progress="On-Going">
+                <td>PT-26-992147</td><td><div class="patient-info-col"><span class="patient-col-name">Ethan R. Ramos</span><span class="patient-col-address">Sua, Camaligan</span></div></td>
+                <td>Deworming</td><td><span class="status-pill progress-ongoing"><span class="status-pill-label">On-Going</span></span></td><td>10/25/2026</td><td><span class="view-action-divider">|</span><a class="view-link" href="#view">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop intervention-modal" id="interventionModal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="interventionModalTitle" aria-hidden="true">
+    <div class="modal-dialog">
+      <header class="modal-header">
+        <div class="modal-header-titles">
+          <h2 class="modal-title" id="interventionModalTitle">Add Intervention Log</h2>
+          <p class="modal-subtitle">Record a new intervention entry for a child</p>
+        </div>
+        <button type="button" class="btn-modal-close" id="btnCloseInterventionModal" aria-label="Close modal"><iconify-icon icon="lucide:x" width="20" height="20"></iconify-icon></button>
+      </header>
+      <form class="modal-body" id="interventionForm" novalidate>
+        <div class="intervention-progress" aria-live="polite">
+          <div class="intervention-progress-summary">
+            <strong>1 of 3 required section complete</strong>
+            <strong>50%</strong>
+          </div>
+          <div class="intervention-progress-track" aria-label="50 percent complete"><span></span></div>
+          <p>1 section left: II. Findings &amp; Actions</p>
+        </div>
+        <div class="intervention-sections">
+          <section class="intervention-form-section">
+            <h3>I. LOG INFORMATION</h3>
+            <div class="form-row col-2">
+              <div class="form-group">
+                <label class="form-label" for="interventionPatientNo">Child Name<span class="req-star">*</span></label>
+                <select class="form-select" id="interventionPatientNo" name="patientNo" required>
+                  <option value="">Select a Child</option>
+                  <option value="PT-26-583741" data-name="Yoongi S. Boncodin" data-address="San Mateo, Camaligan">Yoongi S. Boncodin</option>
+                  <option value="PT-26-951382" data-name="Joonie R. Antonio" data-address="San Juan, Camaligan">Joonie R. Antonio</option>
+                  <option value="PT-26-208694" data-name="Louis L. San Juan" data-address="San Ramon, Camaligan">Louis L. San Juan</option>
+                  <option value="PT-26-774031" data-name="Kristina C. David" data-address="Gogon, Camaligan">Kristina C. David</option>
+                  <option value="PT-26-194826" data-name="Shiki S. Rodriguez" data-address="San Mateo, Camaligan">Shiki S. Rodriguez</option>
+                  <option value="PT-26-730415" data-name="Kyla R. Bom" data-address="San Juan, Camaligan">Kyla R. Bom</option>
+                  <option value="PT-26-462907" data-name="Alexis D. San Juan" data-address="San Ramon, Camaligan">Alexis D. San Juan</option>
+                  <option value="PT-26-815263" data-name="Kristine C. San Pablo" data-address="Gogon, Camaligan">Kristine C. San Pablo</option>
+                  <option value="PT-26-349178" data-name="Maria K. Kanto" data-address="Gogon, Camaligan">Maria K. Kanto</option>
+                  <option value="PT-26-627504" data-name="Tara C. Inom" data-address="Gogon, Camaligan">Tara C. Inom</option>
+                  <option value="PT-26-347896" data-name="Angelica Del Rosario" data-address="San Roque, Camaligan">Angelica Del Rosario</option>
+                  <option value="PT-26-118492" data-name="Christian J. Gomez" data-address="Santo Domingo, Camaligan">Christian J. Gomez</option>
+                  <option value="PT-26-894102" data-name="Joshua P. Alcantara" data-address="San Jose, Camaligan">Joshua P. Alcantara</option>
+                  <option value="PT-26-441923" data-name="Beatrice M. Reyes" data-address="San Mateo, Camaligan">Beatrice M. Reyes</option>
+                  <option value="PT-26-559102" data-name="Daniel K. Tan" data-address="San Juan, Camaligan">Daniel K. Tan</option>
+                  <option value="PT-26-728194" data-name="Sophia L. Castro" data-address="Gogon, Camaligan">Sophia L. Castro</option>
+                  <option value="PT-26-663810" data-name="Liam V. Mendoza" data-address="San Ramon, Camaligan">Liam V. Mendoza</option>
+                  <option value="PT-26-992147" data-name="Ethan R. Ramos" data-address="Sua, Camaligan">Ethan R. Ramos</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="interventionProgram">Intervention Type<span class="req-star">*</span></label>
+                <select class="form-select" id="interventionProgram" name="program" required>
+                  <option value="">Select Intervention</option>
+                  <option>Referral</option><option>Feeding</option><option>Monitoring</option><option>Deworming</option><option>Counseling</option><option>Vitamin A</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row col-2 intervention-date-row">
+              <div class="form-group">
+                <label class="form-label" for="interventionDate">Date Conducted</label>
+                <input class="form-input" type="date" id="interventionDate" name="date">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="interventionFollowUp">Next Follow-up</label>
+                <input class="form-input" type="date" id="interventionFollowUp" name="nextFollowUp">
+              </div>
+            </div>
+          </section>
+          <section class="intervention-form-section">
+            <h3>II. FINDINGS &amp; ACTIONS</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="interventionFindings">Findings / Observations<span class="req-star">*</span></label>
+                <textarea class="form-input intervention-textarea" id="interventionFindings" name="findings" required placeholder="e.g Child appears pale, guardian reports low appetite"></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="interventionActionTaken">Action Taken<span class="req-star">*</span></label>
+                <textarea class="form-input intervention-textarea" id="interventionActionTaken" name="actionTaken" required placeholder="e.g Provided supplementary feeding, administered Vitamin A dose"></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="interventionRecommendation">Recommendation to Guardian<span class="req-star">*</span></label>
+                <textarea class="form-input intervention-textarea" id="interventionRecommendation" name="recommendation" required placeholder="e.g Increase protein-rich food, return in 2 weeks"></textarea>
+              </div>
+            </div>
+          </section>
+          <section class="intervention-form-section">
+            <h3>III. ADDITIONAL NOTES</h3>
+            <div class="form-group">
+              <label class="form-label" for="interventionAppetite">Child’s Appetite</label>
+              <textarea class="form-input intervention-textarea" id="interventionAppetite" name="appetite" placeholder="e.g Child not eating properly. Alot of food was left"></textarea>
+            </div>
+            <h4>Feeding Details (if applicable)</h4>
+            <div class="form-row intervention-feeding-row">
+              <div class="form-group">
+                <label class="form-label" for="interventionFoodGiven">Food Given</label>
+                <input class="form-input" type="text" id="interventionFoodGiven" name="foodGiven" placeholder="Chicken with Broccoli &amp; Rice">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="interventionSessionCount">Number of Session</label>
+                <input class="form-input" type="number" id="interventionSessionCount" name="sessionCount" min="0" placeholder="8">
+              </div>
+            </div>
+          </section>
+        </div>
+        <input type="hidden" name="progress" value="On-Going">
+      </form>
+      <footer class="modal-footer">
+        <button type="submit" form="interventionForm" class="btn-modal-save" id="btnSaveIntervention">Save Record</button>
+        <button type="button" class="btn-modal-cancel" id="btnCancelIntervention">Cancel</button>
+      </footer>
+    </div>
+  </div>
+
+  <div class="modal-backdrop intervention-view-modal" id="interventionViewModal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="interventionViewPatientName" aria-hidden="true">
+    <div class="modal-dialog">
+      <header class="intervention-view-header">
+        <div class="intervention-view-avatar"><iconify-icon icon="solar:user-bold" width="36" height="36"></iconify-icon></div>
+        <div class="intervention-view-identity">
+          <div class="intervention-view-meta">
+            <span>Log ID: <strong id="interventionViewLogId">LOG001</strong></span>
+            <span class="intervention-view-updated"><iconify-icon icon="lucide:calendar-days" width="14" height="14"></iconify-icon>Last Updated: <time id="interventionViewLastUpdated">October 5, 2026</time></span>
+          </div>
+          <h2 id="interventionViewPatientName">Yoshika Sue Boncodin</h2>
+          <p class="intervention-view-nutrition">Nutrition Status: <span class="nutrition-status-pill" id="interventionViewNutritionStatus">Underweight</span></p>
+          <p class="intervention-view-registered"><iconify-icon icon="lucide:clipboard-list" width="13" height="13"></iconify-icon>Registered: <time id="interventionViewRegistered">October 1, 2026</time></p>
+        </div>
+        <button type="button" class="btn-modal-close" id="btnCloseInterventionView" aria-label="Close intervention details"><iconify-icon icon="lucide:x" width="20" height="20"></iconify-icon></button>
+      </header>
+      <div class="intervention-view-body">
+        <div class="intervention-view-sections">
+          <section class="intervention-view-section">
+            <h3>I. ASSIGNED INTERVENTION PROGRAMS</h3>
+            <article class="intervention-program-card">
+              <div class="intervention-program-heading">
+                <iconify-icon icon="lucide:utensils" width="28" height="28"></iconify-icon>
+                <div class="intervention-program-title">
+                  <span id="interventionViewProgramCategory">SUPPLEMENTARY FEEDING</span>
+                  <h4 id="interventionViewProgramName">Feeding Intervention</h4>
+                </div>
+                <div class="intervention-program-status">
+                  <span>Intervention Status:</span>
+                  <strong class="status-ongoing" id="interventionViewProgramStatus">On-Going</strong>
+                </div>
+              </div>
+              <div class="intervention-program-content">
+                <div class="intervention-session-progress" id="interventionViewSessionBlock">
+                  <h5>Session Progress</h5>
+                  <p id="interventionViewSessionSummary">3 of 8 sessions completed</p>
+                  <ol class="intervention-session-list">
+                    <li class="session-complete"><span class="session-number">1</span><span><strong>March 1, 2026</strong><small>Lugaw with egg · Appetite: Fair · 65% consumed</small></span><iconify-icon class="session-check-icon" icon="lucide:check" width="20" height="20"></iconify-icon></li>
+                    <li class="session-complete"><span class="session-number">2</span><span><strong>March 5, 2026</strong><small>Arroz caldo · Appetite: Good · 90% consumed</small></span><iconify-icon class="session-check-icon" icon="lucide:check" width="20" height="20"></iconify-icon></li>
+                    <li class="session-complete"><span class="session-number">3</span><span><strong>March 10, 2026</strong><small>Lugaw with egg · Appetite: Good · 80% consumed</small></span><iconify-icon class="session-check-icon" icon="lucide:check" width="20" height="20"></iconify-icon></li>
+                    <li class="session-upcoming"><span class="session-number">4</span><span><strong>March 14, 2026</strong><small>Not yet conducted</small></span></li>
+                  </ol>
+                </div>
+                <div class="intervention-follow-up">
+                  <iconify-icon icon="lucide:calendar-days" width="18" height="18"></iconify-icon>
+                  <div><strong>Next Follow-up: <time id="interventionViewFollowUpDate">March 14, 2026</time></strong><span id="interventionViewFollowUpSummary">4 days from now — Session 4 of 8 feeding schedule</span></div>
+                  <button type="button" id="btnRescheduleIntervention">Reschedule</button>
+                </div>
+              </div>
+            </article>
+          </section>
+          <section class="intervention-view-section">
+            <h3>II. ACTION AND RECOMMENDATION</h3>
+            <div class="intervention-view-details">
+              <article class="intervention-view-detail">
+                <h4><iconify-icon icon="lucide:zap" width="16" height="16"></iconify-icon>Action Taken</h4>
+                <p id="interventionViewActionTaken">Provided supplementary lugaw with egg to child during home visit. BNS Louis prepared and served the meal, observed child eating. Guardian was present and assisted. Child finished approximately 80% of the serving.</p>
+              </article>
+              <article class="intervention-view-detail">
+                <h4><iconify-icon icon="lucide:lightbulb" width="16" height="16"></iconify-icon>Recommendation to Guardian</h4>
+                <p id="interventionViewRecommendation">Increase protein-rich foods at home between feeding sessions — eggs, fish, or legumes daily if possible. Avoid giving sugary snacks before meal time as this reduces appetite. Guardian was advised to monitor weight at home and report any illness immediately.</p>
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
+      <footer class="intervention-view-footer">
+        <button type="button" class="intervention-print-btn" id="btnPrintIntervention" aria-label="Print intervention log"><iconify-icon icon="lucide:printer" width="21" height="21"></iconify-icon></button>
+        <button type="button" class="intervention-edit-btn" id="btnEditIntervention">Edit Log</button>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHIMS - Clinical Personnel | Patient Queuing</title>
+  <link rel="icon" type="image/png" href="../../../assets/images/MHIMSLOGO.png">
+  <meta name="description"
+    content="Patient Queuing Management - Municipal Health Office Information Management System (MHIMS), Municipality of Camaligan.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Iconify Icon Web Component Script -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <!-- Clinical Queuing CSS -->
+  <link rel="stylesheet" href="../../../css/personnel/maindashboard/queuing.css" data-mhims-page-style>
+
+  <!-- Clinical Queuing JS -->
+  <link rel="stylesheet" href="../../../css/logout.css">
+    <script type="module" src="../../../js/shared/sidebar-navigation.ts" data-mhims-router defer></script>
+  <script type="module" src="../../../js/personnel/maindashboard/queuing.ts?mhims-page=personnel-maindashboard-queuing" defer></script>
+  <script type="module" src="../../../js/logout.ts" data-mhims-global defer></script>
+</head>
+
+<body>
+
+  <div class="dashboard-layout">
+
+    <!-- ======================================================================
+         Left Sidebar Navigation
+         ====================================================================== -->
+    <aside class="sidebar">
+
+      <div class="sidebar-top">
+        <!-- MHIMS Crest Logo -->
+        <a href="dashboard.html" class="sidebar-brand" title="MHIMS Personnel Portal">
+          <img src="../../../assets/images/MHIMS LOGO.png" alt="MHIMS Official Logo" class="sidebar-logo-img">
+        </a>
+
+        <!-- Navigation Modules List -->
+        <nav class="sidebar-nav" aria-label="Personnel Navigation Modules">
+          <a href="dashboard.html" class="nav-item-btn"><iconify-icon icon="ant-design:home-filled" width="22" height="22"></iconify-icon><span>Dashboard</span></a>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="bi:people-fill" width="22" height="22"></iconify-icon><span>ResidentCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../residentcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../residentcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../residentcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../residentcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa6-solid:person-breastfeeding" width="22" height="22"></iconify-icon><span>MaternaTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../maternatrack/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../maternatrack/patientrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient Records</span></a>
+              <a href="../maternatrack/consultationlog.html" class="submenu-item"><iconify-icon icon="mdi:clipboard-text-clock" width="18" height="18"></iconify-icon><span>Consultation Log</span></a>
+              <a href="../maternatrack/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../maternatrack/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa:child" width="22" height="22"></iconify-icon><span>NutriTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../nutritrack/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../nutritrack/childrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Child Records</span></a>
+              <a href="../nutritrack/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../nutritrack/interventionlog.html" class="submenu-item"><iconify-icon icon="icon-park-solid:notebook" width="18" height="18"></iconify-icon><span>Intervention Log</span></a>
+              <a href="../nutritrack/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="healthicons:lungs" width="22" height="22"></iconify-icon><span>TBCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../tbcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../tbcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../tbcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../tbcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <a href="../pharmacy/dashboard.html" class="nav-item-btn"><iconify-icon icon="griddy-icons:pills-alt-02-filled" width="22" height="22"></iconify-icon><span>Pharmacy</span></a>
+        </nav>
+      </div>
+
+      <!-- Bottom Logout Button -->
+      <div class="sidebar-footer">
+        <a href="../../login.html" class="btn-logout" id="logoutBtn" title="Log out from system">
+          <iconify-icon icon="cuida:logout-outline" width="22" height="22"></iconify-icon>
+          <span>Logout</span>
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- ======================================================================
+         Main Queuing Content Area
+         ====================================================================== -->
+    <main class="main-content">
+
+      <!-- Top Header Bar -->
+      <header class="top-header">
+        <div class="header-title-wrap">
+          <h1 class="page-title">Queuing</h1>
+          <p class="page-subtitle">Manage Patient Queue</p>
+        </div>
+
+        <div class="header-actions">
+          <!-- Notification Bell Button -->
+          
+        </div>
+      </header>
+
+      <!-- 4 KPI Summary Cards -->
+      <section class="kpi-row" aria-label="Queue Metrics">
+        <!-- Card 1: Total in Queue -->
+        <article class="kpi-card">
+          <div class="kpi-icon-wrap navy">
+            <iconify-icon icon="fluent:people-queue-28-filled" width="52" height="52"></iconify-icon>
+          </div>
+          <div class="kpi-details">
+            <span class="kpi-title">Total in Queue</span>
+            <span class="kpi-value" id="kpiTotal">9</span>
+          </div>
+        </article>
+
+        <!-- Card 2: Currently Being Served -->
+        <article class="kpi-card">
+          <div class="kpi-icon-wrap green">
+            <iconify-icon icon="bi:person-fill-check" width="52" height="52"></iconify-icon>
+          </div>
+          <div class="kpi-details">
+            <span class="kpi-title">In Consultation</span>
+            <span class="kpi-value" id="kpiServed">1</span>
+          </div>
+        </article>
+
+        <!-- Card 3: Waiting -->
+        <article class="kpi-card">
+          <div class="kpi-icon-wrap amber">
+            <iconify-icon icon="mdi:account-clock" width="57" height="57"></iconify-icon>
+          </div>
+          <div class="kpi-details">
+            <span class="kpi-title">Waiting</span>
+            <span class="kpi-value" id="kpiWaiting">8</span>
+          </div>
+        </article>
+
+        <!-- Card 4: Completed Today -->
+        <article class="kpi-card">
+          <div class="kpi-icon-wrap purple">
+            <iconify-icon icon="fluent-mdl2:completed-solid" width="40" height="40"></iconify-icon>
+          </div>
+          <div class="kpi-details">
+            <span class="kpi-title">Completed Today</span>
+            <span class="kpi-value" id="kpiCompleted">28</span>
+          </div>
+        </article>
+
+        <div class="search-box queue-search-box">
+          <iconify-icon icon="fa:search" class="search-icon"></iconify-icon>
+          <input type="text" id="queueSearchInput" class="search-input"
+            placeholder="Search ID, Resident, Record" aria-label="Search patient queue">
+        </div>
+      </section>
+
+      <!-- Filter Controls Row -->
+      <div class="filter-row">
+        <span class="filter-label">Filter by :</span>
+        <div class="filter-dropdown-wrap">
+          <button type="button" class="filter-btn" id="filterDropdownBtn">
+            <span>All</span>
+            <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="20" height="20"></iconify-icon>
+          </button>
+          <div class="filter-dropdown-menu" id="filterDropdownMenu">
+            <a class="filter-menu-item active" data-category="All">All</a>
+            <a class="filter-menu-item" data-category="Resident">Resident</a>
+            <a class="filter-menu-item" data-category="Nutri">Nutri</a>
+            <a class="filter-menu-item" data-category="Materna">Materna</a>
+            <a class="filter-menu-item" data-category="TB">TB</a>
+          </div>
+        </div>
+        <span class="queue-sort-note">Clinical priority first · Queue number within each group</span>
+      </div>
+
+      <!-- Main Queuing 2-Column Grid -->
+      <div class="queuing-grid">
+
+        <!-- Left Column: Queuing Table -->
+        <section class="queue-table-card" aria-label="Patient Queue Table">
+          <div class="table-scroll-container">
+            <table class="queue-table">
+              <thead>
+                <tr>
+                  <th>Queue No.</th>
+                  <th>Patient Name</th>
+                  <th>Type of Consultation</th>
+                  <th>Category</th>
+                  <th style="text-align: center;">Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="queueTableBody">
+                <!-- Dynamically populated by the clinical queue script. -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Right Column: Current Patient & Queue Actions -->
+        <aside class="queue-side-col">
+
+          <!-- Card 1: Current Patient -->
+          <article class="current-patient-card" aria-label="Upcoming Patient">
+            <div class="card-header-bar">
+              <span>CURRENT PATIENT · <span id="cpQueueNo">#01</span></span>
+            </div>
+            <div class="current-patient-body">
+              <h2 class="cp-name" id="cpName">Juan Dela Cruz</h2>
+              <p class="cp-demographics" id="cpDemographics">General · Resident · San Mateo, Camaligan</p>
+
+              <button type="button" class="btn-view-details" id="btnViewDetails">
+                <span>View Details →</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 2: Queue Actions -->
+          <article class="queue-actions-card" aria-label="Queue Management Actions">
+            <h3 class="actions-heading">Queue Actions</h3>
+
+            <!-- 1. Call Next Patient -->
+            <button type="button" class="btn-queue-action primary" id="btnCallNext">
+              <iconify-icon icon="healthicons:megaphone" width="30" height="30"></iconify-icon>
+              <span>Call Next Patient</span>
+            </button>
+
+            <!-- 2. Mark as in Consultation -->
+            <button type="button" class="btn-queue-action outline" id="btnMarkConsultation">
+              <iconify-icon icon="bi:person-fill-check" width="26" height="26"></iconify-icon>
+              <span>Mark as in Consultation</span>
+            </button>
+
+            <!-- 3. Mark as Completed -->
+            <button type="button" class="btn-queue-action outline" id="btnMarkCompleted">
+              <iconify-icon icon="fluent-mdl2:completed-solid" width="21" height="21"></iconify-icon>
+              <span>Mark as Completed</span>
+            </button>
+
+            <!-- 4. Skip Patient -->
+            <button type="button" class="btn-queue-action outline" id="btnSkipPatient">
+              <iconify-icon icon="tabler:player-track-next-filled" width="21" height="21"></iconify-icon>
+              <span>Skip Patient</span>
+            </button>
+
+          </article>
+
+          <div class="queue-info-box">
+            <iconify-icon icon="emojione-monotone:information" width="25" height="25" class="info-icon"></iconify-icon>
+            <p class="info-text">
+              Patients are automatically sorted by queue number. You may manually adjust the order if needed.
+            </p>
+          </div>
+
+        </aside>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Patient Details Modal -->
+  <div class="modal-overlay" id="detailsModalOverlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Patient Full Details</h3>
+        <button type="button" class="modal-close-btn" id="modalCloseBtn">&times;</button>
+      </div>
+      <div class="modal-content">
+        <div class="modal-field">
+          <span>Resident ID:</span>
+          <span id="modalPatientId">CAM-2026-001</span>
+        </div>
+        <div class="modal-field">
+          <span>Patient Name:</span>
+          <span id="modalPatientName">Juan Dela Cruz</span>
+        </div>
+        <div class="modal-field">
+          <span>Demographics:</span>
+          <span id="modalDemographics">56 yrs old (Male)</span>
+        </div>
+        <div class="modal-field">
+          <span>Barangay Address:</span>
+          <span id="modalAddress">San Mateo, Camaligan</span>
+        </div>
+        <div class="modal-field">
+          <span>Type of Consultation:</span>
+          <span id="modalConsultation">General</span>
+        </div>
+        <div class="modal-field">
+          <span>Module Category:</span>
+          <span id="modalCategory">Resident</span>
+        </div>
+        <div class="modal-field">
+          <span>Current Status:</span>
+          <span id="modalStatus">In Consultation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

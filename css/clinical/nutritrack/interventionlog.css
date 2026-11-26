@@ -1,0 +1,1068 @@
+.main-content.intervention-log-page {
+  padding: 42px 22px 10px 40px;
+}
+
+.intervention-log-page .top-header {
+  margin: 0 16px 30px;
+}
+
+.intervention-log-page .dashboard-title {
+  font-size: 40px;
+}
+
+.intervention-log-page .dashboard-subtitle {
+  margin-top: 2px;
+  font-size: 20px;
+}
+
+.intervention-log-page .header-actions {
+  gap: 44px;
+}
+
+.intervention-log-page .search-input-field {
+  width: 242px;
+  height: 30px;
+  padding: 5px 32px 5px 10px;
+  border-color: #53688f;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.intervention-log-page .search-icon {
+  position: absolute;
+  top: 50%;
+  right: 9px;
+  color: #64748b;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.intervention-log-page .notification-btn {
+  width: 34px;
+  height: 30px;
+  background-color: #f8f6f3;
+}
+
+.intervention-log-page .records-toolbar {
+  position: relative;
+  justify-content: flex-end;
+  min-height: 36px;
+  margin-bottom: 22px;
+}
+
+.intervention-table-card {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.intervention-log-page .filter-group {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex: 0 1 auto;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  min-width: 0;
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+
+.intervention-log-page .filter-label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #4b5563;
+  transform: translateY(-50%);
+}
+
+.intervention-log-page .filter-controls-wrap > .filter-btn,
+.intervention-log-page .filter-controls-wrap > .filter-dropdown-wrap > .filter-btn {
+  height: 24px;
+  padding: 4px 12px;
+  font-size: 13px;
+}
+
+.intervention-log-page .filter-btn.btn-all {
+  min-width: 80px;
+  justify-content: center;
+}
+
+.intervention-log-page .btn-add-record {
+  min-width: 129px;
+  height: 28px;
+  padding: 4px 12px;
+}
+
+.intervention-table-card .table-responsive {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: none;
+  padding: 0;
+}
+
+.intervention-log-table {
+  width: 100%;
+  min-width: 720px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+  font-size: 13.5px;
+}
+
+.intervention-log-table th {
+  padding: 12px 14px;
+  background-color: #6783a9;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.intervention-log-table th:first-child {
+  width: 16%;
+  padding-left: 20px;
+}
+
+.intervention-log-table th:nth-child(2) { width: 22%; }
+.intervention-log-table th:nth-child(3) { width: 14%; }
+.intervention-log-table th:nth-child(4) { width: 23%; }
+.intervention-log-table th:nth-child(5) { width: 15%; }
+
+.intervention-log-table th:last-child {
+  width: 10%;
+  padding-right: 28px;
+}
+
+.intervention-log-table th:last-child,
+.intervention-log-table td:last-child {
+  text-align: right;
+}
+
+.intervention-log-table td {
+  padding: 12px 14px;
+  vertical-align: middle;
+  color: #1e293b;
+}
+
+.intervention-log-table td:first-child {
+  padding-left: 20px;
+  font-weight: 700;
+  color: var(--primary-navy);
+  white-space: nowrap;
+}
+
+.intervention-log-table tbody tr {
+  border-bottom: 1px solid #eef2f6;
+  transition: background-color 0.15s ease;
+}
+
+.intervention-log-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.intervention-log-table td:last-child {
+  padding-right: 28px;
+}
+
+.intervention-log-table .patient-info-col {
+  gap: 2px;
+}
+
+.intervention-log-table .patient-col-name {
+  font-size: 14px;
+}
+
+.intervention-log-table .patient-col-address {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.intervention-log-table .status-pill {
+  max-width: 100%;
+}
+
+.intervention-log-table td:nth-child(4) {
+  text-align: center;
+}
+
+.progress-ongoing {
+  background: #c7d9f2;
+  color: #102963;
+}
+
+.intervention-log-table .view-action-divider {
+  display: inline-block;
+  color: #94a3b8;
+  font-weight: 300;
+}
+
+.intervention-log-table .view-link {
+  color: var(--primary-navy);
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.intervention-log-table .view-link:hover {
+  color: var(--accent-gold);
+  text-decoration: underline;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.intervention-notes-input {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.intervention-modal .modal-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
+  padding: 20px 26px 0;
+  overflow: hidden;
+  gap: 0;
+}
+
+.intervention-modal .modal-dialog {
+  width: min(756px, calc(100vw - 40px));
+  max-width: 756px;
+  height: 610px;
+  max-height: calc(100vh - 40px);
+  border-radius: 4px;
+}
+
+body.intervention-modal-open {
+  overflow: hidden;
+}
+
+.intervention-modal .modal-header {
+  min-height: 74px;
+  padding: 12px 28px;
+}
+
+.intervention-modal .modal-title {
+  margin-bottom: 3px;
+  font-size: 23px;
+}
+
+.intervention-modal .modal-subtitle {
+  color: #e2e8f0;
+  font-size: 13px;
+}
+
+.intervention-progress {
+  flex: 0 0 auto;
+  margin-bottom: 8px;
+  padding: 11px 18px 9px;
+  border-radius: 6px;
+  background: #f1f4fa;
+  color: #101d56;
+}
+
+.intervention-progress-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.intervention-progress-track {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #d7dfeb;
+}
+
+.intervention-progress-track span {
+  display: block;
+  width: 50%;
+  height: 100%;
+  border-radius: inherit;
+  background: #101d56;
+}
+
+.intervention-progress p {
+  margin: 7px 0 0;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.intervention-sections {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 10px 12px 22px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #cbd5e1 #f8fafc;
+  scrollbar-width: thin;
+}
+
+.intervention-sections::-webkit-scrollbar {
+  width: 6px;
+}
+
+.intervention-sections::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 4px;
+}
+
+.intervention-sections::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+.intervention-modal .mhims-select-trigger {
+  height: 30px;
+  min-height: 30px;
+  padding: 0 30px 0 12px;
+  border: 1px solid #53688f;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.intervention-form-section {
+  margin: 0 0 20px;
+}
+
+.intervention-form-section h3 {
+  margin: 0 0 18px;
+  padding: 0 4px 11px;
+  border-bottom: 1px solid #d09518;
+  color: #101d56;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.intervention-form-section h4 {
+  margin: 18px 4px 14px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.intervention-form-section .form-grid {
+  gap: 18px;
+}
+
+.intervention-form-section .form-row.col-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  margin: 0 4px 18px;
+}
+
+.intervention-form-section .form-group {
+  gap: 6px;
+}
+
+.intervention-form-section .form-label {
+  color: #4b5563;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.intervention-modal input.form-input {
+  height: 30px;
+  min-height: 30px;
+  border: 1px solid #53688f;
+  border-radius: 4px;
+  padding: 5px 12px;
+  color: #101d56;
+  font-size: 12px;
+}
+
+.intervention-modal textarea.intervention-textarea {
+  height: 90px;
+  min-height: 90px;
+  border: 1px solid #53688f;
+  border-radius: 4px;
+  padding: 11px 13px;
+  color: #101d56;
+  font-size: 12px;
+  resize: vertical;
+}
+
+.intervention-modal .intervention-feeding-row {
+  grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+  gap: 14px;
+  margin: 0 4px;
+}
+
+.intervention-modal .modal-footer {
+  min-height: 61px;
+  padding: 10px 48px;
+}
+
+.intervention-modal .btn-modal-save,
+.intervention-modal .btn-modal-cancel {
+  height: 30px;
+  min-width: 88px;
+  padding: 0 18px;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+.intervention-modal .btn-modal-save {
+  min-width: 118px;
+}
+
+@media (max-width: 1024px) {
+  .main-content.intervention-log-page {
+    padding: 28px 16px 12px;
+  }
+
+  .intervention-log-page .top-header {
+    margin: 0 0 24px;
+  }
+}
+
+@media (max-width: 760px) {
+  .intervention-log-page .top-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .intervention-log-page .header-actions {
+    width: 100%;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .intervention-log-page .header-search-wrap,
+  .intervention-log-page .search-input-field {
+    width: 100%;
+  }
+
+  .intervention-sections {
+    padding: 20px;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .intervention-modal .modal-dialog {
+    width: calc(100vw - 24px);
+    height: calc(100vh - 32px);
+    max-height: calc(100vh - 32px);
+  }
+
+  .intervention-modal .modal-header {
+    padding: 12px 18px;
+  }
+
+  .intervention-modal .modal-title {
+    font-size: 19px;
+  }
+
+  .intervention-modal .modal-body {
+    padding: 16px 16px 0;
+  }
+
+  .intervention-form-section .form-row.col-2,
+  .intervention-modal .intervention-feeding-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .intervention-modal .modal-footer {
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .intervention-log-page .records-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .intervention-log-page .filter-label {
+    position: static;
+    transform: none;
+  }
+
+  .intervention-log-page .filter-group {
+    position: static;
+    width: 100%;
+    flex: 0 0 auto;
+    transform: none;
+  }
+
+  .intervention-log-page .filter-controls-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .intervention-log-page .btn-add-record {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 680px) {
+  .intervention-log-table {
+    min-width: 720px;
+  }
+}
+
+.intervention-view-modal .modal-dialog {
+  display: flex;
+  width: min(756px, calc(100vw - 40px));
+  max-width: 756px;
+  height: 610px;
+  max-height: calc(100vh - 40px);
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.intervention-view-header {
+  display: flex;
+  flex: 0 0 110px;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 17px 26px 12px;
+  background: #101d56;
+  color: #fff;
+}
+
+.intervention-view-avatar {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  place-items: center;
+  margin-top: 21px;
+  border-radius: 50%;
+  background: #fff;
+  color: #101d56;
+}
+
+.intervention-view-identity {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.intervention-view-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #e2e8f0;
+  font-size: 11px;
+}
+
+.intervention-view-meta strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.intervention-view-updated,
+.intervention-view-registered {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.intervention-view-identity h2 {
+  margin: 8px 0 3px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.intervention-view-nutrition,
+.intervention-view-registered {
+  margin: 0;
+  color: #e2e8f0;
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.nutrition-status-pill {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: #fef3c7;
+  color: #a16207;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.intervention-view-registered {
+  margin-top: 4px;
+}
+
+.intervention-view-header .btn-modal-close {
+  flex: 0 0 auto;
+  margin: -2px -10px 0 0;
+  color: #fff;
+}
+
+.intervention-view-body {
+  display: flex;
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+  padding: 16px 30px 0;
+}
+
+.intervention-view-sections {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 0 6px 22px 0;
+  overscroll-behavior: contain;
+  scrollbar-color: #cbd5e1 #f8fafc;
+  scrollbar-width: thin;
+}
+
+.intervention-view-sections::-webkit-scrollbar {
+  width: 6px;
+}
+
+.intervention-view-sections::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #cbd5e1;
+}
+
+.intervention-view-sections::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.intervention-view-section {
+  margin: 0 0 22px;
+}
+
+.intervention-view-section h3 {
+  margin: 0 0 13px;
+  padding: 0 4px 9px;
+  border-bottom: 1px solid #d09518;
+  color: #101d56;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.intervention-program-card {
+  overflow: hidden;
+  border: 1px solid #53688f;
+  border-radius: 6px;
+}
+
+.intervention-program-heading {
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 18px;
+  background: #f1f5fb;
+  color: #101d56;
+}
+
+.intervention-program-title {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.intervention-program-title > span {
+  color: #53688f;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+
+.intervention-program-title h4 {
+  margin: 2px 0 0;
+  color: #101d56;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.intervention-program-status {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+  color: #475569;
+  font-size: 10px;
+}
+
+.intervention-program-status strong {
+  padding: 4px 9px;
+  border-radius: 99px;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.intervention-program-status strong.status-pending {
+  background: #fef3c7;
+  color: #a16207;
+}
+
+.intervention-program-status strong.status-complete {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.intervention-program-content {
+  padding: 11px 28px 14px 74px;
+}
+
+.intervention-session-progress h5 {
+  margin: 0 0 3px;
+  color: #101d56;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.intervention-session-progress > p {
+  margin: 0 0 8px;
+  color: #64748b;
+  font-size: 10px;
+}
+
+.intervention-session-list {
+  display: grid;
+  gap: 5px;
+  margin: 0 0 0 29px;
+  padding: 0;
+  list-style: none;
+}
+
+.intervention-session-list li {
+  display: flex;
+  min-height: 55px;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border: 1px solid #101d56;
+  border-left: 5px solid #101d56;
+  border-radius: 4px;
+  color: #334155;
+}
+
+.intervention-session-list li > span:nth-child(2) {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.intervention-session-list li strong,
+.intervention-session-list li small {
+  display: block;
+}
+
+.intervention-session-list li strong {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.intervention-session-list li small {
+  margin-top: 2px;
+  color: #64748b;
+  font-size: 9px;
+}
+
+.intervention-session-list .session-check-icon {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  place-items: center;
+  box-sizing: border-box;
+  padding: 4px;
+  border-radius: 50%;
+  background: #315f37;
+  color: #fff;
+}
+
+.session-number {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  flex: 0 0 26px;
+  place-items: center;
+  border-radius: 50%;
+  background: #edf3fd;
+  color: #101d56;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.session-upcoming {
+  border-color: #a3a3a3 !important;
+  border-left-color: #858585 !important;
+  background: #f1f1f1;
+  color: #64748b !important;
+}
+
+.session-upcoming .session-number {
+  background: #e3e7ed;
+  color: #64748b;
+}
+
+.intervention-follow-up {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 11px;
+  padding: 10px 12px;
+  border: 1px solid #bfdbfe;
+  border-radius: 5px;
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+
+.intervention-follow-up[hidden] {
+  display: none;
+}
+
+.intervention-follow-up > iconify-icon {
+  flex: 0 0 auto;
+}
+
+.intervention-follow-up > div {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.intervention-follow-up strong,
+.intervention-follow-up span {
+  display: block;
+}
+
+.intervention-follow-up strong {
+  font-size: 10px;
+}
+
+.intervention-follow-up span {
+  margin-top: 3px;
+  color: #475569;
+  font-size: 9px;
+}
+
+.intervention-follow-up button {
+  flex: 0 0 auto;
+  padding: 5px 9px;
+  border: 1px solid #1d4ed8;
+  border-radius: 4px;
+  background: #fff;
+  color: #1d4ed8;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.intervention-view-details {
+  display: grid;
+  gap: 15px;
+}
+
+.intervention-view-detail h4 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 7px;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.intervention-view-detail h4 iconify-icon {
+  color: #101d56;
+}
+
+.intervention-view-detail p {
+  min-height: 82px;
+  margin: 0;
+  padding: 13px 15px;
+  border: 1px solid #53688f;
+  border-radius: 4px;
+  color: #334155;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.intervention-view-footer {
+  display: flex;
+  min-height: 61px;
+  flex: 0 0 61px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 10px 34px;
+  border-top: 1px solid #e2e8f0;
+  background: #fff;
+}
+
+.intervention-print-btn,
+.intervention-edit-btn {
+  display: inline-flex;
+  height: 31px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #101d56;
+  border-radius: 6px;
+  background: #fff;
+  color: #101d56;
+  cursor: pointer;
+}
+
+.intervention-print-btn {
+  width: 38px;
+}
+
+.intervention-edit-btn {
+  min-width: 104px;
+  padding: 0 18px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .intervention-view-modal .modal-dialog {
+    width: calc(100vw - 24px);
+    height: calc(100vh - 32px);
+    max-height: calc(100vh - 32px);
+  }
+
+  .intervention-view-header {
+    flex-basis: 110px;
+    gap: 10px;
+    padding: 15px 14px 10px;
+  }
+
+  .intervention-view-avatar {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    margin-top: 27px;
+  }
+
+  .intervention-view-avatar iconify-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .intervention-view-identity h2 {
+    font-size: 16px;
+  }
+
+  .intervention-view-meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 9px;
+  }
+
+  .intervention-view-body {
+    padding: 14px 16px 0;
+  }
+
+  .intervention-program-heading {
+    flex-wrap: wrap;
+    padding: 9px 12px;
+  }
+
+  .intervention-program-status {
+    width: 100%;
+    padding-left: 40px;
+  }
+
+  .intervention-program-content {
+    padding: 10px;
+  }
+
+  .intervention-session-list {
+    margin-left: 0;
+  }
+
+  .intervention-session-list li {
+    gap: 7px;
+    padding: 5px 7px;
+  }
+
+  .intervention-session-list li small {
+    line-height: 1.35;
+  }
+
+  .intervention-follow-up {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .intervention-follow-up button {
+    margin-left: 28px;
+  }
+
+  .intervention-view-footer {
+    padding: 10px 16px;
+  }
+}
+
+@media print {
+  body.intervention-printing * {
+    visibility: hidden !important;
+  }
+
+  body.intervention-printing #interventionViewModal,
+  body.intervention-printing #interventionViewModal * {
+    visibility: visible !important;
+  }
+
+  body.intervention-printing #interventionViewModal {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    overflow: visible !important;
+    background: #fff !important;
+  }
+
+  body.intervention-printing #interventionViewModal .modal-dialog {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+  }
+
+  body.intervention-printing #interventionViewModal .intervention-view-body,
+  body.intervention-printing #interventionViewModal .intervention-view-sections {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  body.intervention-printing #interventionViewModal .intervention-view-footer,
+  body.intervention-printing #interventionViewModal .btn-modal-close {
+    display: none !important;
+  }
+}

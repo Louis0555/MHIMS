@@ -1,0 +1,42 @@
+.access-denied-page > :not(.top-header):not(.portal-header):not(.access-denied-state) {
+  display: none !important;
+}
+
+.access-denied-state {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.access-denied-icon {
+  margin-bottom: 16px;
+  color: #101d56;
+  font-size: 64px;
+}
+
+.access-denied-state h2 {
+  margin: 0;
+  color: #101d56;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.access-denied-state p {
+  margin: 9px 0 0;
+  color: #666a70;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .access-denied-state { padding: 18px; }
+  .access-denied-icon { font-size: 54px; }
+  .access-denied-state h2 { font-size: 20px; }
+  .access-denied-state p { font-size: 14px; }
+}

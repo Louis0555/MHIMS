@@ -1,0 +1,141 @@
+.header-search-wrap {
+  position: relative;
+}
+
+.header-search-wrap .search-input-field,
+.search-box .search-input,
+.pharmacy-search-wrap input {
+  box-sizing: border-box;
+  height: 38px;
+  padding: 8px 38px 8px 16px;
+  border: 1.5px solid #101d56;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f5f3ec;
+  color: #101d56;
+  font-family: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-search-wrap .search-input-field::placeholder,
+.search-box .search-input::placeholder,
+.pharmacy-search-wrap input::placeholder {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.header-search-wrap .search-input-field:focus,
+.search-box .search-input:focus,
+.pharmacy-search-wrap input:focus {
+  border-color: #101d56;
+  box-shadow: 0 0 0 3px rgb(16 29 86 / 10%);
+}
+
+.search-box .search-icon,
+.header-search-wrap > .search-icon,
+.pharmacy-search-wrap > .search-icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  left: auto;
+  transform: translateY(-50%);
+  color: #64748b;
+}
+
+.header-search-wrap .search-icon-btn {
+  right: 12px;
+  color: #64748b;
+}
+
+.header-search-wrap .search-icon-btn:hover {
+  color: #101d56;
+}
+
+.queue-summary-search {
+  position: relative;
+  box-sizing: border-box;
+  height: 38px;
+  padding: 0 42px 0 16px;
+  border: 1.5px solid #101d56;
+  border-radius: 8px;
+  background-color: #f5f3ec;
+}
+
+.queue-summary-search > iconify-icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+}
+
+.queue-summary-search .search-input-field {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.queue-summary-search .search-input-field:focus {
+  box-shadow: none;
+}
+
+.queue-summary-search:focus-within {
+  box-shadow: 0 0 0 3px rgb(16 29 86 / 10%);
+}
+
+.pharmacy-patient-content .pharmacy-search-wrap {
+  height: 38px;
+}
+
+.pharmacy-patient-content .pharmacy-search-wrap input {
+  height: 38px;
+  padding: 8px 38px 8px 16px;
+  font-size: 13px;
+}
+
+.pharmacy-search-wrap > iconify-icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  left: auto;
+  transform: translateY(-50%);
+}
+
+.inventory-search {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 38px;
+  height: 38px;
+  padding: 0 42px 0 16px;
+  border: 1.5px solid #101d56;
+  border-radius: 8px;
+  background-color: #f5f3ec;
+}
+
+.inventory-search > iconify-icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+}
+
+.inventory-search input {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #101d56;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.inventory-search:focus-within {
+  box-shadow: 0 0 0 3px rgb(16 29 86 / 10%);
+}

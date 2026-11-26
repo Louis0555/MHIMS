@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHIMS - Statistics | Access Denied</title>
+  <link rel="icon" type="image/png" href="../../../assets/images/MHIMS LOGO.png">
+  <meta name="description" content="Statistics are restricted to the Clinical portal.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <link rel="stylesheet" href="../../../css/personnel/maindashboard/dashboard.css" data-mhims-page-style>
+  <link rel="stylesheet" href="../../../css/personnel/portal-pages.css" data-mhims-page-style>
+  <link rel="stylesheet" href="../../../css/clinical/statistics/dashboard.css" data-mhims-page-style>
+  <link rel="stylesheet" href="../../../css/shared/residentcare-statistics.css" data-mhims-page-style>
+  <link rel="stylesheet" href="../../../css/personnel/access-denied.css" data-mhims-page-style>
+  <link rel="stylesheet" href="../../../css/logout.css">
+    <script type="module" src="../../../js/shared/sidebar-navigation.ts" data-mhims-router defer></script>
+  <script type="module" src="../../../js/logout.ts" data-mhims-global defer></script>
+</head>
+
+<body class="statistics-page residentcare-statistics-page">
+  <div class="dashboard-layout statistics-layout">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <a href="../maindashboard/dashboard.html" class="sidebar-brand" title="Personnel Dashboard">
+          <img src="../../../assets/images/MHIMS LOGO.png" alt="MHIMS Official Logo" class="sidebar-logo-img">
+        </a>
+        <nav class="sidebar-nav" aria-label="Personnel Navigation Modules">
+          <a href="../maindashboard/dashboard.html" class="nav-item-btn"><iconify-icon icon="ant-design:home-filled" width="22" height="22"></iconify-icon><span>Dashboard</span></a>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="bi:people-fill" width="22" height="22"></iconify-icon><span>ResidentCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../residentcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../residentcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../residentcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../residentcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa6-solid:person-breastfeeding" width="22" height="22"></iconify-icon><span>MaternaTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../maternatrack/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../maternatrack/patientrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient Records</span></a>
+              <a href="../maternatrack/consultationlog.html" class="submenu-item"><iconify-icon icon="mdi:clipboard-text-clock" width="18" height="18"></iconify-icon><span>Consultation Log</span></a>
+              <a href="../maternatrack/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../maternatrack/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa:child" width="22" height="22"></iconify-icon><span>NutriTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../nutritrack/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../nutritrack/childrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Child Records</span></a>
+              <a href="../nutritrack/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../nutritrack/interventionlog.html" class="submenu-item"><iconify-icon icon="icon-park-solid:notebook" width="18" height="18"></iconify-icon><span>Intervention Log</span></a>
+              <a href="../nutritrack/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="healthicons:lungs" width="22" height="22"></iconify-icon><span>TBCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../tbcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../tbcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../tbcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../tbcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <a href="../pharmacy/dashboard.html" class="nav-item-btn"><iconify-icon icon="griddy-icons:pills-alt-02-filled" width="22" height="22"></iconify-icon><span>Pharmacy</span></a>
+        </nav>
+      </div>
+      <div class="sidebar-footer">
+        <a href="../../login.html" class="btn-logout" id="logoutBtn" title="Log out from system">
+          <iconify-icon icon="cuida:logout-outline" width="20" height="20"></iconify-icon><span>Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content statistics-main residentcare-statistics-main access-denied-page">
+      <header class="portal-header">
+        <div>
+          <h1 class="dashboard-title">Statistics</h1>
+          <p class="dashboard-subtitle">Statistics overview</p>
+        </div>
+      </header>
+      <section class="access-denied-state" role="status" aria-labelledby="accessDeniedTitle">
+        <iconify-icon class="access-denied-icon" icon="teenyicons:folder-no-access-solid" aria-hidden="true"></iconify-icon>
+        <h2 id="accessDeniedTitle">Sorry, you cannot view the page.</h2>
+        <p>No permission to access this page.</p>
+        <p>If you believe this is a mistake, please contact the administrator.</p>
+      </section>
+      <section class="residentcare-statistics-view residentcare-statistics-view-active" id="residentcareStatisticsView" aria-label="ResidentCare statistics">
+        <header class="statistics-header">
+          <div>
+            <h1 class="dashboard-title">ResidentCare Statistics</h1>
+            <p class="dashboard-subtitle">Statistics overview</p>
+          </div>
+        </header>
+        <div class="statistics-scroll residentcare-statistics-scroll" aria-label="ResidentCare reports and insights" tabindex="0">
+          <div class="overview-tab" aria-current="page">Overview</div>
+          <div class="residentcare-report-group">
+            <section class="statistics-panel residentcare-report-panel" id="residentcareFrequencyPanel" aria-labelledby="residentcareFrequencyTitle">
+              <section class="statistics-controls residentcare-report-controls" aria-label="Patient consultation frequency filters">
+                <div class="period-row">
+                  <strong>Period</strong>
+                  <div class="period-options" role="group" aria-label="Frequency report period">
+                    <button type="button" data-residentcare-period="daily">Daily</button>
+                    <button type="button" data-residentcare-period="monthly" class="active" aria-pressed="true">Monthly</button>
+                    <button type="button" data-residentcare-period="quarterly">Quarterly</button>
+                    <button type="button" data-residentcare-period="yearly">Yearly</button>
+                  </div>
+                  <span class="date-range-label" id="frequencyDateRangeLabel">Jan 1–31, 2026</span>
+                </div>
+                <div class="filter-row">
+                  <label class="filter-field" for="frequencyCategoryFilter">CATEGORIES
+                    <select id="frequencyCategoryFilter">
+                      <option value="consultation-frequency" selected>Patient Consultation Frequency</option>
+                      <option value="patient-distribution">Patient Distribution</option>
+                      <option value="consultation-causes">Causes of Consultation</option>
+                    </select>
+                  </label>
+                  <label class="filter-field" for="frequencyBarangayFilter">BARANGAY
+                    <select id="frequencyBarangayFilter">
+                      <option value="all">All Barangays</option>
+                      <option value="San Marcos">San Marcos</option>
+                      <option value="Santo Domingo">Santo Domingo</option>
+                      <option value="San Jose">San Jose</option>
+                      <option value="San Pablo">San Pablo</option>
+                      <option value="San Mateo">San Mateo</option>
+                      <option value="Santo Tomas">Santo Tomas</option>
+                      <option value="San Lucas">San Lucas</option>
+                      <option value="San Juan">San Juan</option>
+                      <option value="San Ramon">San Ramon</option>
+                      <option value="Gugon">Gugon</option>
+                      <option value="Dugcal">Dugcal</option>
+                      <option value="Sua">Sua</option>
+                      <option value="Marupit">Marupit</option>
+                      <option value="Tarosanan">Tarosanan</option>
+                      <option value="San Francisco">San Francisco</option>
+                    </select>
+                  </label>
+                  <div class="filter-field date-filter">
+                    <span>CUSTOM DATE RANGE</span>
+                    <div class="date-range-box"><iconify-icon icon="solar:calendar-date-bold" aria-hidden="true"></iconify-icon><span id="frequencyCustomDateRange">Jan 1 – Jan 31, 2026</span></div>
+                  </div>
+                </div>
+              </section>
+              <div class="panel-heading">
+                <div>
+                  <h2 id="residentcareFrequencyTitle">Monthly Patient Consultation Frequency</h2>
+                  <p>Number of patient consultations</p>
+                </div>
+                <span class="mock-data-badge">MOCK DATA</span>
+              </div>
+              <div class="chart-container"><svg id="residentcareFrequencyChart" role="img" aria-label="ResidentCare patient consultation frequency"></svg></div>
+            </section>
+            <section class="statistics-panel insights-panel residentcare-insights-panel" aria-labelledby="frequencyInsightsTitle">
+              <div class="insights-heading"><iconify-icon icon="ph:sparkle-fill" aria-hidden="true"></iconify-icon><h2 id="frequencyInsightsTitle">AI-Assisted Patient Consultation Frequency Insights</h2></div>
+              <div class="insights-content">
+                <section class="observation-column" aria-labelledby="frequencyObservationsTitle">
+                  <h3 id="frequencyObservationsTitle"><iconify-icon icon="mdi:lightbulb-on" aria-hidden="true"></iconify-icon>Key observations</h3>
+                  <ul id="frequencyObservations"></ul>
+                </section>
+                <section class="actions-column" aria-labelledby="frequencyActionsTitle">
+                  <h3 id="frequencyActionsTitle"><iconify-icon icon="mdi:account-check" aria-hidden="true"></iconify-icon>Suggested actions</h3>
+                  <ul id="frequencyActions"></ul>
+                </section>
+              </div>
+              <div class="insights-disclaimer">
+                <strong>AI supports — it does not replace — professional clinical judgment.</strong>
+                <p>These observations use fictional demonstration data and must be reviewed by a qualified healthcare professional.</p>
+              </div>
+            </section>
+          </div>
+
+          <div class="residentcare-report-group">
+            <section class="statistics-panel residentcare-report-panel" id="residentcareDistributionPanel" aria-labelledby="residentcareDistributionTitle">
+              <section class="statistics-controls residentcare-report-controls" aria-label="Patient distribution filters">
+                <div class="period-row">
+                  <strong>Period</strong>
+                  <div class="period-options" role="group" aria-label="Distribution report period">
+                    <button type="button" data-residentcare-period="daily">Daily</button>
+                    <button type="button" data-residentcare-period="monthly" class="active" aria-pressed="true">Monthly</button>
+                    <button type="button" data-residentcare-period="quarterly">Quarterly</button>
+                    <button type="button" data-residentcare-period="yearly">Yearly</button>
+                  </div>
+                  <span class="date-range-label" id="distributionDateRangeLabel">Jan 1–31, 2026</span>
+                </div>
+                <div class="filter-row">
+                  <label class="filter-field" for="distributionCategoryFilter">CATEGORIES
+                    <select id="distributionCategoryFilter">
+                      <option value="consultation-frequency">Patient Consultation Frequency</option>
+                      <option value="patient-distribution" selected>Patient Distribution</option>
+                      <option value="consultation-causes">Causes of Consultation</option>
+                    </select>
+                  </label>
+                  <label class="filter-field" for="distributionBarangayFilter">BARANGAY
+                    <select id="distributionBarangayFilter">
+                      <option value="all">All Barangays</option>
+                      <option value="San Marcos">San Marcos</option>
+                      <option value="Santo Domingo">Santo Domingo</option>
+                      <option value="San Jose">San Jose</option>
+                      <option value="San Pablo">San Pablo</option>
+                      <option value="San Mateo">San Mateo</option>
+                      <option value="Santo Tomas">Santo Tomas</option>
+                      <option value="San Lucas">San Lucas</option>
+                      <option value="San Juan">San Juan</option>
+                      <option value="San Ramon">San Ramon</option>
+                      <option value="Gugon">Gugon</option>
+                      <option value="Dugcal">Dugcal</option>
+                      <option value="Sua">Sua</option>
+                      <option value="Marupit">Marupit</option>
+                      <option value="Tarosanan">Tarosanan</option>
+                      <option value="San Francisco">San Francisco</option>
+                    </select>
+                  </label>
+                  <div class="filter-field date-filter">
+                    <span>CUSTOM DATE RANGE</span>
+                    <div class="date-range-box"><iconify-icon icon="solar:calendar-date-bold" aria-hidden="true"></iconify-icon><span id="distributionCustomDateRange">Jan 1 – Jan 31, 2026</span></div>
+                  </div>
+                </div>
+              </section>
+              <div class="panel-heading">
+                <div>
+                  <h2 id="residentcareDistributionTitle">Monthly Patient Distribution by Barangay</h2>
+                  <p>Unique registered residents per barangay</p>
+                </div>
+                <span class="mock-data-badge">MOCK DATA</span>
+              </div>
+              <div class="chart-container"><svg id="residentcareDistributionChart" role="img" aria-label="Registered residents by barangay"></svg></div>
+            </section>
+            <section class="statistics-panel insights-panel residentcare-insights-panel" aria-labelledby="distributionInsightsTitle">
+              <div class="insights-heading"><iconify-icon icon="ph:sparkle-fill" aria-hidden="true"></iconify-icon><h2 id="distributionInsightsTitle">AI-Assisted Patient Distribution Insights</h2></div>
+              <div class="insights-content">
+                <section class="observation-column" aria-labelledby="distributionObservationsTitle">
+                  <h3 id="distributionObservationsTitle"><iconify-icon icon="mdi:lightbulb-on" aria-hidden="true"></iconify-icon>Key observations</h3>
+                  <ul id="distributionObservations"></ul>
+                </section>
+                <section class="actions-column" aria-labelledby="distributionActionsTitle">
+                  <h3 id="distributionActionsTitle"><iconify-icon icon="mdi:account-check" aria-hidden="true"></iconify-icon>Suggested actions</h3>
+                  <ul id="distributionActions"></ul>
+                </section>
+              </div>
+              <div class="insights-disclaimer">
+                <strong>AI supports — it does not replace — professional clinical judgment.</strong>
+                <p>These observations use fictional demonstration data and must be reviewed by a qualified healthcare professional.</p>
+              </div>
+            </section>
+          </div>
+
+          <div class="residentcare-report-group">
+            <section class="statistics-panel residentcare-report-panel" id="residentcareCausesPanel" aria-labelledby="residentcareCausesTitle">
+              <section class="statistics-controls residentcare-report-controls" aria-label="Causes of consultation filters">
+                <div class="period-row">
+                  <strong>Period</strong>
+                  <div class="period-options" role="group" aria-label="Consultation causes report period">
+                    <button type="button" data-residentcare-period="daily">Daily</button>
+                    <button type="button" data-residentcare-period="monthly" class="active" aria-pressed="true">Monthly</button>
+                    <button type="button" data-residentcare-period="quarterly">Quarterly</button>
+                    <button type="button" data-residentcare-period="yearly">Yearly</button>
+                  </div>
+                  <span class="date-range-label" id="causesDateRangeLabel">Jan 1–31, 2026</span>
+                </div>
+                <div class="filter-row">
+                  <label class="filter-field" for="causesCategoryFilter">CATEGORIES
+                    <select id="causesCategoryFilter">
+                      <option value="consultation-frequency">Patient Consultation Frequency</option>
+                      <option value="patient-distribution">Patient Distribution</option>
+                      <option value="consultation-causes" selected>Causes of Consultation</option>
+                    </select>
+                  </label>
+                  <label class="filter-field" for="causesBarangayFilter">BARANGAY
+                    <select id="causesBarangayFilter">
+                      <option value="all">All Barangays</option>
+                      <option value="San Marcos">San Marcos</option>
+                      <option value="Santo Domingo">Santo Domingo</option>
+                      <option value="San Jose">San Jose</option>
+                      <option value="San Pablo">San Pablo</option>
+                      <option value="San Mateo">San Mateo</option>
+                      <option value="Santo Tomas">Santo Tomas</option>
+                      <option value="San Lucas">San Lucas</option>
+                      <option value="San Juan">San Juan</option>
+                      <option value="San Ramon">San Ramon</option>
+                      <option value="Gugon">Gugon</option>
+                      <option value="Dugcal">Dugcal</option>
+                      <option value="Sua">Sua</option>
+                      <option value="Marupit">Marupit</option>
+                      <option value="Tarosanan">Tarosanan</option>
+                      <option value="San Francisco">San Francisco</option>
+                    </select>
+                  </label>
+                  <div class="filter-field date-filter">
+                    <span>CUSTOM DATE RANGE</span>
+                    <div class="date-range-box"><iconify-icon icon="solar:calendar-date-bold" aria-hidden="true"></iconify-icon><span id="causesCustomDateRange">Jan 1 – Jan 31, 2026</span></div>
+                  </div>
+                </div>
+              </section>
+              <div class="panel-heading">
+                <div>
+                  <h2 id="residentcareCausesTitle">Monthly Causes of Consultation</h2>
+                  <p>Most common reasons residents visit the MHO</p>
+                </div>
+                <span class="mock-data-badge">MOCK DATA</span>
+              </div>
+              <div class="chart-container"><svg id="residentcareCausesChart" role="img" aria-label="Common causes of consultation"></svg></div>
+            </section>
+            <section class="statistics-panel insights-panel residentcare-insights-panel" aria-labelledby="causesInsightsTitle">
+              <div class="insights-heading"><iconify-icon icon="ph:sparkle-fill" aria-hidden="true"></iconify-icon><h2 id="causesInsightsTitle">AI-Assisted Causes of Consultation Insights</h2></div>
+              <div class="insights-content">
+                <section class="observation-column" aria-labelledby="causesObservationsTitle">
+                  <h3 id="causesObservationsTitle"><iconify-icon icon="mdi:lightbulb-on" aria-hidden="true"></iconify-icon>Key observations</h3>
+                  <ul id="causesObservations"></ul>
+                </section>
+                <section class="actions-column" aria-labelledby="causesActionsTitle">
+                  <h3 id="causesActionsTitle"><iconify-icon icon="mdi:account-check" aria-hidden="true"></iconify-icon>Suggested actions</h3>
+                  <ul id="causesActions"></ul>
+                </section>
+              </div>
+              <div class="insights-disclaimer">
+                <strong>AI supports — it does not replace — professional clinical judgment.</strong>
+                <p>These observations use fictional demonstration data and must be reviewed by a qualified healthcare professional.</p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+      <section class="residentcare-statistics-view maternatrack-statistics-view" id="maternaStatisticsView" aria-label="MaternaTrack statistics" hidden></section>
+    </main>
+  </div>
+</body>
+
+</html>

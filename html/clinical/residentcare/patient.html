@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHIMS - ResidentCare | General Health & Profiling</title>
+  <link rel="icon" type="image/png" href="../../../assets/images/MHIMS LOGO.png">
+  <meta name="description"
+    content="ResidentCare General Health & Profiling - Municipal Health Office Information Management System (MHIMS), Municipality of Camaligan.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Iconify Icon Web Component Script -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <!-- Clinical Dashboard Base CSS -->
+  <link rel="stylesheet" href="../../../css/clinical/residentcare/dashboard.css" data-mhims-page-style>
+
+  <!-- ResidentCare Profiling Specific CSS -->
+  <link rel="stylesheet" href="../../../css/clinical/residentcare/patient.css" data-mhims-page-style>
+  <link rel="stylesheet" href="../../../css/logout.css">
+
+  <!-- Clinical Dashboard JS -->
+    <script type="module" src="../../../js/shared/sidebar-navigation.ts" data-mhims-router defer></script>
+<script type="module" src="../../../js/clinical/residentcare/patient.ts?mhims-page=clinical-residentcare-patient" defer></script>
+  <script type="module" src="../../../js/logout.ts" data-mhims-global defer></script>
+</head>
+
+<body>
+
+  <div class="dashboard-layout">
+
+    <!-- ======================================================================
+         Left Sidebar Navigation
+         ====================================================================== -->
+    <aside class="sidebar">
+
+      <div class="sidebar-top">
+        <!-- MHIMS Crest Logo -->
+        <a href="../maindashboard/dashboard.html" class="sidebar-brand" title="MHIMS Clinical Portal">
+          <img src="../../../assets/images/MHIMS LOGO.png" alt="MHIMS Official Logo" class="sidebar-logo-img">
+        </a>
+
+        <!-- Navigation Modules List -->
+        <nav class="sidebar-nav" aria-label="Clinical Navigation Modules">
+          <a href="../maindashboard/dashboard.html" class="nav-item-btn"><iconify-icon icon="ant-design:home-filled" width="22" height="22"></iconify-icon><span>Dashboard</span></a>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="bi:people-fill" width="22" height="22"></iconify-icon><span>ResidentCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="patient.html" class="submenu-item active" aria-current="page"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa6-solid:person-breastfeeding" width="22" height="22"></iconify-icon><span>MaternaTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../maternatrack/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../maternatrack/patientrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient Records</span></a>
+              <a href="../maternatrack/consultationlog.html" class="submenu-item"><iconify-icon icon="mdi:clipboard-text-clock" width="18" height="18"></iconify-icon><span>Consultation Log</span></a>
+              <a href="../maternatrack/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../maternatrack/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa:child" width="22" height="22"></iconify-icon><span>NutriTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../nutritrack/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../nutritrack/childrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Child Records</span></a>
+              <a href="../nutritrack/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../nutritrack/interventionlog.html" class="submenu-item"><iconify-icon icon="icon-park-solid:notebook" width="18" height="18"></iconify-icon><span>Intervention Log</span></a>
+              <a href="../nutritrack/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="healthicons:lungs" width="22" height="22"></iconify-icon><span>TBCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../tbcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../tbcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../tbcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../tbcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="griddy-icons:pills-alt-02-filled" width="22" height="22"></iconify-icon><span>Pharmacy</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../pharmacy/dashboard.html" class="submenu-item"><iconify-icon icon="griddy-icons:pills-alt-02-filled" width="18" height="18"></iconify-icon><span>Medicine</span></a>
+              <a href="../pharmacy/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+            </div>
+          </div>
+          <a href="../statistics/dashboard.html" class="nav-item-btn"><iconify-icon icon="mdi:google-analytics" width="22" height="22"></iconify-icon><span>Statistics</span></a>
+        </nav>
+      </div>
+
+      <!-- Bottom Logout Button -->
+      <div class="sidebar-footer">
+        <a href="../../login.html" class="btn-logout" id="logoutBtn" title="Log out from system">
+          <iconify-icon icon="cuida:logout-outline" width="22" height="22"></iconify-icon>
+          <span>Logout</span>
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- ======================================================================
+         Main Content Area (ResidentCare Patient Profiling)
+         ====================================================================== -->
+    <main class="main-content">
+      <div id="residentPatientListView" class="resident-patient-list-view">
+
+
+      <!-- Top Header Bar -->
+      <header class="top-header">
+        <div class="header-title-wrap">
+          <h1 class="dashboard-title">ResidentCare</h1>
+          <p class="dashboard-subtitle">General Health & Profiling</p>
+        </div>
+
+        <div class="header-actions">
+          <!-- Search Input -->
+          <div class="header-search-wrap">
+            <input type="text" id="patientSearchInput" class="search-input-field" placeholder="Search patients name">
+            <button type="button" class="search-icon-btn" aria-label="Search">
+              <iconify-icon icon="lucide:search" width="18" height="18"></iconify-icon>
+            </button>
+          </div>
+
+          <!-- Notification Bell Button -->
+          
+        </div>
+      </header>
+
+      <!-- ResidentCare Filter Toolbar -->
+      <div class="residentcare-toolbar">
+        <span class="filter-label">Filter by :</span>
+        <div class="filter-group">
+          <div class="filter-controls-wrap">
+            <button type="button" class="filter-btn active btn-all" id="btnFilterAll">All</button>
+
+            <div class="filter-dropdown-wrap" id="barangayDropdownWrap">
+              <button type="button" class="filter-btn dropdown-toggle" id="barangayDropdownBtn"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="filter-btn-text">Barangay</span>
+                <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="18" height="18"></iconify-icon>
+              </button>
+              <div class="filter-dropdown-menu" id="barangayDropdownMenu">
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Marcos">San Marcos</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="Santo Domingo">Santo Domingo</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Jose">San Jose</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Pablo">San Pablo</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Mateo">San Mateo</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="Santo Tomas">Santo Tomas</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Lucas">San Lucas</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Juan">San Juan</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Ramon">San Ramon</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="Gugon">Gugon</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="Dugcal">Dugcal</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="Sua">Sua</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="Marupit">Marupit</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="Tarosanan">Tarosanan</a>
+                <a class="filter-menu-item" data-filter="barangay" data-value="San Francisco">San Francisco</a>
+              </div>
+            </div>
+
+            <div class="filter-dropdown-wrap" id="sexDropdownWrap">
+              <button type="button" class="filter-btn dropdown-toggle" id="sexDropdownBtn"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="filter-btn-text">Sex</span>
+                <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="18" height="18"></iconify-icon>
+              </button>
+              <div class="filter-dropdown-menu" id="sexDropdownMenu">
+                <a class="filter-menu-item" data-filter="sex" data-value="Male">Male</a>
+                <a class="filter-menu-item" data-filter="sex" data-value="Female">Female</a>
+              </div>
+            </div>
+
+            <button type="button" class="filter-btn" id="lastConsultBtn">Last Consult</button>
+
+            <div class="filter-dropdown-wrap" id="statusDropdownWrap">
+              <button type="button" class="filter-btn dropdown-toggle" id="statusDropdownBtn"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="filter-btn-text">Status</span>
+                <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="18" height="18"></iconify-icon>
+              </button>
+              <div class="filter-dropdown-menu" id="statusDropdownMenu">
+                <a class="filter-menu-item" data-filter="status" data-value="Completed">Completed</a>
+                <a class="filter-menu-item" data-filter="status" data-value="On-Going Treatment">On-Going Treatment</a>
+                <a class="filter-menu-item" data-filter="status" data-value="Monitor">Monitor</a>
+                <a class="filter-menu-item" data-filter="status" data-value="High Risk">High Risk</a>
+                <a class="filter-menu-item" data-filter="status" data-value="Missed to Follow-Up">Missed to Follow-Up</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn-add-record" id="btnAddRecord">
+          <iconify-icon icon="material-symbols:add" width="18" height="18"></iconify-icon>
+          <span>Add New Patient</span>
+        </button>
+      </div>
+
+      <!-- Patient Records Table Card -->
+      <div class="patient-table-card">
+        <div class="table-responsive">
+          <table class="patient-table" id="patientsTable">
+            <thead>
+              <tr>
+                <th>Patient No.</th>
+                <th>Patient Name</th>
+                <th>Sex</th>
+                <th>Age</th>
+                <th>Last Consult</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1 -->
+              <tr>
+                <td>PT-26-583741</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Giro Paulo A David</span>
+                    <span class="patient-col-address">San Mateo, Camaligan</span>
+                  </div>
+                </td>
+                <td>Male</td>
+                <td>21</td>
+                <td>May 26, 2026</td>
+                <td>
+                  <span class="status-pill monitor">
+                    <span class="status-dot"></span>
+                    <span>Monitor</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 2 -->
+              <tr>
+                <td>PT-26-951382</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Cessi R. Antonio</span>
+                    <span class="patient-col-address">San Juan, Camaligan</span>
+                  </div>
+                </td>
+                <td>Female</td>
+                <td>20</td>
+                <td>September 20, 2026</td>
+                <td>
+                  <span class="status-pill ongoing-treatment">
+                    <span class="status-dot"></span>
+                    <span>Ongoing Treatment</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 3 -->
+              <tr>
+                <td>PT-26-208694</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Louis L. San Juan</span>
+                    <span class="patient-col-address">San Ramon, Camaligan</span>
+                  </div>
+                </td>
+                <td>Male</td>
+                <td>16</td>
+                <td>August 29, 2026</td>
+                <td>
+                  <span class="status-pill ongoing-treatment">
+                    <span class="status-dot"></span>
+                    <span>Ongoing Treatment</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 4 -->
+              <tr>
+                <td>PT-26-774031</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Alexis D. Sandigan</span>
+                    <span class="patient-col-address">Gogon, Camaligan</span>
+                  </div>
+                </td>
+                <td>Female</td>
+                <td>40</td>
+                <td>January 17, 2025</td>
+                <td>
+                  <span class="status-pill high-risk">
+                    <span class="status-dot"></span>
+                    <span>High Risk</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 5 -->
+              <tr>
+                <td>PT-26-194826</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Yoshiki B. Reyes</span>
+                    <span class="patient-col-address">San Jose, Camaligan</span>
+                  </div>
+                </td>
+                <td>Male</td>
+                <td>30</td>
+                <td>November 17, 2026</td>
+                <td>
+                  <span class="status-pill completed">
+                    <span class="status-dot"></span>
+                    <span>Completed</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 6 -->
+              <tr>
+                <td>PT-26-730415</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Kristina A. San Juan</span>
+                    <span class="patient-col-address">San Pablo, Camaligan</span>
+                  </div>
+                </td>
+                <td>Female</td>
+                <td>30</td>
+                <td>June 27, 2026</td>
+                <td>
+                  <span class="status-pill completed">
+                    <span class="status-dot"></span>
+                    <span>Completed</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 7 -->
+              <tr>
+                <td>PT-26-462907</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Nory S. San Juan</span>
+                    <span class="patient-col-address">San Mateo, Camaligan</span>
+                  </div>
+                </td>
+                <td>Female</td>
+                <td>22</td>
+                <td>April 23, 2026</td>
+                <td>
+                  <span class="status-pill completed">
+                    <span class="status-dot"></span>
+                    <span>Completed</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 8 -->
+              <tr>
+                <td>PT-26-815263</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Canada D. Santos</span>
+                    <span class="patient-col-address">Santo Domingo, Camaligan</span>
+                  </div>
+                </td>
+                <td>Male</td>
+                <td>25</td>
+                <td>May 18, 2026</td>
+                <td>
+                  <span class="status-pill completed">
+                    <span class="status-dot"></span>
+                    <span>Completed</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 9 -->
+              <tr>
+                <td>PT-26-349178</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Amara Lomeda</span>
+                    <span class="patient-col-address">San Marcos, Camaligan</span>
+                  </div>
+                </td>
+                <td>Female</td>
+                <td>10</td>
+                <td>February 14, 2026</td>
+                <td>
+                  <span class="status-pill high-risk">
+                    <span class="status-dot"></span>
+                    <span>High Risk</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 10 -->
+              <tr>
+                <td>PT-26-627504</td>
+                <td>
+                  <div class="patient-info-col">
+                    <span class="patient-col-name">Ralph Axel C. Abiada</span>
+                    <span class="patient-col-address">San Marcos, Camaligan</span>
+                  </div>
+                </td>
+                <td>Male</td>
+                <td>15</td>
+                <td>November 14, 2026</td>
+                <td>
+                  <span class="status-pill missed-followup">
+                    <span class="status-dot"></span>
+                    <span>Missed to Follow-up</span>
+                  </span>
+                </td>
+                <td>
+                  <div class="view-action-cell">
+                    <span class="view-action-divider">|</span>
+                    <a href="#view" class="view-link">View</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>PT-26-738214</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Alexie Mae Santos</span><span class="patient-col-address">Dugcal, Camaligan</span></div></td>
+                <td>Female</td><td>28</td><td>November 20, 2026</td>
+                <td><span class="status-pill monitor"><span class="status-dot"></span><span>Monitor</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-406283</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Julius A. Agbayani</span><span class="patient-col-address">San Jose, Camaligan</span></div></td>
+                <td>Male</td><td>35</td><td>August 3, 2026</td>
+                <td><span class="status-pill ongoing-treatment"><span class="status-dot"></span><span>Ongoing Treatment</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-572931</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Mariel T. Flores</span><span class="patient-col-address">Santo Domingo, Camaligan</span></div></td>
+                <td>Female</td><td>52</td><td>November 18, 2026</td>
+                <td><span class="status-pill high-risk"><span class="status-dot"></span><span>High Risk</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-865207</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Kyle Gabriel M. Reyes</span><span class="patient-col-address">San Lucas, Camaligan</span></div></td>
+                <td>Male</td><td>14</td><td>September 11, 2026</td>
+                <td><span class="status-pill monitor"><span class="status-dot"></span><span>Monitor</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-193650</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Lara C. Mendoza</span><span class="patient-col-address">San Pablo, Camaligan</span></div></td>
+                <td>Female</td><td>31</td><td>October 21, 2026</td>
+                <td><span class="status-pill missed-followup"><span class="status-dot"></span><span>Missed to Follow-up</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-284719</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Joel M. Garcia</span><span class="patient-col-address">San Ramon, Camaligan</span></div></td>
+                <td>Male</td><td>61</td><td>November 22, 2026</td>
+                <td><span class="status-pill ongoing-treatment"><span class="status-dot"></span><span>Ongoing Treatment</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-617438</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Hazel Anne A. Cruz</span><span class="patient-col-address">Tarosanan, Camaligan</span></div></td>
+                <td>Female</td><td>7</td><td>July 14, 2026</td>
+                <td><span class="status-pill high-risk"><span class="status-dot"></span><span>High Risk</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-395126</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Rommel D. Navarro</span><span class="patient-col-address">Marupit, Camaligan</span></div></td>
+                <td>Male</td><td>48</td><td>September 5, 2026</td>
+                <td><span class="status-pill monitor"><span class="status-dot"></span><span>Monitor</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-740862</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Denice R. Salcedo</span><span class="patient-col-address">Sua, Camaligan</span></div></td>
+                <td>Female</td><td>39</td><td>November 5, 2026</td>
+                <td><span class="status-pill ongoing-treatment"><span class="status-dot"></span><span>Ongoing Treatment</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+              <tr>
+                <td>PT-26-503718</td>
+                <td><div class="patient-info-col"><span class="patient-col-name">Carlito C. Araneta</span><span class="patient-col-address">San Francisco, Camaligan</span></div></td>
+                <td>Male</td><td>22</td><td>August 28, 2026</td>
+                <td><span class="status-pill high-risk"><span class="status-dot"></span><span>High Risk</span></span></td>
+                <td><div class="view-action-cell"><span class="view-action-divider">|</span><a href="#view" class="view-link">View</a></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+
+      <section class="resident-profile-view" id="residentPatientProfileView" hidden>
+        <header class="resident-profile-page-header">
+          <div class="resident-profile-heading">
+            <button type="button" class="resident-profile-back" id="btnBackToPatients" aria-label="Back to patient list">
+              <iconify-icon icon="lucide:chevron-left" width="22" height="22"></iconify-icon>
+            </button>
+            <div>
+              <h1>ResidentCare</h1>
+              <p>Full Profile and Consultation History</p>
+            </div>
+          </div>
+          
+        </header>
+
+        <article class="resident-profile-card">
+          <div class="resident-profile-summary">
+            <div class="profile-person">
+              <div class="profile-avatar"><iconify-icon icon="solar:user-bold" width="42" height="42"></iconify-icon></div>
+              <div class="profile-person-details">
+                <span class="profile-patient-number" id="profilePatientNumber"></span>
+                <h2 id="profilePatientName"></h2>
+                <div class="profile-demographics">
+                  <span><iconify-icon icon="bi:people-fill" width="14" height="14"></iconify-icon><span id="profilePatientSex"></span></span>
+                  <span><iconify-icon icon="solar:calendar-bold" width="14" height="14"></iconify-icon><span id="profilePatientAge"></span></span>
+                  <span><iconify-icon icon="mdi:map-marker" width="15" height="15"></iconify-icon><span id="profilePatientAddress"></span></span>
+                </div>
+                <span class="profile-pwd-badge" id="profilePwdBadge" hidden><iconify-icon icon="mdi:wheelchair-accessibility" width="13" height="13"></iconify-icon> PWD Patient</span>
+              </div>
+            </div>
+            <div class="profile-summary-actions">
+              <div class="profile-action-buttons">
+                <button type="button" class="profile-edit-button" id="btnEditResidentProfile"><iconify-icon icon="lucide:pencil" width="14" height="14"></iconify-icon>Edit Profile</button>
+                <button type="button" class="profile-export-button" id="btnExportResidentProfile"><iconify-icon icon="lucide:download" width="14" height="14"></iconify-icon>Export</button>
+              </div>
+              <span class="profile-status-badge" id="profilePatientStatus"></span>
+              <span class="profile-last-updated" id="profileLastUpdated"></span>
+            </div>
+          </div>
+
+          <div class="resident-profile-content">
+            <section class="profile-section" aria-labelledby="profilePersonalTitle">
+              <h2 class="profile-section-title" id="profilePersonalTitle">I. Personal Details</h2>
+              <p class="profile-section-description">Core identification and contact information for this resident.</p>
+              <div class="profile-details-grid">
+                <div class="profile-detail family-serial"><span>Family Serial Number</span><strong data-profile-field="familySerial"></strong></div>
+                <div class="profile-detail"><span>Last Name</span><strong data-profile-field="lastName"></strong></div>
+                <div class="profile-detail"><span>Middle Name</span><strong data-profile-field="middleName"></strong></div>
+                <div class="profile-detail"><span>First Name</span><strong data-profile-field="firstName"></strong></div>
+                <div class="profile-detail"><span>Gender</span><strong data-profile-field="sex"></strong></div>
+                <div class="profile-detail"><span>Birthdate</span><strong data-profile-field="birthDate"></strong></div>
+                <div class="profile-detail"><span>Age</span><strong data-profile-field="age"></strong></div>
+                <div class="profile-detail address-detail"><span>Address</span><strong data-profile-field="address"></strong></div>
+                <div class="profile-detail queue-consultation-detail" id="profileQueueConsultationWrap" hidden><span>Type of Consultation</span><strong id="profileQueueConsultation"></strong></div>
+                <div class="profile-detail"><span>Contact Number</span><strong data-profile-field="contact"></strong></div>
+                <div class="profile-detail"><span>Civil Status</span><strong data-profile-field="civilStatus"></strong></div>
+                <div class="profile-detail philhealth-detail"><span>PhilHealth No.</span><strong data-profile-field="philHealthNumber"></strong></div>
+              </div>
+            </section>
+
+            <section class="profile-section" aria-labelledby="profileConsultationTitle">
+              <div class="profile-section-heading-row">
+                <div>
+                  <h2 class="profile-section-title" id="profileConsultationTitle">II. Consultation History</h2>
+                  <p class="profile-section-description">Resident General Consultation History</p>
+                </div>
+                <button type="button" class="profile-add-visit-button" id="btnAddResidentVisit"><iconify-icon icon="lucide:plus" width="16" height="16"></iconify-icon>Add Visit</button>
+              </div>
+              <div class="profile-table-wrap">
+                <table class="profile-history-table">
+                  <thead>
+                    <tr><th>Date</th><th>Chief Complaint</th><th>Vital Signs</th><th>Diagnosis</th><th>Treatment</th><th>Health Provider</th></tr>
+                  </thead>
+                  <tbody id="profileVisitHistoryBody"></tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="profile-section other-history-section" aria-labelledby="profileOtherHistoryTitle">
+              <h2 class="profile-section-title" id="profileOtherHistoryTitle">III. Other Consultation History</h2>
+              <p class="profile-section-description">Other Module Related Consultation History</p>
+              <h3 class="profile-subsection-title">A. TBCare</h3>
+              <h4 class="profile-subsection-heading">Screening Information</h4>
+              <div class="profile-screening-grid">
+                <div class="profile-detail"><span>Referred By :</span><strong data-profile-field="tbReferredBy"></strong></div>
+                <div class="profile-detail"><span>Mode of Screening</span><strong data-profile-field="tbScreeningMode"></strong></div>
+                <div class="profile-detail"><span>Date of Screening</span><strong data-profile-field="tbScreeningDate"></strong></div>
+              </div>
+              <h4 class="profile-subsection-heading lab-heading">Laboratory Test</h4>
+              <div class="profile-table-wrap">
+                <table class="profile-history-table laboratory-table">
+                  <thead>
+                    <tr><th>Test Conducted</th><th>Collection / Examination</th><th>Results</th><th>Remarks</th></tr>
+                  </thead>
+                  <tbody id="profileLabHistoryBody"></tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </article>
+      </section>
+    </main>
+
+  </div>
+
+  <div class="resident-modal-backdrop profile-modal-backdrop" id="addResidentVisitModal" aria-hidden="true">
+    <div class="resident-modal-dialog profile-edit-dialog profile-visit-dialog" role="dialog" aria-modal="true" aria-labelledby="addResidentVisitTitle">
+      <header class="resident-modal-header">
+        <div><h2 id="addResidentVisitTitle">Add Consultation Visit</h2><p>Logs to the Resident’s Consultation History</p></div>
+        <button type="button" class="resident-modal-close" data-close-visit-modal aria-label="Close modal"><iconify-icon icon="lucide:x" width="20" height="20"></iconify-icon></button>
+      </header>
+      <form class="profile-visit-form" id="addResidentVisitForm">
+        <div class="profile-visit-scroll">
+          <div class="profile-visit-date-provider">
+            <div class="resident-form-group"><label for="visitDate">Date of Consultation</label><input id="visitDate" name="date" type="date" required></div>
+            <div class="resident-form-group"><label for="visitProvider">Name Of Attending Provider</label><input id="visitProvider" name="provider" type="text" placeholder="e.g. BHW John Caesar Antonio"></div>
+          </div>
+          <div class="resident-form-group profile-visit-wide-field"><label for="visitComplaint">Chief Complaints</label><textarea id="visitComplaint" name="complaint" placeholder="What The Patient Reports On This Visit"></textarea></div>
+          <div class="profile-vitals-grid">
+            <div class="resident-form-group"><label for="visitWeight">Weight (kg)</label><input id="visitWeight" name="weight" type="number" step="0.1" min="0" placeholder="58"></div>
+            <div class="resident-form-group"><label for="visitHeight">Height (cm)</label><input id="visitHeight" name="height" type="number" step="0.1" min="0" placeholder="160"></div>
+            <div class="resident-form-group"><label for="visitBloodPressure">Blood Pressure</label><input id="visitBloodPressure" name="bloodPressure" type="text" placeholder="120/80"></div>
+            <div class="resident-form-group"><label for="visitPulse">Pulse Rate (PR)</label><input id="visitPulse" name="pulse" type="number" min="0" placeholder="bpm"></div>
+            <div class="resident-form-group"><label for="visitSpo2">O₂ Saturation (SPO2)</label><input id="visitSpo2" name="spo2" type="number" min="0" max="100" placeholder="%"></div>
+            <div class="resident-form-group"><label for="visitTemperature">Temperature</label><input id="visitTemperature" name="temperature" type="number" step="0.1" placeholder="36.5 C"></div>
+          </div>
+          <div class="resident-form-group profile-visit-wide-field"><label for="visitDiagnosis">Diagnosis</label><textarea id="visitDiagnosis" name="diagnosis" placeholder="Attending Provider’s Diagnosis"></textarea></div>
+          <div class="resident-form-group profile-visit-wide-field"><label for="visitTreatment">Medication / Treatment</label><textarea id="visitTreatment" name="treatment" placeholder="Medicines Given Or Treatment Plan"></textarea></div>
+        </div>
+        <footer class="resident-modal-footer profile-visit-footer">
+          <p></p>
+          <div><button type="submit" class="resident-btn-save">Save Record</button><button type="button" class="resident-btn-cancel" data-close-visit-modal>Cancel</button></div>
+        </footer>
+      </form>
+    </div>
+  </div>
+
+  
+
+  <div class="resident-modal-backdrop" id="addPatientModal" aria-hidden="true">
+    <div class="resident-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="addPatientModalTitle">
+      <header class="resident-modal-header">
+        <div>
+          <h2 id="addPatientModalTitle">Add New Patient</h2>
+          <p>Fill in the details below to register a new patient</p>
+        </div>
+        <button type="button" class="resident-modal-close" id="btnCloseAddPatient" aria-label="Close modal">
+          <iconify-icon icon="lucide:x" width="20" height="20"></iconify-icon>
+        </button>
+      </header>
+
+      <div class="resident-progress">
+        <div class="resident-progress-card">
+          <div class="resident-progress-heading">
+            <strong id="patientProgressSummary">0 of 2 required sections complete</strong>
+            <strong id="patientProgressPercent">0%</strong>
+          </div>
+          <div
+            class="resident-progress-track"
+            id="patientProgressTrack"
+            role="progressbar"
+            aria-label="Patient registration completion"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0">
+            <span class="resident-progress-bar" id="patientProgressBar"></span>
+          </div>
+          <div class="resident-progress-meta">
+            <span id="patientProgressNote">2 sections left: I. Patient Information, II. Initial Consultation</span>
+            <span id="patientDraftStatus">Complete the required fields to update progress</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="resident-patient-form" id="addPatientForm" novalidate>
+        <div class="resident-form-scroll">
+          <section class="resident-form-section" data-progress-section="patient-information">
+            <h3 class="resident-form-section-title">FAMILY RECORD</h3>
+            <div class="resident-form-grid cols-2">
+              <div class="resident-form-group">
+                <label for="familySerial">Family Serial Number</label>
+                <input id="familySerial" name="familySerial" type="text" placeholder="FSN-00000">
+              </div>
+              <div class="resident-form-group">
+                <label for="facilityCode">Facility Code</label>
+                <input id="facilityCode" name="facilityCode" type="text">
+              </div>
+              <div class="resident-form-group">
+                <label for="headOfFamily">Head Of The Family</label>
+                <input id="headOfFamily" name="headOfFamily" type="text" placeholder="Full name of household head">
+              </div>
+            </div>
+
+            <h3 class="resident-form-section-title with-divider">I. PATIENT INFORMATION</h3>
+            <div class="resident-form-grid cols-3">
+              <div class="resident-form-group">
+                <label for="patientLastName">Last Name <span class="required-mark">*</span></label>
+                <input id="patientLastName" name="lastName" type="text" placeholder="Dela Cruz" required>
+              </div>
+              <div class="resident-form-group">
+                <label for="patientFirstName">First Name <span class="required-mark">*</span></label>
+                <input id="patientFirstName" name="firstName" type="text" placeholder="Juan" required>
+              </div>
+              <div class="resident-form-group">
+                <label for="patientMiddleName">Middle Name</label>
+                <input id="patientMiddleName" name="middleName" type="text" placeholder="Luna">
+              </div>
+
+              <div class="resident-form-group">
+                <label for="patientSuffix">Suffix</label>
+                <select id="patientSuffix" name="suffix">
+                  <option value="">Select suffix</option>
+                  <option>Jr.</option>
+                  <option>Sr.</option>
+                  <option>II</option>
+                  <option>III</option>
+                  <option>IV</option>
+                </select>
+              </div>
+              <div class="resident-form-group">
+                <label for="patientBirthDate">Birthdate <span class="required-mark">*</span></label>
+                <input id="patientBirthDate" name="birthDate" type="date" required>
+              </div>
+              <div class="resident-form-group">
+                <label for="patientAge">Age</label>
+                <input id="patientAge" name="age" type="text" placeholder="Auto" readonly>
+              </div>
+
+              <div class="resident-form-group">
+                <label for="patientBirthplace">Birthplace</label>
+                <input id="patientBirthplace" name="birthplace" type="text" placeholder="City / Municipality">
+              </div>
+              <fieldset class="resident-choice-group">
+                <legend>Sex <span class="required-mark">*</span></legend>
+                <div class="resident-choice-options">
+                  <label><input type="radio" name="sex" value="Female" required> Female</label>
+                  <label><input type="radio" name="sex" value="Male" required> Male</label>
+                </div>
+              </fieldset>
+              <fieldset class="resident-choice-group">
+                <legend>Are you a Person with Disability (PWD)? <span class="required-mark">*</span></legend>
+                <div class="resident-choice-options">
+                  <label><input type="radio" name="isPwd" value="Yes" required> Yes</label>
+                  <label><input type="radio" name="isPwd" value="No" required> No</label>
+                </div>
+              </fieldset>
+
+              <div class="resident-form-group">
+                <label for="pwdIdStatus">PWD ID Status</label>
+                <select id="pwdIdStatus" name="pwdIdStatus">
+                  <option value="">If applicable</option>
+                  <option>With PWD ID</option>
+                  <option>For application</option>
+                  <option>No PWD ID</option>
+                </select>
+              </div>
+              <div class="resident-form-group">
+                <label for="pwdIdNumber">PWD ID Number</label>
+                <input id="pwdIdNumber" name="pwdIdNumber" type="text" placeholder="If applicable">
+              </div>
+              <div class="resident-form-group">
+                <label for="disabilityType">Type of Disability <span class="required-mark">*</span></label>
+                <select id="disabilityType" name="disabilityType" disabled>
+                  <option value="">Select Type of Disability</option>
+                  <option>Visual</option>
+                  <option>Hearing</option>
+                  <option>Speech</option>
+                  <option>Physical</option>
+                  <option>Intellectual</option>
+                  <option>Mental</option>
+                  <option>Learning</option>
+                  <option>Psychosocial</option>
+                  <option>Multiple Disabilities</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="resident-form-group">
+                <label for="patientBloodType">Blood Type</label>
+                <select id="patientBloodType" name="bloodType">
+                  <option value="">Select Blood Type</option>
+                  <option value="A+">A +</option><option value="A-">A -</option>
+                  <option value="B+">B +</option><option value="B-">B -</option>
+                  <option value="AB+">AB +</option><option value="AB-">AB -</option>
+                  <option value="O+">O +</option><option value="O-">O -</option>
+                </select>
+              </div>
+
+              <div class="resident-form-group">
+                <label for="patientCivilStatus">Civil Status <span class="required-mark">*</span></label>
+                <select id="patientCivilStatus" name="civilStatus" required>
+                  <option value="">Select Civil Status</option>
+                  <option>Single</option><option>Married</option><option>Widowed</option>
+                  <option>Separated</option><option>Annulled</option>
+                </select>
+              </div>
+              <div class="resident-form-group">
+                <label for="spouseName">Spouse's Name</label>
+                <input id="spouseName" name="spouseName" type="text" placeholder="If married">
+              </div>
+              <div class="resident-form-group">
+                <label for="maidenName">Maiden Name</label>
+                <input id="maidenName" name="maidenName" type="text" placeholder="For married women">
+              </div>
+              <div class="resident-form-group">
+                <label for="motherName">Mother's Name</label>
+                <input id="motherName" name="motherName" type="text" placeholder="For verification">
+              </div>
+            </div>
+
+            <h3 class="resident-form-section-title with-divider">RESIDENTIAL ADDRESS</h3>
+            <div class="resident-form-grid cols-3">
+              <div class="resident-form-group">
+                <label for="patientZone">Zone, Street <span class="required-mark">*</span></label>
+                <select id="patientZone" name="zone" required>
+                  <option value="">e.g. Zone 2</option>
+                  <option>Zone 1</option><option>Zone 2</option><option>Zone 3</option>
+                  <option>Zone 4</option><option>Zone 5</option><option>Zone 6</option>
+                  <option>Zone 7</option><option>Zone 8</option><option>Zone 9</option>
+                  <option>Zone 10</option>
+                </select>
+              </div>
+              <div class="resident-form-group">
+                <label for="patientBarangay">Barangay <span class="required-mark">*</span></label>
+                <select id="patientBarangay" name="barangay" required>
+                  <option value="">e.g. San Pablo</option>
+                  <option>San Marcos</option><option>Santo Domingo</option><option>San Jose</option>
+                  <option>San Pablo</option><option>San Mateo</option><option>Santo Tomas</option>
+                  <option>San Lucas</option><option>San Juan</option><option>San Ramon</option>
+                  <option>Gugon</option><option>Dugcal</option><option>Sua</option>
+                  <option>Marupit</option><option>Tarosanan</option><option>San Francisco</option>
+                </select>
+              </div>
+              <div class="resident-form-group">
+                <label for="patientMunicipality">Municipality, Province <span class="required-mark">*</span></label>
+                <input id="patientMunicipality" name="municipality" type="text" placeholder="e.g. Camaligan" required>
+              </div>
+              <div class="resident-form-group">
+                <label for="patientContact">Contact Number <span class="required-mark">*</span></label>
+                <input id="patientContact" name="contact" type="tel" placeholder="09" required>
+              </div>
+            </div>
+
+            <h3 class="resident-form-section-title with-divider">EDUCATION &amp; EMPLOYMENT</h3>
+            <div class="resident-form-grid cols-3">
+              <div class="resident-form-group">
+                <label for="educationAttainment">Educational Attainment</label>
+                <select id="educationAttainment" name="education">
+                  <option value="">Select Educational Attainment</option>
+                  <option>No Formal Education</option><option>Elementary</option>
+                  <option>High School</option><option>Senior High School</option>
+                  <option>Vocational</option><option>College</option><option>Postgraduate</option>
+                </select>
+              </div>
+              <div class="resident-form-group">
+                <label for="employmentStatus">Employment Status</label>
+                <select id="employmentStatus" name="employmentStatus">
+                  <option value="">Select Employment Status</option>
+                  <option>Employed</option><option>Self-Employed</option><option>Unemployed</option>
+                  <option>Student</option><option>Retired</option><option>Not Applicable</option>
+                </select>
+              </div>
+              <div class="resident-form-group">
+                <label for="positionInFamily">Position in the Family</label>
+                <select id="positionInFamily" name="familyPosition">
+                  <option value="">Select Position</option>
+                  <option>Father</option><option>Mother</option><option>Son</option>
+                  <option>Daughter</option><option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <h3 class="resident-form-section-title with-divider">HOUSEHOLD &amp; PROGRAM MEMBERSHIP</h3>
+            <div class="resident-form-grid cols-3">
+              <fieldset class="resident-choice-group">
+                <legend>DSWD NHTS? <span class="required-mark">*</span></legend>
+                <div class="resident-choice-options">
+                  <label><input type="radio" name="nhts" value="Yes" required> Yes</label>
+                  <label><input type="radio" name="nhts" value="No" required> No</label>
+                </div>
+              </fieldset>
+              <fieldset class="resident-choice-group">
+                <legend>4Ps Member? <span class="required-mark">*</span></legend>
+                <div class="resident-choice-options">
+                  <label><input type="radio" name="fourPs" value="Yes" required> Yes</label>
+                  <label><input type="radio" name="fourPs" value="No" required> No</label>
+                </div>
+              </fieldset>
+              <fieldset class="resident-choice-group">
+                <legend>PhilHealth Member? <span class="required-mark">*</span></legend>
+                <div class="resident-choice-options">
+                  <label><input type="radio" name="philHealthMember" value="Yes" required> Yes</label>
+                  <label><input type="radio" name="philHealthMember" value="No" required> No</label>
+                </div>
+              </fieldset>
+              <fieldset class="resident-choice-group">
+                <legend>Status Type</legend>
+                <div class="resident-choice-options">
+                  <label><input type="radio" name="philHealthStatus" value="Member"> Member</label>
+                  <label><input type="radio" name="philHealthStatus" value="Dependent"> Dependent</label>
+                </div>
+              </fieldset>
+              <fieldset class="resident-choice-group">
+                <legend>Primary Care Benefit (PCB) Member? <span class="required-mark">*</span></legend>
+                <div class="resident-choice-options">
+                  <label><input type="radio" name="pcbMember" value="Yes" required> Yes</label>
+                  <label><input type="radio" name="pcbMember" value="No" required> No</label>
+                </div>
+              </fieldset>
+              <div class="resident-form-group">
+                <label for="philHealthNumber">PhilHealth No.</label>
+                <input id="philHealthNumber" name="philHealthNumber" type="text" placeholder="If member">
+              </div>
+              <div class="resident-form-group">
+                <label for="membershipCategory">Membership Category</label>
+                <select id="membershipCategory" name="membershipCategory">
+                  <option value="">Select Membership Category</option>
+                  <option>FE - Private</option><option>Government</option>
+                  <option>Indigent</option><option>Sponsored</option><option>Lifetime</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <section class="resident-form-section" data-progress-section="initial-consultation">
+            <h3 class="resident-form-section-title with-divider">II. INITIAL CONSULTATION</h3>
+            <div class="resident-form-grid cols-3">
+              <div class="resident-form-group">
+                <label for="modeOfTransaction">Mode of Transaction</label>
+                <select id="modeOfTransaction" name="modeOfTransaction">
+                  <option>Walk-in</option><option>Visited</option>
+                </select>
+              </div>
+              <div class="resident-form-group">
+                <label for="natureOfVisit">Nature Of Visit <span class="required-mark">*</span></label>
+                <select id="natureOfVisit" name="natureOfVisit" required>
+                  <option value="New Consultation / Case">New Consultation / Case</option>
+                  <option>New Admission</option>
+                  <option>Follow-Up visit</option>
+                </select>
+              </div>
+              <div class="resident-form-group">
+                <label for="consultationDate">Date of Consultation <span class="required-mark">*</span></label>
+                <input id="consultationDate" name="consultationDate" type="date" required>
+              </div>
+              <div class="resident-form-group">
+                <label for="consultationTime">Consultation Time <span class="required-mark">*</span></label>
+                <input id="consultationTime" name="consultationTime" type="time" required>
+              </div>
+              <div class="resident-form-group">
+                <label for="referredFrom">Referred From</label>
+                <input id="referredFrom" name="referredFrom" type="text" placeholder="Facility / Barangay">
+              </div>
+              <div class="resident-form-group">
+                <label for="referredTo">Referred To</label>
+                <input id="referredTo" name="referredTo" type="text" placeholder="Facility / Department">
+              </div>
+              <div class="resident-form-group">
+                <label for="referredBy">Referred By</label>
+                <input id="referredBy" name="referredBy" type="text" placeholder="Name">
+              </div>
+              <div class="resident-form-group span-2">
+                <label for="referralReason">Reason(s) For Referral</label>
+                <input id="referralReason" name="referralReason" type="text" placeholder="Brief reason">
+              </div>
+            </div>
+
+            <h3 class="resident-form-section-title with-divider">VITAL SIGNS</h3>
+            <div class="resident-form-grid cols-3">
+              <div class="resident-form-group">
+                <label for="consultHeight">Height (cm) <span class="required-mark">*</span></label>
+                <input id="consultHeight" name="height" type="number" step="0.1" min="0" placeholder="160" required>
+              </div>
+              <div class="resident-form-group">
+                <label for="consultWeight">Weight (kg) <span class="required-mark">*</span></label>
+                <input id="consultWeight" name="weight" type="number" step="0.1" min="0" placeholder="58" required>
+              </div>
+              <div class="resident-form-group">
+                <label for="consultTemperature">Temperature <span class="required-mark">*</span></label>
+                <input id="consultTemperature" name="temperature" type="number" step="0.1" placeholder="36.5 C" required>
+              </div>
+              <div class="resident-form-group">
+                <label for="consultBloodPressure">Blood Pressure <span class="required-mark">*</span></label>
+                <input id="consultBloodPressure" name="bloodPressure" type="text" placeholder="120/80" required>
+              </div>
+              <div class="resident-form-group">
+                <label for="consultPulse">Pulse Rate (PR) <span class="required-mark">*</span></label>
+                <input id="consultPulse" name="pulse" type="number" min="0" placeholder="bpm" required>
+              </div>
+              <div class="resident-form-group">
+                <label for="consultSpo2">O₂ Saturation (SPO2)</label>
+                <input id="consultSpo2" name="spo2" type="number" min="0" max="100" placeholder="%">
+              </div>
+              <fieldset class="resident-choice-group">
+                <legend>Existing Medical Condition? <span class="required-mark">*</span></legend>
+                <div class="resident-choice-options">
+                  <label><input type="radio" name="hasCondition" value="Yes" required> Yes</label>
+                  <label><input type="radio" name="hasCondition" value="No" required> No</label>
+                </div>
+              </fieldset>
+              <div class="resident-form-group">
+                <label for="medicalCondition">Condition <span class="required-mark" id="conditionRequiredMark">*</span></label>
+                <input id="medicalCondition" name="condition" type="text" placeholder="e.g. Hypertension, Type 2 Diabetes, Asthma" disabled>
+              </div>
+              <div class="resident-form-group">
+                <label for="conditionDate">Date Diagnosed</label>
+                <input id="conditionDate" name="conditionDate" type="date">
+              </div>
+              <div class="resident-form-group">
+                <label for="conditionStatus">Status <span class="required-mark">*</span></label>
+                <select id="conditionStatus" name="conditionStatus" required>
+                  <option value="">Select Condition Status</option>
+                  <option>Monitor</option><option>Under Treatment</option>
+                  <option>High Risk</option><option>Resolved</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="resident-form-group provider-field">
+              <label for="attendingProvider">Name Of Attending Provider <span class="required-mark">*</span></label>
+              <input id="attendingProvider" name="attendingProvider" type="text" placeholder="e.g. BHW John Caesar Antonio" required>
+            </div>
+
+            <fieldset class="resident-choice-group visit-purpose-group" data-required-group="visit-purpose">
+              <legend>Type Of Consultation / Purpose Of Visit <span class="required-mark">*</span></legend>
+              <div class="resident-visit-options">
+                <label><input type="checkbox" name="visitPurpose" value="General"> General</label>
+                <label><input type="checkbox" name="visitPurpose" value="Child Immunization"> Child Immunization</label>
+                <label><input type="checkbox" name="visitPurpose" value="Family Planning / Postpartum"> Family Planning / Postpartum</label>
+                <label><input type="checkbox" name="visitPurpose" value="Prenatal"> Prenatal</label>
+                <label><input type="checkbox" name="visitPurpose" value="Sickness"> Sickness</label>
+                <label><input type="checkbox" name="visitPurpose" value="Child Care & Nutrition"> Child Care &amp; Nutrition</label>
+                <label><input type="checkbox" name="visitPurpose" value="Tuberculosis"> Tuberculosis</label>
+                <label><input type="checkbox" name="visitPurpose" value="Injury"> Injury</label>
+                <label><input type="checkbox" name="visitPurpose" value="Firecracker Injury"> Firecracker Injury</label>
+              </div>
+            </fieldset>
+
+            <div class="resident-form-grid cols-2 consultation-notes">
+              <div class="resident-form-group">
+                <label for="chiefComplaints">Chief Complaints</label>
+                <textarea id="chiefComplaints" name="chiefComplaints" placeholder="What the patient reports on this visit"></textarea>
+              </div>
+              <div class="resident-form-group">
+                <label for="consultDiagnosis">Diagnosis</label>
+                <textarea id="consultDiagnosis" name="diagnosis" placeholder="Attending provider's diagnosis"></textarea>
+              </div>
+              <div class="resident-form-group span-2">
+                <label for="medicationTreatment">Medication / Treatment</label>
+                <textarea id="medicationTreatment" name="medicationTreatment" placeholder="Medicines given or treatment plan"></textarea>
+              </div>
+            </div>
+          </section>
+        </div>
+      </form>
+
+      <footer class="resident-modal-footer">
+        <p>Complete the 2 section details, then save your record.</p>
+        <div>
+          <button type="submit" class="resident-btn-save" form="addPatientForm">Save Record</button>
+          <button type="button" class="resident-btn-cancel" id="btnCancelAddPatient">Cancel</button>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>

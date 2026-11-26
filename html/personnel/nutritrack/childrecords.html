@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHIMS - NutriTrack | Child Records</title>
+  <link rel="icon" type="image/png" href="../../../assets/images/MHIMS LOGO.png">
+  <meta name="description"
+    content="MaternaTrack Patient Records - General Health & Profiling - Municipal Health Office Information Management System (MHIMS), Municipality of Camaligan.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Iconify Icon Web Component Script -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <!-- MaternaTrack Patient Records CSS -->
+  <link rel="stylesheet" href="../../../css/personnel/nutritrack/childrecords.css" data-mhims-page-style>
+
+  <!-- MaternaTrack Sidebar Shared Logic -->
+    <script type="module" src="../../../js/shared/sidebar-navigation.ts" data-mhims-router defer></script>
+
+  <!-- NutriTrack Child Records Logic -->
+  <script type="module" src="../../../js/personnel/nutritrack/childrecords.ts?mhims-page=personnel-nutritrack-childrecords" defer></script>
+  <link rel="stylesheet" href="../../../css/logout.css">
+  <script type="module" src="../../../js/logout.ts" data-mhims-global defer></script>
+</head>
+
+<body>
+
+  <div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <div class="sidebar-top">
+        <!-- MHIMS Crest Logo -->
+        <a href="../maindashboard/dashboard.html" class="sidebar-brand" title="MHIMS Personnel Portal">
+          <img src="../../../assets/images/MHIMS LOGO.png" alt="MHIMS Official Logo" class="sidebar-logo-img">
+        </a>
+
+        <!-- Navigation Modules List -->
+        <nav class="sidebar-nav" aria-label="Personnel Navigation Modules">
+          <a href="../maindashboard/dashboard.html" class="nav-item-btn"><iconify-icon icon="ant-design:home-filled" width="22" height="22"></iconify-icon><span>Dashboard</span></a>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="bi:people-fill" width="22" height="22"></iconify-icon><span>ResidentCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../residentcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../residentcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../residentcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../residentcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa6-solid:person-breastfeeding" width="22" height="22"></iconify-icon><span>MaternaTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../maternatrack/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../maternatrack/patientrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient Records</span></a>
+              <a href="../maternatrack/consultationlog.html" class="submenu-item"><iconify-icon icon="mdi:clipboard-text-clock" width="18" height="18"></iconify-icon><span>Consultation Log</span></a>
+              <a href="../maternatrack/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../maternatrack/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa:child" width="22" height="22"></iconify-icon><span>NutriTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="childrecords.html" class="submenu-item active" aria-current="page"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Child Records</span></a>
+              <a href="queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="interventionlog.html" class="submenu-item"><iconify-icon icon="icon-park-solid:notebook" width="18" height="18"></iconify-icon><span>Intervention Log</span></a>
+              <a href="calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="healthicons:lungs" width="22" height="22"></iconify-icon><span>TBCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../tbcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../tbcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../tbcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../tbcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <a href="../pharmacy/dashboard.html" class="nav-item-btn"><iconify-icon icon="griddy-icons:pills-alt-02-filled" width="22" height="22"></iconify-icon><span>Pharmacy</span></a>
+        </nav>
+      </div>
+
+      <!-- Bottom Logout Button -->
+      <div class="sidebar-footer">
+        <a href="../../login.html" class="btn-logout" id="logoutBtn" title="Log out from system">
+          <iconify-icon icon="cuida:logout-outline" width="22" height="22"></iconify-icon>
+          <span>Logout</span>
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <!-- 1. Table View Container (Default) -->
+      <div id="recordsTableView">
+        <!-- Top Header Bar -->
+        <header class="top-header">
+          <div class="header-title-wrap">
+            <h1 class="dashboard-title">NutriTrack</h1>
+            <p class="dashboard-subtitle">Municipal Child Health Records</p>
+          </div>
+
+          <div class="header-actions">
+            <!-- Search Input -->
+            <div class="header-search-wrap">
+              <input type="text" id="patientSearchInput" class="search-input-field"
+                placeholder="Search by Name or Status">
+              <button type="button" class="search-icon-btn" aria-label="Search">
+                <iconify-icon icon="lucide:search" width="18" height="18"></iconify-icon>
+              </button>
+            </div>
+
+            <!-- Notification Bell Button -->
+            
+          </div>
+        </header>
+
+        <!-- Filter Toolbar -->
+        <div class="records-toolbar">
+          <div class="filter-group">
+            <span class="filter-label">Filter by :</span>
+            <div class="filter-controls-wrap">
+              <button type="button" class="filter-btn active btn-all" id="btnFilterAll">All</button>
+
+              <div class="filter-dropdown-wrap" id="barangayDropdownWrap">
+                <button type="button" class="filter-btn dropdown-toggle" id="barangayDropdownBtn" aria-haspopup="true"
+                  aria-expanded="false">
+                  <span class="filter-btn-text">Barangay</span>
+                  <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="18" height="18"></iconify-icon>
+                </button>
+                <div class="filter-dropdown-menu" id="barangayDropdownMenu">
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Marcos">San Marcos</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="Santo Domingo">Santo Domingo</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Jose">San Jose</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Pablo">San Pablo</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Mateo">San Mateo</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="Santo Tomas">Santo Tomas</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Lucas">San Lucas</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Juan">San Juan</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Ramon">San Ramon</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="Gogon">Gogon</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="Dugcal">Dugcal</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="Sua">Sua</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="Marupit">Marupit</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="Tarosanan">Tarosanan</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Francisco">San Francisco</a>
+                  <a class="filter-menu-item" data-filter="barangay" data-value="San Roque">San Roque</a>
+                </div>
+              </div>
+
+              <div class="filter-dropdown-wrap" id="genderDropdownWrap">
+                <button type="button" class="filter-btn dropdown-toggle" id="genderDropdownBtn" aria-haspopup="true"
+                  aria-expanded="false">
+                  <span class="filter-btn-text">Gender</span>
+                  <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="18" height="18"></iconify-icon>
+                </button>
+                <div class="filter-dropdown-menu" id="genderDropdownMenu">
+                  <a class="filter-menu-item" data-filter="gender" data-value="Male">Male</a>
+                  <a class="filter-menu-item" data-filter="gender" data-value="Female">Female</a>
+                </div>
+              </div>
+
+              <div class="filter-dropdown-wrap" id="statusDropdownWrap">
+                <button type="button" class="filter-btn dropdown-toggle" id="statusDropdownBtn" aria-haspopup="true"
+                  aria-expanded="false">
+                  <span class="filter-btn-text">Status</span>
+                  <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="18" height="18"></iconify-icon>
+                </button>
+                <div class="filter-dropdown-menu" id="statusDropdownMenu">
+                  <a class="filter-menu-item" data-filter="status" data-value="Normal">Normal</a>
+                  <a class="filter-menu-item" data-filter="status" data-value="Stunted">Stunted</a>
+                  <a class="filter-menu-item" data-filter="status" data-value="Severely Stunted">Severely Stunted</a>
+                  <a class="filter-menu-item" data-filter="status" data-value="Underweight">Underweight</a>
+                  <a class="filter-menu-item" data-filter="status" data-value="Severely Underweight">Severely
+                    Underweight</a>
+                  <a class="filter-menu-item" data-filter="status" data-value="Wasted">Wasted</a>
+                  <a class="filter-menu-item" data-filter="status" data-value="Severely Wasted">Severely Wasted</a>
+                  <a class="filter-menu-item" data-filter="status"
+                    data-value="Severely Acute Malnutrition (SAM)">Severely Acute Malnutrition (SAM)</a>
+                  <a class="filter-menu-item" data-filter="status"
+                    data-value="Moderate Acute Malnutrition (MAM)">Moderate Acute Malnutrition (MAM)</a>
+                  <a class="filter-menu-item" data-filter="status" data-value="Overweight">Overweight</a>
+                  <a class="filter-menu-item" data-filter="status" data-value="Obese">Obese</a>
+                  <a class="filter-menu-item" data-filter="status" data-value="Pending Assessment">Pending Assessment</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn-add-record" id="btnAddRecord">
+            <iconify-icon icon="mingcute:add-fill" width="17" height="17"></iconify-icon>
+            Add Record
+          </button>
+        </div>
+
+        <!-- Patient Records Table Card -->
+          <div class="patient-table-card">
+            <div class="table-responsive">
+              <table class="patient-table" id="patientsTable">
+                <thead>
+                  <tr>
+                    <th>Patient No.</th>
+                    <th>Child’s Name</th>
+                    <th>Gender</th>
+                    <th>Status</th>
+                    <th>Last Updated</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Row 1 -->
+                  <tr data-patient-no="PT-26-583741" data-name="Yoongi S. Min" data-barangay="San Mateo"
+                    data-gender="Male" data-status="Normal" data-date="08/10/2026">
+                    <td>PT-26-583741</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Yoongi S. Min</span>
+                        <span class="patient-col-address">San Mateo, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Male</td>
+                    <td>Normal</td>
+                    <td>08/10/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 2 -->
+                  <tr data-patient-no="PT-26-951382" data-name="Joonie R. Antonio" data-barangay="San Juan"
+                    data-gender="Male" data-status="Underweight" data-date="10/05/2026">
+                    <td>PT-26-951382</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Joonie R. Antonio</span>
+                        <span class="patient-col-address">San Juan, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Male</td>
+                    <td>Underweight</td>
+                    <td>10/05/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 3 -->
+                  <tr data-patient-no="PT-26-208694" data-name="Louis L. San Juan" data-barangay="San Ramon"
+                    data-gender="Male" data-status="Normal" data-date="09/29/2026">
+                    <td>PT-26-208694</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Louis L. San Juan</span>
+                        <span class="patient-col-address">San Ramon, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Male</td>
+                    <td>Normal</td>
+                    <td>09/29/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 4 -->
+                  <tr data-patient-no="PT-26-774031" data-name="Kristina C. David" data-barangay="Gogon"
+                    data-gender="Female" data-status="Normal" data-date="08/10/2026">
+                    <td>PT-26-774031</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Kristina C. David</span>
+                        <span class="patient-col-address">Gogon, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Female</td>
+                    <td>Normal</td>
+                    <td>08/10/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 5 -->
+                  <tr data-patient-no="PT-26-194826" data-name="Shiki S. Rodriguez" data-barangay="San Mateo"
+                    data-gender="Male" data-status="Normal" data-date="09/29/2026">
+                    <td>PT-26-194826</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Shiki S. Rodriguez</span>
+                        <span class="patient-col-address">San Mateo, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Male</td>
+                    <td>Normal</td>
+                    <td>09/29/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 6 -->
+                  <tr data-patient-no="PT-26-730415" data-name="Kyla R. Bom" data-barangay="San Juan"
+                    data-gender="Female" data-status="Normal" data-date="08/10/2026">
+                    <td>PT-26-730415</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Kyla R. Bom</span>
+                        <span class="patient-col-address">San Juan, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Female</td>
+                    <td>Normal</td>
+                    <td>08/10/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 7 -->
+                  <tr data-patient-no="PT-26-462907" data-name="Alexis D. San Juan" data-barangay="San Ramon"
+                    data-gender="Female" data-status="Underweight" data-date="08/10/2026">
+                    <td>PT-26-462907</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Alexis D. San Juan</span>
+                        <span class="patient-col-address">San Ramon, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Female</td>
+                    <td>Underweight</td>
+                    <td>08/10/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 8 -->
+                  <tr data-patient-no="PT-26-815263" data-name="Kristine C. San Pablo" data-barangay="Gogon"
+                    data-gender="Female" data-status="Normal" data-date="09/29/2026">
+                    <td>PT-26-815263</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Kristine C. San Pablo</span>
+                        <span class="patient-col-address">Gogon, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Female</td>
+                    <td>Normal</td>
+                    <td>09/29/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 9 -->
+                  <tr data-patient-no="PT-26-349178" data-name="Maria K. Kanto" data-barangay="Gogon"
+                    data-gender="Female" data-status="Normal" data-date="09/29/2026">
+                    <td>PT-26-349178</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Maria K. Kanto</span>
+                        <span class="patient-col-address">Gogon, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Female</td>
+                    <td>Normal</td>
+                    <td>09/29/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 10 -->
+                  <tr data-patient-no="PT-26-627504" data-name="Tara C. Inom" data-barangay="Gogon" data-gender="Female"
+                    data-status="Overweight" data-date="08/10/2026">
+                    <td>PT-26-627504</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Tara C. Inom</span>
+                        <span class="patient-col-address">Gogon, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Female</td>
+                    <td>Overweight</td>
+                    <td>08/10/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 11 -->
+                  <tr data-patient-no="PT-26-347896" data-name="Angelica Del Rosario" data-barangay="San Roque"
+                    data-gender="Female" data-status="Normal" data-date="10/01/2026">
+                    <td>PT-26-347896</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Angelica Del Rosario</span>
+                        <span class="patient-col-address">San Roque, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Female</td>
+                    <td>Normal</td>
+                    <td>10/01/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 12 -->
+                  <tr data-patient-no="PT-26-118492" data-name="Christian J. Gomez" data-barangay="Santo Domingo"
+                    data-gender="Male" data-status="Underweight" data-date="09/15/2026">
+                    <td>PT-26-118492</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Christian J. Gomez</span>
+                        <span class="patient-col-address">Santo Domingo, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Male</td>
+                    <td>Underweight</td>
+                    <td>09/15/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 11 -->
+                  <tr data-patient-no="PT-26-347896" data-name="Angelica Del Rosario" data-barangay="San Roque"
+                    data-gender="Female" data-status="Stunted" data-date="10/01/2026">
+                    <td>PT-26-347896</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Angelica Del Rosario</span>
+                        <span class="patient-col-address">San Roque, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Female</td>
+                    <td>Stunted</td>
+                    <td>10/01/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 12 -->
+                  <tr data-patient-no="PT-26-118492" data-name="Christian J. Gomez" data-barangay="Santo Domingo"
+                    data-gender="Male" data-status="Severely Stunted" data-date="09/15/2026">
+                    <td>PT-26-118492</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Christian J. Gomez</span>
+                        <span class="patient-col-address">Santo Domingo, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Male</td>
+                    <td>Severely Stunted</td>
+                    <td>09/15/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 13 -->
+                  <tr data-patient-no="PT-26-894102" data-name="Joshua P. Alcantara" data-barangay="San Jose"
+                    data-gender="Male" data-status="Severely Underweight" data-date="10/12/2026">
+                    <td>PT-26-894102</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Joshua P. Alcantara</span>
+                        <span class="patient-col-address">San Jose, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Male</td>
+                    <td>Severely Underweight</td>
+                    <td>10/12/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 14 -->
+                  <tr data-patient-no="PT-26-441923" data-name="Beatrice M. Reyes" data-barangay="San Mateo"
+                    data-gender="Female" data-status="Wasted" data-date="10/18/2026">
+                    <td>PT-26-441923</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Beatrice M. Reyes</span>
+                        <span class="patient-col-address">San Mateo, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Female</td>
+                    <td>Wasted</td>
+                    <td>10/18/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 15 -->
+                  <tr data-patient-no="PT-26-559102" data-name="Daniel K. Tan" data-barangay="San Juan"
+                    data-gender="Male" data-status="Severely Wasted" data-date="10/20/2026">
+                    <td>PT-26-559102</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Daniel K. Tan</span>
+                        <span class="patient-col-address">San Juan, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Male</td>
+                    <td>Severely Wasted</td>
+                    <td>10/20/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 16 -->
+                  <tr data-patient-no="PT-26-728194" data-name="Sophia L. Castro" data-barangay="Gogon"
+                    data-gender="Female" data-status="Severely Acute Malnutrition (SAM)" data-date="10/22/2026">
+                    <td>PT-26-728194</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Sophia L. Castro</span>
+                        <span class="patient-col-address">Gogon, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Female</td>
+                    <td>Severely Acute Malnutrition (SAM)</td>
+                    <td>10/22/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 17 -->
+                  <tr data-patient-no="PT-26-663810" data-name="Liam V. Mendoza" data-barangay="San Ramon"
+                    data-gender="Male" data-status="Moderate Acute Malnutrition (MAM)" data-date="10/24/2026">
+                    <td>PT-26-663810</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Liam V. Mendoza</span>
+                        <span class="patient-col-address">San Ramon, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Male</td>
+                    <td>Moderate Acute Malnutrition (MAM)</td>
+                    <td>10/24/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 18 -->
+                  <tr data-patient-no="PT-26-992147" data-name="Ethan R. Ramos" data-barangay="Sua" data-gender="Male"
+                    data-status="Obese" data-date="10/25/2026">
+                    <td>PT-26-992147</td>
+                    <td>
+                      <div class="patient-info-col">
+                        <span class="patient-col-name">Ethan R. Ramos</span>
+                        <span class="patient-col-address">Sua, Camaligan</span>
+                      </div>
+                    </td>
+                    <td>Male</td>
+                    <td>Obese</td>
+                    <td>10/25/2026</td>
+                    <td>
+                      <div class="view-action-cell">
+                        <span class="view-action-divider">|</span>
+                        <a href="#view" class="view-link">View</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </div>
+      <!-- /#recordsTableView -->
+
+      <!-- 2. Full Patient Record View Container (Shown on "View" Click) -->
+      <div id="patientFullView" class="patient-full-view" style="display: none;">
+
+        <!-- Top Header Bar for Full View -->
+        <header class="fullview-top-header">
+          <div class="fullview-title-wrap">
+            <button type="button" class="btn-back-records" id="btnBackToRecords" title="Back to Patient Records">
+              <iconify-icon icon="lucide:chevron-left" width="34" height="34"></iconify-icon>
+            </button>
+            <div class="fullview-headings">
+              <h1 class="fullview-title">NutriTrack</h1>
+              <p class="fullview-subtitle">Full Profile and Consultation History</p>
+            </div>
+          </div>
+
+          <div class="header-actions">
+            <!-- Notification Bell Button -->
+            
+          </div>
+        </header>
+
+        <!-- Full Patient Record Detail Card -->
+        <div class="patient-detail-card">
+
+          <!-- Card Header / Patient Summary -->
+          <div class="patient-card-header">
+            <div class="patient-summary-left">
+              <div class="patient-avatar-circle">
+                <iconify-icon icon="solar:user-bold" width="38" height="38"></iconify-icon>
+              </div>
+              <div class="patient-summary-info">
+                <span class="patient-id-tag" id="viewPatientId">Patient No. : PNT-0987</span>
+                <h2 class="patient-full-name" id="viewPatientName">Yoongi S. Min</h2>
+                <div class="patient-meta-row">
+                  <span class="meta-item">
+                    <iconify-icon icon="fa6-solid:child" class="meta-icon gold"></iconify-icon>
+                    <span id="viewGender">Male</span>
+                  </span>
+                  <span class="meta-item">
+                    <iconify-icon icon="boxicons:calendar-alt-filled" class="meta-icon gold"></iconify-icon>
+                    <span id="viewAge">4 years old</span>
+                  </span>
+                  <span class="meta-item">
+                    <iconify-icon icon="mdi:map-marker" class="meta-icon gold"></iconify-icon>
+                    <span id="viewZone">Zone 1, San Mateo Camaligan</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="patient-summary-right">
+              <div class="summary-action-btns">
+                <button type="button" class="btn-edit-profile" id="btnEditProfile">
+                  <iconify-icon icon="lucide:pencil" width="15" height="15"></iconify-icon>
+                  <span>Edit Profile</span>
+                </button>
+                <button type="button" class="btn-export-profile" id="btnExportProfile">
+                  <iconify-icon icon="lucide:upload" width="15" height="15"></iconify-icon>
+                  <span>Export</span>
+                </button>
+              </div>
+              <div class="summary-status-wrap">
+                <div class="summary-status-line">
+                  <span>Nutrition Status:</span>
+                  <strong class="nutrition-status-pill" id="viewNutritionStatus" data-status="normal">Normal</strong>
+                </div>
+                <span class="last-updated-text">Last updated: March 20, 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <hr class="card-horizontal-divider">
+
+          <div class="patient-detail-sections">
+            <section class="patient-detail-section" id="sectionChildInformation">
+              <div class="section-title-wrap">
+                <h3 class="section-title">I. Child's Information</h3>
+                <p class="section-subtitle">Core identification and contact information for this resident.</p>
+              </div>
+              <div class="section-fields-grid">
+                <div class="field-item w-40">
+                  <label class="field-label">Family Serial Number</label>
+                  <div class="field-value-box">FSN-00000</div>
+                </div>
+                <div class="fields-row col-2 child-name-gender">
+                  <div class="field-item">
+                    <label class="field-label">Complete Name</label>
+                    <div class="field-value-box" id="viewDetailFullName">Yoongi Suga Min</div>
+                  </div>
+                  <div class="field-item">
+                    <label class="field-label">Gender</label>
+                    <div class="field-value-box" id="viewDetailGender">Male</div>
+                  </div>
+                </div>
+                <div class="fields-row col-3">
+                  <div class="field-item">
+                    <label class="field-label">Age in Months</label>
+                    <div class="field-value-box">48</div>
+                  </div>
+                  <div class="field-item">
+                    <label class="field-label">Age in Days</label>
+                    <div class="field-value-box">1464</div>
+                  </div>
+                  <div class="field-item">
+                    <label class="field-label">Birthday</label>
+                    <div class="field-value-box" id="viewChildBirthday" data-date-value="2022-10-04">October 4, 2022</div>
+                  </div>
+                </div>
+                <div class="field-item w-60">
+                  <label class="field-label">Complete Address</label>
+                  <div class="field-value-box" id="viewDetailAddress">Zone 1, San Mateo, Camaligan, Camarines Sur</div>
+                </div>
+              </div>
+            </section>
+
+            <section class="patient-detail-section" id="sectionGuardian">
+              <div class="section-title-wrap">
+                <h3 class="section-title">II. Guardian</h3>
+                <p class="section-subtitle">Recorded Child Guardian Details</p>
+              </div>
+              <div class="section-fields-grid">
+                <div class="fields-row col-2 guardian-contact-row">
+                  <div class="field-item">
+                    <label class="field-label">Complete Name</label>
+                    <div class="field-value-box" id="viewGuardianName">Louis Min</div>
+                  </div>
+                  <div class="field-item">
+                    <label class="field-label">Contact Number</label>
+                    <div class="field-value-box" id="viewGuardianContact">095072749589</div>
+                  </div>
+                </div>
+                <div class="fields-row col-2">
+                  <div class="field-item">
+                    <label class="field-label">Relationship to the Child</label>
+                    <div class="field-value-box" id="viewGuardianRelationship">Mother</div>
+                  </div>
+                  <div class="field-item w-60">
+                    <label class="field-label">Type of Guardianship</label>
+                    <div class="field-value-box" id="viewGuardianType">Parent</div>
+                  </div>
+                </div>
+                <div class="field-item">
+                  <label class="field-label">Detailed Address</label>
+                  <div class="field-value-box" id="viewGuardianAddress">Zone 1, San Mateo, Camaligan, Camarines Sur</div>
+                </div>
+              </div>
+            </section>
+
+            <section class="patient-detail-section" id="sectionHealthMeasurements">
+              <div class="section-title-wrap">
+                <h3 class="section-title">III. Health Measurements</h3>
+                <p class="section-subtitle">Child Growth and Nutrition Assessment</p>
+              </div>
+              <div class="field-item measurement-date-field">
+                <label class="field-label">Date Measured</label>
+                <div class="field-value-box" id="viewMeasuredDate">10/04/2022</div>
+              </div>
+              <div class="fields-row col-3 measurement-values">
+                <div class="field-item">
+                  <label class="field-label">Weight</label>
+                  <div class="field-value-box" id="viewChildWeight">16.3 kg</div>
+                </div>
+                <div class="field-item">
+                  <label class="field-label">Height</label>
+                  <div class="field-value-box" id="viewChildHeight">103 cm</div>
+                </div>
+                <div class="field-item">
+                  <label class="field-label">MUAC (cm)</label>
+                  <div class="field-value-box" id="viewChildMuac">15.5 cm</div>
+                </div>
+              </div>
+              <div class="health-status-group">
+                <div class="nutrition-indicators-panel">
+                  <h4 class="health-status-heading">NUTRITION INDICATORS</h4>
+                  <div class="nutrition-indicator-list">
+                    <div class="health-indicator-card">
+                      <span class="indicator-name"><strong>WFA</strong><small>Weight-for-Age</small></span>
+                      <span class="indicator-result"><i></i>Normal</span>
+                    </div>
+                    <div class="health-indicator-card">
+                      <span class="indicator-name"><strong>HFA</strong><small>Height-for-Age</small></span>
+                      <span class="indicator-result"><i></i>Normal</span>
+                    </div>
+                    <div class="health-indicator-card">
+                      <span class="indicator-name"><strong>WFH / WH</strong><small>Weight-for-Height</small></span>
+                      <span class="indicator-result"><i></i>Normal</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="health-status-group">
+                <h4 class="health-status-heading">Preventive Health Status</h4>
+                <div class="fields-row col-3 preventive-status-grid">
+                  <div class="field-item"><label class="field-label">Bilateral Pitting Edema</label><div class="field-value-box" id="viewEdemaStatus">Absent</div></div>
+                  <div class="field-item"><label class="field-label">Vitamin A</label><div class="field-value-box" id="viewVitaminAStatus">Yes</div></div>
+                  <div class="field-item"><label class="field-label">Deworming</label><div class="field-value-box" id="viewDewormingStatus">Yes</div></div>
+                  <div class="field-item"><label class="field-label">Immunization</label><div class="field-value-box" id="viewImmunizationStatus">Complete</div></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="patient-detail-section" id="sectionInterventions">
+              <div class="section-title-wrap">
+                <h3 class="section-title">IV. Interventions</h3>
+                <p class="section-subtitle">Recorded Interventions based on Nutrition Status</p>
+              </div>
+              <div class="intervention-record-list">
+                <article class="intervention-record-card">
+                  <div class="intervention-record-heading">
+                    <h4><iconify-icon icon="solar:chat-round-dots-bold"></iconify-icon>Nutrition Counseling</h4>
+                    <span class="intervention-date">Feb 20, 2026</span>
+                    <span class="record-status completed">Completed</span>
+                  </div>
+                  <div class="intervention-record-body">
+                    <span>Type:</span><span>Dietary Counseling</span>
+                    <span>Conducted by:</span><span>BNS Louis</span>
+                    <span>Notes:</span><span>Advised guardian to increase protein intake and reduce sugary snacks</span>
+                  </div>
+                </article>
+                <article class="intervention-record-card">
+                  <div class="intervention-record-heading">
+                    <h4><iconify-icon icon="solar:fork-knife-bold"></iconify-icon>Food Supplementation</h4>
+                    <span class="intervention-date">March 20, 2026</span>
+                    <span class="record-status ongoing">On-Going</span>
+                  </div>
+                  <div class="intervention-record-body">
+                    <span>Type:</span><span>Supplementary Feeding</span>
+                    <span>Conducted by:</span><span>BNS Louis</span>
+                    <span>Notes:</span><span>Weekly lugaw feeding program. 3 of 8 sessions completed</span>
+                  </div>
+                </article>
+              </div>
+              <div class="consultation-history-group">
+                <article class="intervention-record-card consultation-history-card">
+                  <div class="intervention-record-heading">
+                    <h4><iconify-icon icon="solar:scale-bold"></iconify-icon>Follow-up Weighing</h4>
+                    <span class="intervention-date">March 15, 2026</span>
+                    <span class="record-status pending">Pending</span>
+                  </div>
+                  <div class="intervention-record-body">
+                    <span>Type:</span><span></span>
+                    <span>Assigned to:</span><span></span>
+                    <span>Notes:</span><span></span>
+                  </div>
+                </article>
+                <div class="other-consultation-heading">
+                  <h3 class="section-title">IV. Other Consultation History</h3>
+                  <p class="section-subtitle">Other Module Related Consultation History</p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <!-- /#patientFullView -->
+
+    </main>
+
+  </div>
+
+
+
+  <div id="addChildModal" class="modal-backdrop child-add-modal" style="display: none;">
+    <div class="modal-dialog child-add-dialog" role="dialog" aria-modal="true" aria-labelledby="addChildModalTitle">
+      <header class="modal-header">
+        <div class="modal-header-titles">
+          <h2 class="modal-title" id="addChildModalTitle">Add New Patient</h2>
+          <p class="modal-subtitle">Fill in the details below to register a new patient</p>
+        </div>
+        <button type="button" class="btn-modal-close" id="btnCloseAddChild" aria-label="Close modal">
+          <iconify-icon icon="lucide:x" width="20" height="20"></iconify-icon>
+        </button>
+      </header>
+
+      <form id="addChildForm" class="modal-body child-add-form" novalidate>
+        <section class="child-progress-panel" aria-label="Form completion">
+          <div class="child-progress-heading">
+            <strong id="childProgressSummary">0 of 3 required sections complete</strong>
+            <strong id="childProgressPercent">0%</strong>
+          </div>
+          <div class="child-progress-track" id="childProgressTrack" role="progressbar"
+            aria-label="Required form sections completed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <span class="child-progress-fill" id="childProgressFill"></span>
+          </div>
+          <p class="child-progress-note" id="childProgressNote">3 sections left: I. Child’s Information, II. Health Measurements, III. Parent-Guardian Information</p>
+        </section>
+
+        <div class="child-add-sections">
+          <section class="modal-form-section child-progress-section" data-child-progress-section="child-information">
+          <h3 class="modal-section-title">I. CHILD’S INFORMATION</h3>
+          <div class="modal-section-divider"></div>
+          <div class="form-grid">
+            <div class="form-row col-4">
+              <div class="form-group">
+                <label class="form-label" for="childLastName">Last Name <span class="req-star">*</span></label>
+                <input class="form-input" id="childLastName" name="lastName" type="text" placeholder="e.g Jenner" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="childFirstName">First Name <span class="req-star">*</span></label>
+                <input class="form-input" id="childFirstName" name="firstName" type="text" placeholder="e.g Kylie" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="childMiddleName">Middle Name</label>
+                <input class="form-input" id="childMiddleName" name="middleName" type="text" placeholder="e.g Go">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="childSuffix">Suffix</label>
+                <input class="form-input" id="childSuffix" name="suffix" type="text" placeholder="e.g Jr.">
+              </div>
+            </div>
+            <div class="form-row col-4">
+              <div class="form-group">
+                <label class="form-label" for="childGender">Gender <span class="req-star">*</span></label>
+                <select class="form-select" id="childGender" name="gender" required>
+                  <option value="">Select gender</option>
+                  <option>Female</option>
+                  <option>Male</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="childBirthDate">Birth Date <span class="req-star">*</span></label>
+                <input class="form-input" id="childBirthDate" name="birthDate" type="date" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="childAgeMonths">Age in Months</label>
+                <input class="form-input readonly-input" id="childAgeMonths" name="ageMonths" type="text" placeholder="Auto-Computed" readonly>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="childAgeDays">Age in Days</label>
+                <input class="form-input readonly-input" id="childAgeDays" name="ageDays" type="text" placeholder="Auto-Computed" readonly>
+              </div>
+            </div>
+            <div class="form-row col-2">
+              <div class="form-group">
+                <label class="form-label" for="childAddress">Complete Address <span class="req-star">*</span></label>
+                <input class="form-input" id="childAddress" name="address" type="text"
+                  placeholder="e.g Zone 1, Sto Tomas, Camaligan, Camarines Sur" required>
+              </div>
+            </div>
+          </div>
+        </section>
+
+          <section class="modal-form-section child-progress-section" data-child-progress-section="initial-consultation">
+          <h3 class="modal-section-title">II. HEALTH MEASUREMENTS</h3>
+          <div class="modal-section-divider"></div>
+          <div class="form-grid">
+            <div class="form-row col-3">
+              <div class="form-group">
+                <label class="form-label" for="childDateMeasured">Date Measured <span class="req-star">*</span></label>
+                <input class="form-input" id="childDateMeasured" name="dateMeasured" type="date" required>
+              </div>
+            </div>
+            <div class="form-row col-3">
+              <div class="form-group">
+                <label class="form-label" for="childWeight">Weight</label>
+                <input class="form-input" id="childWeight" name="weight" type="number" min="0" step="0.1" placeholder="e.g 10 kg">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="childHeight">Height</label>
+                <input class="form-input" id="childHeight" name="height" type="number" min="0" step="0.1" placeholder="e.g 130 cm">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="childMuac">MUAC (cm)</label>
+                <input class="form-input" id="childMuac" name="muac" type="number" min="0" step="0.1" placeholder="e.g -1.1">
+              </div>
+            </div>
+            <div class="form-row col-3">
+              <div class="form-group">
+                <label class="form-label" for="childWeightForAge">Weight for Age</label>
+                <input class="form-input readonly-input" id="childWeightForAge" name="weightForAge" value="Auto-Detected" readonly>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="childHeightForAge">Length / Height for Age</label>
+                <input class="form-input readonly-input" id="childHeightForAge" name="heightForAge" value="Auto-Detected" readonly>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="childWeightForHeight">Weight for Height</label>
+                <input class="form-input readonly-input" id="childWeightForHeight" name="weightForHeight" value="Auto-Detected" readonly>
+              </div>
+            </div>
+            <div class="form-row col-3">
+              <div class="form-group">
+                <label class="form-label" for="childWeightStatus">Status</label>
+                <input class="form-input readonly-input" id="childWeightStatus" name="weightStatus" value="Auto-Detected" readonly>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="childHeightStatus">Status</label>
+                <input class="form-input readonly-input" id="childHeightStatus" name="heightStatus" value="Auto-Detected" readonly>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="childWeightHeightStatus">Status</label>
+                <input class="form-input readonly-input" id="childWeightHeightStatus" name="weightHeightStatus" value="Auto-Detected" readonly>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="child-subsection-heading">PREVENTIVE HEALTH STATUS</h4>
+          <div class="child-choice-grid">
+            <fieldset class="child-choice-group">
+              <legend>Bilateral Pitting Edema <span class="req-star">*</span></legend>
+              <label><input type="radio" name="edema" value="Present" required><span>Present</span></label>
+              <label><input type="radio" name="edema" value="Absent"><span>Absent</span></label>
+            </fieldset>
+            <fieldset class="child-choice-group">
+              <legend>Received Vitamin A? <span class="req-star">*</span></legend>
+              <label><input type="radio" name="vitaminA" value="Yes" required><span>Yes</span></label>
+              <label><input type="radio" name="vitaminA" value="No"><span>No</span></label>
+            </fieldset>
+            <fieldset class="child-choice-group">
+              <legend>Deworming done? <span class="req-star">*</span></legend>
+              <label><input type="radio" name="deworming" value="Yes" required><span>Yes</span></label>
+              <label><input type="radio" name="deworming" value="No"><span>No</span></label>
+            </fieldset>
+          </div>
+          <fieldset class="child-choice-group child-immunization-group">
+            <legend>Immunization Status <span class="req-star">*</span></legend>
+            <label><input type="radio" name="immunizationStatus" value="Complete" required><span>Complete</span></label>
+            <label><input type="radio" name="immunizationStatus" value="Incomplete"><span>Incomplete</span></label>
+            <label><input type="radio" name="immunizationStatus" value="None"><span>None</span></label>
+          </fieldset>
+        </section>
+          <section class="modal-form-section child-progress-section" data-child-progress-section="parent-guardian">
+          <h3 class="modal-section-title child-guardian-title">III. PARENT-GUARDIAN INFORMATION</h3>
+          <div class="modal-section-divider"></div>
+          <div class="form-grid">
+            <div class="form-row col-3">
+              <div class="form-group">
+                <label class="form-label" for="guardianLastName">Last Name <span class="req-star">*</span></label>
+                <input class="form-input" id="guardianLastName" name="guardianLastName" type="text" placeholder="e.g Kim" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="guardianFirstName">First Name <span class="req-star">*</span></label>
+                <input class="form-input" id="guardianFirstName" name="guardianFirstName" type="text" placeholder="e.g Seok Jin" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="guardianMiddleName">Middle Name <span class="req-star">*</span></label>
+                <input class="form-input" id="guardianMiddleName" name="guardianMiddleName" type="text" placeholder="e.g Min" required>
+              </div>
+            </div>
+            <div class="form-row col-3">
+              <div class="form-group">
+                <label class="form-label" for="guardianContact">Contact Number <span class="req-star">*</span></label>
+                <input class="form-input" id="guardianContact" name="guardianContact" type="tel" placeholder="+ 63" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="guardianRelationship">Relationship to the Child <span class="req-star">*</span></label>
+                <select class="form-select" id="guardianRelationship" name="guardianRelationship" required>
+                  <option value="">e.g Parent</option>
+                  <option>Mother</option>
+                  <option>Father</option>
+                  <option>Grandparent</option>
+                  <option>Other relative</option>
+                  <option>Guardian</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="guardianType">Type of Guardianship <span class="req-star">*</span></label>
+                <select class="form-select" id="guardianType" name="guardianType" required>
+                  <option value="">e.g Parent, Legal Guardian, Informal</option>
+                  <option>Parent</option>
+                  <option>Legal Guardian</option>
+                  <option>Informal Guardian</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="guardianAddress">Detailed Address <span class="req-star">*</span></label>
+                <input class="form-input" id="guardianAddress" name="guardianAddress" type="text"
+                  placeholder="e.g Narra Street, Gogon-Dugcal, Camaligan" required>
+              </div>
+            </div>
+          </div>
+        </section>
+        </div>
+      </form>
+
+      <footer class="modal-footer">
+        <button type="submit" form="addChildForm" class="btn-modal-save" id="btnSaveChildRecord">Save Record</button>
+        <button type="button" class="btn-modal-cancel" id="btnCancelAddChild">Cancel</button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       Edit New Patient Modal (Matching Design & Layout)
+       ====================================================================== -->
+  <div id="editPatientModal" class="modal-backdrop" style="display: none;">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+      <!-- Modal Header -->
+      <header class="modal-header">
+        <div class="modal-header-titles">
+          <h2 class="modal-title" id="modalTitle">Edit Patient</h2>
+          <p class="modal-subtitle">Update the details below to save changes to the patient's record</p>
+        </div>
+        <button type="button" class="btn-modal-close" id="btnCloseModal" aria-label="Close modal">
+          <iconify-icon icon="lucide:x" width="20" height="20"></iconify-icon>
+        </button>
+      </header>
+
+      <!-- Modal Form Body -->
+      <form id="editPatientForm" class="modal-body" novalidate>
+
+        <!-- SECTION I: PATIENT INFORMATION -->
+        <section class="modal-form-section">
+          <h3 class="modal-section-title">I. PATIENT INFORMATION</h3>
+          <div class="modal-section-divider"></div>
+
+          <div class="form-grid">
+            <!-- Row 1: Patient No, Family Serial Number -->
+            <div class="form-row col-2">
+              <div class="form-group">
+                <label class="form-label" for="editPatientNo">Patient’s No. <span class="req-star">*</span></label>
+                <input type="text" id="editPatientNo" name="patientNo" class="form-input readonly-input"
+                  placeholder="Auto-Filled" readonly>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="editFamilySerial">Family Serial Number <span
+                    class="req-star">*</span></label>
+                <input type="text" id="editFamilySerial" name="familySerial" class="form-input"
+                  placeholder="Auto-Filled" required>
+              </div>
+            </div>
+
+            <!-- Row 2: Last Name, First Name, Middle Name -->
+            <div class="form-row col-3">
+              <div class="form-group">
+                <label class="form-label" for="editLastName">Last Name <span class="req-star">*</span></label>
+                <input type="text" id="editLastName" name="lastName" class="form-input" placeholder="Auto-Filled"
+                  required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="editFirstName">First Name <span class="req-star">*</span></label>
+                <input type="text" id="editFirstName" name="firstName" class="form-input" placeholder="Auto-Filled"
+                  required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="editMiddleName">Middle Name <span class="req-star">*</span></label>
+                <input type="text" id="editMiddleName" name="middleName" class="form-input" placeholder="Auto-Filled"
+                  required>
+              </div>
+            </div>
+
+            <!-- Row 3: Birth Date, Age (Auto-calc), Blood Type -->
+            <div class="form-row col-3">
+              <div class="form-group">
+                <label class="form-label" for="editBirthDate">Birth Date <span class="req-star">*</span></label>
+                <input type="date" id="editBirthDate" name="birthDate" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="editAge">Age <span class="req-star">*</span></label>
+                <input type="text" id="editAge" name="age" class="form-input readonly-input" placeholder="Auto-Filled"
+                  readonly required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Blood Type <span class="req-star">*</span></label>
+                <div class="cust-select-wrap" id="bloodTypeWrap">
+                  <button type="button" class="cust-select-btn" id="bloodTypeBtn" aria-haspopup="listbox"
+                    aria-expanded="false">
+                    <span class="cust-select-text placeholder" id="bloodTypeTxt">Auto-Filled</span>
+                    <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="20" height="20"
+                      class="cust-select-chevron"></iconify-icon>
+                  </button>
+                  <div class="cust-select-menu" id="bloodTypeMenu" role="listbox">
+                    <div class="cust-select-item" data-value="A +">A +</div>
+                    <div class="cust-select-item" data-value="A -">A -</div>
+                    <div class="cust-select-item" data-value="B +">B +</div>
+                    <div class="cust-select-item" data-value="B -">B -</div>
+                    <div class="cust-select-item" data-value="AB +">AB +</div>
+                    <div class="cust-select-item" data-value="AB -">AB -</div>
+                    <div class="cust-select-item" data-value="O +">O +</div>
+                    <div class="cust-select-item" data-value="O -">O -</div>
+                  </div>
+                  <input type="hidden" id="editBloodType" name="bloodType" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 4: Height, Pre-Pregnancy Weight, Pre-Pregnancy BMI (Auto-calc) -->
+            <div class="form-row col-3">
+              <div class="form-group">
+                <label class="form-label" for="editHeight">Height (cm) <span class="req-star">*</span></label>
+                <input type="number" id="editHeight" name="height" class="form-input" placeholder="Auto-Filled"
+                  step="0.1" min="50" max="250" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="editWeight">Pre-Pregnancy Weight (kg) <span
+                    class="req-star">*</span></label>
+                <input type="number" id="editWeight" name="weight" class="form-input" placeholder="Auto-Filled"
+                  step="0.1" min="20" max="250" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="editBMI">Pre-Pregnancy BMI <span class="req-star">*</span></label>
+                <input type="text" id="editBMI" name="bmi" class="form-input readonly-input" placeholder="Auto-Filled"
+                  readonly required>
+              </div>
+            </div>
+
+            <!-- Row 5: Contact Number, Civil Status -->
+            <div class="form-row col-2">
+              <div class="form-group">
+                <label class="form-label" for="editContact">Contact Number <span class="req-star">*</span></label>
+                <input type="text" id="editContact" name="contact" class="form-input" placeholder="Auto-Filled"
+                  required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Civil Status <span class="req-star">*</span></label>
+                <div class="cust-select-wrap" id="civilStatusWrap">
+                  <button type="button" class="cust-select-btn" id="civilStatusBtn" aria-haspopup="listbox"
+                    aria-expanded="false">
+                    <span class="cust-select-text placeholder" id="civilStatusTxt">Auto-Filled</span>
+                    <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="20" height="20"
+                      class="cust-select-chevron"></iconify-icon>
+                  </button>
+                  <div class="cust-select-menu" id="civilStatusMenu" role="listbox">
+                    <div class="cust-select-item" data-value="Single">Single</div>
+                    <div class="cust-select-item" data-value="Married">Married</div>
+                    <div class="cust-select-item" data-value="Widowed">Widowed</div>
+                    <div class="cust-select-item" data-value="Separated">Separated</div>
+                  </div>
+                  <input type="hidden" id="editCivilStatus" name="civilStatus" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 6: Zone/Street, Barangay, Municipality/Province -->
+            <div class="form-row col-3">
+              <div class="form-group">
+                <label class="form-label" for="editZone">Zone, Street <span class="req-star">*</span></label>
+                <input type="text" id="editZone" name="zone" class="form-input" placeholder="Auto-Filled" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Barangay <span class="req-star">*</span></label>
+                <div class="cust-select-wrap" id="barangayWrap">
+                  <button type="button" class="cust-select-btn" id="barangayBtn" aria-haspopup="listbox"
+                    aria-expanded="false">
+                    <span class="cust-select-text placeholder" id="barangayTxt">Auto-Filled</span>
+                    <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="20" height="20"
+                      class="cust-select-chevron"></iconify-icon>
+                  </button>
+                  <div class="cust-select-menu" id="barangayMenu" role="listbox">
+                    <div class="cust-select-item" data-value="San Marcos">San Marcos</div>
+                    <div class="cust-select-item" data-value="Santo Domingo">Santo Domingo</div>
+                    <div class="cust-select-item" data-value="San Jose">San Jose</div>
+                    <div class="cust-select-item" data-value="San Pablo">San Pablo</div>
+                    <div class="cust-select-item" data-value="San Mateo">San Mateo</div>
+                    <div class="cust-select-item" data-value="Santo Tomas">Santo Tomas</div>
+                    <div class="cust-select-item" data-value="San Lucas">San Lucas</div>
+                    <div class="cust-select-item" data-value="San Juan">San Juan</div>
+                    <div class="cust-select-item" data-value="San Ramon">San Ramon</div>
+                    <div class="cust-select-item" data-value="Gugon">Gugon</div>
+                    <div class="cust-select-item" data-value="Dugcal">Dugcal</div>
+                    <div class="cust-select-item" data-value="Sua">Sua</div>
+                    <div class="cust-select-item" data-value="Marupit">Marupit</div>
+                    <div class="cust-select-item" data-value="Tarosanan">Tarosanan</div>
+                    <div class="cust-select-item" data-value="San Francisco">San Francisco</div>
+                  </div>
+                  <input type="hidden" id="editBarangay" name="barangay" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="editMunicipality">Municipality, Province <span
+                    class="req-star">*</span></label>
+                <input type="text" id="editMunicipality" name="municipality" class="form-input"
+                  placeholder="Auto-Filled" value="Camaligan, Camarines Sur" required>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION II: PATIENT'S HISTORY -->
+        <section class="modal-form-section">
+          <h3 class="modal-section-title">II. PATIENT’S HISTORY</h3>
+          <div class="modal-section-divider"></div>
+          <h4 class="modal-subsection-heading">Medical Conditions and History</h4>
+
+          <div class="conditions-grid">
+            <!-- 1. Tuberculosis -->
+            <div class="condition-card">
+              <span class="condition-name">Tuberculosis (14 days or more of cough)</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="tb_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="tb_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="tb_remarks" class="form-input condition-input"
+                  placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+
+            <!-- 2. Heart Disease -->
+            <div class="condition-card">
+              <span class="condition-name">Heart Disease (shortness of breath)</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="heart_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="heart_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="heart_remarks" class="form-input condition-input"
+                  placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+
+            <!-- 3. Diabetes -->
+            <div class="condition-card">
+              <span class="condition-name">Diabetes (high blood sugar)</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="diabetes_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="diabetes_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="diabetes_remarks" class="form-input condition-input"
+                  placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+
+            <!-- 4. Hypertension -->
+            <div class="condition-card">
+              <span class="condition-name">Hypertension (high blood pressure)</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="htn_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="htn_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="htn_remarks" class="form-input condition-input"
+                  placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+
+            <!-- 5. Bronchial Asthma -->
+            <div class="condition-card">
+              <span class="condition-name">Bronchial Asthma</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="asthma_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="asthma_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="asthma_remarks" class="form-input condition-input"
+                  placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+
+            <!-- 6. Urinary Track Infection -->
+            <div class="condition-card">
+              <span class="condition-name">Urinary Track Infection</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="uti_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="uti_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="uti_remarks" class="form-input condition-input"
+                  placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+
+            <!-- 7. Parasitism -->
+            <div class="condition-card">
+              <span class="condition-name">Parasitism</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="para_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="para_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="para_remarks" class="form-input condition-input"
+                  placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+
+            <!-- 8. Goiter -->
+            <div class="condition-card">
+              <span class="condition-name">Goiter</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="goiter_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="goiter_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="goiter_remarks" class="form-input condition-input"
+                  placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+
+            <!-- 9. Anemia (pallor) -->
+            <div class="condition-card">
+              <span class="condition-name">Anemia (pallor)</span>
+              <div class="condition-checkboxes">
+                <label class="chk-label"><input type="checkbox" name="anemia_personal"> Personal History</label>
+                <label class="chk-label"><input type="checkbox" name="anemia_family"> Family History</label>
+              </div>
+              <div class="condition-remarks-wrap">
+                <label class="remarks-label">Remarks</label>
+                <input type="text" name="anemia_remarks" class="form-input condition-input"
+                  placeholder="e.g on 2nd month HRZE meds">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION III: OBSTETRIC & PREGNANCY DETAILS -->
+        <section class="modal-form-section">
+          <h3 class="modal-section-title">III. OBSTETRIC & PREGNANCY DETAILS</h3>
+          <div class="modal-section-divider"></div>
+
+          <!-- LMP, EDC, EDD -->
+          <div class="form-row col-3">
+            <div class="form-group">
+              <label class="form-label" for="editLMP">Last Menstrual Period (LMP) <span
+                  class="req-star">*</span></label>
+              <input type="date" id="editLMP" name="lmp" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="editEDC">Estimated Date of Confinement (EDC)</label>
+              <input type="text" id="editEDC" name="edc" class="form-input readonly-input" placeholder="Auto-Computed"
+                readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="editEDD">Estimated Date of Delivery (EDD)</label>
+              <input type="text" id="editEDD" name="edd" class="form-input readonly-input" placeholder="Auto-Computed"
+                readonly>
+            </div>
+          </div>
+
+          <!-- AOG / Gestational Age -->
+          <div class="form-row col-3" style="margin-top: 14px;">
+            <div class="form-group">
+              <label class="form-label" for="editAOG">AOG / Gestational Age</label>
+              <input type="text" id="editAOG" name="aog" class="form-input readonly-input" placeholder="Auto-Computed"
+                readonly>
+            </div>
+          </div>
+
+          <!-- GTPAL Grid -->
+          <h4 class="gtpal-title-label">OBSTETRIC HISTORY (GTPAL)</h4>
+          <div class="gtpal-input-grid">
+            <div class="gtpal-input-item">
+              <label class="form-label">G (GRAVIDA) <span class="req-star">*</span></label>
+              <input type="number" id="editGravida" name="gravida" class="form-input gtpal-num-input" min="0" max="15"
+                value="0" required>
+            </div>
+            <div class="gtpal-input-item">
+              <label class="form-label">T (TERM) <span class="req-star">*</span></label>
+              <input type="number" id="editTerm" name="term" class="form-input gtpal-num-input" min="0" max="15"
+                value="0" required>
+            </div>
+            <div class="gtpal-input-item">
+              <label class="form-label">P (PRETERM) <span class="req-star">*</span></label>
+              <input type="number" id="editPreterm" name="preterm" class="form-input gtpal-num-input" min="0" max="15"
+                value="0" required>
+            </div>
+            <div class="gtpal-input-item">
+              <label class="form-label">A (ABORTION) <span class="req-star">*</span></label>
+              <input type="number" id="editAbortion" name="abortion" class="form-input gtpal-num-input" min="0" max="15"
+                value="0" required>
+            </div>
+            <div class="gtpal-input-item">
+              <label class="form-label">L (LIVING) <span class="req-star">*</span></label>
+              <input type="number" id="editLiving" name="living" class="form-input gtpal-num-input" min="0" max="15"
+                value="0" required>
+            </div>
+          </div>
+
+          <!-- First Pregnancy Question -->
+          <div class="first-pregnancy-question">
+            <span class="first-preg-label">First Pregnancy? <span class="req-star">*</span></span>
+            <div class="radio-inline-group">
+              <label class="radio-option">
+                <input type="radio" name="firstPregnancy" value="yes" id="firstPregYes" required>
+                <span>Yes</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="firstPregnancy" value="no" id="firstPregNo" required>
+                <span>No</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- PREVIOUS PREGNANCY HISTORY (Dynamic based on First Pregnancy = Yes and Gravida count) -->
+          <div id="previousPregnancySection" class="previous-pregnancy-section" style="display: none;">
+            <h4 class="prev-preg-section-heading">PREVIOUS PREGNANCY HISTORY</h4>
+            <div id="pregnancyCardsContainer" class="pregnancy-cards-container">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </div>
+
+        </section>
+
+      </form>
+
+      <!-- Modal Footer -->
+      <footer class="modal-footer">
+        <button type="button" class="btn-modal-cancel" id="btnCancelEdit">Cancel</button>
+        <button type="submit" form="editPatientForm" class="btn-modal-save" id="btnSaveRecord">Save Record</button>
+      </footer>
+
+    </div>
+  </div>
+
+</body>
+
+</html>

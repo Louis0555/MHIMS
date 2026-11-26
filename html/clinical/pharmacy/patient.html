@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHIMS - Pharmacy | Patients with Dispensed Medicine</title>
+  <link rel="icon" type="image/png" href="../../../assets/images/MHIMS LOGO.png">
+  <meta name="description" content="Clinical Pharmacy patients with dispensed medicine.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <link rel="stylesheet" href="../../../css/clinical/residentcare/dashboard.css" data-mhims-page-style>
+  <link rel="stylesheet" href="../../../css/clinical/pharmacy/dashboard.css" data-mhims-page-style>
+  <link rel="stylesheet" href="../../../css/clinical/pharmacy/patient.css" data-mhims-page-style>
+  <link rel="stylesheet" href="../../../css/logout.css">
+  <script type="module" src="../../../js/shared/sidebar-navigation.ts" data-mhims-router defer></script>
+  <script type="module" src="../../../js/clinical/pharmacy/patient.ts?mhims-page=clinical-pharmacy-patient" defer></script>
+  <script type="module" src="../../../js/logout.ts" data-mhims-global defer></script>
+</head>
+
+<body class="pharmacy-patient-page">
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <a href="../maindashboard/dashboard.html" class="sidebar-brand" title="MHIMS Clinical Portal">
+          <img src="../../../assets/images/MHIMS LOGO.png" alt="MHIMS Official Logo" class="sidebar-logo-img">
+        </a>
+        <nav class="sidebar-nav" aria-label="Clinical Navigation Modules">
+          <a href="../maindashboard/dashboard.html" class="nav-item-btn"><iconify-icon icon="ant-design:home-filled" width="22" height="22"></iconify-icon><span>Dashboard</span></a>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="bi:people-fill" width="22" height="22"></iconify-icon><span>ResidentCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../residentcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../residentcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../residentcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../residentcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa6-solid:person-breastfeeding" width="22" height="22"></iconify-icon><span>MaternaTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../maternatrack/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../maternatrack/patientrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient Records</span></a>
+              <a href="../maternatrack/consultationlog.html" class="submenu-item"><iconify-icon icon="mdi:clipboard-text-clock" width="18" height="18"></iconify-icon><span>Consultation Log</span></a>
+              <a href="../maternatrack/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../maternatrack/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="fa:child" width="22" height="22"></iconify-icon><span>NutriTrack</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../nutritrack/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../nutritrack/childrecords.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Child Records</span></a>
+              <a href="../nutritrack/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../nutritrack/interventionlog.html" class="submenu-item"><iconify-icon icon="icon-park-solid:notebook" width="18" height="18"></iconify-icon><span>Intervention Log</span></a>
+              <a href="../nutritrack/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+              <span class="nav-btn-content"><iconify-icon icon="healthicons:lungs" width="22" height="22"></iconify-icon><span>TBCare</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="../tbcare/dashboard.html" class="submenu-item"><iconify-icon icon="ant-design:home-filled" width="18" height="18"></iconify-icon><span>Dashboard</span></a>
+              <a href="../tbcare/patient.html" class="submenu-item"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+              <a href="../tbcare/queuing.html" class="submenu-item"><iconify-icon icon="fluent:people-queue-24-filled" width="18" height="18"></iconify-icon><span>Queuing</span></a>
+              <a href="../tbcare/calendarview.html" class="submenu-item"><iconify-icon icon="boxicons:calendar-alt-filled" width="18" height="18"></iconify-icon><span>Calendar View</span></a>
+            </div>
+          </div>
+          <div class="nav-dropdown open">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="true">
+              <span class="nav-btn-content"><iconify-icon icon="griddy-icons:pills-alt-02-filled" width="22" height="22"></iconify-icon><span>Pharmacy</span></span>
+              <iconify-icon icon="mingcute:down-line" class="nav-chevron" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="nav-submenu">
+              <a href="dashboard.html" class="submenu-item"><iconify-icon icon="griddy-icons:pills-alt-02-filled" width="18" height="18"></iconify-icon><span>Medicine</span></a>
+              <a href="patient.html" class="submenu-item active" aria-current="page"><iconify-icon icon="solar:user-bold" width="18" height="18"></iconify-icon><span>Patient</span></a>
+            </div>
+          </div>
+          <a href="../statistics/dashboard.html" class="nav-item-btn"><iconify-icon icon="mdi:google-analytics" width="22" height="22"></iconify-icon><span>Statistics</span></a>
+        </nav>
+      </div>
+      <div class="sidebar-footer">
+        <a href="../../login.html" class="btn-logout" id="logoutBtn" title="Log out from system">
+          <iconify-icon icon="cuida:logout-outline" width="22" height="22"></iconify-icon>
+          <span>Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content pharmacy-main-content pharmacy-patient-content">
+      <header class="top-header">
+        <button type="button" class="dispensed-back-button" id="backToDispensedPatients" aria-label="Back to patients" hidden>
+          <iconify-icon icon="lucide:chevron-left" width="20" height="20" aria-hidden="true"></iconify-icon>
+        </button>
+        <div class="header-title-wrap">
+          <h1 class="dashboard-title">Pharmacy</h1>
+          <p class="dashboard-subtitle">Patients with Dispensed Medicine</p>
+        </div>
+        <div class="header-actions">
+          <label class="search-box pharmacy-search-wrap">
+            <span class="sr-only">Search patient name or ID</span>
+            <iconify-icon icon="lucide:search" class="search-icon" width="18" height="18" aria-hidden="true"></iconify-icon>
+            <input type="search" id="patientSearch" class="search-input" placeholder="Search patient name / ID" autocomplete="off">
+          </label>
+          
+        </div>
+      </header>
+
+      <section class="pharmacy-toolbar pharmacy-patient-toolbar" aria-label="Dispensed medicine filters and actions">
+        <div class="pharmacy-filter-row">
+          <span class="pharmacy-filter-label">Filter by :</span>
+          <div class="pharmacy-filter-controls" role="group" aria-label="Filter dispensing history by date">
+            <button type="button" class="pharmacy-filter-btn active" data-date-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="pharmacy-filter-btn" data-date-filter="today" aria-pressed="false">Today</button>
+            <button type="button" class="pharmacy-filter-btn" data-date-filter="week" aria-pressed="false">This Week</button>
+            <button type="button" class="pharmacy-filter-btn" data-date-filter="month" aria-pressed="false">This Month</button>
+            <div class="dispensed-date-range" id="dateRangeWrap">
+              <button
+                type="button"
+                class="pharmacy-filter-btn date-range-toggle"
+                id="dateRangeToggle"
+                aria-haspopup="dialog"
+                aria-expanded="false"
+                aria-controls="dateRangeMenu"
+                aria-pressed="false">
+                Date Range
+                <iconify-icon icon="material-symbols:arrow-drop-down-rounded" width="18" height="18" aria-hidden="true"></iconify-icon>
+              </button>
+              <form class="date-range-menu" id="dateRangeMenu" role="dialog" aria-label="Choose dispensing date range">
+                <label>
+                  <span>From</span>
+                  <input type="date" id="dateRangeStart" required>
+                </label>
+                <label>
+                  <span>To</span>
+                  <input type="date" id="dateRangeEnd" required>
+                </label>
+                <p class="date-range-error" id="dateRangeError" role="alert" hidden>Start date must be on or before the end date.</p>
+                <div class="date-range-actions">
+                  <button type="button" class="date-range-clear" id="clearDateRange">Clear</button>
+                  <button type="submit" class="date-range-apply">Apply</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn-dispense-medicine" id="openDispenseDialog">
+          <iconify-icon icon="mingcute:add-fill" width="17" height="17" aria-hidden="true"></iconify-icon>
+          Dispense Medicine
+        </button>
+      </section>
+
+      <section class="pharmacy-table-card" aria-label="Patients with dispensed medicine">
+        <div class="pharmacy-table-scroll">
+          <table class="pharmacy-table pharmacy-dispensed-table" id="pharmacyPatients">
+            <thead>
+              <tr>
+                <th scope="col">Patient ID</th>
+                <th scope="col">Patient Name</th>
+                <th scope="col">Medicine Dispensed</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Date Dispensed</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-dispensed-date="2026-11-23" data-patient-id="PT-0001" data-patient-name="Maria Santos" data-location="San Mateo, Camaligan" data-medicine="Amoxicillin" data-strength="500 mg" data-quantity="21 caps" data-dispensed-by="Elena Aquino" data-frequency-duration="3x daily for 7 days" data-diagnosis="Upper respiratory tract infection" data-prescription="Yes" data-philhealth="Not provided">
+                <td>PT-0001</td>
+                <td><div class="dispensed-patient"><strong>Maria Santos</strong><span>San Mateo, Camaligan</span></div></td>
+                <td><div class="dispensed-medicine"><span>Amoxicillin</span><strong>500 mg</strong></div></td>
+                <td>21 caps</td>
+                <td>2026-11-23</td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-view-dispensed>View</button></div></td>
+              </tr>
+              <tr data-dispensed-date="2026-11-23" data-patient-id="PT-0002" data-patient-name="Juan Dela Cruz" data-location="San Juan, Camaligan" data-medicine="Paracetamol" data-strength="500 mg" data-quantity="10 tabs">
+                <td>PT-0002</td>
+                <td><div class="dispensed-patient"><strong>Juan Dela Cruz</strong><span>San Juan, Camaligan</span></div></td>
+                <td><div class="dispensed-medicine"><span>Paracetamol</span><strong>500 mg</strong></div></td>
+                <td>10 tabs</td>
+                <td>2026-11-23</td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-view-dispensed>View</button></div></td>
+              </tr>
+              <tr data-dispensed-date="2026-11-23" data-patient-id="PT-0003" data-patient-name="Ana Reyes" data-location="San Ramon, Camaligan" data-medicine="Azithromycin" data-strength="500 mg" data-quantity="3 tabs">
+                <td>PT-0003</td>
+                <td><div class="dispensed-patient"><strong>Ana Reyes</strong><span>San Ramon, Camaligan</span></div></td>
+                <td><div class="dispensed-medicine"><span>Azithromycin</span><strong>500 mg</strong></div></td>
+                <td>3 tabs</td>
+                <td>2026-11-23</td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-view-dispensed>View</button></div></td>
+              </tr>
+              <tr data-dispensed-date="2026-11-23" data-patient-id="PT-0004" data-patient-name="Pedro Garcia" data-location="Gogon, Camaligan" data-medicine="Rifampicin" data-strength="500 mg" data-quantity="30 caps">
+                <td>PT-0004</td>
+                <td><div class="dispensed-patient"><strong>Pedro Garcia</strong><span>Gogon, Camaligan</span></div></td>
+                <td><div class="dispensed-medicine"><span>Rifampicin</span><strong>500 mg</strong></div></td>
+                <td>30 caps</td>
+                <td>2026-11-23</td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-view-dispensed>View</button></div></td>
+              </tr>
+              <tr data-dispensed-date="2026-11-22" data-patient-id="PT-0005" data-patient-name="Liza Mendoza" data-location="San Jose, Camaligan" data-medicine="Cetirizine" data-strength="10 mg" data-quantity="10 tabs">
+                <td>PT-0005</td>
+                <td><div class="dispensed-patient"><strong>Liza Mendoza</strong><span>San Jose, Camaligan</span></div></td>
+                <td><div class="dispensed-medicine"><span>Cetirizine</span><strong>10 mg</strong></div></td>
+                <td>10 tabs</td>
+                <td>2026-11-22</td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-view-dispensed>View</button></div></td>
+              </tr>
+              <tr data-dispensed-date="2026-11-22" data-patient-id="PT-0006" data-patient-name="Jose Ramos" data-location="Santo Domingo, Camaligan" data-medicine="Metformin" data-strength="500 mg" data-quantity="60 tabs">
+                <td>PT-0006</td>
+                <td><div class="dispensed-patient"><strong>Jose Ramos</strong><span>Santo Domingo, Camaligan</span></div></td>
+                <td><div class="dispensed-medicine"><span>Metformin</span><strong>500 mg</strong></div></td>
+                <td>60 tabs</td>
+                <td>2026-11-22</td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-view-dispensed>View</button></div></td>
+              </tr>
+              <tr data-dispensed-date="2026-11-22" data-patient-id="PT-0007" data-patient-name="Rosa Villanueva" data-location="San Marcos, Camaligan" data-medicine="Amlodipine" data-strength="10 mg" data-quantity="30 tabs">
+                <td>PT-0007</td>
+                <td><div class="dispensed-patient"><strong>Rosa Villanueva</strong><span>San Marcos, Camaligan</span></div></td>
+                <td><div class="dispensed-medicine"><span>Amlodipine</span><strong>10 mg</strong></div></td>
+                <td>30 tabs</td>
+                <td>2026-11-22</td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-view-dispensed>View</button></div></td>
+              </tr>
+              <tr data-dispensed-date="2026-11-21" data-patient-id="PT-0008" data-patient-name="Carlo Bautista" data-location="Santo Domingo, Camaligan" data-medicine="Oral Rehydration Salts" data-strength="" data-quantity="5 sachets">
+                <td>PT-0008</td>
+                <td><div class="dispensed-patient"><strong>Carlo Bautista</strong><span>Santo Domingo, Camaligan</span></div></td>
+                <td><div class="dispensed-medicine"><span>Oral Rehydration Salts</span></div></td>
+                <td>5 sachets</td>
+                <td>2026-11-21</td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-view-dispensed>View</button></div></td>
+              </tr>
+              <tr data-dispensed-date="2026-11-21" data-patient-id="PT-0009" data-patient-name="Elena Cruz" data-location="San Marcos, Camaligan" data-medicine="Fluconazole" data-strength="150 mg" data-quantity="1 cap">
+                <td>PT-0009</td>
+                <td><div class="dispensed-patient"><strong>Elena Cruz</strong><span>San Marcos, Camaligan</span></div></td>
+                <td><div class="dispensed-medicine"><span>Fluconazole</span><strong>150 mg</strong></div></td>
+                <td>1 cap</td>
+                <td>2026-11-21</td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-view-dispensed>View</button></div></td>
+              </tr>
+              <tr data-dispensed-date="2026-11-21" data-patient-id="PT-0010" data-patient-name="Miguel Torres" data-location="San Marcos, Camaligan" data-medicine="Salbutamol Inhaler" data-strength="100 mcg" data-quantity="1 inhaler">
+                <td>PT-0010</td>
+                <td><div class="dispensed-patient"><strong>Miguel Torres</strong><span>San Marcos, Camaligan</span></div></td>
+                <td><div class="dispensed-medicine"><span>Salbutamol Inhaler</span><strong>100 mcg</strong></div></td>
+                <td>1 inhaler</td>
+                <td>2026-11-21</td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-view-dispensed>View</button></div></td>
+              </tr>
+              <tr data-dispensed-date="2026-11-20" data-patient-id="PT-0011" data-patient-name="Daniel Castillo" data-location="San Antonio, Camaligan" data-medicine="Ibuprofen" data-strength="200 mg" data-quantity="12 tabs" data-dispensed-by="Elena Aquino" data-frequency-duration="As prescribed" data-diagnosis="Pain management" data-prescription="Yes" data-philhealth="Not provided">
+                <td>PT-0011</td>
+                <td><div class="dispensed-patient"><strong>Daniel Castillo</strong><span>San Antonio, Camaligan</span></div></td>
+                <td><div class="dispensed-medicine"><span>Ibuprofen</span><strong>200 mg</strong></div></td>
+                <td>12 tabs</td>
+                <td>2026-11-20</td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-view-dispensed>View</button></div></td>
+              </tr>
+              <tr data-dispensed-date="2026-11-20" data-patient-id="PT-0012" data-patient-name="Marites Fernandez" data-location="San Francisco, Camaligan" data-medicine="Loratadine" data-strength="10 mg" data-quantity="10 tabs" data-dispensed-by="Elena Aquino" data-frequency-duration="Once daily" data-diagnosis="Allergic rhinitis" data-prescription="Yes" data-philhealth="Not provided">
+                <td>PT-0012</td>
+                <td><div class="dispensed-patient"><strong>Marites Fernandez</strong><span>San Francisco, Camaligan</span></div></td>
+                <td><div class="dispensed-medicine"><span>Loratadine</span><strong>10 mg</strong></div></td>
+                <td>10 tabs</td>
+                <td>2026-11-20</td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-view-dispensed>View</button></div></td>
+              </tr>
+              <tr data-dispensed-date="2026-11-19" data-patient-id="PT-0013" data-patient-name="Alberto Lim" data-location="San Jose, Camaligan" data-medicine="Cephalexin" data-strength="500 mg" data-quantity="21 caps" data-dispensed-by="Elena Aquino" data-frequency-duration="3x daily" data-diagnosis="Bacterial infection" data-prescription="Yes" data-philhealth="Not provided">
+                <td>PT-0013</td>
+                <td><div class="dispensed-patient"><strong>Alberto Lim</strong><span>San Jose, Camaligan</span></div></td>
+                <td><div class="dispensed-medicine"><span>Cephalexin</span><strong>500 mg</strong></div></td>
+                <td>21 caps</td>
+                <td>2026-11-19</td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-view-dispensed>View</button></div></td>
+              </tr>
+              <tr data-dispensed-date="2026-11-19" data-patient-id="PT-0014" data-patient-name="Olivia Ramos" data-location="San Pablo, Camaligan" data-medicine="Clotrimazole" data-strength="1%" data-quantity="1 tube" data-dispensed-by="Elena Aquino" data-frequency-duration="Apply as directed" data-diagnosis="Fungal infection" data-prescription="Yes" data-philhealth="Not provided">
+                <td>PT-0014</td>
+                <td><div class="dispensed-patient"><strong>Olivia Ramos</strong><span>San Pablo, Camaligan</span></div></td>
+                <td><div class="dispensed-medicine"><span>Clotrimazole</span><strong>1%</strong></div></td>
+                <td>1 tube</td>
+                <td>2026-11-19</td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-view-dispensed>View</button></div></td>
+              </tr>
+              <tr data-dispensed-date="2026-11-18" data-patient-id="PT-0015" data-patient-name="Roberto Dela Cruz" data-location="San Isidro, Camaligan" data-medicine="Isoniazid" data-strength="300 mg" data-quantity="30 tabs" data-dispensed-by="Elena Aquino" data-frequency-duration="Once daily" data-diagnosis="TB treatment" data-prescription="Yes" data-philhealth="Not provided">
+                <td>PT-0015</td>
+                <td><div class="dispensed-patient"><strong>Roberto Dela Cruz</strong><span>San Isidro, Camaligan</span></div></td>
+                <td><div class="dispensed-medicine"><span>Isoniazid</span><strong>300 mg</strong></div></td>
+                <td>30 tabs</td>
+                <td>2026-11-18</td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-view-dispensed>View</button></div></td>
+              </tr>
+              <tr data-dispensed-date="2026-11-18" data-patient-id="PT-0016" data-patient-name="Grace Mendoza" data-location="San Roque, Camaligan" data-medicine="Oral Rehydration Salts" data-strength="1 sachet" data-quantity="4 sachets" data-dispensed-by="Elena Aquino" data-frequency-duration="As needed" data-diagnosis="Fluid replacement" data-prescription="Yes" data-philhealth="Not provided">
+                <td>PT-0016</td>
+                <td><div class="dispensed-patient"><strong>Grace Mendoza</strong><span>San Roque, Camaligan</span></div></td>
+                <td><div class="dispensed-medicine"><span>Oral Rehydration Salts</span><strong>1 sachet</strong></div></td>
+                <td>4 sachets</td>
+                <td>2026-11-18</td>
+                <td><div class="medicine-action"><span aria-hidden="true">|</span><button type="button" class="view-link" data-view-dispensed>View</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="empty-inventory" id="emptyDispensedPatients" hidden>No dispensed medicine records match your search or filters.</p>
+        </div>
+      </section>
+
+      <section class="dispensed-patient-detail" id="dispensedPatientDetail" aria-label="Patient dispensing history" hidden>
+        <article class="dispensed-patient-card">
+          <header class="dispensed-profile-summary">
+            <div class="dispensed-patient-identity">
+              <div class="dispensed-patient-avatar" aria-hidden="true">
+                <iconify-icon icon="solar:user-circle-bold" width="42" height="42"></iconify-icon>
+              </div>
+              <div class="dispensed-patient-heading">
+                <span class="dispensed-patient-number" id="dispensedPatientNumber"></span>
+                <h2 id="dispensedPatientName"></h2>
+                <p id="dispensedPatientLocation"></p>
+              </div>
+            </div>
+            <div class="dispensed-last-date">
+              <span>Last dispensed</span>
+              <strong id="dispensedLastDate"></strong>
+            </div>
+          </header>
+
+          <div class="dispensed-detail-sections">
+            <section class="dispensed-history-section" aria-labelledby="dispensedHistoryTitle">
+              <div class="dispensed-section-heading">
+                <h3 id="dispensedHistoryTitle">I. Dispensing History</h3>
+                <p><span id="dispensedHistoryCount"></span><span aria-hidden="true"> · </span>Latest first</p>
+              </div>
+              <table class="dispensed-history-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Date Dispensed</th>
+                    <th scope="col">Medicine</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Frequency &amp; Duration</th>
+                    <th scope="col">Dispensed By</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody id="dispensedHistoryBody"></tbody>
+              </table>
+            </section>
+
+            <section class="dispensed-record-section" aria-labelledby="dispensedRecordTitle">
+              <h3 id="dispensedRecordTitle">II. Dispensing Record Details</h3>
+              <p class="dispensed-selected-record" id="dispensedSelectedRecord"></p>
+              <div class="dispensed-record-fields">
+                <div class="dispensed-record-field">
+                  <span>Dispensed by</span>
+                  <strong id="dispensedRecordBy"></strong>
+                </div>
+                <div class="dispensed-record-field">
+                  <span>Date dispensed</span>
+                  <strong id="dispensedRecordDate"></strong>
+                </div>
+                <div class="dispensed-record-field">
+                  <span>Frequency &amp; duration</span>
+                  <strong id="dispensedRecordFrequency"></strong>
+                </div>
+                <div class="dispensed-record-field">
+                  <span>Diagnosis / Reason for dispensing</span>
+                  <strong id="dispensedDiagnosis"></strong>
+                </div>
+                <div class="dispensed-record-field">
+                  <span>With prescription?</span>
+                  <strong id="dispensedPrescription"></strong>
+                </div>
+                <div class="dispensed-record-field">
+                  <span>PhilHealth No.</span>
+                  <strong id="dispensedPhilhealth"></strong>
+                </div>
+              </div>
+            </section>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <dialog class="inventory-dialog dispense-dialog" id="dispenseDialog" aria-labelledby="dispenseDialogTitle" aria-describedby="dispenseDialogDescription">
+    <header class="inventory-dialog-header">
+      <div>
+        <h2 id="dispenseDialogTitle">Dispense Medicine</h2>
+        <p id="dispenseDialogDescription">Record Medicine Given to a Patient and Deduct From Stock</p>
+      </div>
+      <button type="button" class="dialog-close" data-close-dispense aria-label="Close dialog">
+        <iconify-icon icon="lucide:x" width="20" height="20"></iconify-icon>
+      </button>
+    </header>
+    <form class="inventory-action-form" id="dispenseForm">
+      <section class="inventory-progress" aria-label="Form completion">
+        <div class="inventory-progress-heading">
+          <strong>1 of 2 required section complete</strong>
+          <strong>40%</strong>
+        </div>
+        <div
+          class="inventory-progress-track"
+          role="progressbar"
+          aria-label="Required sections complete"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="40">
+          <span style="width: 40%"></span>
+        </div>
+        <p>1 SECTIONS LEFT: DISPENSING RECORD</p>
+      </section>
+      <div class="inventory-dialog-scroll dispense-form-scroll">
+        <p class="dialog-error" id="dispenseFormError" role="alert" hidden></p>
+        <section class="inventory-form-section" aria-labelledby="dispensePatientSection">
+          <h3 id="dispensePatientSection">PATIENT</h3>
+          <div class="inventory-field-grid">
+            <div class="inventory-field span-6">
+              <label for="dispensePhilhealth">PhilHealth No.</label>
+              <input id="dispensePhilhealth" name="philhealth" type="text" placeholder="If Member" autocomplete="off">
+            </div>
+            <fieldset class="inventory-field span-6 prescription-field">
+              <legend>With Prescription?</legend>
+              <div class="prescription-options">
+                <label><input name="prescription" type="radio" value="Yes" required><span>Yes</span></label>
+                <label><input name="prescription" type="radio" value="No" required><span>No</span></label>
+              </div>
+            </fieldset>
+            <div class="inventory-field span-8">
+              <label for="dispensePatientName">Patient / Resident Name</label>
+              <input id="dispensePatientName" name="patientName" type="text" placeholder="e.g. Elena Aquino" required autocomplete="off">
+            </div>
+            <div class="inventory-field span-8">
+              <label for="dispenseDiagnosis">Diagnosis / Reason For Dispensing</label>
+              <input id="dispenseDiagnosis" name="diagnosis" type="text" placeholder="e.g. Upper Respiratory Tract Infection" autocomplete="off">
+            </div>
+          </div>
+        </section>
+        <section class="inventory-form-section" aria-labelledby="dispenseMedicineSection">
+          <h3 id="dispenseMedicineSection">MEDICINE</h3>
+          <div class="inventory-field-grid">
+            <div class="inventory-field span-8">
+              <label for="dispenseMedicineName">Medicine Name</label>
+              <input id="dispenseMedicineName" name="medicineName" type="text" list="dispenseMedicineOptions" placeholder="e.g Amoxicillin" required autocomplete="off">
+              <datalist id="dispenseMedicineOptions"></datalist>
+            </div>
+            <div class="inventory-field span-4">
+              <label for="dispenseStrength">Strength / Dose</label>
+              <input id="dispenseStrength" name="strength" type="text" placeholder="e.g 500mg tablet" disabled>
+            </div>
+            <div class="inventory-field span-4">
+              <label for="dispenseOnHand">Currently on Hand</label>
+              <input id="dispenseOnHand" name="onHand" type="text" placeholder="Select a medicine" disabled>
+            </div>
+            <div class="inventory-field span-4">
+              <label for="dispenseQuantity">Quantity to Dispense</label>
+              <input id="dispenseQuantity" name="quantity" type="number" min="1" step="1" placeholder="e.g 21" required>
+            </div>
+            <div class="inventory-field span-4">
+              <label for="dispenseFrequency">Frequency &amp; Duration</label>
+              <input id="dispenseFrequency" name="frequencyDuration" type="text" placeholder="e.g 3x daily for 7 days" required autocomplete="off">
+            </div>
+          </div>
+        </section>
+        <section class="inventory-form-section" aria-labelledby="dispenseRecordSection">
+          <h3 id="dispenseRecordSection">DISPENSING RECORD</h3>
+          <div class="inventory-field-grid">
+            <div class="inventory-field span-4">
+              <label for="dispenseDate">Date Dispensed <span class="required-marker" aria-hidden="true">*</span></label>
+              <input id="dispenseDate" name="dateDispensed" type="date" required>
+            </div>
+            <div class="inventory-field span-8">
+              <label for="dispenseBy">Dispensed By</label>
+              <input id="dispenseBy" name="dispensedBy" type="text" placeholder="e.g. Elena Aquino" required autocomplete="off">
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer class="dialog-actions">
+        <button type="button" class="dialog-cancel" data-close-dispense>Cancel</button>
+        <button type="submit" class="dispense-submit">Dispense &amp; Update Stock</button>
+      </footer>
+    </form>
+  </dialog>
+
+</body>
+
+</html>

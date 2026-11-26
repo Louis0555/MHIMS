@@ -1,0 +1,1927 @@
+/* ==========================================================================
+   MHIMS - Municipal Health Office Information Management System
+   Clinical Personnel Portal - MaternaTrack Consultation Log Stylesheet
+   Stylesheet: css/clinical/maternatrack/consultationlog.css
+   ========================================================================== */
+
+:root {
+  --primary-navy: #101D56;
+  --primary-navy-dark: #0a1338;
+  --primary-navy-hover: #192a6b;
+
+  --sidebar-btn-bg: #7894BC;
+  --sidebar-btn-hover: #6784ad;
+  --sidebar-btn-active: #101D56;
+
+  --accent-gold: #D09518;
+  --accent-gold-hover: #b58012;
+  --accent-pink: #C2185B;
+
+  --bg-page: #F8F6F4;
+  --bg-card: #ffffff;
+
+  --table-header-bg: #6783A9;
+
+  --text-primary: #101D56;
+  --text-secondary: #55667e;
+  --text-muted: #828282;
+
+  --border-light: #e2e8f0;
+  --border-input: #cbd5e1;
+
+  --font-sans: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --sidebar-width: 230px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+}
+
+iconify-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.dashboard-layout {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 14px;
+  flex-shrink: 0;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(100vh - 85px);
+  padding-right: 2px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(16, 29, 86, 0.2) transparent;
+}
+
+.sidebar-top::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-top::-webkit-scrollbar-thumb {
+  background-color: rgba(16, 29, 86, 0.2);
+  border-radius: 4px;
+}
+
+.sidebar-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  text-decoration: none;
+}
+
+.sidebar-logo-img {
+  width: 125px;
+  height: 125px;
+  object-fit: contain;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.nav-item-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  max-width: 206px;
+  height: 35px;
+  padding: 8px 12px;
+  background-color: var(--sidebar-btn-bg);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  user-select: none;
+}
+
+.nav-item-btn:hover:not(.active) {
+  background-color: var(--sidebar-btn-hover);
+}
+
+/* Dropdown Nav */
+.nav-dropdown {
+  width: 100%;
+  max-width: 206px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-dropdown-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 206px;
+  height: 35px;
+  padding: 8px 12px;
+  background-color: var(--sidebar-btn-bg);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-radius 0.2s ease;
+  user-select: none;
+}
+
+.nav-dropdown-toggle:hover:not(.active) {
+  background-color: var(--sidebar-btn-hover);
+}
+
+.nav-btn-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-chevron {
+  font-size: 18px;
+  transition: transform 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* When the dropdown is OPEN */
+.nav-dropdown.open .nav-dropdown-toggle {
+  background-color: var(--primary-navy);
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 2px 6px rgba(16, 29, 86, 0.25);
+}
+
+.nav-dropdown.open .nav-chevron {
+  transform: rotate(180deg);
+}
+
+/* Submenu container */
+.nav-submenu {
+  background-color: #6c88b0;
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, padding 0.25s ease;
+}
+
+.nav-dropdown.open .nav-submenu {
+  max-height: 300px;
+  opacity: 1;
+  padding: 4px 0 6px 0;
+  margin-bottom: 2px;
+}
+
+/* Submenu item links */
+.submenu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 12px 7px 18px;
+  margin: 2px 6px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+  user-select: none;
+}
+
+.submenu-item iconify-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.submenu-item:hover {
+  background-color: rgba(16, 29, 86, 0.25);
+}
+
+.submenu-item.active {
+  background-color: #4f6b92;
+  color: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.submenu-item.active iconify-icon,
+.submenu-item.active span {
+  color: #101D56 !important;
+  font-weight: 800;
+}
+
+/* Logout Button */
+.sidebar-footer {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #f1f5f9;
+  width: 100%;
+}
+
+.btn-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 9px 14px;
+  background-color: var(--primary-navy);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-logout:hover {
+  background-color: var(--primary-navy-hover);
+  box-shadow: 0 4px 12px rgba(16, 29, 86, 0.25);
+}
+
+/* ==========================================================================
+   Main Content Area
+   ========================================================================== */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 24px 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Top Header */
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.header-title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-title {
+  font-size: 50px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.dashboard-subtitle {
+  font-size: 25px;
+  font-weight: 500;
+  color: #000;
+  margin-top: 2px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Header Search Input */
+.header-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input-field {
+  width: 290px;
+  height: 40px;
+  padding: 8px 38px 8px 16px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-primary);
+  background-color: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-input-field::placeholder {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.search-input-field:focus {
+  border-color: var(--primary-navy);
+  box-shadow: 0 0 0 3px rgba(16, 29, 86, 0.1);
+}
+
+.search-icon-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease;
+}
+
+.search-icon-btn:hover {
+  color: var(--primary-navy);
+}
+
+/* Notification Bell */
+.notification-btn {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F5F3EC;
+  border: 1px solid var(--primary-navy);
+  border-radius: 8px;
+  color: var(--primary-navy);
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.notification-btn:hover {
+  background-color: #f8fafc;
+}
+
+.notification-badge-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 7px;
+  height: 7px;
+  background-color: #2563eb;
+  border-radius: 50%;
+}
+
+/* ==========================================================================
+   Filter Toolbar
+   ========================================================================== */
+.records-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #4b5563;
+  margin-right: 274px;
+  white-space: nowrap;
+}
+
+/* Segmented Filter Control Group (Matching ResidentCare) */
+.filter-controls-wrap {
+  display: inline-flex;
+  align-items: stretch;
+}
+
+.filter-controls-wrap > .filter-btn,
+.filter-controls-wrap > .filter-dropdown-wrap > .filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  height: 24px;
+  padding: 4px 14px;
+  background-color: #ffffff;
+  color: var(--primary-navy);
+  border: 1.5px solid var(--primary-navy);
+  border-radius: 0px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Remove duplicate borders between adjacent buttons */
+.filter-controls-wrap > *:not(:first-child) > .filter-btn,
+.filter-controls-wrap > button:not(:first-child) {
+  border-left: none;
+}
+
+/* First button rounded on left */
+.filter-controls-wrap > *:first-child,
+.filter-controls-wrap > *:first-child > .filter-btn,
+.filter-controls-wrap > button:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.filter-btn.btn-all {
+  min-width: 80px;
+  justify-content: center;
+}
+
+/* Last button rounded on right */
+.filter-controls-wrap > *:last-child,
+.filter-controls-wrap > *:last-child > .filter-btn,
+.filter-controls-wrap > button:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.filter-btn:hover {
+  background-color: #f1f5f9;
+}
+
+.filter-btn.active,
+.filter-btn.has-filter {
+  background-color: var(--primary-navy);
+  color: #ffffff;
+  border-color: var(--primary-navy);
+}
+
+.filter-btn.active iconify-icon,
+.filter-btn.has-filter iconify-icon {
+  color: #ffffff;
+}
+
+/* Filter Dropdown Wrappers & Menus */
+.filter-dropdown-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.filter-btn iconify-icon {
+  transition: transform 0.2s ease;
+  font-size: 18px;
+  color: var(--primary-navy);
+}
+
+.filter-dropdown-wrap.open .filter-btn iconify-icon {
+  transform: rotate(180deg);
+}
+
+.filter-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(16, 29, 86, 0.14);
+  min-width: 175px;
+  max-height: 260px;
+  overflow-y: auto;
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  padding: 6px 0;
+  animation: dropdownFadeIn 0.15s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filter-dropdown-menu::-webkit-scrollbar {
+  width: 5px;
+}
+
+.filter-dropdown-menu::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+.filter-dropdown-menu::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.filter-dropdown-menu.show {
+  display: flex;
+}
+
+.filter-menu-item {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-menu-item:hover {
+  background-color: #f1f5f9;
+  color: var(--primary-navy);
+}
+
+.filter-menu-item.selected {
+  background-color: #edf2f9;
+  color: var(--primary-navy);
+  font-weight: 700;
+}
+
+/* + Log Consultation Action Button */
+.btn-log-consultation {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background-color: var(--accent-gold);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(208, 149, 24, 0.3);
+}
+
+.btn-log-consultation:hover {
+  background-color: var(--accent-gold-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(208, 149, 24, 0.4);
+}
+
+.btn-log-consultation:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Consultation Log Table Card
+   ========================================================================== */
+.patient-table-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: calc(100vh - 195px);
+}
+
+.patient-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13.5px;
+}
+
+.patient-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.patient-table th {
+  background-color: var(--table-header-bg);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 12px 14px;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.patient-table th:first-child {
+  padding-left: 20px;
+}
+
+.patient-table th:last-child {
+  padding-right: 20px;
+  text-align: center;
+}
+
+.patient-table tbody tr {
+  border-bottom: 1px solid #eef2f6;
+  transition: background-color 0.15s ease;
+}
+
+.patient-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.patient-table td {
+  padding: 11px 14px;
+  vertical-align: middle;
+  color: #1e293b;
+}
+
+.patient-table td:first-child {
+  padding-left: 20px;
+  font-weight: 700;
+  color: var(--primary-navy);
+}
+
+.patient-table td:last-child {
+  padding-right: 20px;
+  text-align: center;
+}
+
+/* Patient Name + Address Column */
+.patient-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.patient-col-name {
+  font-weight: 700;
+  color: var(--primary-navy);
+  font-size: 14px;
+}
+
+.patient-col-address {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Risk Level Badges
+   ========================================================================== */
+.risk-pill {
+  width: 120px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  text-wrap: nowrap;
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.risk-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Low Risk (Green) */
+.risk-pill.low-risk {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.risk-pill.low-risk .risk-dot {
+  background-color: #16a34a;
+}
+
+/* Medium Risk (Amber/Orange) */
+.risk-pill.medium-risk {
+  background-color: #FBF0DC;
+  color: #D09518;
+}
+
+.risk-pill.medium-risk .risk-dot {
+  background-color: #D09518;
+}
+
+/* High Risk (Red) */
+.risk-pill.high-risk {
+  background-color: #FBE7E4;
+  color: #B23A2E;
+}
+
+.risk-pill.high-risk .risk-dot {
+  background-color: #B23A2E;
+}
+
+/* Action View Link */
+.view-action-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.view-action-divider {
+  color: #94a3b8;
+  font-weight: 300;
+}
+
+.view-link {
+  font-weight: 700;
+  color: var(--primary-navy);
+  text-decoration: none;
+  font-size: 13.5px;
+  transition: color 0.15s ease;
+}
+
+.view-link:hover {
+  color: var(--accent-gold);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Full Patient Consultation View Styles (Matching Screenshot Design)
+   ========================================================================== */
+.patient-full-view {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+}
+
+.fullview-top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  margin-bottom: 20px;
+}
+
+.fullview-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-back-records {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #D09518;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border-radius: 6px;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-back-records:hover {
+  transform: translateX(-3px);
+  background-color: rgba(208, 149, 24, 0.12);
+}
+
+.fullview-headings {
+  display: flex;
+  flex-direction: column;
+}
+
+.fullview-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.fullview-subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  margin: 2px 0 0 0;
+}
+
+/* Patient Consultation Detail Card */
+.patient-detail-card.consultation-detail-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  padding: 16px 36px 32px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.patient-card-header {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.patient-summary-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 54px;
+}
+
+.patient-avatar-circle {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background-color: #101D56;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.patient-summary-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.patient-id-tag {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #D09518;
+  margin-bottom: 2px;
+}
+
+.patient-full-name {
+  font-size: 26px;
+  font-weight: 800;
+  color: #101D56;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.02em;
+}
+
+.patient-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.meta-icon.gold {
+  color: #D09518;
+  font-size: 15px;
+}
+
+.patient-status-pills {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.summary-risk-pill,
+.lmp-edd-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.summary-risk-pill {
+  justify-content: center;
+  min-width: 126px;
+}
+
+.summary-risk-pill.low-risk {
+  background-color: #e9fbf1;
+  color: #2d6033;
+}
+
+.summary-risk-pill.medium-risk {
+  background-color: #fbf0dc;
+  color: #a8730f;
+}
+
+.summary-risk-pill.high-risk {
+  background-color: #fbe7e4;
+  color: #b23a2e;
+}
+
+.lmp-edd-pill {
+  background-color: #eef2fa;
+  color: #101d56;
+}
+
+.patient-summary-right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  padding-top: 54px;
+}
+
+.summary-action-btns {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 760px) {
+  .patient-detail-card.consultation-detail-card {
+    padding: 18px;
+  }
+
+  .patient-card-header {
+    flex-direction: column;
+  }
+
+  .patient-summary-left {
+    margin-top: 0;
+  }
+
+  .patient-summary-right {
+    width: 100%;
+    align-items: flex-start;
+    padding-top: 0;
+  }
+
+  .summary-action-btns {
+    position: static;
+    align-self: flex-end;
+    margin-bottom: 10px;
+  }
+}
+
+.btn-edit-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background-color: #D09518;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn-edit-profile:hover {
+  background-color: #b58012;
+}
+
+.btn-export-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 18px;
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-export-profile:hover {
+  background-color: #f8fafc;
+  border-color: var(--primary-navy);
+  color: var(--primary-navy);
+}
+
+/* Right Trimester Dropdown Pill Button */
+.trimester-select-wrap {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 4px;
+}
+
+.btn-trimester-dropdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  background-color: #6783A9;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.btn-trimester-dropdown:hover {
+  background-color: #557297;
+}
+
+.trimester-chevron {
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.trimester-select-wrap.open .trimester-chevron {
+  transform: rotate(180deg);
+}
+
+.trimester-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(16, 29, 86, 0.14);
+  min-width: 235px;
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  padding: 6px 0;
+  animation: dropdownFadeIn 0.15s ease-out;
+}
+
+.trimester-dropdown-menu.show {
+  display: flex;
+}
+
+.trimester-menu-item {
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trimester-menu-item:hover,
+.trimester-menu-item.active {
+  background-color: #edf2f9;
+  color: var(--primary-navy);
+  font-weight: 700;
+}
+
+.checkup-indicator-text {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #101D56;
+  text-align: right;
+  margin-top: 6px;
+  letter-spacing: 0.2px;
+}
+
+/* Checkup Segmented Tabs */
+.checkup-segmented-tabs {
+  display: flex;
+  flex: 0 0 auto;
+  width: 100%;
+  border: 1.5px solid #6783A9;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 20px 0 26px 0;
+}
+
+.checkup-segment-tab {
+  flex: 1;
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #101D56;
+  background-color: #ffffff;
+  border: none;
+  border-right: 1.5px solid #6783A9;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.checkup-segment-tab:last-child {
+  border-right: none;
+}
+
+.checkup-segment-tab.active {
+  background-color: #101D56;
+  color: #ffffff;
+}
+
+.checkup-segment-tab:hover:not(.active) {
+  background-color: #f1f5f9;
+}
+
+/* Consultation Detail Sections */
+.consult-section {
+  margin-bottom: 26px;
+}
+
+.section-title-wrap {
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #101D56;
+  margin: 0 0 2px 0;
+}
+
+.section-subtitle {
+  font-size: 12.5px;
+  color: #64748b;
+  font-weight: 500;
+  margin: 0;
+}
+
+.fieldboxes-row {
+  display: grid;
+  gap: 16px;
+}
+
+.fieldboxes-row.col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.fieldboxes-row.col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.fieldboxes-row.col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.field-box-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field-box-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #101D56;
+}
+
+.field-box-value {
+  background-color: #F8FAFC;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #101D56;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+}
+
+.subgroup-heading {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #101D56;
+}
+
+.lab-treatment-card {
+  background-color: #F8FAFC;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 8px;
+  padding: 18px 24px;
+}
+
+.card-inner-heading {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #101D56;
+  margin-bottom: 10px;
+}
+
+.card-bullet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.bullet-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.8;
+}
+
+.maternal-condition-box {
+  background-color: #F8FAFC;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 8px;
+  padding: 14px 18px;
+}
+
+.condition-label {
+  font-size: 12.5px;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.condition-value {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #101D56;
+}
+
+.trimester-content-panel {
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 8px;
+  scrollbar-color: #cbd5e1 transparent;
+  scrollbar-width: thin;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.trimester-content-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.trimester-content-panel::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 4px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Responsive fallback
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 60px;
+    padding: 12px 6px;
+  }
+
+  .sidebar-nav span,
+  .nav-chevron,
+  .btn-logout span {
+    display: none;
+  }
+
+  .sidebar-logo-img {
+    width: 36px;
+  }
+
+  .main-content {
+    padding: 14px 16px;
+  }
+
+  .filter-label {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .prenatal-modal-backdrop {
+    padding: 12px;
+  }
+
+  .prenatal-modal-dialog {
+    width: calc(100vw - 24px);
+    max-height: calc(100vh - 24px);
+  }
+
+  .prenatal-modal-header,
+  .prenatal-modal-body,
+  .prenatal-modal-footer {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .prenatal-patient-summary {
+    align-items: flex-start;
+  }
+
+  .prenatal-trimester-badge {
+    display: none;
+  }
+
+  .prenatal-progress-meta span:last-child {
+    display: none;
+  }
+
+  .prenatal-visit-details,
+  .prenatal-vitals-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Prenatal visit form */
+.prenatal-modal-backdrop {
+  position: fixed;
+  inset: 0 0 0 var(--sidebar-width);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background: rgba(15, 23, 42, 0.42);
+  backdrop-filter: blur(2px);
+}
+
+.prenatal-modal-backdrop.show {
+  display: flex;
+}
+
+.prenatal-modal-dialog {
+  display: flex;
+  flex-direction: column;
+  width: min(755px, 100%);
+  max-height: 82vh;
+  max-height: 82dvh;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 18px 55px rgba(15, 23, 42, 0.28);
+}
+
+.prenatal-modal-header {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 74px;
+  padding: 12px 30px;
+  color: #fff;
+  background: var(--primary-navy);
+}
+
+.prenatal-modal-header h2 {
+  margin: 0;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.prenatal-modal-header p {
+  margin-top: 5px;
+  color: #e4e9f8;
+  font-size: 12px;
+}
+
+.prenatal-modal-close {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  color: #fff;
+  background: #50608c;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.prenatal-modal-dialog form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.prenatal-modal-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  padding: 18px 26px 0;
+}
+
+.prenatal-patient-summary {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 10px 18px;
+  border-bottom: 1.5px solid var(--accent-gold);
+}
+
+.prenatal-avatar {
+  display: grid;
+  flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  color: #fff;
+  background: var(--primary-navy);
+  border: 4px solid #e6eaf5;
+  border-radius: 50%;
+}
+
+.prenatal-patient-details {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.prenatal-patient-number {
+  color: var(--accent-gold);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.prenatal-patient-details > strong {
+  color: var(--primary-navy);
+  font-size: 14px;
+}
+
+.prenatal-patient-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 3px;
+}
+
+.prenatal-risk-tag,
+.prenatal-date-tag,
+.prenatal-trimester-badge {
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.prenatal-risk-tag {
+  color: #357044;
+  background: #e7f8ec;
+}
+
+.prenatal-date-tag {
+  color: var(--primary-navy);
+  background: #e8edf8;
+}
+
+.prenatal-trimester-badge {
+  margin-left: auto;
+  color: #c58a09;
+  background: #fff4dc;
+}
+
+.prenatal-progress {
+  flex: 0 0 auto;
+  margin: 16px 0 20px;
+  padding: 10px 16px;
+  color: var(--primary-navy);
+  background: #f0f3fa;
+  border-radius: 7px;
+}
+
+.prenatal-progress-heading,
+.prenatal-progress-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.prenatal-progress-heading {
+  font-size: 14px;
+}
+
+.prenatal-progress-heading strong:last-child {
+  font-size: 16px;
+}
+
+.prenatal-progress-track {
+  height: 7px;
+  margin: 8px 0;
+  overflow: hidden;
+  background: #d7deec;
+  border-radius: 8px;
+}
+
+.prenatal-progress-track span {
+  display: block;
+  width: 50%;
+  height: 100%;
+  background: var(--primary-navy);
+  border-radius: inherit;
+  transition: width 0.2s ease;
+}
+
+.prenatal-progress-meta {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.prenatal-sections-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 6px 26px 0;
+  overscroll-behavior: contain;
+  scrollbar-color: #cbd5e1 transparent;
+  scrollbar-width: thin;
+}
+
+.prenatal-sections-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.prenatal-sections-scroll::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 4px;
+}
+
+.prenatal-form-section {
+  margin: 0 0 22px;
+}
+
+.prenatal-section-title {
+  margin: 0 0 16px;
+  padding-bottom: 7px;
+  color: var(--primary-navy);
+  border-bottom: 1px solid #8a8a8a;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.prenatal-form-grid {
+  display: grid;
+  gap: 14px 10px;
+}
+
+.prenatal-visit-details {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 420px;
+  margin-bottom: 20px;
+}
+
+.prenatal-vitals-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.prenatal-assessment-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 520px;
+  margin-top: 14px;
+}
+
+.prenatal-lab-grid,
+.prenatal-disposition-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 14px;
+}
+
+.prenatal-field {
+  display: block;
+  min-width: 0;
+  color: #4a4a4a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.prenatal-field em {
+  display: inline;
+  color: #e34444;
+  font-style: normal;
+}
+
+.prenatal-field input,
+.prenatal-field select,
+.prenatal-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 30px;
+  margin-top: 6px;
+  padding: 6px 10px;
+  color: var(--primary-navy);
+  background: #fff;
+  border: 1px solid #68799d;
+  border-radius: 4px;
+  font: 500 11px var(--font-sans);
+}
+
+.prenatal-field input::placeholder,
+.prenatal-field textarea::placeholder {
+  color: #a4a4a4;
+}
+
+.prenatal-field input:disabled {
+  color: #999;
+  background: #f2f2f2;
+  border-color: #d2d2d2;
+}
+
+.prenatal-field textarea {
+  min-height: 50px;
+  resize: vertical;
+}
+
+.prenatal-field-full {
+  grid-column: 1 / -1;
+}
+
+.prenatal-test-list,
+.prenatal-check-groups fieldset {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px 16px;
+  padding: 0;
+  border: 0;
+}
+
+.prenatal-test-list legend,
+.prenatal-check-groups legend {
+  margin-bottom: 8px;
+  color: #4a4a4a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.prenatal-test-list label,
+.prenatal-check-groups label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #4a4a4a;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.prenatal-test-list input,
+.prenatal-check-groups input {
+  accent-color: var(--primary-navy);
+}
+
+.prenatal-test-list legend {
+  grid-column: 1 / -1;
+}
+
+.prenatal-test-column {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.prenatal-trimester-fields[data-trimester-fields="2"] .prenatal-lab-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.prenatal-trimester-fields[data-trimester-fields="3"] .prenatal-lab-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.prenatal-check-groups fieldset {
+  grid-template-columns: 1fr;
+}
+
+.prenatal-subheading {
+  grid-column: 1 / -1;
+  color: var(--primary-navy);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.prenatal-check-groups {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
+.prenatal-modal-footer {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 14px 26px;
+  background: #fff;
+  border-top: 1px solid #eee9e2;
+}
+
+.prenatal-save-button,
+.prenatal-cancel-button {
+  min-width: 88px;
+  padding: 8px 18px;
+  border-radius: 7px;
+  font: 700 12px var(--font-sans);
+  cursor: pointer;
+}
+
+.prenatal-save-button {
+  color: var(--primary-navy);
+  background: #e4aa2c;
+  border: 1px solid #e4aa2c;
+}
+
+.prenatal-cancel-button {
+  color: var(--primary-navy);
+  background: #fff;
+  border: 1px solid var(--primary-navy);
+}
+
+.prenatal-modal-backdrop[aria-hidden="true"] {
+  visibility: hidden;
+}
+
+.prenatal-modal-backdrop[aria-hidden="false"] {
+  visibility: visible;
+}
+
+.prenatal-trimester-fields[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .prenatal-modal-backdrop {
+    inset: 0;
+    padding: 10px;
+  }
+
+  .prenatal-modal-dialog {
+    max-height: 94vh;
+    max-height: 94dvh;
+  }
+
+  .prenatal-modal-header {
+    padding: 12px 18px;
+  }
+
+  .prenatal-modal-body {
+    padding: 16px 16px 0;
+  }
+
+  .prenatal-patient-summary {
+    align-items: flex-start;
+  }
+
+  .prenatal-trimester-badge {
+    white-space: normal;
+  }
+
+  .prenatal-vitals-grid,
+  .prenatal-lab-grid,
+  .prenatal-disposition-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .prenatal-trimester-fields[data-trimester-fields="2"] .prenatal-lab-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 460px) {
+  .prenatal-vitals-grid,
+  .prenatal-lab-grid,
+  .prenatal-disposition-grid,
+  .prenatal-visit-details,
+  .prenatal-assessment-grid,
+  .prenatal-check-groups {
+    grid-template-columns: 1fr;
+  }
+
+  .prenatal-trimester-fields[data-trimester-fields="2"] .prenatal-lab-grid,
+  .prenatal-trimester-fields[data-trimester-fields="3"] .prenatal-lab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prenatal-test-list {
+    grid-template-columns: 1fr;
+  }
+}

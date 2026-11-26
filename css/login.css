@@ -1,0 +1,725 @@
+/* ==========================================================================
+   MHIMS - Municipal Health Office Information Management System
+   Stylesheet: css/login.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens & CSS Variables
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand Palette derived from LOGIN-PAGE.png reference */
+  --primary-navy: #101D56;
+  --primary-navy-dark: #0b1733;
+  --primary-navy-light: #1b356d;
+  --primary-navy-hover: #192a6b;
+
+  --accent-gold: #e5a93c;
+  --accent-gold-hover: #d4992e;
+
+  --tab-inactive-bg: #7894BC;
+  --tab-inactive-hover: #6a88b2;
+  --tab-inactive-text: #ffffff;
+
+  --border-slate: #7894BC;
+  --border-light: #cbd5e1;
+  --border-focus: #101D56;
+
+  --bg-page: #f4f6fa;
+  --bg-card: #ffffff;
+
+  --text-headline: #101D56;
+  --text-label: #101D56;
+  --text-muted: #55667e;
+  --text-placeholder: #94a3b8;
+
+  --danger-color: #dc2626;
+  --danger-bg: #fef2f2;
+  --success-color: #16a34a;
+  --success-bg: #f0fdf4;
+
+  /* Typography */
+  --font-sans: 'Inter';
+
+  /* Card Width */
+  --card-max-width: 512px;
+
+  /* Shadows & Transitions */
+  --shadow-card: 0 4px 20px rgba(17, 35, 73, 0.04);
+  --shadow-input-focus: 0 0 0 3px rgba(16, 29, 86, 0.12);
+  --shadow-btn-hover: 0 4px 14px rgba(16, 29, 86, 0.25);
+  --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Base Styles
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-headline);
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.25rem;
+  line-height: 1.5;
+  position: relative;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   3. Main Page Container
+   -------------------------------------------------------------------------- */
+.page-container {
+  width: 100%;
+  max-width: var(--card-max-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  margin: auto;
+}
+
+/* --------------------------------------------------------------------------
+   4. Header & Branding Section
+   -------------------------------------------------------------------------- */
+.header-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  user-select: none;
+  text-decoration: none;
+}
+
+.brand-logo-wrap,
+.MHIMS-logo-wrap {
+  width: 84px;
+  height: 84px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MHIMS-logo-img {
+  margin-top: -30px;
+  width: 120px;
+  height: 147px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.MHIMS-TEXT-img {
+  margin-top: -19px;
+  width: 195px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.brand-subtitle,
+.brand-subtitle-line2 {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  margin-left: 15px;
+  font-style: normal;
+  font-weight: 700;
+  color: #101D56;
+  line-height: 1.25;
+}
+
+/* --------------------------------------------------------------------------
+   5. Authentication Card
+   -------------------------------------------------------------------------- */
+.auth-card {
+  width: 100%;
+  max-width: var(--card-max-width);
+  height: auto;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-slate);
+  border-radius: 6px;
+  padding: 38px 42px 32px 42px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.auth-card:hover {
+  box-shadow: 0 6px 24px rgba(17, 35, 73, 0.07);
+}
+
+.card-title {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 25px;
+  font-weight: 800;
+  text-align: center;
+  color: #101D56;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+
+.card-subtitle {
+  font-size: 15px;
+  font-family: var(--font-sans);
+  color: #828282;
+  text-align: center;
+  margin-bottom: 22px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* --------------------------------------------------------------------------
+   6. Role Switcher Segmented Control
+   -------------------------------------------------------------------------- */
+.role-switcher-container {
+  width: 100%;
+  max-width: 335px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--tab-inactive-bg);
+  border-radius: 9999px;
+  padding: 3px;
+  margin: 0 auto 22px auto;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.role-tab-btn {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 8px 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--tab-inactive-text);
+  border-radius: 9999px;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  transition: var(--transition-smooth);
+  position: relative;
+  font-family: inherit;
+}
+
+.role-tab-btn:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.role-tab-btn.active {
+  background-color: var(--primary-navy);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(16, 29, 86, 0.35);
+}
+
+.role-tab-btn:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   7. Form Inputs & Controls
+   -------------------------------------------------------------------------- */
+.auth-form {
+  width: 100%;
+  max-width: 413px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: 'Inter';
+  color: #101D56;
+  margin-bottom: 6px;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.form-input {
+  width: 413px;
+  height: 55px;
+  border: 1px solid #101D56;
+  border-radius: 4px;
+  padding: 0 14px;
+  font-size: 13.5px;
+  font-family: inherit;
+  color: #101D56;
+  background-color: #ffffff;
+  outline: none;
+  transition: var(--transition-smooth);
+  box-sizing: border-box;
+}
+
+.form-input::placeholder {
+  color: #BBBBBB;
+  font-weight: 600;
+}
+
+.form-input:hover {
+  border-color: #5577a3;
+}
+
+.form-input:focus {
+  border-color: var(--border-focus);
+  box-shadow: var(--shadow-input-focus);
+}
+
+/* Error state on input */
+.form-input.has-error {
+  border-color: var(--danger-color);
+  background-color: var(--danger-bg);
+}
+
+.form-input.has-error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+}
+
+.field-error-message {
+  display: none;
+  font-size: 0.78rem;
+  color: var(--danger-color);
+  font-weight: 600;
+  margin-top: 0.35rem;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.field-error-message.visible {
+  display: flex;
+}
+
+/* Password Toggle Icon Button */
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--border-slate);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: color 0.2s;
+}
+
+.password-toggle-btn:hover {
+  color: var(--primary-navy);
+}
+
+.password-toggle-btn:focus-visible {
+  outline: 2px solid var(--primary-navy);
+}
+
+.password-toggle-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   8. Submit Button
+   -------------------------------------------------------------------------- */
+.btn-submit {
+  width: 100%;
+  width: 413px;
+  height: 50px;
+  margin-top: 6px;
+  margin-bottom: 18px;
+  align-self: center;
+  background-color: var(--primary-navy);
+  color: var(--accent-gold);
+  border: none;
+  border-radius: 6px;
+  font-size: 16.5px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: var(--transition-smooth);
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-navy-hover);
+  box-shadow: var(--shadow-btn-hover);
+}
+
+.btn-submit:active {
+  transform: translateY(1px);
+}
+
+.btn-submit:focus-visible {
+  outline: 3px solid var(--accent-gold);
+  outline-offset: 2px;
+}
+
+.btn-submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   9. Footer text
+   -------------------------------------------------------------------------- */
+
+.card-footer-text {
+  color: #605F5F;
+  font-size: 12px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* Loading Spinner inside Submit Button */
+.btn-spinner {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(229, 169, 60, 0.3);
+  border-top-color: var(--accent-gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-submit.loading .btn-text {
+  display: none;
+}
+
+.btn-submit.loading .btn-spinner {
+  display: inline-block;
+}
+
+/* Subtle ripple feedback */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+  background-color: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Shake Animation for Validation Feedback */
+@keyframes shakeAnimation {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20%, 60% {
+    transform: translateX(-6px);
+  }
+  40%, 80% {
+    transform: translateX(6px);
+  }
+}
+
+.shake {
+  animation: shakeAnimation 0.4s ease-in-out;
+}
+
+
+/* --------------------------------------------------------------------------
+   10. Partnership Footer Section
+   -------------------------------------------------------------------------- */
+.partnership-section {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+}
+
+.partnership-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #55667e;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.partnership-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.partnership-seal {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partnership-seal.right-shield {
+  width: 42px;
+  height: 42px;
+}
+
+.partnership-seal-img,
+.camaligan-seal-img{
+  width: 60px;
+  height: 60px;
+}
+.mho-seal-img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+}
+
+.partnership-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.municipality-name {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #101D56;
+  line-height: 1.25;
+}
+
+.office-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #101D56;
+  line-height: 1.25;
+  margin-top: 1px;
+}
+
+.province-name {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: #55667e;
+  line-height: 1.25;
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   11. Toast Notification Component
+   -------------------------------------------------------------------------- */
+.toast-notification {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  min-width: 320px;
+  max-width: 420px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 10px 25px -5px rgba(17, 35, 73, 0.2), 0 8px 10px -6px rgba(17, 35, 73, 0.1);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  border-left: 5px solid var(--primary-navy);
+  transform: translateY(-150%);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  z-index: 9999;
+}
+
+.toast-notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast-notification.success {
+  border-left-color: var(--success-color);
+}
+
+.toast-notification.error {
+  border-left-color: var(--danger-color);
+}
+
+.toast-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+}
+
+.toast-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #112349;
+  margin-bottom: 0.2rem;
+}
+
+.toast-message {
+  font-size: 0.82rem;
+  color: #57657d;
+  line-height: 1.35;
+}
+
+/* --------------------------------------------------------------------------
+   13. Responsive API Live HUD / Floating Badge
+   -------------------------------------------------------------------------- */
+.responsive-hud {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   14. Responsive Layout & Media Queries
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 540px) {
+  body {
+    padding: 1.5rem 1rem;
+    justify-content: flex-start;
+  }
+
+  .page-container {
+    max-width: 100%;
+  }
+
+  .auth-card {
+    padding: 28px 20px 24px 20px;
+    border-radius: 6px;
+  }
+
+  .header-brand {
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .brand-logo-wrap,
+  .MHIMS-logo-wrap {
+    width: 68px;
+    height: 68px;
+  }
+
+  .MHIMS-TEXT-img {
+    width: 165px;
+  }
+
+  .role-switcher-container {
+    max-width: 100%;
+  }
+
+  .role-tab-btn {
+    padding: 7px 8px;
+    font-size: 11.5px;
+  }
+
+  .partnership-content {
+    gap: 10px;
+  }
+
+  .partnership-seal {
+    width: 36px;
+    height: 36px;
+  }
+
+  .partnership-seal.right-shield {
+    width: 34px;
+    height: 34px;
+  }
+
+  .municipality-name {
+    font-size: 12px;
+  }
+
+  .office-name {
+    font-size: 11px;
+  }
+
+  .province-name {
+    font-size: 10px;
+  }
+
+  .toast-notification {
+    left: 16px;
+    right: 16px;
+    min-width: auto;
+    max-width: none;
+    top: 16px;
+  }
+}
+
+@media screen and (max-height: 640px) {
+  body {
+    justify-content: flex-start;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .header-brand {
+    margin-bottom: 16px;
+  }
+
+  .partnership-section {
+    margin-top: 18px;
+  }
+}
